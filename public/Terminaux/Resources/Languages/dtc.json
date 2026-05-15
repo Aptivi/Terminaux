@@ -3623,6 +3623,14 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
       "text": "Het verwijderen van het thema is mislukt"
+    },
+    {
+      "loc": "T_INPUT_COMMON_CONTEXTMENU_FAILED",
+      "text": "Het contextmenu werkt niet"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
+      "text": "Contextmenu"
     }
   ]
 }

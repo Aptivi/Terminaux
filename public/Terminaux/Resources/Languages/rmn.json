@@ -3618,6 +3618,14 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
       "text": "Eliminarea temei a eșuat"
+    },
+    {
+      "loc": "T_INPUT_COMMON_CONTEXTMENU_FAILED",
+      "text": "Meniul contextual a eșuat"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
+      "text": "Meniu contextual"
     }
   ]
 }

@@ -3625,6 +3625,14 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
       "text": "主题移除失败"
+    },
+    {
+      "loc": "T_INPUT_COMMON_CONTEXTMENU_FAILED",
+      "text": "上下文菜单失效"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
+      "text": "上下文菜单"
     }
   ]
 }

@@ -3621,6 +3621,14 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
       "text": "Fjerning av temaet mislyktes"
+    },
+    {
+      "loc": "T_INPUT_COMMON_CONTEXTMENU_FAILED",
+      "text": "Kontekstmenyen har feilet"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
+      "text": "Kontekstmeny"
     }
   ]
 }

@@ -3617,6 +3617,14 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
       "text": "Penghapusan tema gagal"
+    },
+    {
+      "loc": "T_INPUT_COMMON_CONTEXTMENU_FAILED",
+      "text": "Menu konteks gagal"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
+      "text": "Menu konteks"
     }
   ]
 }

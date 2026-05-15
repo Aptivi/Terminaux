@@ -2826,5 +2826,11 @@
   <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
     <value>테마 삭제에 실패했습니다.</value>
   </data>
+  <data name="T_INPUT_COMMON_CONTEXTMENU_FAILED" xml:space="preserve">
+    <value>컨텍스트 메뉴가 작동하지 않습니다.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
+    <value>컨텍스트 메뉴</value>
+  </data>
 
 </root>

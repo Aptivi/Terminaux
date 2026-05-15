@@ -2826,5 +2826,11 @@
   <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
     <value>主題移除失敗</value>
   </data>
+  <data name="T_INPUT_COMMON_CONTEXTMENU_FAILED" xml:space="preserve">
+    <value>上下文選單失效</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
+    <value>內容選單</value>
+  </data>
 
 </root>

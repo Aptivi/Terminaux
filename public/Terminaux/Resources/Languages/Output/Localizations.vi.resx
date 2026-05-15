@@ -2826,5 +2826,11 @@
   <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
     <value>Việc xóa giao diện đã thất bại</value>
   </data>
+  <data name="T_INPUT_COMMON_CONTEXTMENU_FAILED" xml:space="preserve">
+    <value>Menu ngữ cảnh đã bị lỗi</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
+    <value>Menu ngữ cảnh</value>
+  </data>
 
 </root>

@@ -3618,6 +3618,14 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
       "text": "테마 삭제에 실패했습니다."
+    },
+    {
+      "loc": "T_INPUT_COMMON_CONTEXTMENU_FAILED",
+      "text": "컨텍스트 메뉴가 작동하지 않습니다."
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
+      "text": "컨텍스트 메뉴"
     }
   ]
 }

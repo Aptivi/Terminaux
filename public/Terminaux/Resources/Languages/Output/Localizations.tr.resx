@@ -2826,5 +2826,11 @@
   <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
     <value>Tema kaldırma işlemi başarısız oldu</value>
   </data>
+  <data name="T_INPUT_COMMON_CONTEXTMENU_FAILED" xml:space="preserve">
+    <value>Bağlam menüsü başarısız oldu</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
+    <value>Bağlam menüsü</value>
+  </data>
 
 </root>

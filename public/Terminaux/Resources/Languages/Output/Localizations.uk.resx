@@ -2826,5 +2826,11 @@
   <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
     <value>Видалення теми не вдалося</value>
   </data>
+  <data name="T_INPUT_COMMON_CONTEXTMENU_FAILED" xml:space="preserve">
+    <value>Збій контекстного меню</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
+    <value>Контекстне меню</value>
+  </data>
 
 </root>

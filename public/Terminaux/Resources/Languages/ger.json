@@ -3626,6 +3626,14 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
       "text": "Das Entfernen des Themas ist fehlgeschlagen."
+    },
+    {
+      "loc": "T_INPUT_COMMON_CONTEXTMENU_FAILED",
+      "text": "Das Kontextmenü konnte nicht geladen werden."
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
+      "text": "Kontextmenü"
     }
   ]
 }
