@@ -133,10 +133,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
                 var figFontFallback = FigletTools.GetFigletFont("small");
                 var figLines = FigletTools.GetFigletLines(Text, Font, Width);
-                int figWidth = FigletTools.GetFigletWidth(Text, Font, Width);
+                int figWidth = FigletTools.GetFigletWidth(Text, Font);
                 int figHeight = FigletTools.GetFigletHeight(Text, Font, Width);
                 var figLinesFallback = FigletTools.GetFigletLines(Text, figFontFallback, Width);
-                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback, Width);
+                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback);
                 int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback, Width);
                 string renderedFiglet = string.Join("\n", figLines);
                 string renderedFigletFallback = string.Join("\n", figLinesFallback);

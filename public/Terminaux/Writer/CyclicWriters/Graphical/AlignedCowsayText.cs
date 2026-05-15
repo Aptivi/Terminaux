@@ -132,10 +132,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
                 var cowFallback = CowName.Default;
                 var cowLines = CowsayTools.GetCowsayLines(Text, Cow, think, Width);
-                int cowWidth = CowsayTools.GetCowsayWidth(Text, Cow, think, Width);
+                int cowWidth = CowsayTools.GetCowsayWidth(Text, Cow, think);
                 int cowHeight = CowsayTools.GetCowsayHeight(Text, Cow, think, Width);
                 var cowLinesFallback = CowsayTools.GetCowsayLines(Text, cowFallback, think, Width);
-                int cowWidthFallback = CowsayTools.GetCowsayWidth(Text, cowFallback, think, Width);
+                int cowWidthFallback = CowsayTools.GetCowsayWidth(Text, cowFallback, think);
                 int cowHeightFallback = CowsayTools.GetCowsayHeight(Text, cowFallback, think, Width);
                 string renderedCowsay = string.Join("\n", cowLines);
                 string renderedCowsayFallback = string.Join("\n", cowLinesFallback);
