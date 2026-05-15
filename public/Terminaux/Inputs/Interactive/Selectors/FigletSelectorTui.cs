@@ -60,27 +60,38 @@ namespace Terminaux.Inputs.Interactive.Selectors
             selectedFont = FigletSelector.DetermineFigletIndex(font);
             var figletFont = FigletTools.GetFigletFont(font);
             var figletFontFallback = FigletTools.GetFigletFont("small");
+            var wrappedSentences = ConsoleMisc.GetWrappedSentences(text, ConsoleWrapper.WindowWidth);
             if (screenNum == 0)
             {
                 var buffer = new StringBuilder();
 
                 // Write the text using the selected figlet font
+                int figletWidth = FigletTools.GetFigletWidth(text, figletFont);
+                int figletWidthFallback = FigletTools.GetFigletWidth(text, figletFontFallback);
+                int figletWidthSmallText = wrappedSentences.Max(ConsoleChar.EstimateCellWidth);
                 int figletHeight = FigletTools.GetFigletHeight(text, figletFont);
                 int figletHeightFallback = FigletTools.GetFigletHeight(text, figletFontFallback);
-                int figletHeightSmallText = ConsoleMisc.GetWrappedSentences(text, ConsoleWrapper.WindowWidth).Length;
+                int figletHeightSmallText = wrappedSentences.Length;
                 int finalTop = ConsoleWrapper.WindowHeight / 2 - figletHeight / 2;
                 int finalTopFallback = ConsoleWrapper.WindowHeight / 2 - figletHeightFallback / 2;
                 int finalTopFallbackSmallText = ConsoleWrapper.WindowHeight / 2 - figletHeightSmallText / 2;
+                int finalLeft = ConsoleWrapper.WindowWidth / 2 - figletWidth / 2;
+                int finalLeftFallback = ConsoleWrapper.WindowWidth / 2 - figletWidthFallback / 2;
+                int finalLeftFallbackSmallText = ConsoleWrapper.WindowWidth / 2 - figletWidthSmallText / 2;
+                int fallbackLevel =
+                    (finalTop > 0 && finalLeft > 0) ? 0 :
+                    (finalTopFallback > 0 && finalLeftFallback > 0) ? 1 :
+                    2;
                 var figletDisplay = new AlignedFigletText(figletFont, text)
                 {
                     Top =
-                        finalTop > 0 ? finalTop :
-                        finalTopFallback > 0 ? finalTopFallback :
+                        fallbackLevel == 0 ? finalTop :
+                        fallbackLevel == 1 ? finalTopFallback :
                         finalTopFallbackSmallText,
-                    Settings = new()
-                    {
-                        Alignment = TextAlignment.Middle
-                    },
+                    Left =
+                        fallbackLevel == 0 ? finalLeft :
+                        fallbackLevel == 1 ? finalLeftFallback :
+                        finalLeftFallbackSmallText,
                 };
                 buffer.Append(figletDisplay.Render());
 
@@ -109,22 +120,32 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
                 // Write the text using the selected figlet font
                 string character = ((char)chars[showcaseIndex]).ToString();
+                int figletWidth = FigletTools.GetFigletWidth(character, figletFont);
+                int figletWidthFallback = FigletTools.GetFigletWidth(character, figletFontFallback);
+                int figletWidthSmallText = wrappedSentences.Max(ConsoleChar.EstimateCellWidth);
                 int figletHeight = FigletTools.GetFigletHeight(character, figletFont);
                 int figletHeightFallback = FigletTools.GetFigletHeight(character, figletFontFallback);
-                int figletHeightSmallText = ConsoleMisc.GetWrappedSentences(character, ConsoleWrapper.WindowWidth).Length;
+                int figletHeightSmallText = wrappedSentences.Length;
                 int finalTop = ConsoleWrapper.WindowHeight / 2 - figletHeight / 2;
                 int finalTopFallback = ConsoleWrapper.WindowHeight / 2 - figletHeightFallback / 2;
                 int finalTopFallbackSmallText = ConsoleWrapper.WindowHeight / 2 - figletHeightSmallText / 2;
+                int finalLeft = ConsoleWrapper.WindowWidth / 2 - figletWidth / 2;
+                int finalLeftFallback = ConsoleWrapper.WindowWidth / 2 - figletWidthFallback / 2;
+                int finalLeftFallbackSmallText = ConsoleWrapper.WindowWidth / 2 - figletWidthSmallText / 2;
+                int fallbackLevel =
+                    (finalTop > 0 && finalLeft > 0) ? 0 :
+                    (finalTopFallback > 0 && finalLeftFallback > 0) ? 1 :
+                    2;
                 var figletDisplay = new AlignedFigletText(figletFont, character)
                 {
                     Top =
-                        finalTop > 0 ? finalTop :
-                        finalTopFallback > 0 ? finalTopFallback :
+                        fallbackLevel == 0 ? finalTop :
+                        fallbackLevel == 1 ? finalTopFallback :
                         finalTopFallbackSmallText,
-                    Settings = new()
-                    {
-                        Alignment = TextAlignment.Middle
-                    }
+                    Left =
+                        fallbackLevel == 0 ? finalLeft :
+                        fallbackLevel == 1 ? finalLeftFallback :
+                        finalLeftFallbackSmallText,
                 };
                 buffer.Append(figletDisplay.Render());
 
