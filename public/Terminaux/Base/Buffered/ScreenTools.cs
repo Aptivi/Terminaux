@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 using ThreadState = System.Threading.ThreadState;
 
 namespace Terminaux.Base.Buffered
@@ -31,7 +32,7 @@ namespace Terminaux.Base.Buffered
     public static class ScreenTools
     {
         private static Screen? cyclicScreen = null;
-        private static Thread? cyclicScreenThread = null;
+        private static ThreadInstance cyclicScreenThread = new("Cyclic screen", true, new ParameterizedThreadStart((screen) => CycleScreen((Screen)screen)));
         private static readonly List<Screen> screens = [];
 
         /// <summary>
@@ -153,8 +154,7 @@ namespace Terminaux.Base.Buffered
 
             // Now, start a thread with cyclic screen info
             StopCyclicScreen();
-            cyclicScreenThread = new(() => CycleScreen(screen));
-            cyclicScreenThread.Start();
+            cyclicScreenThread.Start(screen);
             ConsoleLogger.Debug("Cyclic screen with frequency {0} ms has started...", screen.CycleFrequency);
         }
 
@@ -163,16 +163,13 @@ namespace Terminaux.Base.Buffered
         /// </summary>
         /// <returns></returns>
         public static bool CyclicScreenRunning() =>
-            cyclicScreenThread?.ThreadState == ThreadState.Running;
+            cyclicScreenThread.IsAlive;
 
         /// <summary>
         /// Stops the current cyclic screen
         /// </summary>
-        public static void StopCyclicScreen()
-        {
-            cyclicScreenThread?.Interrupt();
-            cyclicScreenThread?.Join(10000);
-        }
+        public static void StopCyclicScreen() =>
+            cyclicScreenThread.Stop();
 
         private static void CycleScreen(Screen screen)
         {

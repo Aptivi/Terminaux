@@ -31,6 +31,7 @@ using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Switches;
 using Terminaux.Base.Wrappers;
 using Terminaux.Themes.Colors;
+using Threadify.Manager;
 
 namespace Terminaux.Shell.Commands
 {
@@ -54,7 +55,6 @@ namespace Terminaux.Shell.Commands
                 if (ShellInstance.AltCommandThreads.Count > 0)
                 {
                     ConsoleLogger.Info("Using last alt command thread...");
-                    ShellInstance.AltCommandThreads[ShellInstance.AltCommandThreads.Count - 1] = ShellManager.RegenerateCommandThread(ShellInstance.ShellType);
                     StartCommandThread = ShellInstance.AltCommandThreads[ShellInstance.AltCommandThreads.Count - 1];
                 }
                 else
@@ -67,8 +67,8 @@ namespace Terminaux.Shell.Commands
             {
                 ConsoleLogger.Info("Starting command thread...");
                 StartCommandThread.Start(ThreadParams);
-                StartCommandThread.Join();
-                ShellInstance.shellCommandThread = ShellManager.RegenerateCommandThread(ShellInstance.ShellType);
+                StartCommandThread.Wait();
+                StartCommandThread.Stop();
             }
         }
 
@@ -428,7 +428,7 @@ namespace Terminaux.Shell.Commands
                 if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
                 {
                     ConsoleLogger.Debug("Making alt thread for buffered command {0}...", command);
-                    var BufferedCommand = new Thread((cmdThreadParams) => ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
+                    var BufferedCommand = new ThreadInstance($"Buffered command thread for {currentType}", true, (cmdThreadParams) => ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                     currentShell.AltCommandThreads.Add(BufferedCommand);
                 }
 
