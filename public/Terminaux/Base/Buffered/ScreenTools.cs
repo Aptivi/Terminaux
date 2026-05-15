@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Threadify.Manager;
-using ThreadState = System.Threading.ThreadState;
 
 namespace Terminaux.Base.Buffered
 {

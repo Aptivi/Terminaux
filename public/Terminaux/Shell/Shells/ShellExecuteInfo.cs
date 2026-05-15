@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using System.Threading;
 using Threadify.Manager;
 
 namespace Terminaux.Shell.Shells
