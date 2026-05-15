@@ -56,26 +56,37 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var buffer = new StringBuilder();
 
             // Write the text using the selected cow
+            var wrappedSentences = ConsoleMisc.GetWrappedSentences(text, ConsoleWrapper.WindowWidth);
+            int cowsayWidth = CowsayTools.GetCowsayWidth(text, cowName);
+            int cowsayWidthFallback = CowsayTools.GetCowsayWidth(text, CowName.Default);
+            int cowsayWidthSmallText = wrappedSentences.Max(ConsoleChar.EstimateCellWidth);
             int cowsayHeight = CowsayTools.GetCowsayHeight(text, cowName);
             int cowsayHeightFallback = CowsayTools.GetCowsayHeight(text, CowName.Default);
-            int cowsayHeightSmallText = ConsoleMisc.GetWrappedSentences(text, ConsoleWrapper.WindowWidth).Length;
+            int cowsayHeightSmallText = wrappedSentences.Length;
             int finalTop = ConsoleWrapper.WindowHeight / 2 - cowsayHeight / 2;
             int finalTopFallback = ConsoleWrapper.WindowHeight / 2 - cowsayHeightFallback / 2;
             int finalTopFallbackSmallText = ConsoleWrapper.WindowHeight / 2 - cowsayHeightSmallText / 2;
+            int finalLeft = ConsoleWrapper.WindowWidth / 2 - cowsayWidth / 2;
+            int finalLeftFallback = ConsoleWrapper.WindowWidth / 2 - cowsayWidthFallback / 2;
+            int finalLeftFallbackSmallText = ConsoleWrapper.WindowWidth / 2 - cowsayWidthSmallText / 2;
+            int fallbackLevel =
+                (finalTop > 0 && finalLeft > 0) ? 0 :
+                (finalTopFallback > 0 && finalLeftFallback > 0) ? 1 :
+                2;
             var cowsayDisplay = new AlignedCowsayText(cowName, text)
             {
                 Top =
-                    finalTop > 0 ? finalTop :
-                    finalTopFallback > 0 ? finalTopFallback :
+                    fallbackLevel == 0 ? finalTop :
+                    fallbackLevel == 1 ? finalTopFallback :
                     finalTopFallbackSmallText,
-                Settings = new()
-                {
-                    Alignment = TextAlignment.Middle
-                },
+                Left =
+                    fallbackLevel == 0 ? finalLeft :
+                    fallbackLevel == 1 ? finalLeftFallback :
+                    finalLeftFallbackSmallText,
             };
             buffer.Append(cowsayDisplay.Render());
 
-            // Write the selected cowName name and the keybindings
+            // Write the selected cow name and the keybindings
             var cowsayInfo = new AlignedText($"{cowName} - [[{selectedCowName + 1}/{CowNameMapping.cowNameStrings.Count}]]")
             {
                 Top = 1,
