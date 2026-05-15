@@ -131,9 +131,7 @@ namespace Terminaux.Shell.Commands
                     TextWriterRaw.Write();
                     ConsoleWrapperTools.SetWrapperLocal(nameof(Null));
                     cts.Cancel();
-                    ProcessExecutor.processExecutorThread.Interrupt();
-                    ProcessExecutor.processExecutorThread.Join();
-                    ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
+                    ProcessExecutor.processExecutorThread.Stop();
                     ConsoleWrapperTools.UnsetWrapperLocal();
                     ConsoleLogger.Debug("Cancelled command.");
                 }

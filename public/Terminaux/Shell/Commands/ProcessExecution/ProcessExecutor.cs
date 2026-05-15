@@ -26,6 +26,7 @@ using Textify.General;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors.Themes.Colors;
+using Threadify.Manager;
 
 namespace Terminaux.Shell.Commands.ProcessExecution
 {
@@ -34,7 +35,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
     /// </summary>
     public static class ProcessExecutor
     {
-        internal static Thread processExecutorThread = new((processParams) => ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
+        internal static ThreadInstance processExecutorThread = new("Process executor", false, (processParams) => ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
 
         internal static int ExecuteProcess(ExecuteProcessThreadParameters? ThreadParams)
         {

@@ -23,6 +23,7 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -63,7 +64,7 @@ namespace Terminaux.Shell.Shells.Unified
             if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
             {
                 ConsoleLogger.Debug("Making alt thread for repeated command {0}...", lastCommand);
-                var WrappedCommand = new Thread((cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
+                var WrappedCommand = new ThreadInstance($"Wrapped command thread for {ShellManager.CurrentShellType}", true, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                 ShellManager.ShellStack[ShellManager.ShellStack.Count - 1].AltCommandThreads.Add(WrappedCommand);
             }
 

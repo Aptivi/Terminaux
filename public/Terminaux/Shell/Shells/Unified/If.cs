@@ -25,6 +25,7 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting.Conditions;
 using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -47,7 +48,7 @@ namespace Terminaux.Shell.Shells.Unified
                     var AltThreads = ShellManager.ShellStack[ShellManager.ShellStack.Count - 1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
                     {
-                        var CommandThread = new Thread((cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
+                        var CommandThread = new ThreadInstance($"Conditional command thread for {ShellManager.CurrentShellType}", true, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                         ShellManager.ShellStack[ShellManager.ShellStack.Count - 1].AltCommandThreads.Add(CommandThread);
                     }
                     ShellManager.GetLine(CommandString);

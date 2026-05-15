@@ -22,6 +22,7 @@ using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using System.Threading;
+using Threadify.Manager;
 
 namespace Terminaux.Base
 {
@@ -34,7 +35,7 @@ namespace Terminaux.Base
         internal static int CurrentWindowWidth;
         internal static int CurrentWindowHeight;
         private static bool ResizeDetected;
-        private static Thread ResizeListenerThread = new((_) => PollForResize(null)) { Name = "Console Resize Listener Thread", IsBackground = true };
+        private static ThreadInstance ResizeListenerThread = new("Console Resize Listener Thread", true, (l) => PollForResize((Action<int, int, int, int>?)l));
 
         /// <summary>
         /// Whether to run the base console resize handler or not after running a custom action
@@ -72,16 +73,7 @@ namespace Terminaux.Base
                 return;
 
             SetCachedWindowDimensions(Console.WindowWidth, Console.WindowHeight);
-            if (customHandler is not null)
-            {
-                ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>?)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
-                ResizeListenerThread.Start(customHandler);
-            }
-            else
-            {
-                ResizeListenerThread = new((_) => PollForResize(null)) { Name = "Console Resize Listener Thread", IsBackground = true };
-                ResizeListenerThread.Start(null);
-            }
+            ResizeListenerThread.Start(customHandler);
         }
 
         /// <summary>
@@ -91,7 +83,7 @@ namespace Terminaux.Base
         {
             if (!IsListening)
                 return;
-            ResizeListenerThread.Interrupt();
+            ResizeListenerThread.Stop();
         }
 
         /// <summary>

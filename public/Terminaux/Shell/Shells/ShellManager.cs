@@ -19,31 +19,33 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using Terminaux.Reader;
 using System.Collections.ObjectModel;
-using Textify.General;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
+using SpecProbe.Software.Platform;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Wrappers;
+using Terminaux.Reader;
 using Terminaux.Reader.History;
+using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Prompts;
-using Terminaux.Shell.Switches;
-using Terminaux.Shell.Shells.Unified;
-using System.Threading;
-using Terminaux.Writer.ConsoleWriters;
-using Textify.Tools;
-using Terminaux.Shell.Scripting;
-using System.IO;
-using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands.ProcessExecution;
-using Newtonsoft.Json;
-using System.Text.RegularExpressions;
-using Terminaux.Base.Wrappers;
-using Terminaux.Shell.Aliases;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Scripting;
+using Terminaux.Shell.Shells.Unified;
+using Terminaux.Shell.Switches;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.Data.Words.Profanity;
+using Textify.General;
+using Textify.Tools;
 using Textify.Tools.Placeholder;
+using Threadify.Manager;
 
 namespace Terminaux.Shell.Shells
 {
@@ -770,9 +772,8 @@ namespace Terminaux.Shell.Shells
                                         // Create a new instance of process
                                         ConsoleLogger.Debug("Command: {0}, Arguments: {1}", TargetFile, arguments);
                                         var Params = new ExecuteProcessThreadParameters(TargetFile, arguments);
-                                        ProcessExecutor.processExecutorThread = new Thread((processParams) => processExitCode = ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
                                         ProcessExecutor.processExecutorThread.Start(Params);
-                                        ProcessExecutor.processExecutorThread.Join();
+                                        ProcessExecutor.processExecutorThread.Wait();
                                         MESHVariables.SetVariable("MESHErrorCode", $"{processExitCode}");
                                         ShellInstance.lastErrorCode = processExitCode;
                                     }
@@ -785,9 +786,7 @@ namespace Terminaux.Shell.Shells
                                     }
                                     finally
                                     {
-                                        ProcessExecutor.processExecutorThread.Interrupt();
-                                        ProcessExecutor.processExecutorThread.Join();
-                                        ProcessExecutor.processExecutorThread = new Thread((processParams) => processExitCode = ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
+                                        ProcessExecutor.processExecutorThread.Stop();
                                     }
                                 }
                             }
@@ -868,7 +867,7 @@ namespace Terminaux.Shell.Shells
                     throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR"), ShellType.ToString());
 
                 // Make a new instance of shell information
-                var ShellCommandThread = RegenerateCommandThread(ShellType);
+                var ShellCommandThread = new ThreadInstance($"Command thread for {ShellType}", true, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                 var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
@@ -1028,20 +1027,11 @@ namespace Terminaux.Shell.Shells
             var AltThreads = ShellStack[ShellStack.Count - 1].AltCommandThreads;
             if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
             {
-                var CommandThread = new Thread((cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
+                var CommandThread = new ThreadInstance($"Alternate command thread for {CurrentShellType}", true, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                 ShellStack[ShellStack.Count - 1].AltCommandThreads.Add(CommandThread);
             }
         }
 
-        internal static Thread RegenerateCommandThread(string ShellType) =>
-            new((cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams))
-            {
-                Name = $"{ShellType} Command Thread"
-            };
-
-        /// <summary>
-        /// Initializes the redirection
-        /// </summary>
         private static string InitializeRedirection(string Command)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
