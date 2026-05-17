@@ -211,6 +211,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     if (positionsValues.Item2 > processedHeight + processedTop)
                         break;
                     var rowOption = Rows[y, x];
+                    if (rowOption is null)
+                        continue;
                     rowOption.RowNumber = y;
                     rowOption.ColumnNumber = x;
                     string text = rowOption.Value ?? "";
