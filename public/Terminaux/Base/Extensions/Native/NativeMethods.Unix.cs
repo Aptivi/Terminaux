@@ -50,7 +50,7 @@ namespace Terminaux.Base.Extensions.Native
 
         internal static ulong DeterminePeekIoCtl()
         {
-            if (PlatformHelper.IsOnMacOS())
+            if (PlatformHelper.IsOnMacOS() || PlatformHelper.IsOnFreeBSD())
             {
                 // Return FreeBSD's FIONREAD ioctl according to this line, because Darwin is BSD.
                 // http://fxr.watson.org/fxr/source/sys/filio.h#L49
