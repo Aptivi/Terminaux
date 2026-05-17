@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using BassBoom.Basolia.Independent;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using BassBoom.Basolia.Media.Independent;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
