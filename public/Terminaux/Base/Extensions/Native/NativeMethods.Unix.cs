@@ -86,7 +86,7 @@ namespace Terminaux.Base.Extensions.Native
                 Termios newTermios = orig;
                 newTermios.c_iflag &= ~(0x1u | 0x200u | 0x400u);
                 newTermios.c_lflag &= ~(0x8u | 0x100u | 0x80u);
-                if (!PlatformHelper.IsOnMacOS())
+                if (!PlatformHelper.IsOnMacOS() && !PlatformHelper.IsOnFreeBSD())
                 {
                     newTermios.c_cc[6] = 0;
                     newTermios.c_cc[5] = 1;
@@ -110,7 +110,7 @@ namespace Terminaux.Base.Extensions.Native
             if (PlatformHelper.IsOnWindows())
                 return;
 
-            int nonBlock = PlatformHelper.IsOnMacOS() ? 0x4 : 0x800;
+            int nonBlock = PlatformHelper.IsOnMacOS() || PlatformHelper.IsOnFreeBSD() ? 0x4 : 0x800;
             if (enable)
             {
                 int flags = fcntl(STDIN_FD, F_GETFL, 0);
