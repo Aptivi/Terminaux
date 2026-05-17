@@ -132,6 +132,8 @@ namespace Terminaux.Base.Extensions
         {
             if (string.IsNullOrEmpty(text))
                 return [""];
+            if (maximumLength <= 0)
+                return text.SplitNewLines();
 
             // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
             // sizes.
@@ -151,15 +153,15 @@ namespace Terminaux.Base.Extensions
             {
                 var sequencesCollections = VtSequenceTools.MatchVTSequences(splitText);
                 int vtSeqIdx = 0;
-                int totalWidth = 0;
+                int compensate = 0;
                 if (splitText.Length == 0)
                     IncompleteSentences.Add(splitText);
                 for (int i = 0; i < splitText.Length; i++)
                 {
                     // Check the character to see if we're at the VT sequence
+                    bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
                     char ParagraphChar = splitText[i];
-                    bool wouldOverflow = false;
-                    bool overflown = false;
+                    bool isNewLine = splitText[i] == '\n';
 
                     // Append the character into the incomplete sentence builder, but check the surrogate pairs first.
                     string sequence = ConsolePositioning.BufferChar(splitText, sequencesCollections, ref i, ref vtSeqIdx, out bool isVtSeq);
@@ -169,34 +171,32 @@ namespace Terminaux.Base.Extensions
                         sequence += splitText[i + 1];
                         i++;
                     }
-                    if (!isVtSeq)
-                        totalWidth += width;
 
-                    // Also, compensate the zero-width characters and take the full-width ones
-                    overflown = totalWidth == maximumLength - indentLength;
-                    wouldOverflow = totalWidth > maximumLength - indentLength;
-                    if (!wouldOverflow)
+                    // Append the character into the incomplete sentence builder.
+                    if (!isNewLine)
                         IncompleteSentenceBuilder.Append(sequence);
 
+                    // Also, compensate the \0 characters and the VT sequences
+                    if (isVtSeq)
+                        compensate += width;
+                    if (splitText[i] == '\0')
+                        compensate++;
+
                     // Check to see if we're at the maximum character number or at the new line
-                    if (overflown | wouldOverflow | i == splitText.Length - 1)
+                    string sentence = IncompleteSentenceBuilder.ToString();
+                    if (ConsoleChar.EstimateCellWidth(sentence) == maximumLength - indentLength + compensate |
+                        i == splitText.Length - 1 |
+                        isNewLine)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                        IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                        IncompleteSentences.Add(sentence);
+                        if (explicitNewLine)
+                            IncompleteSentences.Add("");
 
                         // Clean everything up
                         IncompleteSentenceBuilder.Clear();
                         indentLength = 0;
-                        totalWidth = 0;
-
-                        // Add the overflown string if found
-                        if (wouldOverflow)
-                        {
-                            totalWidth += width;
-                            IncompleteSentenceBuilder.Append(sequence);
-                            if (i == splitText.Length - 1)
-                                IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-                        }
+                        compensate = 0;
                     }
                 }
             }
@@ -224,6 +224,8 @@ namespace Terminaux.Base.Extensions
         {
             if (string.IsNullOrEmpty(text))
                 return [""];
+            if (maximumLength <= 0)
+                return text.SplitNewLines();
 
             // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
             // sizes.
