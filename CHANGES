@@ -1,15 +1,12 @@
-This version of Terminaux is a late monthly release that adds some new features.
-
-This release is now available as a celebratory event of our Aptivi Blog being selected for the Sunshine Blogger Award for the second time!
+This version of Terminaux is a monthly release that provides support for FreeBSD systems and a Cowsay text renderer.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added accurate progress bar design
-- `[+]` Added pane-specific keybindings
-- `[+]` Added link markup
-- `[*]` Fixed ImageMagick security bugs
+- `[+]` Added timed input
+- `[+]` Added cowsay renderer
+- `[+]` Added FreeBSD support
 - `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
