@@ -1,10 +1,11 @@
-This version of Terminaux provides updated ImageMagick library to fix security bugs
+This version of Terminaux provides support for FreeBSD systems, as well as some general improvements.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed ImageMagick security bugs
+- `[+]` Added FreeBSD support
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
