@@ -40,7 +40,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         {
             ICow cowsay = DefaultCattleFarmer.RearCowWithDefaults(CowNameMapping.GetCowNameFrom(CowsayFont)).Result;
             string spoken = think ? cowsay.Think(Text) : cowsay.Speak(Text);
-            var cowsayLines = spoken.GetWrappedSentences(width);
+            var cowsayLines = ConsoleMisc.GetWrappedSentences(spoken, width);
             int maximumLength = cowsayLines.Max(ConsoleChar.EstimateCellWidth);
             for (int i = 0; i < cowsayLines.Length; i++)
                 cowsayLines[i] = cowsayLines[i].PadRight(maximumLength);
