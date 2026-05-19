@@ -1,10 +1,10 @@
-This is a hotfix release of Terminaux v8.4.0.1 that fixes input-related issues on FreeBSD.
+This is a hotfix release of Terminaux v8.4.0.2 that fixes security issues related to ImageMagick.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed issues related to input on FreeBSD systems
+- `[*]` Updated ImageMagick library
 
 Review the commit history if you want to get a deep insight about the changes.
 
