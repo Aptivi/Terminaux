@@ -212,7 +212,7 @@ namespace Terminaux.Colors.Transformation
             double saturation = hsl.Saturation;
             saturation -= target / 100d;
             saturation = ClampZeroOne(saturation);
-            return new Color($"hsl:{hsl.HueWhole};{saturation * 100};{hsl.LightnessWhole}");
+            return new Color($"hsl:{hsl.HueWhole};{(int)(saturation * 100)};{hsl.LightnessWhole}");
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace Terminaux.Colors.Transformation
             double saturation = hsl.Saturation;
             saturation += target / 100d;
             saturation = ClampZeroOne(saturation);
-            return new Color($"hsl:{hsl.HueWhole};{saturation * 100};{hsl.LightnessWhole}");
+            return new Color($"hsl:{hsl.HueWhole};{(int)(saturation * 100)};{hsl.LightnessWhole}");
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace Terminaux.Colors.Transformation
             double lightness = hsl.Lightness;
             lightness -= target / 100d;
             lightness = ClampZeroOne(lightness);
-            return new Color($"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{lightness * 100}");
+            return new Color($"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{(int)(lightness * 100)}");
         }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace Terminaux.Colors.Transformation
             double lightness = hsl.Lightness;
             lightness += target / 100d;
             lightness = ClampZeroOne(lightness);
-            return new Color($"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{lightness * 100}");
+            return new Color($"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{(int)(lightness * 100)}");
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Terminaux.Colors.Transformation
             var hsl = ConversionTools.ConvertFromRgb<HueSaturationLightness>(source.RGB);
             double hue = (hsl.HueWhole + target) % 360;
             hue = hue < 0 ? hue + 360 : hue;
-            return new Color($"hsl:{hue};{hsl.SaturationWhole};{hsl.LightnessWhole}");
+            return new Color($"hsl:{(int)hue};{hsl.SaturationWhole};{hsl.LightnessWhole}");
         }
 
         /// <summary>
