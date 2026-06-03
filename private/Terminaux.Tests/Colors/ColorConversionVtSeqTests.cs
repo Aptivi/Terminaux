@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shouldly;
+using System;
 using Colorimetry;
 using Colorimetry.Models;
 using Colorimetry.Models.Conversion;
 using Colorimetry.Models.Parsing;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences.Builder;
 
@@ -888,6 +889,216 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to YPbPrSDTV
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToYPbPrSDTV()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrSDTV
+            var ypbprsdtv = ConversionTools.ToYPbPrSDTV(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprsdtv.Y, 1).ShouldBe(209.3);
+            Math.Round(ypbprsdtv.Pb, 1).ShouldBe(231.9);
+            Math.Round(ypbprsdtv.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(ypbprsdtv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YPbPrHDTV
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToYPbPrHDTV()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrHDTV
+            var ypbprhdtv = ConversionTools.ToYPbPrHDTV(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprhdtv.Y, 1).ShouldBe(148.8);
+            Math.Round(ypbprhdtv.Pb, 1).ShouldBe(269.8);
+            Math.Round(ypbprhdtv.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(ypbprhdtv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YPbPrHiVi
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToYPbPrHiVi()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrHiVi
+            var ypbprhivi = ConversionTools.ToYPbPrHiVi(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprhivi.Y, 1).ShouldBe(183.9);
+            Math.Round(ypbprhivi.Pb, 1).ShouldBe(252.3);
+            Math.Round(ypbprhivi.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(ypbprhivi);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YDbDr
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToYDbDr()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YDbDr
+            var ydbdr = ConversionTools.ToYDbDr(ColorInstance.RGB);
+
+            // Check for property correctness
+            ydbdr.Y.ShouldBe(0.299);
+            ydbdr.Db.ShouldBe(-0.45);
+            ydbdr.Dr.ShouldBe(-1.333);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(ydbdr);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(254);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to LMS
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToLms()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to LMS
+            var lms = ConversionTools.ToLms(ColorInstance.RGB);
+
+            // Check for property correctness
+            lms.L.ShouldBe(0.8951);
+            lms.M.ShouldBe(-0.7502);
+            lms.S.ShouldBe(0.0389);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(lms);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -1438,6 +1649,216 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to YPbPrSDTV
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToYPbPrSDTV()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrSDTV
+            var ypbprsdtv = ConversionTools.ConvertFromRgb<YPbPrSDTV>(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprsdtv.Y, 1).ShouldBe(209.3);
+            Math.Round(ypbprsdtv.Pb, 1).ShouldBe(231.9);
+            Math.Round(ypbprsdtv.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(ypbprsdtv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YPbPrHDTV
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToYPbPrHDTV()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrHDTV
+            var ypbprhdtv = ConversionTools.ConvertFromRgb<YPbPrHDTV>(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprhdtv.Y, 1).ShouldBe(148.8);
+            Math.Round(ypbprhdtv.Pb, 1).ShouldBe(269.8);
+            Math.Round(ypbprhdtv.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(ypbprhdtv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YPbPrHiVi
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToYPbPrHiVi()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrHiVi
+            var ypbprhivi = ConversionTools.ConvertFromRgb<YPbPrHiVi>(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprhivi.Y, 1).ShouldBe(183.9);
+            Math.Round(ypbprhivi.Pb, 1).ShouldBe(252.3);
+            Math.Round(ypbprhivi.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(ypbprhivi);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YDbDr
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToYDbDr()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YDbDr
+            var ydbdr = ConversionTools.ConvertFromRgb<YDbDr>(ColorInstance.RGB);
+
+            // Check for property correctness
+            ydbdr.Y.ShouldBe(0.299);
+            ydbdr.Db.ShouldBe(-0.45);
+            ydbdr.Dr.ShouldBe(-1.333);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(ydbdr);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(254);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to LMS
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToLms()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to LMS
+            var lms = ConversionTools.ConvertFromRgb<Lms>(ColorInstance.RGB);
+
+            // Check for property correctness
+            lms.L.ShouldBe(0.8951);
+            lms.M.ShouldBe(-0.7502);
+            lms.S.ShouldBe(0.0389);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(lms);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -1985,6 +2406,216 @@ namespace Terminaux.Tests.Colors
             rgb.R.ShouldBe(139);
             rgb.G.ShouldBe(0);
             rgb.B.ShouldBe(21);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YPbPrSDTV
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToYPbPrSDTV()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrSDTV
+            var ypbprsdtv = ConversionTools.GetConvertedColorModel<RedGreenBlue, YPbPrSDTV>(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprsdtv.Y, 1).ShouldBe(209.3);
+            Math.Round(ypbprsdtv.Pb, 1).ShouldBe(231.9);
+            Math.Round(ypbprsdtv.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<YPbPrSDTV, RedGreenBlue>(ypbprsdtv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YPbPrHDTV
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToYPbPrHDTV()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrHDTV
+            var ypbprhdtv = ConversionTools.GetConvertedColorModel<RedGreenBlue, YPbPrHDTV>(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprhdtv.Y, 1).ShouldBe(148.8);
+            Math.Round(ypbprhdtv.Pb, 1).ShouldBe(269.8);
+            Math.Round(ypbprhdtv.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<YPbPrHDTV, RedGreenBlue>(ypbprhdtv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YPbPrHiVi
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToYPbPrHiVi()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YPbPrHiVi
+            var ypbprhivi = ConversionTools.GetConvertedColorModel<RedGreenBlue, YPbPrHiVi>(ColorInstance.RGB);
+
+            // Check for property correctness
+            Math.Round(ypbprhivi.Y, 1).ShouldBe(183.9);
+            Math.Round(ypbprhivi.Pb, 1).ShouldBe(252.3);
+            Math.Round(ypbprhivi.Pr, 1).ShouldBe(700);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<YPbPrHiVi, RedGreenBlue>(ypbprhivi);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YDbDr
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToYDbDr()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to YDbDr
+            var ydbdr = ConversionTools.GetConvertedColorModel<RedGreenBlue, YDbDr>(ColorInstance.RGB);
+
+            // Check for property correctness
+            ydbdr.Y.ShouldBe(0.299);
+            ydbdr.Db.ShouldBe(-0.45);
+            ydbdr.Dr.ShouldBe(-1.333);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<YDbDr, RedGreenBlue>(ydbdr);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(254);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to LMS
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToLms()
+        {
+            // Create instance
+            var ColorInstance = new Color(255, 0, 0);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+
+            // Now, convert to LMS
+            var lms = ConversionTools.GetConvertedColorModel<RedGreenBlue, Lms>(ColorInstance.RGB);
+
+            // Check for property correctness
+            lms.L.ShouldBe(0.8951);
+            lms.M.ShouldBe(-0.7502);
+            lms.S.ShouldBe(0.0389);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<Lms, RedGreenBlue>(lms);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(255);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(0);
         }
     }
 }

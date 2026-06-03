@@ -2172,6 +2172,316 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests initializing color instance from true color (YPbPrSDTV)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYPbPrSDTV()
+        {
+            // Create instance
+            var ColorInstance = new Color("ypbprsdtv:209.3;231.9;700.0");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FF0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YPbPrSDTV) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYPbPrSDTVImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "ypbprsdtv:209.3;231.9;700.0";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FF0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YPbPrHDTV)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYPbPrHDTV()
+        {
+            // Create instance
+            var ColorInstance = new Color("ypbprhdtv:148.8;269.8;700.0");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("254;0;0");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;254;0;0m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;254;0;0m");
+            ColorInstance.RGB.R.ShouldBe(254);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FE0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YPbPrHDTV) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYPbPrHDTVImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "ypbprhdtv:148.8;269.8;700.0";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("254;0;0");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;254;0;0m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;254;0;0m");
+            ColorInstance.RGB.R.ShouldBe(254);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FE0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YPbPrHiVi)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYPbPrHiVi()
+        {
+            // Create instance
+            var ColorInstance = new Color("ypbprhivi:183.9;252.3;700.0");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FF0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YPbPrHiVi) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYPbPrHiViImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "ypbprhivi:183.9;252.3;700.0";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FF0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YDbDr)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYDbDr()
+        {
+            // Create instance
+            var ColorInstance = new Color("ydbdr:0.299;-0.45;-1.333");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("254;0;0");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;254;0;0m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;254;0;0m");
+            ColorInstance.RGB.R.ShouldBe(254);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FE0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YDbDr) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYDbDrImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "ydbdr:0.299;-0.45;-1.333";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("254;0;0");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;254;0;0m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;254;0;0m");
+            ColorInstance.RGB.R.ShouldBe(254);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FE0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (LMS)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorLms()
+        {
+            // Create instance
+            var ColorInstance = new Color("lms:0.8951;-0.7502;0.0389");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FF0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (LMS) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorLmsImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "lms:0.8951;-0.7502;0.0389";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("9");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[101m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[91m");
+            ColorInstance.RGB.R.ShouldBe(255);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(0);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#FF0000");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Red);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Red);
+        }
+
+        /// <summary>
         /// Tests initializing color instance from Drawing's color
         /// </summary>
         [TestMethod]
