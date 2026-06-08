@@ -28,6 +28,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// </summary>
     public class Ellipsis : GraphicalCyclicWriter
     {
+        private int rainbowSaturation = 100;
+        private int rainbowLighting = 50;
+
         /// <summary>
         /// Whether to print this filled ellipsis or just the outline
         /// </summary>
@@ -37,6 +40,35 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         /// Shape color
         /// </summary>
         public Color ShapeColor { get; }
+
+        /// <summary>
+        /// Whether to make a "color wheel" or to use the shape color
+        /// </summary>
+        public bool RainbowMode { get; set; }
+
+        /// <summary>
+        /// Saturation of the color wheel (from 0 to 100)
+        /// </summary>
+        public int RainbowSaturation
+        {
+            get =>
+                rainbowSaturation > 100 ? 100 :
+                rainbowSaturation < 0 ? 0 :
+                rainbowSaturation;
+            set => rainbowSaturation = value;
+        }
+
+        /// <summary>
+        /// Lighting of the color wheel (from 0 to 100)
+        /// </summary>
+        public int RainbowLighting
+        {
+            get =>
+                rainbowLighting > 100 ? 100 :
+                rainbowLighting < 0 ? 0 :
+                rainbowLighting;
+            set => rainbowLighting = value;
+        }
 
         /// <summary>
         /// Renders an ellipsis
@@ -51,6 +83,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 OuterRadius = Height / 2,
                 AngleStart = 0,
                 AngleEnd = 360,
+                RainbowMode = RainbowMode,
+                RainbowSaturation = RainbowSaturation,
+                RainbowLighting = RainbowLighting,
             };
 
             // Check to see if it's a circle or an ellipsis

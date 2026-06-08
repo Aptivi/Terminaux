@@ -32,6 +32,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// </summary>
     public class Arc : GraphicalCyclicWriter
     {
+        private int rainbowSaturation = 100;
+        private int rainbowLighting = 50;
+
         /// <summary>
         /// Specifies the inner radius
         /// </summary>
@@ -76,6 +79,35 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         /// Shape color
         /// </summary>
         public Color ShapeColor { get; }
+
+        /// <summary>
+        /// Whether to make a "color wheel" or to use the shape color
+        /// </summary>
+        public bool RainbowMode { get; set; }
+
+        /// <summary>
+        /// Saturation of the color wheel (from 0 to 100)
+        /// </summary>
+        public int RainbowSaturation
+        {
+            get =>
+                rainbowSaturation > 100 ? 100 :
+                rainbowSaturation < 0 ? 0 :
+                rainbowSaturation;
+            set => rainbowSaturation = value;
+        }
+
+        /// <summary>
+        /// Lighting of the color wheel (from 0 to 100)
+        /// </summary>
+        public int RainbowLighting
+        {
+            get =>
+                rainbowLighting > 100 ? 100 :
+                rainbowLighting < 0 ? 0 :
+                rainbowLighting;
+            set => rainbowLighting = value;
+        }
 
         /// <summary>
         /// Renders an arc
@@ -127,7 +159,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 int ratio = (int)Math.Round(angle * 180 / Math.PI) % 360;
                 if (full || (ratio >= angleStart && ratio < angleEnd) ^ inverted)
                 {
-                    pixels.Add(new(pos.Item1, pos.Item2) { CellColor = ShapeColor });
+                    Color finalColor = RainbowMode ? $"hsl:{ratio};{RainbowSaturation};{RainbowLighting}" : ShapeColor;
+                    pixels.Add(new(pos.Item1, pos.Item2) { CellColor = finalColor });
                     plotted.Add(pos);
                 }
             }

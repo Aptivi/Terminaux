@@ -29,6 +29,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// </summary>
     public class Circle : GraphicalCyclicWriter
     {
+        private int rainbowSaturation = 100;
+        private int rainbowLighting = 50;
+
         /// <summary>
         /// Whether to print this filled circle or just the outline
         /// </summary>
@@ -40,13 +43,48 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         public Color ShapeColor { get; }
 
         /// <summary>
+        /// Whether to make a "color wheel" or to use the shape color
+        /// </summary>
+        public bool RainbowMode { get; set; }
+
+        /// <summary>
+        /// Saturation of the color wheel (from 0 to 100)
+        /// </summary>
+        public int RainbowSaturation
+        {
+            get =>
+                rainbowSaturation > 100 ? 100 :
+                rainbowSaturation < 0 ? 0 :
+                rainbowSaturation;
+            set => rainbowSaturation = value;
+        }
+
+        /// <summary>
+        /// Lighting of the color wheel (from 0 to 100)
+        /// </summary>
+        public int RainbowLighting
+        {
+            get =>
+                rainbowLighting > 100 ? 100 :
+                rainbowLighting < 0 ? 0 :
+                rainbowLighting;
+            set => rainbowLighting = value;
+        }
+
+        /// <summary>
         /// Renders a circle
         /// </summary>
         /// <returns>A rendered circle using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public override string Render()
         {
             StringBuilder buffer = new();
-            buffer.Append(new Ellipsis(Width, Height, Left, Top, Filled, ShapeColor).Render());
+            var ellipsis = new Ellipsis(Width, Height, Left, Top, Filled, ShapeColor)
+            {
+                RainbowMode = RainbowMode,
+                RainbowSaturation = RainbowSaturation,
+                RainbowLighting = RainbowLighting,
+            };
+            buffer.Append(ellipsis.Render());
             return buffer.ToString();
         }
 

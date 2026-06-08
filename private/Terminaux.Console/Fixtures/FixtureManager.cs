@@ -449,6 +449,9 @@ namespace Terminaux.Console.Fixtures
             new RenderCircle(),
             new RenderArc(),
             new RenderArcPositional(),
+            new RenderEllipsisRainbow(),
+            new RenderCircleRainbow(),
+            new RenderArcRainbow(),
 
             // Shell
             new TestShell(),
