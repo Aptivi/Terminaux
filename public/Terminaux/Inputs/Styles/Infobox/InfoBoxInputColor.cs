@@ -18,17 +18,18 @@
 //
 
 using System;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Reader;
 using System.Text;
-using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Writer.CyclicWriters.Graphical;
-using Textify.General.Structures;
-using Textify.General;
+using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Reader;
+using Terminaux.Reader.Bindings;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Textify.General;
+using Textify.General.Structures;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -153,6 +154,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     readerSettings.InputForegroundColor = settings.ForegroundColor;
                     readerSettings.InputBackgroundColor = settings.BackgroundColor;
                 }
+                BindingsTools.Override(
+                    new ConsoleKeyInfo('\x03', ConsoleKey.C, false, false, true),
+                    new ConsoleKeyInfo('\x1b', ConsoleKey.Escape, false, false, false)
+                );
                 string input = TermReader.Read("", initialValue, readerSettings, password, true);
                 if (character)
                 {
@@ -182,6 +187,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                 ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxScreenPart.Id);
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
+                BindingsTools.RemoveOverride(
+                    new ConsoleKeyInfo('\x03', ConsoleKey.C, false, false, true),
+                    new ConsoleKeyInfo('\x1b', ConsoleKey.Escape, false, false, false)
+                );
             }
             return "";
         }
