@@ -378,30 +378,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 // Search function
                                 if (selectionChoices <= 0)
                                     break;
-                                var entriesString = modules.Select((entry) => (entry.Name, entry.Description)).ToArray();
-                                string keyword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT"));
-                                if (!RegexTools.IsValidRegex(keyword))
-                                {
-                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
-                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                int answer = InputChoiceTools.GetEntryIdxFromSearchPrompt(modules, out var resultEntries);
+                                if (answer < 0)
                                     break;
-                                }
-                                var regex = new Regex(keyword);
-                                var resultEntries = entriesString
-                                    .Select((entry, idx) => (entry.Name, entry.Description, idx))
-                                    .Where((entry) => regex.IsMatch(entry.Name) || regex.IsMatch(entry.Description)).ToArray();
-                                if (resultEntries.Length > 1)
-                                {
-                                    var foundChoices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.Name, tuple.Description)).ToArray();
-                                    int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(foundChoices, LanguageTools.GetLocalized("T_INPUT_COMMON_ENTRYPROMPT"));
-                                    if (answer < 0)
-                                        break;
-                                    currentSelection = resultEntries[answer].idx;
-                                }
-                                else if (resultEntries.Length == 1)
-                                    currentSelection = resultEntries[0].idx;
-                                else
-                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"));
+                                currentSelection = resultEntries[answer].itemIdx;
                                 ScreenTools.CurrentScreen?.RequireRefresh();
                                 break;
                             case ConsoleKey.E:

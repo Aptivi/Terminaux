@@ -321,36 +321,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void SearchPrompt(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             // Prompt the user for search term
-            var entriesString = allAnswers.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled)).ToArray();
-            string keyword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT"));
-            if (!RegexTools.IsValidRegex(keyword))
-            {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
+            int idx = InputChoiceTools.GetEntryIdxFromSearchPrompt(allAnswers.ToArray(), out var resultEntries);
+            if (idx < 0)
                 return;
-            }
-
-            // Get the result entries
-            var regex = new Regex(keyword);
-            var resultEntries = entriesString
-                .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, itemIdx: idx))
-                .Where((entry) => (regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)) && !entry.ChoiceDisabled).ToArray();
-
-            // Act, depending on the result entries
-            int idx = 0;
-            if (resultEntries.Length > 1)
-            {
-                var choices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
-                idx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("T_INPUT_COMMON_ENTRYPROMPT"));
-                if (idx < 0)
-                    return;
-            }
-            else if (resultEntries.Length == 1)
-                idx = 0;
-            else
-            {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"));
-                return;
-            }
 
             // Change the highlighted answer number
             var resultNum = idx >= resultEntries.Length ? highlightedAnswer : resultEntries[idx].itemIdx;

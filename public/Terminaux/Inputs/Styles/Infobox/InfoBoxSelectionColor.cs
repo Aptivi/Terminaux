@@ -18,21 +18,22 @@
 //
 
 using System;
-using Terminaux.Writer.ConsoleWriters;
 using System.Linq;
-using Terminaux.Base.Buffered;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Base.Extensions;
-using System.Text.RegularExpressions;
-using Textify.Tools;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
-using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Base.Structures;
 using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
+using Textify.Tools;
+using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -463,30 +464,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 // Search function
                                 if (selectionChoices <= 0)
                                     break;
-                                var entriesString = choices.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled)).ToArray();
-                                string keyword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT"));
-                                if (!RegexTools.IsValidRegex(keyword))
-                                {
-                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
-                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                int answer = InputChoiceTools.GetEntryIdxFromSearchPrompt(choices, out var resultEntries);
+                                if (answer < 0)
                                     break;
-                                }
-                                var regex = new Regex(keyword);
-                                var resultEntries = entriesString
-                                    .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, idx))
-                                    .Where((entry) => (regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)) && !entry.ChoiceDisabled).ToArray();
-                                if (resultEntries.Length > 1)
-                                {
-                                    var resultChoices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
-                                    int answer = WriteInfoBoxSelection(resultChoices, LanguageTools.GetLocalized("T_INPUT_COMMON_ENTRYPROMPT"));
-                                    if (answer < 0)
-                                        break;
-                                    currentSelection = resultEntries[answer].idx;
-                                }
-                                else if (resultEntries.Length == 1)
-                                    currentSelection = resultEntries[0].idx;
-                                else
-                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"));
+                                currentSelection = resultEntries[answer].itemIdx;
                                 ScreenTools.CurrentScreen?.RequireRefresh();
                                 break;
                             case ConsoleKey.E:

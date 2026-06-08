@@ -609,32 +609,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 (selectorTui.CurrentPane == 2 ?
                  selectorTui.SecondaryDataSource.Select(selectorTui.GetEntryFromItemSecondary) :
                  selectorTui.PrimaryDataSource.Select(selectorTui.GetEntryFromItem)).ToArray();
-            string keyword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT"), selectorTui.Settings.InfoBoxSettings);
-            if (!RegexTools.IsValidRegex(keyword))
-            {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
+            var choices = InputChoiceTools.GetInputChoices(entriesString);
+            int answer = InputChoiceTools.GetEntryIdxFromSearchPrompt(choices, out var resultEntries);
+            if (answer < 0)
                 return;
-            }
-            var regex = new Regex(keyword);
-            var resultEntries = entriesString
-                .Select((entry, idx) => ($"{idx + 1}", entry))
-                .Where((tuple) => regex.IsMatch(tuple.entry)).ToArray();
-            if (resultEntries.Length > 1)
-            {
-                var choices = InputChoiceTools.GetInputChoices(resultEntries);
-                int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("T_INPUT_COMMON_ENTRYPROMPT"), selectorTui.Settings.InfoBoxSettings);
-                if (answer < 0)
-                    return;
-                var resultIdx = int.Parse(resultEntries[answer].Item1);
-                InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
-            }
-            else if (resultEntries.Length == 1)
-            {
-                var resultIdx = int.Parse(resultEntries[0].Item1);
-                InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
-            }
-            else
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"), selectorTui.Settings.InfoBoxSettings);
+            var resultIdx = resultEntries[answer].itemIdx;
+            InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
         }
 
         private void Exit(TextualUI ui)
