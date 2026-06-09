@@ -1,10 +1,13 @@
-This is a hotfix release of Terminaux v8.4.0 that fixes crashes related to Colorimetry's transformation tools.
+This version of Terminaux is part of a monthly release plan to add some more features related to colors.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated Colorimetry
+- `[+]` Added new color models (Colorimetry v1.1.0)
+- `[+]` Added ESC to exit input info box
+- `[+]` Added color wheel
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
