@@ -20,9 +20,6 @@
 using System;
 using System.Linq;
 using System.Text;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
-using Terminaux.Base.Structures;
 using Colorimetry;
 using Colorimetry.Data;
 using Colorimetry.Gradients;
@@ -31,6 +28,10 @@ using Colorimetry.Models.Conversion;
 using Colorimetry.Transformation;
 using Colorimetry.Transformation.Contrast;
 using Colorimetry.Transformation.Formulas;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -39,6 +40,7 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
@@ -481,44 +483,45 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[3], (_, _, _) => ChangeSimulationSeverity(false)));
             Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[4], (_, _, _) => ChangeSimulationSeverity(true)));
             Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[5], (_, _, mouse) => ChangeValue(mouse, false)));
+            Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[6], (_, _, _) => OpenColorWheel()));
 
             // These require write access
             if (!readOnly)
             {
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[6], SelectWebColor));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[7], (_, _, _) =>
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[7], SelectWebColor));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[8], (_, _, _) =>
                 {
                     finalSettings.Opacity++;
                     UpdateColor(ref selectedColor, type, finalSettings);
                 }));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[8], (_, _, _) =>
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[9], (_, _, _) =>
                 {
                     finalSettings.Opacity--;
                     UpdateColor(ref selectedColor, type, finalSettings);
                 }));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[9], (_, _, _) => ChangeMode(false)));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[10], (_, _, _) => ChangeMode(true)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[10], (_, _, _) => ChangeMode(false)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[11], (_, _, _) => ChangeMode(true)));
 
                 // Mouse bindings
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[11], (_, _, mouse) => ChangeValue(mouse, false)));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[12], (_, _, mouse) => ChangeValue(mouse, true)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[12], (_, _, mouse) => ChangeValue(mouse, false)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[13], (_, _, mouse) => ChangeValue(mouse, true)));
 
                 // Type-specific bindings
                 switch (type)
                 {
                     case ColorType.TrueColor:
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[13], (_, _, _) => ChangeHue(true)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[14], (_, _, _) => ChangeLightness(true)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[15], (_, _, _) => ChangeSaturation(true)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[16], (_, _, _) => ChangeHue(false)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[17], (_, _, _) => ChangeLightness(false)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[18], (_, _, _) => ChangeSaturation(false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[14], (_, _, _) => ChangeHue(true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[15], (_, _, _) => ChangeLightness(true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[16], (_, _, _) => ChangeSaturation(true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[17], (_, _, _) => ChangeHue(false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[18], (_, _, _) => ChangeLightness(false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[19], (_, _, _) => ChangeSaturation(false)));
                         break;
                     case ColorType.EightBitColor:
                     case ColorType.FourBitColor:
-                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[13], (_, _, _) => ChangeColor(true)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[14], (_, _, _) => ChangeColor(false)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[15], (_, _, _) => ShowColorList()));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[14], (_, _, _) => ChangeColor(true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[15], (_, _, _) => ChangeColor(false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[16], (_, _, _) => ShowColorList()));
                         break;
                 }
             }
@@ -853,6 +856,91 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (trueColorSaturation > 100)
                 trueColorSaturation = 0;
             UpdateColor(ref selectedColor, type, finalSettings);
+        }
+
+        private void OpenColorWheel()
+        {
+            // Make a color wheel screen to print it to the console
+            var colorWheelScreen = new Screen();
+            var colorWheelScreenPart = new ScreenPart();
+            try
+            {
+                var hsl = ConversionTools.ConvertFromRgb<HueSaturationLightness>(selectedColor.RGB);
+                var angle = 360 - hsl.HueWhole;
+
+                // Add appropriate renderer
+                colorWheelScreenPart.AddDynamicText(() =>
+                {
+                    double ToRad(int degrees) =>
+                        degrees * (Math.PI / 180d);
+
+                    // Add a new rainbow circle
+                    int bezelHeight = ConsoleWrapper.WindowHeight - 2;
+                    int circleWidth = bezelHeight * 2;
+                    int left = ConsoleWrapper.WindowWidth / 2 - bezelHeight;
+
+                    // Set up an arc that shows you the current color
+                    int bezelTop = 1;
+                    bezelHeight = bezelHeight < (circleWidth - 1) / 2 ? bezelHeight : (circleWidth - 1) / 2;
+                    int bezelWidth = bezelHeight * 2;
+                    int bezelLeft = circleWidth / 2 - bezelHeight + left;
+                    var colorWheelCircle = new Circle(bezelHeight, bezelLeft, bezelTop, true)
+                    {
+                        RainbowMode = true,
+                        RainbowSaturation = hsl.SaturationWhole,
+                        RainbowLighting = hsl.LightnessWhole,
+                    };
+                    (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);
+                    int arcLeft = ConsoleWrapper.WindowWidth / 2 - (bezelHeight + 2);
+                    (int pointX, int pointY) = ((int)(radius.x + bezelHeight / 2 * Math.Cos(ToRad(angle))), (int)(radius.y + bezelHeight / 2 * Math.Sin(ToRad(angle))));
+                    pointX += pointX - radius.x - 1;
+
+                    // String builder
+                    var builder = new StringBuilder();
+                    builder.Append(
+                        colorWheelCircle.Render() +
+                        ConsolePositioning.RenderChangePosition(pointX, pointY) +
+                        ConsoleColoring.RenderSetConsoleColor(ConsoleColors.White, true) +
+                        "  " +
+                        ConsoleColoring.RenderResetBackground()
+                    );
+                    return builder.ToString();
+                });
+                colorWheelScreen.AddBufferedPart("Color wheel screen", colorWheelScreenPart);
+
+                // Wait for user input
+                ScreenTools.SetCurrent(colorWheelScreen);
+                bool escaping = false;
+                while (!escaping)
+                {
+                    // Render the color wheel
+                    ScreenTools.Render();
+
+                    // Get user input and handle the keypress
+                    InputEventInfo data = Input.ReadPointerOrKey();
+                    if (data.ConsoleKeyInfo is ConsoleKeyInfo cki)
+                    {
+                        switch (cki.Key)
+                        {
+                            case ConsoleKey.Escape:
+                                escaping = true;
+                                break;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // A fatal error has occurred here
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED") + $": {ex.Message}");
+            }
+            finally
+            {
+                // Clean things up
+                colorWheelScreen.RemoveBufferedPart("Color wheel screen");
+                ScreenTools.UnsetCurrent(colorWheelScreen);
+                ScreenTools.CurrentScreen?.RequireRefresh();
+            }
         }
 
         internal ColorSelectorTui(Color color, ColorSettings settings, bool readOnly)

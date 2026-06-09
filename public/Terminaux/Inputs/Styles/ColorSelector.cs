@@ -71,6 +71,7 @@ namespace Terminaux.Inputs.Styles
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ"), ConsoleKey.N, ConsoleModifiers.Control),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ"), ConsoleKey.M, ConsoleModifiers.Control),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM"), PointerButton.Left, PointerButtonPress.Released),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL"), ConsoleKey.C),
         ];
         internal static Keybinding[] AdditionalBindingsReadWrite =>
         [
