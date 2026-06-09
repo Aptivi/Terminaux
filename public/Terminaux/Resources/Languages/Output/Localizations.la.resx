@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+  </resheader>
+  <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
     <value>Error generalis Terminaux!</value>
   </data>
   <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
@@ -166,10 +107,10 @@
     <value>Usor applicationem Terminaux per terminale stultum exsequi conatus est.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Haec applicatio utitur facultatibus consolae amplificatis a Terminaux praebitis, quae facultates requirunt quas terminales &quot;stulti&quot; non sustinent.</value>
+    <value>Haec applicatio utitur facultatibus consolae amplificatis a Terminaux praebitis, quae facultates requirunt quas terminales "stulti" non sustinent.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Solutio possibilis: Aemulatore terminali idoneo utere vel optiones terminalis consule ut genus terminalis in aliquid praeter &quot;stultum&quot; constituas. Aemulatoribus terminalibus &quot;vt100&quot; uti commendamus ut plurimum ex hac applicatione capias.</value>
+    <value>Solutio possibilis: Aemulatore terminali idoneo utere vel optiones terminalis consule ut genus terminalis in aliquid praeter "stultum" constituas. Aemulatoribus terminalibus "vt100" uti commendamus ut plurimum ex hac applicatione capias.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
     <value>Usor applicationem Terminaux in genere terminali in indice nigro inclusum exsequi conatus est.</value>
@@ -196,7 +137,7 @@
     <value>Usor conatus est applicationem Terminaux in MinTTY Git Bash sine winpty exsequi.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>Programmate hoc uti posse, necesse erit tibi &quot;winpty&quot; uti. Si certus es te &quot;Git Bash&quot; non uti, fac ut terminali Windows apto utaris.</value>
+    <value>Programmate hoc uti posse, necesse erit tibi "winpty" uti. Si certus es te "Git Bash" non uti, fac ut terminali Windows apto utaris.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
     <value>Situs consolae propter errorem I/O non operatur, ergo haec applicatio erratice se gerere potest.</value>
@@ -361,7 +302,7 @@
     <value>Valor morae non est numerus.</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
-    <value>Genus facultatis ignotum &apos;{0}&apos;</value>
+    <value>Genus facultatis ignotum '{0}'</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
     <value>{0} onerare non potest.</value>
@@ -1105,7 +1046,7 @@
     <value>Methodus in hoc delegato fortasse non vacuum reddere potest.</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
-    <value>Methodus in hoc delegato &quot;vacuum&quot; reddere debet.</value>
+    <value>Methodus in hoc delegato "vacuum" reddere debet.</value>
   </data>
   <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
     <value>Expressio regularis componentis invalida est.</value>
@@ -1207,7 +1148,7 @@
     <value>Series VT sine argumentis desuntibus construi non potest. Exspectata sunt {0} argumenta, accepta sunt {1} argumenta.</value>
   </data>
   <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
-    <value>Nomen &quot;alias&quot; ac mandatum non potest esse idem nomen.</value>
+    <value>Nomen "alias" ac mandatum non potest esse idem nomen.</value>
   </data>
   <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
     <value>Mandatum ad alias {0} non inventum.</value>
@@ -1231,7 +1172,7 @@
     <value>Descriptio</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
-    <value>Nullum auxilium pro argumento &quot;{0}&quot;.</value>
+    <value>Nullum auxilium pro argumento "{0}".</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
     <value>Descriptio auxilii argumenti nulla</value>
@@ -1327,7 +1268,7 @@
     <value>Quaedam mandata consuetudinaria exonerari non possunt.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
-    <value>Haec testa mandata linea obliqua (vel &quot;slide&quot;) ad mandata exsequenda utitur. Quaeso, signum lineae obliquae &apos;/&apos; initio mandati adde ut incipias. Exempli gratia:</value>
+    <value>Haec testa mandata linea obliqua (vel "slide") ad mandata exsequenda utitur. Quaeso, signum lineae obliquae '/' initio mandati adde ut incipias. Exempli gratia:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
     <value>Hoc mandatum non definitum est.</value>
@@ -1375,7 +1316,7 @@
     <value>Descriptio commutatoris non specificata</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
-    <value>Nullum auxilium pro mandato &quot;{0}&quot;.</value>
+    <value>Nullum auxilium pro mandato "{0}".</value>
   </data>
   <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Praedefinitum {0} specificatum non invenitur.</value>
@@ -1417,7 +1358,7 @@
     <value>Bibliothecam praedefinitarum testae aperit</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
-    <value>Nuntius Shell: Mandatum petitum {0} non inventum est. Vide &apos;auxilium&apos; pro mandatis praesto.</value>
+    <value>Nuntius Shell: Mandatum petitum {0} non inventum est. Vide 'auxilium' pro mandatis praesto.</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
     <value>Error dum mandatum exsequi conaris.</value>
@@ -1750,7 +1691,7 @@
     <value>Iustus abstergit valorem variabilis sine remotione</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
-    <value>Nunc currere potes &apos;{0}&apos; ut &apos;{1}&apos;!</value>
+    <value>Nunc currere potes '{0}' ut '{1}'!</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
     <value>Genus invalidum {0}.</value>
@@ -2430,5 +2371,4 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>Rota colorum defecit.</value>
   </data>
-
 </root>

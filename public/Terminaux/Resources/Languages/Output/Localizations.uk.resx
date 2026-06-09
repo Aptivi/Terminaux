@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+  </resheader>
+  <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
     <value>Загальна помилка Terminaux!</value>
   </data>
   <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
@@ -142,7 +83,7 @@
     <value>Ви повинні вказати частину екрана.</value>
   </data>
   <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
-    <value>Ви повинні вказати ім&apos;я користувача.</value>
+    <value>Ви повинні вказати ім'я користувача.</value>
   </data>
   <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
     <value>Вказаний індекс деталі виходить за межі діапазону.</value>
@@ -166,10 +107,10 @@
     <value>Користувач спробував запустити програму Terminaux за допомогою неавторизованого терміналу.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Ця програма використовує розширені функції консолі, що надаються Terminaux, які потребують функцій, що не підтримуються &quot;тупими&quot; терміналами.</value>
+    <value>Ця програма використовує розширені функції консолі, що надаються Terminaux, які потребують функцій, що не підтримуються "тупими" терміналами.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Можливе рішення: скористайтеся відповідним емулятором терміналу або перевірте налаштування терміналу, щоб встановити тип терміналу, відмінний від &quot;німного&quot;. Ми рекомендуємо використовувати емулятори терміналу &quot;vt100&quot;, щоб отримати максимальну віддачу від цієї програми.</value>
+    <value>Можливе рішення: скористайтеся відповідним емулятором терміналу або перевірте налаштування терміналу, щоб встановити тип терміналу, відмінний від "німного". Ми рекомендуємо використовувати емулятори терміналу "vt100", щоб отримати максимальну віддачу від цієї програми.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
     <value>Користувач спробував запустити програму Terminaux на терміналі з чорного списку.</value>
@@ -361,7 +302,7 @@
     <value>Значення затримки не є числом.</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
-    <value>Невідомий тип можливості &apos;{0}&apos;</value>
+    <value>Невідомий тип можливості '{0}'</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
     <value>Не вдається завантажити {0}</value>
@@ -535,7 +476,7 @@
     <value>Інтерактивний TUI {0} не містить жодного джерела даних.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
-    <value>Інтерактивний TUI {0} має конфліктні прив&apos;язки клавіатури або миші.</value>
+    <value>Інтерактивний TUI {0} має конфліктні прив'язки клавіатури або миші.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
     <value>Наступні комбінації клавіш або комбінації миші конфліктують:</value>
@@ -550,7 +491,7 @@
     <value>Цей текстовий інтерфейс користувача [{0}] не готовий, оскільки стан {1}</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
-    <value>У текстовому інтерфейсі [{1}] є {0} конфліктуючих прив&apos;язок клавіш</value>
+    <value>У текстовому інтерфейсі [{1}] є {0} конфліктуючих прив'язок клавіш</value>
   </data>
   <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
     <value>Контекст події вказівника не вказано</value>
@@ -568,7 +509,7 @@
     <value>Початкове положення Y не може бути більшим за кінцеве положення Y</value>
   </data>
   <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
-    <value>Ім&apos;я вхідного поля не вказано</value>
+    <value>Ім'я вхідного поля не вказано</value>
   </data>
   <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
     <value>Аванс</value>
@@ -1231,7 +1172,7 @@
     <value>Опис</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
-    <value>Немає довідки для аргументу &quot;{0}&quot;.</value>
+    <value>Немає довідки для аргументу "{0}".</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
     <value>Довідка з опису без аргументів</value>
@@ -1255,7 +1196,7 @@
     <value>Параметри потоку не вказані.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
-    <value>Обов&apos;язкові аргументи не надаються для всіх випадків використання, наведених нижче:</value>
+    <value>Обов'язкові аргументи не надаються для всіх випадків використання, наведених нижче:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
     <value>Необхідні аргументи не надано.</value>
@@ -1327,7 +1268,7 @@
     <value>Деякі користувацькі команди неможливо вивантажити.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
-    <value>Ця оболонка використовує команди зі слеш-рискою для виконання команд. Будь ласка, додайте символ слеш-риски &apos;/&apos; на початок команди, щоб розпочати. Наприклад:</value>
+    <value>Ця оболонка використовує команди зі слеш-рискою для виконання команд. Будь ласка, додайте символ слеш-риски '/' на початок команди, щоб розпочати. Наприклад:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
     <value>Ця команда не визначена.</value>
@@ -1375,7 +1316,7 @@
     <value>Невизначений опис перемикача</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
-    <value>Немає довідки для команди &quot;{0}&quot;.</value>
+    <value>Немає довідки для команди "{0}".</value>
   </data>
   <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Вказаний пресет {0} не знайдено.</value>
@@ -1465,16 +1406,16 @@
     <value>Доступні комбінації клавіш</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
-    <value>У цьому контексті не визначено жодних прив&apos;язок.</value>
+    <value>У цьому контексті не визначено жодних прив'язок.</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
-    <value>Прив&apos;язки клавіатури</value>
+    <value>Прив'язки клавіатури</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
-    <value>Прив&apos;язки миші</value>
+    <value>Прив'язки миші</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
-    <value>Недійсне ім&apos;я персонажа Nerd Fonts {0} у типі {1}</value>
+    <value>Недійсне ім'я персонажа Nerd Fonts {0} у типі {1}</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
     <value>Недійсне представлення символів шрифтів Nerd {0} з {1} у типі {2}</value>
@@ -1744,13 +1685,13 @@
     <value>Вилучає змінну зі списку змінних УЕСХ</value>
   </data>
   <data name="T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC" xml:space="preserve">
-    <value>Ім&apos;я змінної</value>
+    <value>Ім'я змінної</value>
   </data>
   <data name="T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC" xml:space="preserve">
     <value>Просто стирає значення змінної, не видаляючи його</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
-    <value>Тепер ви можете запускати &quot;{0}&quot; як &quot;{1}&quot;!</value>
+    <value>Тепер ви можете запускати "{0}" як "{1}"!</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
     <value>Недійсний тип {0}.</value>
@@ -2430,5 +2371,4 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>Кольорове коло не працює</value>
   </data>
-
 </root>

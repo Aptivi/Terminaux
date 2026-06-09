@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+  </resheader>
+  <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
     <value>Γενικό σφάλμα Terminaux!</value>
   </data>
   <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
@@ -166,10 +107,10 @@
     <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux χρησιμοποιώντας ένα ανόητο τερματικό.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Αυτή η εφαρμογή χρησιμοποιεί εκτεταμένες λειτουργίες κονσόλας που παρέχονται από την Terminaux και απαιτούν λειτουργίες που δεν υποστηρίζονται από &quot;χαζά&quot; τερματικά.</value>
+    <value>Αυτή η εφαρμογή χρησιμοποιεί εκτεταμένες λειτουργίες κονσόλας που παρέχονται από την Terminaux και απαιτούν λειτουργίες που δεν υποστηρίζονται από "χαζά" τερματικά.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Πιθανή λύση: Χρησιμοποιήστε έναν κατάλληλο εξομοιωτή τερματικού ή συμβουλευτείτε τις ρυθμίσεις του τερματικού σας για να ορίσετε τον τύπο τερματικού σε κάτι διαφορετικό από &quot;dumb&quot;. Συνιστούμε να χρησιμοποιήσετε τους εξομοιωτές τερματικού &quot;vt100&quot; για να αξιοποιήσετε στο έπακρο αυτήν την εφαρμογή.</value>
+    <value>Πιθανή λύση: Χρησιμοποιήστε έναν κατάλληλο εξομοιωτή τερματικού ή συμβουλευτείτε τις ρυθμίσεις του τερματικού σας για να ορίσετε τον τύπο τερματικού σε κάτι διαφορετικό από "dumb". Συνιστούμε να χρησιμοποιήσετε τους εξομοιωτές τερματικού "vt100" για να αξιοποιήσετε στο έπακρο αυτήν την εφαρμογή.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
     <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux σε έναν τύπο τερματικού που βρίσκεται στη μαύρη λίστα.</value>
@@ -361,7 +302,7 @@
     <value>Η τιμή καθυστέρησης δεν είναι αριθμός.</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
-    <value>Άγνωστος τύπος δυνατότητας &apos;{0}&apos;</value>
+    <value>Άγνωστος τύπος δυνατότητας '{0}'</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
     <value>Δεν είναι δυνατή η φόρτωση του {0}</value>
@@ -820,10 +761,10 @@
     <value>Μετάβαση στο επόμενο κουμπί</value>
   </data>
   <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP" xml:space="preserve">
-    <value>Κουμπί &quot;Προηγούμενο&quot; ή προηγούμενες τρεις γραμμές κειμένου</value>
+    <value>Κουμπί "Προηγούμενο" ή προηγούμενες τρεις γραμμές κειμένου</value>
   </data>
   <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN" xml:space="preserve">
-    <value>Κουμπί &quot;Επόμενο&quot; ή επόμενες τρεις γραμμές κειμένου</value>
+    <value>Κουμπί "Επόμενο" ή επόμενες τρεις γραμμές κειμένου</value>
   </data>
   <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
     <value>Μεταβαίνει στην πρώτη γραμμή κειμένου</value>
@@ -1231,7 +1172,7 @@
     <value>Περιγραφή</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
-    <value>Δεν υπάρχει βοήθεια για το όρισμα &quot;{0}&quot;.</value>
+    <value>Δεν υπάρχει βοήθεια για το όρισμα "{0}".</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
     <value>Χωρίς περιγραφή βοήθειας για όρισμα</value>
@@ -1327,7 +1268,7 @@
     <value>Δεν είναι δυνατή η κατάργηση της φόρτωσης ορισμένων από τις προσαρμοσμένες εντολές.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
-    <value>Αυτό το κέλυφος χρησιμοποιεί τις εντολές κάθετου για την εκτέλεση των εντολών. Προσαρτήστε το σύμβολο κάθετου &apos;/&apos; στην αρχή της εντολής για να ξεκινήσετε. Για παράδειγμα:</value>
+    <value>Αυτό το κέλυφος χρησιμοποιεί τις εντολές κάθετου για την εκτέλεση των εντολών. Προσαρτήστε το σύμβολο κάθετου '/' στην αρχή της εντολής για να ξεκινήσετε. Για παράδειγμα:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
     <value>Αυτή η εντολή δεν έχει οριστεί.</value>
@@ -1375,7 +1316,7 @@
     <value>Μη καθορισμένη περιγραφή διακόπτη</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
-    <value>Δεν υπάρχει βοήθεια για την εντολή &quot;{0}&quot;.</value>
+    <value>Δεν υπάρχει βοήθεια για την εντολή "{0}".</value>
   </data>
   <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Η καθορισμένη προεπιλογή {0} δεν βρέθηκε.</value>
@@ -1417,7 +1358,7 @@
     <value>Ανοίγει τη βιβλιοθήκη προεπιλογών κελύφους</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
-    <value>Μήνυμα κελύφους: Η ζητούμενη εντολή {0} δεν βρέθηκε. Δείτε τη &apos;βοήθεια&apos; για τις διαθέσιμες εντολές.</value>
+    <value>Μήνυμα κελύφους: Η ζητούμενη εντολή {0} δεν βρέθηκε. Δείτε τη 'βοήθεια' για τις διαθέσιμες εντολές.</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
     <value>Σφάλμα κατά την προσπάθεια εκτέλεσης εντολής.</value>
@@ -1750,7 +1691,7 @@
     <value>Απλώς σκουπίζει την τιμή της μεταβλητής χωρίς να την αφαιρέσει</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
-    <value>Τώρα μπορείτε να εκτελέσετε το &quot;{0}&quot; ως &quot;{1}&quot;!</value>
+    <value>Τώρα μπορείτε να εκτελέσετε το "{0}" ως "{1}"!</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
     <value>Μη έγκυρος τύπος {0}.</value>
@@ -2430,5 +2371,4 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>Ο τροχός χρωμάτων έχει αποτύχει</value>
   </data>
-
 </root>

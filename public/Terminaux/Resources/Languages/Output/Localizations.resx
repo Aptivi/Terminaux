@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+  </resheader>
+  <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
     <value>General Terminaux error!</value>
   </data>
   <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
@@ -130,7 +71,7 @@
     <value>Not implemented yet.</value>
   </data>
   <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
-    <value>This program can&apos;t continue.</value>
+    <value>This program can't continue.</value>
   </data>
   <data name="T_COMMON_ANYKEY" xml:space="preserve">
     <value>Press any key to continue...</value>
@@ -166,37 +107,37 @@
     <value>User tried to run a Terminaux application using a dumb terminal.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>This application makes use of extended console features provided by Terminaux that require features not supported by &quot;dumb&quot; terminals.</value>
+    <value>This application makes use of extended console features provided by Terminaux that require features not supported by "dumb" terminals.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than &quot;dumb&quot;. We recommend using the &quot;vt100&quot; terminal emulators to get the most out of this application.</value>
+    <value>Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than "dumb". We recommend using the "vt100" terminal emulators to get the most out of this application.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
     <value>User tried to run a Terminaux application on a blacklisted terminal type.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>The console type you&apos;re currently using, {0}, is blacklisted: {1}</value>
+    <value>The console type you're currently using, {0}, is blacklisted: {1}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>The console type you&apos;re currently using, {0}, is graylisted: {1}</value>
+    <value>The console type you're currently using, {0}, is graylisted: {1}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
     <value>User tried to run a Terminaux application on a blacklisted terminal emulator.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>The terminal emulator you&apos;re currently using, {0}, is blacklisted: {1}</value>
+    <value>The terminal emulator you're currently using, {0}, is blacklisted: {1}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>The terminal emulator you&apos;re currently using, {0}, is graylisted: {1}</value>
+    <value>The terminal emulator you're currently using, {0}, is graylisted: {1}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
-    <value>Terminal type {0} doesn&apos;t support 256 colors according to terminfo</value>
+    <value>Terminal type {0} doesn't support 256 colors according to terminfo</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>User tried to run a Terminaux application on Git Bash&apos;s MinTTY without winpty.</value>
+    <value>User tried to run a Terminaux application on Git Bash's MinTTY without winpty.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>You&apos;ll need to use winpty to be able to use this program. If you are sure that you&apos;re not running Git Bash, ensure that you&apos;re using a proper Windows terminal.</value>
+    <value>You'll need to use winpty to be able to use this program. If you are sure that you're not running Git Bash, ensure that you're using a proper Windows terminal.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
     <value>Console positioning is not working due to an I/O error, so this application might behave erratically.</value>
@@ -214,7 +155,7 @@
     <value>Assembly not provided.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
-    <value>{0} Can&apos;t continue.</value>
+    <value>{0} Can't continue.</value>
   </data>
   <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
     <value>Console type only supports basic writing.</value>
@@ -226,31 +167,31 @@
     <value>This application makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors.</value>
   </data>
   <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
-    <value>Console type doesn&apos;t support 256 colors.</value>
+    <value>Console type doesn't support 256 colors.</value>
   </data>
   <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
-    <value>Can&apos;t filter without any query.</value>
+    <value>Can't filter without any query.</value>
   </data>
   <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
-    <value>Can&apos;t filter with an invalid query.</value>
+    <value>Can't filter with an invalid query.</value>
   </data>
   <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
     <value>There is no expression in the console filter.</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
-    <value>Can&apos;t restore new termios attributes for raw mode: {0}</value>
+    <value>Can't restore new termios attributes for raw mode: {0}</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED" xml:space="preserve">
-    <value>Can&apos;t get file descriptor flags: {0}</value>
+    <value>Can't get file descriptor flags: {0}</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED" xml:space="preserve">
-    <value>Can&apos;t set file descriptor flag to non-blocking read: {0}</value>
+    <value>Can't set file descriptor flag to non-blocking read: {0}</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED" xml:space="preserve">
-    <value>Can&apos;t set file descriptor flag to blocking read: {0}</value>
+    <value>Can't set file descriptor flag to blocking read: {0}</value>
   </data>
   <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
-    <value>Can&apos;t get synth info from the provided representation.</value>
+    <value>Can't get synth info from the provided representation.</value>
   </data>
   <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
     <value>Synth representation is invalid at [{0}.{1}]</value>
@@ -292,7 +233,7 @@
     <value>This designator may not be located at the end of the string without specifying a character constant</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
-    <value>You can&apos;t append more than one character</value>
+    <value>You can't append more than one character</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
     <value>This designator needs a character collection</value>
@@ -304,10 +245,10 @@
     <value>This designator may not be located at the end of the string without specifying a type</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
-    <value>Can&apos;t process null sequence.</value>
+    <value>Can't process null sequence.</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
-    <value>Can&apos;t process null parameters.</value>
+    <value>Can't process null parameters.</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
     <value>This flag needs to represent a minus sign</value>
@@ -322,7 +263,7 @@
     <value>Integer constant is not valid.</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
-    <value>Can&apos;t push nonexistent variable.</value>
+    <value>Can't push nonexistent variable.</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
     <value>This is a binary operation, but enqueued argument count is {0}</value>
@@ -349,7 +290,7 @@
     <value>Invalid header magic</value>
   </data>
   <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
-    <value>Can&apos;t process parameter on non-string value type. Enum is {0} and type is {1}.</value>
+    <value>Can't process parameter on non-string value type. Enum is {0} and type is {1}.</value>
   </data>
   <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
     <value>Delay designator ended prematurely.</value>
@@ -361,10 +302,10 @@
     <value>Delay value is not a number.</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
-    <value>Unknown capability type &apos;{0}&apos;</value>
+    <value>Unknown capability type '{0}'</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
-    <value>Can&apos;t load {0}</value>
+    <value>Can't load {0}</value>
   </data>
   <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
     <value>Failed to set background</value>
@@ -463,10 +404,10 @@
     <value>Invalid color type in the color selector</value>
   </data>
   <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
-    <value>Write the font name. It&apos;ll be converted to lowercase.</value>
+    <value>Write the font name. It'll be converted to lowercase.</value>
   </data>
   <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
-    <value>The font doesn&apos;t exist.</value>
+    <value>The font doesn't exist.</value>
   </data>
   <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
     <value>Select a figlet font from the list below</value>
@@ -496,10 +437,10 @@
     <value>The selection style requires that there is at least one choice enabled.</value>
   </data>
   <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
-    <value>Write the spinner name. It&apos;ll be converted to lowercase.</value>
+    <value>Write the spinner name. It'll be converted to lowercase.</value>
   </data>
   <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
-    <value>The spinner doesn&apos;t exist.</value>
+    <value>The spinner doesn't exist.</value>
   </data>
   <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
     <value>Select a spinner from the list below</value>
@@ -532,7 +473,7 @@
     <value>Please provide a base Interactive TUI class and try again.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
-    <value>The interactive TUI {0} doesn&apos;t contain any data source.</value>
+    <value>The interactive TUI {0} doesn't contain any data source.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
     <value>The interactive TUI {0} has conflicting keyboard or mouse bindings.</value>
@@ -541,7 +482,7 @@
     <value>The following keybindings or mouse bindings conflict:</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
-    <value>The textual UI has crashed. It&apos;s usually a problem in the application end.</value>
+    <value>The textual UI has crashed. It's usually a problem in the application end.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
     <value>Textual UI is not specified</value>
@@ -586,19 +527,19 @@
     <value>Incorrect Input</value>
   </data>
   <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
-    <value>Required inputs have not been provided. You&apos;ll need to fill in the values of the following inputs:</value>
+    <value>Required inputs have not been provided. You'll need to fill in the values of the following inputs:</value>
   </data>
   <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
     <value>Input not provided</value>
   </data>
   <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
-    <value>Can&apos;t show choice with no answers and no alternative answers.</value>
+    <value>Can't show choice with no answers and no alternative answers.</value>
   </data>
   <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
     <value>The choice style requires that there is at least one choice enabled.</value>
   </data>
   <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
-    <value>You can&apos;t provide answers with more than one character in single-character mode.</value>
+    <value>You can't provide answers with more than one character in single-character mode.</value>
   </data>
   <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
     <value>Wrong answer. Please try again.</value>
@@ -652,7 +593,7 @@
     <value>Write a byte or a group of bytes separated by whitespaces.</value>
   </data>
   <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
-    <value>Bytes are required to find, but you haven&apos;t provided one.</value>
+    <value>Bytes are required to find, but you haven't provided one.</value>
   </data>
   <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
     <value>Position</value>
@@ -691,7 +632,7 @@
     <value>The specified byte number may not be larger than {0}.</value>
   </data>
   <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
-    <value>Can&apos;t perform this operation on a null array.</value>
+    <value>Can't perform this operation on a null array.</value>
   </data>
   <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
     <value>Byte number must start with 1.</value>
@@ -733,7 +674,7 @@
     <value>Write a string to find. Supports regular expressions.</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
-    <value>String is required to find, but you haven&apos;t provided one.</value>
+    <value>String is required to find, but you haven't provided one.</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
     <value>This string to find is not a valid regular expression.</value>
@@ -751,7 +692,7 @@
     <value>The specified line number may not be larger than {0}.</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
-    <value>Can&apos;t perform this operation on null lines list.</value>
+    <value>Can't perform this operation on null lines list.</value>
   </data>
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
     <value>Shows more info in an infobox</value>
@@ -883,7 +824,7 @@
     <value>Selects or deselects all choices</value>
   </data>
   <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
-    <value>Can&apos;t get category and group in choice number {0}.</value>
+    <value>Can't get category and group in choice number {0}.</value>
   </data>
   <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
     <value>General choices</value>
@@ -1069,7 +1010,7 @@
     <value>This fixture may not be a base Fixture class. Specify a conditional fixture.</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
-    <value>Returned value {0} doesn&apos;t match expected value {1}</value>
+    <value>Returned value {0} doesn't match expected value {1}</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
     <value>This fixture is not conditional.</value>
@@ -1099,7 +1040,7 @@
     <value>Message</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
-    <value>Expected value doesn&apos;t match actual value.</value>
+    <value>Expected value doesn't match actual value.</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
     <value>Method in this delegate may not return void</value>
@@ -1126,13 +1067,13 @@
     <value>No name of the base highlighter provided.</value>
   </data>
   <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
-    <value>Can&apos;t find highlighter {0}</value>
+    <value>Can't find highlighter {0}</value>
   </data>
   <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
-    <value>Can&apos;t find highlighter</value>
+    <value>Can't find highlighter</value>
   </data>
   <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t find component {0} in highlighter {1}</value>
+    <value>Can't find component {0} in highlighter {1}</value>
   </data>
   <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
     <value>Invalid highlighter.</value>
@@ -1147,7 +1088,7 @@
     <value>Highlighter has no components.</value>
   </data>
   <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
-    <value>Can&apos;t remove built-in highlighter {0}</value>
+    <value>Can't remove built-in highlighter {0}</value>
   </data>
   <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
     <value>History name is not specified</value>
@@ -1177,7 +1118,7 @@
     <value>History {0} not found.</value>
   </data>
   <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
-    <value>General history can&apos;t be removed, but can be cleared.</value>
+    <value>General history can't be removed, but can be cleared.</value>
   </data>
   <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
     <value>History is not part of the registered histories.</value>
@@ -1192,13 +1133,13 @@
     <value>History entry list is not provided.</value>
   </data>
   <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
-    <value>There&apos;s a conflict between {0} and {1}.</value>
+    <value>There's a conflict between {0} and {1}.</value>
   </data>
   <data name="T_READER_FAILED" xml:space="preserve">
     <value>Input reader has failed</value>
   </data>
   <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
-    <value>This stream can&apos;t seek.</value>
+    <value>This stream can't seek.</value>
   </data>
   <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
     <value>Cannot build VT sequence for nonexistent type {0}</value>
@@ -1207,7 +1148,7 @@
     <value>Cannot build VT sequence with missing arguments. Expected {0} arguments, got {1} arguments.</value>
   </data>
   <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
-    <value>Alias can&apos;t be the same name as a command.</value>
+    <value>Alias can't be the same name as a command.</value>
   </data>
   <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
     <value>Command not found to alias to {0}.</value>
@@ -1231,7 +1172,7 @@
     <value>Description</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
-    <value>No help for argument &quot;{0}&quot;.</value>
+    <value>No help for argument "{0}".</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
     <value>No argument help description</value>
@@ -1249,7 +1190,7 @@
     <value>Unrecoverable error in argument</value>
   </data>
   <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
-    <value>Can&apos;t get argument info for command or argument</value>
+    <value>Can't get argument info for command or argument</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
     <value>Thread parameters are not specified.</value>
@@ -1273,7 +1214,7 @@
     <value>Switches that are listed below conflict with each other.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
-    <value>The below switches don&apos;t accept values.</value>
+    <value>The below switches don't accept values.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
     <value>One or more of the arguments expect a numeric value, but you provided an invalid number.</value>
@@ -1306,7 +1247,7 @@
     <value>Command not found.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
-    <value>Shell type {0} doesn&apos;t exist.</value>
+    <value>Shell type {0} doesn't exist.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
     <value>You must provide the command base.</value>
@@ -1318,16 +1259,16 @@
     <value>The command specified is already added.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
-    <value>Some of the custom commands can&apos;t be loaded.</value>
+    <value>Some of the custom commands can't be loaded.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
     <value>The custom command specified is not found.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
-    <value>Some of the custom commands can&apos;t be unloaded.</value>
+    <value>Some of the custom commands can't be unloaded.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
-    <value>This shell uses the slash commands to execute the commands. Please append the slash symbol &apos;/&apos; to the beginning of the command to get started. For example:</value>
+    <value>This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
     <value>This command is not defined.</value>
@@ -1375,7 +1316,7 @@
     <value>Unspecified switch description</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
-    <value>No help for command &quot;{0}&quot;.</value>
+    <value>No help for command "{0}".</value>
   </data>
   <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>The specified preset {0} is not found.</value>
@@ -1417,19 +1358,19 @@
     <value>Opens the shell preset library</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
-    <value>Shell message: The requested command {0} is not found. See &apos;help&apos; for available commands.</value>
+    <value>Shell message: The requested command {0} is not found. See 'help' for available commands.</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
     <value>Error trying to execute command.</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
-    <value>Can&apos;t get shell executor for {0}</value>
+    <value>Can't get shell executor for {0}</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
     <value>Failed trying to initialize shell</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
-    <value>Can&apos;t determine if the selection input is single or multiple</value>
+    <value>Can't determine if the selection input is single or multiple</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
     <value>Markup is not specified.</value>
@@ -1450,16 +1391,16 @@
     <value>There is no Asciicast file</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE" xml:space="preserve">
-    <value>Can&apos;t deserialize base Asciicast representation</value>
+    <value>Can't deserialize base Asciicast representation</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE" xml:space="preserve">
-    <value>Can&apos;t deserialize Asciicast v1 representation</value>
+    <value>Can't deserialize Asciicast v1 representation</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE" xml:space="preserve">
-    <value>Can&apos;t deserialize Asciicast v2 representation</value>
+    <value>Can't deserialize Asciicast v2 representation</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO" xml:space="preserve">
-    <value>Can&apos;t obtain event information</value>
+    <value>Can't obtain event information</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
     <value>Available keybindings</value>
@@ -1510,7 +1451,7 @@
     <value>Sets the value of the output to the selected MESH variable</value>
   </data>
   <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION" xml:space="preserve">
-    <value>Can&apos;t get thread parameters for process execution.</value>
+    <value>Can't get thread parameters for process execution.</value>
   </data>
   <data name="T_SHELL_BASE_COMMANDS_ERROREXECUTE1" xml:space="preserve">
     <value>Error trying to execute command</value>
@@ -1534,13 +1475,13 @@
     <value>An error occurred while trying to wrap a command output</value>
   </data>
   <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE" xml:space="preserve">
-    <value>Can&apos;t buffer a command that is not set as wrappable.</value>
+    <value>Can't buffer a command that is not set as wrappable.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION" xml:space="preserve">
-    <value>You can&apos;t declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.</value>
+    <value>You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID" xml:space="preserve">
-    <value>When starting a new block, make sure that you&apos;ve indented the stack correctly. The stack number is {0}.</value>
+    <value>When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED" xml:space="preserve">
     <value>The script is malformed. Check the script and resolve any errors: {0}</value>
@@ -1558,10 +1499,10 @@
     <value>Error parsing expression due to syntax error.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE" xml:space="preserve">
-    <value>Can&apos;t register a condition that already exists.</value>
+    <value>Can't register a condition that already exists.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY" xml:space="preserve">
-    <value>Can&apos;t register an empty condition.</value>
+    <value>Can't register an empty condition.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE" xml:space="preserve">
     <value>Data type {0} specified is invalid.</value>
@@ -1582,7 +1523,7 @@
     <value>Invalid number of times.</value>
   </data>
   <data name="T_SHELL_SHELLS_REPEAT_REPEATSELF" xml:space="preserve">
-    <value>Can&apos;t repeat self.</value>
+    <value>Can't repeat self.</value>
   </data>
   <data name="T_SHELL_SHELLS_WRAP_COMMANDSHELPER" xml:space="preserve">
     <value>Wrappable commands:</value>
@@ -1750,7 +1691,7 @@
     <value>Just wipes the variable value without removing it</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
-    <value>You can now run &apos;{0}&apos; as &apos;{1}&apos;!</value>
+    <value>You can now run '{0}' as '{1}'!</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
     <value>Invalid type {0}.</value>
@@ -1759,7 +1700,7 @@
     <value>Removed alias {0} successfully.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER" xml:space="preserve">
-    <value>Can&apos;t unregister a condition that doesn&apos;t exist.</value>
+    <value>Can't unregister a condition that doesn't exist.</value>
   </data>
   <data name="T_SHELL_UNIFIED_ALIAS_DESC" xml:space="preserve">
     <value>Adds aliases to commands</value>
@@ -1801,7 +1742,7 @@
     <value>There is no theme metadata defined.</value>
   </data>
   <data name="T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID" xml:space="preserve">
-    <value>Can&apos;t deserialize metadata.</value>
+    <value>Can't deserialize metadata.</value>
   </data>
   <data name="T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR" xml:space="preserve">
     <value>Your console must support true color to use this theme.</value>
@@ -1810,16 +1751,16 @@
     <value>Exit the preview</value>
   </data>
   <data name="T_COLORS_THEMES_THEMESHOWCASE" xml:space="preserve">
-    <value>Here&apos;s how your theme will look like:</value>
+    <value>Here's how your theme will look like:</value>
   </data>
   <data name="T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
     <value>Invalid color template {0}</value>
   </data>
   <data name="T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME" xml:space="preserve">
-    <value>The theme {0} celebrates an event, but you&apos;re either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}.</value>
+    <value>The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}.</value>
   </data>
   <data name="T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR" xml:space="preserve">
-    <value>The theme {0} needs true color support, but your console doesn&apos;t support it.</value>
+    <value>The theme {0} needs true color support, but your console doesn't support it.</value>
   </data>
   <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
     <value>One or more of the colors is invalid.</value>
@@ -1843,7 +1784,7 @@
     <value>Do these ramps look right to you? They should transition smoothly.</value>
   </data>
   <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
-    <value>We have failed to generate a working VT sequence of type {0} with action {1}. Make sure that you&apos;ve specified values correctly.</value>
+    <value>We have failed to generate a working VT sequence of type {0} with action {1}. Make sure that you've specified values correctly.</value>
   </data>
   <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
     <value>Untitled answer</value>
@@ -1870,7 +1811,7 @@
     <value>The completion function is not registered.</value>
   </data>
   <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN" xml:space="preserve">
-    <value>The built-in completion function can&apos;t be removed.</value>
+    <value>The built-in completion function can't be removed.</value>
   </data>
   <data name="T_SHELL_UNIFIED_FIRSTNAMES_DESC" xml:space="preserve">
     <value>First name finder</value>
@@ -2413,7 +2354,7 @@
     <value>Theme already exists</value>
   </data>
   <data name="T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST" xml:space="preserve">
-    <value>Theme doesn&apos;t exist</value>
+    <value>Theme doesn't exist</value>
   </data>
   <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
     <value>Theme removal has failed</value>
@@ -2430,5 +2371,4 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>The color wheel has failed</value>
   </data>
-
 </root>

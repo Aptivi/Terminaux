@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+  </resheader>
+  <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
     <value>Algemene Terminaux-fout!</value>
   </data>
   <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
@@ -166,10 +107,10 @@
     <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren met behulp van een domme terminal.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Deze applicatie maakt gebruik van uitgebreide consolefuncties van Terminaux die functies vereisen die niet worden ondersteund door &apos;domme&apos; terminals.</value>
+    <value>Deze applicatie maakt gebruik van uitgebreide consolefuncties van Terminaux die functies vereisen die niet worden ondersteund door 'domme' terminals.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Mogelijke oplossing: Gebruik een geschikte terminal-emulator of raadpleeg uw terminalinstellingen om het terminaltype in te stellen op iets anders dan &quot;dom&quot;. We raden aan de &quot;vt100&quot; terminal-emulators te gebruiken om deze applicatie optimaal te benutten.</value>
+    <value>Mogelijke oplossing: Gebruik een geschikte terminal-emulator of raadpleeg uw terminalinstellingen om het terminaltype in te stellen op iets anders dan "dom". We raden aan de "vt100" terminal-emulators te gebruiken om deze applicatie optimaal te benutten.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
     <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminaltype dat op de zwarte lijst staat.</value>
@@ -193,7 +134,7 @@
     <value>Terminaltype {0} ondersteunt volgens terminfo geen 256 kleuren</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op Git Bash&apos;s MinTTY zonder winpty.</value>
+    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op Git Bash's MinTTY zonder winpty.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
     <value>Je hebt WinPty nodig om dit programma te kunnen gebruiken. Als je zeker weet dat je Git Bash niet gebruikt, zorg er dan voor dat je een geschikte Windows-terminal gebruikt.</value>
@@ -361,7 +302,7 @@
     <value>De vertragingswaarde is geen getal.</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
-    <value>Onbekend capaciteitstype &apos;{0}&apos;</value>
+    <value>Onbekend capaciteitstype '{0}'</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
     <value>Kan {0} niet laden</value>
@@ -1231,7 +1172,7 @@
     <value>Beschrijving</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
-    <value>Geen hulp voor argument &quot;{0}&quot;.</value>
+    <value>Geen hulp voor argument "{0}".</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
     <value>Geen argument help beschrijving</value>
@@ -1327,7 +1268,7 @@
     <value>Sommige aangepaste opdrachten kunnen niet worden ontladen.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
-    <value>Deze shell gebruikt de slash-opdrachten om opdrachten uit te voeren. Voeg het slash-symbool &apos;/&apos; toe aan het begin van de opdracht om te beginnen. Bijvoorbeeld:</value>
+    <value>Deze shell gebruikt de slash-opdrachten om opdrachten uit te voeren. Voeg het slash-symbool '/' toe aan het begin van de opdracht om te beginnen. Bijvoorbeeld:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
     <value>Deze opdracht is niet gedefinieerd.</value>
@@ -1336,13 +1277,13 @@
     <value>Beschikbare opdrachten:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
-    <value>Algemene commando&apos;s:</value>
+    <value>Algemene commando's:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
     <value>Geen shell-opdrachten.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
-    <value>Extra commando&apos;s:</value>
+    <value>Extra commando's:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
     <value>Geen extra opdrachten.</value>
@@ -1375,7 +1316,7 @@
     <value>Ongespecificeerde schakelaarbeschrijving</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
-    <value>Geen hulp voor opdracht &quot;{0}&quot;.</value>
+    <value>Geen hulp voor opdracht "{0}".</value>
   </data>
   <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>De opgegeven voorinstelling {0} is niet gevonden.</value>
@@ -1417,7 +1358,7 @@
     <value>Opent de shell-presetbibliotheek</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
-    <value>Shell-bericht: De gevraagde opdracht {0} is niet gevonden. Zie &apos;help&apos; voor beschikbare opdrachten.</value>
+    <value>Shell-bericht: De gevraagde opdracht {0} is niet gevonden. Zie 'help' voor beschikbare opdrachten.</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
     <value>Fout bij het uitvoeren van de opdracht.</value>
@@ -1528,7 +1469,7 @@
     <value>U mag deze opdracht niet rechtstreeks uitvoeren in een ingepakte modus.</value>
   </data>
   <data name="T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE" xml:space="preserve">
-    <value>De opdracht kan niet worden ingepakt. Deze commando&apos;s zijn wrappable:</value>
+    <value>De opdracht kan niet worden ingepakt. Deze commando's zijn wrappable:</value>
   </data>
   <data name="T_SHELL_BASE_COMMANDS_WRAPFAILED" xml:space="preserve">
     <value>Er is een fout opgetreden bij het inpakken van een opdrachtuitvoer</value>
@@ -1585,7 +1526,7 @@
     <value>Kan mezelf niet herhalen.</value>
   </data>
   <data name="T_SHELL_SHELLS_WRAP_COMMANDSHELPER" xml:space="preserve">
-    <value>Inpakbare commando&apos;s:</value>
+    <value>Inpakbare commando's:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC" xml:space="preserve">
     <value>Herinnering voor de slash-opdrachten</value>
@@ -1750,7 +1691,7 @@
     <value>Wist gewoon de variabelewaarde zonder deze te verwijderen</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
-    <value>U kunt nu &apos;{0}&apos; uitvoeren als &apos;{1}&apos;!</value>
+    <value>U kunt nu '{0}' uitvoeren als '{1}'!</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
     <value>Ongeldig type {0}.</value>
@@ -2092,7 +2033,7 @@
     <value>Extra opdrachten voor</value>
   </data>
   <data name="T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC" xml:space="preserve">
-    <value>Toont een lijst met opdrachten als Markdown (voor documentatie en LLM&apos;s)</value>
+    <value>Toont een lijst met opdrachten als Markdown (voor documentatie en LLM's)</value>
   </data>
   <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_DESC" xml:space="preserve">
     <value>Genereer voornamen</value>
@@ -2386,7 +2327,7 @@
     <value>Interactieve TUI-hulp</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
-    <value>Selecteer een van de onderstaande hulppagina&apos;s.</value>
+    <value>Selecteer een van de onderstaande hulppagina's.</value>
   </data>
   <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
     <value>Op deze pagina vindt u aanvullende sneltoetsen die voor deze interactieve TUI worden ondersteund, naast de basistoetsen.</value>
@@ -2430,5 +2371,4 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>Het kleurenwiel werkt niet</value>
   </data>
-
 </root>

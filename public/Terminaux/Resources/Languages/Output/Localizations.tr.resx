@@ -1,127 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+  </resheader>
+  <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
     <value>General Terminaux hatası!</value>
   </data>
   <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
-    <value>Terminaux&apos;da iç hata!</value>
+    <value>Terminaux'da iç hata!</value>
   </data>
   <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
     <value>Bilinmeyen hata</value>
@@ -166,10 +107,10 @@
     <value>Kullanıcı, aptal bir terminal kullanarak bir Terminaux uygulaması çalıştırmayı denedi.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Bu uygulama, &quot;aptal&quot; terminallerin desteklemediği özellikleri gerektiren Terminaux tarafından sağlanan genişletilmiş konsol özelliklerini kullanır.</value>
+    <value>Bu uygulama, "aptal" terminallerin desteklemediği özellikleri gerektiren Terminaux tarafından sağlanan genişletilmiş konsol özelliklerini kullanır.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Olası çözüm: Uygun bir terminal emülatörü kullanın veya terminal ayarlarınıza danışarak terminal türünü &quot;dumb&quot; dışında bir şeye ayarlayın. Bu uygulamadan en iyi şekilde yararlanmak için &quot;vt100&quot; terminal emülatörlerini kullanmanızı öneririz.</value>
+    <value>Olası çözüm: Uygun bir terminal emülatörü kullanın veya terminal ayarlarınıza danışarak terminal türünü "dumb" dışında bir şeye ayarlayın. Bu uygulamadan en iyi şekilde yararlanmak için "vt100" terminal emülatörlerini kullanmanızı öneririz.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
     <value>Kullanıcı kara listeye alınmış bir terminal türünde Terminaux uygulamasını çalıştırmayı denedi.</value>
@@ -190,13 +131,13 @@
     <value>Şu anda kullandığınız terminal emülatörü {0} gri listeye alınmış: {1}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
-    <value>Terminal türü {0} terminfo&apos;ya göre 256 rengi desteklemiyor</value>
+    <value>Terminal türü {0} terminfo'ya göre 256 rengi desteklemiyor</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>Kullanıcı winpty olmadan Git Bash&apos;in MinTTY&apos;sinde bir Terminaux uygulaması çalıştırmayı denedi.</value>
+    <value>Kullanıcı winpty olmadan Git Bash'in MinTTY'sinde bir Terminaux uygulaması çalıştırmayı denedi.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>Bu programı kullanabilmek için winpty kullanmanız gerekecek. Git Bash&apos;i çalıştırmadığınızdan eminseniz, uygun bir Windows terminali kullandığınızdan emin olun.</value>
+    <value>Bu programı kullanabilmek için winpty kullanmanız gerekecek. Git Bash'i çalıştırmadığınızdan eminseniz, uygun bir Windows terminali kullandığınızdan emin olun.</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
     <value>Bir G/Ç hatası nedeniyle konsol konumlandırması çalışmıyor, bu nedenle bu uygulama hatalı davranabilir.</value>
@@ -259,13 +200,13 @@
     <value>Frekans [{0}.{1}] konumunda geçersiz</value>
   </data>
   <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
-    <value>Süre [{0}.{1}]&apos;de geçersiz</value>
+    <value>Süre [{0}.{1}]'de geçersiz</value>
   </data>
   <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
     <value>Hedef boş olmayabilir</value>
   </data>
   <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
-    <value>Maksimum değer [{0}], ilerleme değeri [{1}]&apos;den küçük olmamalıdır</value>
+    <value>Maksimum değer [{0}], ilerleme değeri [{1}]'den küçük olmamalıdır</value>
   </data>
   <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
     <value>İlerleme değeri [{0}] 0 ile maksimum {1} değeri arasında olmalıdır.</value>
@@ -277,7 +218,7 @@
     <value>Bu tanımlayıcı parametre olarak yalnızca bir sayı alabilir.</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
-    <value>Bu belirteç sadece 1&apos;den 9&apos;a kadar bir rakam alabilir.</value>
+    <value>Bu belirteç sadece 1'den 9'a kadar bir rakam alabilir.</value>
   </data>
   <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
     <value>Bu tanımlayıcı parametre olarak yalnızca bir harf alabilir.</value>
@@ -361,7 +302,7 @@
     <value>Gecikme değeri bir sayı değildir.</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
-    <value>Bilinmeyen yetenek türü &apos;{0}&apos;</value>
+    <value>Bilinmeyen yetenek türü '{0}'</value>
   </data>
   <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
     <value>{0} yüklenemiyor</value>
@@ -487,7 +428,7 @@
     <value>Hareket et</value>
   </data>
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
-    <value>Etkileşimli TUI&apos;den çıkışlar</value>
+    <value>Etkileşimli TUI'den çıkışlar</value>
   </data>
   <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
     <value>Ürün bilgisi</value>
@@ -514,10 +455,10 @@
     <value>Durum yok</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
-    <value>Yalnızca bir bölmeden etkileşime izin veren etkileşimli bir TUI&apos;de ikincil bölme için etkileşimli TUI öğelerini oluşturmaya çalıştım.</value>
+    <value>Yalnızca bir bölmeden etkileşime izin veren etkileşimli bir TUI'de ikincil bölme için etkileşimli TUI öğelerini oluşturmaya çalıştım.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
-    <value>Etkileşimli bir TUI&apos;de, iki bölmeden etkileşime izin veren ikincil bölmedeki bilgileri işlemeye çalıştım, bu da oradaki seçim işlemesini bozdu.</value>
+    <value>Etkileşimli bir TUI'de, iki bölmeden etkileşime izin veren ikincil bölmedeki bilgileri işlemeye çalıştım, bu da oradaki seçim işlemesini bozdu.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
     <value>Boş veriler hakkında bilgi oluşturulmaya çalışıldı</value>
@@ -535,7 +476,7 @@
     <value>Etkileşimli TUI {0} herhangi bir veri kaynağı içermiyor.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
-    <value>Etkileşimli TUI {0}&apos;da çakışan klavye veya fare bağlamaları var.</value>
+    <value>Etkileşimli TUI {0}'da çakışan klavye veya fare bağlamaları var.</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
     <value>Aşağıdaki tuş veya fare bağlamaları çakışıyor:</value>
@@ -1231,7 +1172,7 @@
     <value>Tanım</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
-    <value>&quot;{0}&quot; argümanı için yardım yok.</value>
+    <value>"{0}" argümanı için yardım yok.</value>
   </data>
   <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
     <value>Hiçbir argüman yardım açıklaması yok</value>
@@ -1327,7 +1268,7 @@
     <value>Bazı özel komutlar kaldırılamıyor.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
-    <value>Bu kabuk, komutları yürütmek için eğik çizgi komutlarını kullanır. Başlamak için lütfen komutun başına eğik çizgi sembolünü &apos;/&apos; ekleyin. Örneğin:</value>
+    <value>Bu kabuk, komutları yürütmek için eğik çizgi komutlarını kullanır. Başlamak için lütfen komutun başına eğik çizgi sembolünü '/' ekleyin. Örneğin:</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
     <value>Bu komut tanımlanmamış.</value>
@@ -1375,7 +1316,7 @@
     <value>Belirtilmemiş anahtar açıklaması</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
-    <value>&quot;{0}&quot; komutu için yardım yok.</value>
+    <value>"{0}" komutu için yardım yok.</value>
   </data>
   <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Belirtilen ön ayar {0} bulunamadı.</value>
@@ -1417,7 +1358,7 @@
     <value>Kabuk ön ayar kitaplığını açar</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
-    <value>Kabuk iletisi: İstenen {0} komutu bulunamadı. Kullanılabilir komutlar için &apos;yardım&apos;a bakın.</value>
+    <value>Kabuk iletisi: İstenen {0} komutu bulunamadı. Kullanılabilir komutlar için 'yardım'a bakın.</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
     <value>Komut yürütülürken hata oluştu.</value>
@@ -1477,7 +1418,7 @@
     <value>{1} türünde geçersiz Nerd Fonts karakter adı {0}</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
-    <value>{1}&apos;den {2} türündeki geçersiz Nerd Fonts karakter gösterimi {0}</value>
+    <value>{1}'den {2} türündeki geçersiz Nerd Fonts karakter gösterimi {0}</value>
   </data>
   <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
     <value>Geçersiz Nerd Fontları türü {0}</value>
@@ -1537,10 +1478,10 @@
     <value>Sarmalanabilir olarak ayarlanmamış bir komut arabelleğe alınamaz.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION" xml:space="preserve">
-    <value>Koşullar veya döngüler gibi oluşturmayı destekleyen ifadeleri yerleştirmeden önce yeni bloğu bildiremezsiniz. Yığın numarası {0}&apos;dır.</value>
+    <value>Koşullar veya döngüler gibi oluşturmayı destekleyen ifadeleri yerleştirmeden önce yeni bloğu bildiremezsiniz. Yığın numarası {0}'dır.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID" xml:space="preserve">
-    <value>Yeni bir blok başlatırken, yığını doğru şekilde girintilediğinizden emin olun. Yığın numarası {0}&apos;dır.</value>
+    <value>Yeni bir blok başlatırken, yığını doğru şekilde girintilediğinizden emin olun. Yığın numarası {0}'dır.</value>
   </data>
   <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED" xml:space="preserve">
     <value>Komut dosyası hatalı. Komut dosyasını kontrol edin ve hataları çözün: {0}</value>
@@ -1750,7 +1691,7 @@
     <value>Değişken değerini kaldırmadan sadece siler</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
-    <value>Artık &apos;{0}&apos;ı &apos;{1}&apos; olarak çalıştırabilirsiniz!</value>
+    <value>Artık '{0}'ı '{1}' olarak çalıştırabilirsiniz!</value>
   </data>
   <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
     <value>Geçersiz tip {0}.</value>
@@ -1933,7 +1874,7 @@
     <value>Komut dosyası ayıklaması başarılı oldu.</value>
   </data>
   <data name="T_SHELL_UNIFIED_LINTSCRIPT_FAILED" xml:space="preserve">
-    <value>Komut dosyası lint başarısız oldu. Büyük olasılıkla bir sözdizimi hatası var. Komut dosyanızda hata olup olmadığını kontrol edin ve linter&apos;ı tekrar çalıştırmayı deneyin.</value>
+    <value>Komut dosyası lint başarısız oldu. Büyük olasılıkla bir sözdizimi hatası var. Komut dosyanızda hata olup olmadığını kontrol edin ve linter'ı tekrar çalıştırmayı deneyin.</value>
   </data>
   <data name="T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
     <value>Komut dosyanızı ayrıştırmaya çalışırken komut dosyası tarama aracı beklenmedik bir şekilde başarısız oldu.</value>
@@ -2092,7 +2033,7 @@
     <value>Ek komutlar</value>
   </data>
   <data name="T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC" xml:space="preserve">
-    <value>Komutların listesini Markdown olarak göster (dokümanlar ve LLM&apos;ler için)</value>
+    <value>Komutların listesini Markdown olarak göster (dokümanlar ve LLM'ler için)</value>
   </data>
   <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_DESC" xml:space="preserve">
     <value>Adları oluşturur</value>
@@ -2430,5 +2371,4 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>Renk çemberi çalışmadı</value>
   </data>
-
 </root>
