@@ -1,10 +1,10 @@
-This is a hotfix release of Terminaux v6.1.41 that fixes crashes related to transformation tools.
+This is the last update of Terminaux 6.1.x before the end of support. Emergency security patches will still be released, though.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed crashes related to transformation tools
+- `[*]` Updated ImageMagick
 
 Review the commit history if you want to get a deep insight about the changes.
 
