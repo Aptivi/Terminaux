@@ -875,7 +875,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         degrees * (Math.PI / 180d);
 
                     // Add a new rainbow circle
-                    int bezelHeight = ConsoleWrapper.WindowHeight - 2;
+                    int consoleHeight = ConsoleWrapper.WindowHeight;
+                    int bezelHeight = consoleHeight - 2 - (consoleHeight % 2 == 0 ? 1 : 0);
                     int circleWidth = bezelHeight * 2;
                     int left = ConsoleWrapper.WindowWidth / 2 - bezelHeight;
 
@@ -884,7 +885,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     bezelHeight = bezelHeight < (circleWidth - 1) / 2 ? bezelHeight : (circleWidth - 1) / 2;
                     int bezelWidth = bezelHeight * 2;
                     int bezelLeft = circleWidth / 2 - bezelHeight + left;
-                    var colorWheelCircle = new Circle(bezelHeight, bezelLeft, bezelTop, true)
+                    var bezelCircle = new Circle(bezelHeight, bezelLeft, bezelTop, false, ConsoleColors.Grey);
+                    var colorWheelCircle = new Circle(bezelHeight - 2, bezelLeft + 2, bezelTop + 1, true)
                     {
                         RainbowMode = true,
                         RainbowSaturation = hsl.SaturationWhole,
@@ -893,11 +895,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);
                     int arcLeft = ConsoleWrapper.WindowWidth / 2 - (bezelHeight + 2);
                     (int pointX, int pointY) = ((int)(radius.x + bezelHeight / 2 * Math.Cos(ToRad(angle))), (int)(radius.y + bezelHeight / 2 * Math.Sin(ToRad(angle))));
-                    pointX += pointX - radius.x - 1;
+                    pointX += pointX - radius.x;
 
                     // String builder
                     var builder = new StringBuilder();
                     builder.Append(
+                        bezelCircle.Render() +
                         colorWheelCircle.Render() +
                         ConsolePositioning.RenderChangePosition(pointX, pointY) +
                         ConsoleColoring.RenderSetConsoleColor(ConsoleColors.White, true) +

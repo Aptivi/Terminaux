@@ -2424,5 +2424,11 @@
   <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
     <value>قائمة السياق</value>
   </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL" xml:space="preserve">
+    <value>افتح عجلة الألوان</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
+    <value>تعطلت عجلة الألوان</value>
+  </data>
 
 </root>

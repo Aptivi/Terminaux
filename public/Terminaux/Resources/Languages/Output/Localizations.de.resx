@@ -2424,5 +2424,11 @@
   <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
     <value>Kontextmenü</value>
   </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL" xml:space="preserve">
+    <value>Offenes Farbrad</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
+    <value>Das Farbrad ist ausgefallen</value>
+  </data>
 
 </root>

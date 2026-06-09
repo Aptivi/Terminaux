@@ -2424,5 +2424,11 @@
   <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
     <value>Menu contestuale</value>
   </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL" xml:space="preserve">
+    <value>Ruota dei colori aperta</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
+    <value>La ruota dei colori non funziona</value>
+  </data>
 
 </root>

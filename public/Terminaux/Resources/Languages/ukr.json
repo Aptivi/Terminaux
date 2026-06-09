@@ -3081,6 +3081,14 @@
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
       "text": "Контекстне меню"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL",
+      "text": "Відкрити колірне коло"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
+      "text": "Кольорове коло не працює"
     }
   ]
 }

@@ -3081,6 +3081,14 @@
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
       "text": "コンテキストメニュー"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL",
+      "text": "カラーホイールを開く"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
+      "text": "カラーホイールが失敗しました"
     }
   ]
 }

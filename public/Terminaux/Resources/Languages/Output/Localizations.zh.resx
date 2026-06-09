@@ -2424,5 +2424,11 @@
   <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
     <value>內容選單</value>
   </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL" xml:space="preserve">
+    <value>打開色輪</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
+    <value>色輪已失效</value>
+  </data>
 
 </root>

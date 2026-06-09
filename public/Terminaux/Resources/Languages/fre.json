@@ -3127,6 +3127,14 @@
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
       "text": "Menu contextuel"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL",
+      "text": "Ouvrir la roue chromatique"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
+      "text": "La roue chromatique est défectueuse"
     }
   ]
 }

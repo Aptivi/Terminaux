@@ -3107,6 +3107,14 @@
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
       "text": "قائمة السياق"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL",
+      "text": "افتح عجلة الألوان"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
+      "text": "تعطلت عجلة الألوان"
     }
   ]
 }

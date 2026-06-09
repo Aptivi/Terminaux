@@ -3089,6 +3089,14 @@
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_CONTEXTMENU",
       "text": "上下文菜单"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL",
+      "text": "打开色轮"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
+      "text": "色轮已失效"
     }
   ]
 }

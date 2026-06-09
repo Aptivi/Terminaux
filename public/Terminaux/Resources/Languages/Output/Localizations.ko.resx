@@ -2424,5 +2424,11 @@
   <data name="T_INPUT_COMMON_KEYBINDING_CONTEXTMENU" xml:space="preserve">
     <value>컨텍스트 메뉴</value>
   </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORWHEEL" xml:space="preserve">
+    <value>컬러 휠 열기</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
+    <value>컬러 휠이 실패했습니다</value>
+  </data>
 
 </root>
