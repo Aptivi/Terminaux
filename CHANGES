@@ -1,11 +1,10 @@
-This version of Terminaux updates different parts of the library.
+This version of Terminaux fixes a critical bug that was introduced in 8.5.1.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated terminal info
-- `[*]` Updated Colorimetry
+- `[*]` Fixed critical bug causing Terminaux applications to crash at startup
 
 Review the commit history if you want to get a deep insight about the changes.
 
