@@ -1,13 +1,11 @@
-This version of Terminaux is part of a monthly release plan to add some more features related to colors.
+This version of Terminaux updates different parts of the library.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added new color models (Colorimetry v1.1.0)
-- `[+]` Added ESC to exit input info box
-- `[+]` Added color wheel
-- `[*]` General improvements and bug fixes
+- `[*]` Updated terminal info
+- `[*]` Updated Colorimetry
 
 Review the commit history if you want to get a deep insight about the changes.
 
