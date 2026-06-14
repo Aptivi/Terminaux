@@ -255,9 +255,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, add the two numbers and pass it to the stack as a string
@@ -276,9 +276,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, subtract the two numbers and pass it to the stack as a string
@@ -297,9 +297,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, multiply the two numbers and pass it to the stack as a string
@@ -318,9 +318,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, divide the two numbers and pass it to the stack as a string
@@ -339,9 +339,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, get the modulus of the two numbers and pass it to the stack as a string
@@ -359,9 +359,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, perform a bitwise AND
@@ -379,9 +379,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, perform a bitwise OR
@@ -399,9 +399,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, perform a bitwise XOR
@@ -419,9 +419,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, test for equality
@@ -439,9 +439,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, test for equality
@@ -459,9 +459,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, test for equality
@@ -479,9 +479,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, test for equality
@@ -499,9 +499,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             // Remove last two arguments from the stack, and check for integers
                             string first = popArgs.Dequeue();
                             string second = popArgs.Dequeue();
-                            if (!int.TryParse(first, out int firstInt))
+                            if (!TryParseInteger(first, out int firstInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID") + $" {first}");
-                            if (!int.TryParse(second, out int secondInt))
+                            if (!TryParseInteger(second, out int secondInt))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID") + $" {second}");
 
                             // Now, test for equality
@@ -518,7 +518,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         {
                             // Remove last argument from the stack, and check for integers
                             string lastValue = popArgs.Dequeue();
-                            if (!int.TryParse(lastValue, out int unaryValue))
+                            if (!TryParseInteger(lastValue, out int unaryValue))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST") + $" {lastValue}");
 
                             // Now, test for logical complement
@@ -535,7 +535,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         {
                             // Remove last argument from the stack, and check for integers
                             string lastValue = popArgs.Dequeue();
-                            if (!int.TryParse(lastValue, out int unaryValue))
+                            if (!TryParseInteger(lastValue, out int unaryValue))
                                 throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST") + $" {lastValue}");
 
                             // Now, test for bit complement
@@ -644,6 +644,26 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
             // Return the list of syntaxes
             return [.. syntaxes];
+        }
+
+        private static bool TryParseInteger(string integer, out int result)
+        {
+            // Try to parse this integer
+            if (!int.TryParse(integer, out result))
+            {
+                // We might have been given an integer as a character representation
+                if (integer.Length == 1)
+                {
+                    result = (int)integer[0];
+                    return true;
+                }
+
+                // Assume invalid integer
+                result = 0;
+                return false;
+            }
+            else
+                return true;
         }
     }
 }
