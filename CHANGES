@@ -1,10 +1,10 @@
-This is the last update of Terminaux 7.0.x before the end of support. Emergency security patches will still be released, though.
+This is a hotfix to fix integer parsing failures in some terminfo files
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated ImageMagick
+- `[*]` Fixed integer parsing failures for terminfo
 
 Review the commit history if you want to get a deep insight about the changes.
 
