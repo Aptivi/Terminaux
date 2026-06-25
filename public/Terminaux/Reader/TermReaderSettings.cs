@@ -66,6 +66,7 @@ namespace Terminaux.Reader
         private int initialPosition = -1;
         private ConsoleBell bell = ConsoleBell.Audible;
         private int width;
+        private static Func<bool> lockCondition = Input.DefaultLockCondition;
 
         /// <summary>
         /// Password mask character
@@ -399,6 +400,20 @@ namespace Terminaux.Reader
         public bool UseDefaultValueOnEmpty { get; set; }
 
         /// <summary>
+        /// Function that evaluates the final boolean. True means to stop waiting and to allow input to go through.
+        /// </summary>
+        public Func<bool> LockCondition
+        {
+            get => lockCondition;
+            set => lockCondition = value;
+        }
+
+        /// <summary>
+        /// Allow input to go through without waiting for the lock function to evaluate to true
+        /// </summary>
+        public bool DisableLock { get; set; }
+
+        /// <summary>
         /// Initializes an empty reader settings instance
         /// </summary>
         public TermReaderSettings() :
@@ -445,6 +460,9 @@ namespace Terminaux.Reader
             InitialPosition = settings.InitialPosition;
             Bell = settings.Bell;
             PasswordMaskChar = settings.PasswordMaskChar;
+            UseDefaultValueOnEmpty = settings.UseDefaultValueOnEmpty;
+            LockCondition = settings.LockCondition;
+            DisableLock = settings.DisableLock;
         }
     }
 }

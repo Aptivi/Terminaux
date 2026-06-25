@@ -65,6 +65,7 @@ namespace Terminaux.Inputs
         private static bool cueVolumeBoost;
         private static string bassBoomLibraryRoot = "";
         private static char passwordMaskChar = '*';
+        private static Func<bool> defaultLockCondition = () => true;
         private static readonly Stopwatch inputTimeout = new();
         private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? GetStdHandle(-10) : IntPtr.Zero;
         private static readonly Queue<InputEventInfo> mouseEventQueue = [];
@@ -281,17 +282,34 @@ namespace Terminaux.Inputs
         }
 
         /// <summary>
+        /// Function that evaluates the final boolean. True means to stop waiting and to allow input to go through.
+        /// </summary>
+        public static Func<bool> DefaultLockCondition
+        {
+            get => defaultLockCondition;
+            set => defaultLockCondition = value;
+        }
+
+        /// <summary>
         /// Reads either a pointer or a key (blocking)
         /// </summary>
         /// <param name="eventType">Event types to wait for (None implies all events)</param>
-        public static InputEventInfo ReadPointerOrKey(InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard)
+        /// <param name="lockCondition">Function that evaluates the final boolean. True means to stop waiting and to allow input to go through.</param>
+        /// <param name="disableLock">Allow input to go through without waiting for the lock function to evaluate to true</param>
+        public static InputEventInfo ReadPointerOrKey(InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard, Func<bool>? lockCondition = null, bool disableLock = false)
         {
             InputEventInfo input = new();
+
+            // Obtain input
             SpinWait.SpinUntil(() =>
             {
                 input = ReadPointerOrKeyNoBlock(eventType);
                 return input.EventType != InputEventType.None;
             });
+
+            // Wait for lock release by condition
+            if (!disableLock)
+                SpinWait.SpinUntil(lockCondition is not null ? lockCondition : DefaultLockCondition);
             return input;
         }
 
@@ -300,14 +318,22 @@ namespace Terminaux.Inputs
         /// </summary>
         /// <param name="timeout">Timeout in milliseconds</param>
         /// <param name="eventType">Event types to wait for (None implies all events)</param>
-        public static (InputEventInfo result, bool provided) ReadPointerOrKeyUntil(TimeSpan timeout, InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard)
+        /// <param name="lockCondition">Function that evaluates the final boolean. True means to bail.</param>
+        /// <param name="disableLock">Allow input to go through without waiting for the lock function to evaluate to true</param>
+        public static (InputEventInfo result, bool provided) ReadPointerOrKeyUntil(TimeSpan timeout, InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard, Func<bool>? lockCondition = null, bool disableLock = false)
         {
             InputEventInfo input = new();
+
+            // Obtain input
             bool result = SpinWait.SpinUntil(() =>
             {
                 input = ReadPointerOrKeyNoBlock(eventType);
                 return input.EventType != InputEventType.None;
             }, timeout);
+
+            // Wait for lock release by condition
+            if (!disableLock)
+                SpinWait.SpinUntil(lockCondition is not null ? lockCondition : DefaultLockCondition);
             return (input, result);
         }
 
@@ -349,17 +375,23 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Reads the next key from the console input stream
         /// </summary>
-        public static ConsoleKeyInfo ReadKey() =>
-            ReadKeyTimeout(TimeSpan.FromMilliseconds(-1)).result;
+        /// <param name="lockCondition">Function that evaluates the final boolean. True means to bail.</param>
+        /// <param name="disableLock">Allow input to go through without waiting for the lock function to evaluate to true</param>
+        public static ConsoleKeyInfo ReadKey(Func<bool>? lockCondition = null, bool disableLock = false) =>
+            ReadKeyTimeout(TimeSpan.FromMilliseconds(-1), lockCondition, disableLock).result;
 
         /// <summary>
         /// Reads the next key from the console input stream with the timeout
         /// </summary>
         /// <param name="Timeout">Timeout</param>
-        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(TimeSpan Timeout)
+        /// <param name="lockCondition">Function that evaluates the final boolean. True means to bail.</param>
+        /// <param name="disableLock">Allow input to go through without waiting for the lock function to evaluate to true</param>
+        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(TimeSpan Timeout, Func<bool>? lockCondition = null, bool disableLock = false)
         {
             TermReaderTools.isWaitingForInput = true;
             InputEventInfo data = new();
+
+            // Obtain input
             bool result = SpinWait.SpinUntil(() =>
             {
                 data = ReadPointerOrKeyNoBlock();
@@ -370,7 +402,11 @@ namespace Terminaux.Inputs
             // Play audio cue when required
             if (KeyboardCues && ConsoleAcoustic.cueSupported && data.ConsoleKeyInfo is ConsoleKeyInfo cki)
                 ConsoleAcoustic.PlayKeyAudioCue(null, cki.Key == ConsoleKey.Backspace ? ConsoleKeyAudioCue.Backspace : cki.Key == ConsoleKey.Enter ? ConsoleKeyAudioCue.Enter : ConsoleKeyAudioCue.Type);
-            
+
+            // Wait for lock release by condition
+            if (!disableLock)
+                SpinWait.SpinUntil(lockCondition is not null ? lockCondition : DefaultLockCondition);
+
             // Return the result
             return (!result ? default : data.ConsoleKeyInfo ?? default, result);
         }

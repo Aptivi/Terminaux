@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Extensions.Data;
@@ -453,6 +454,10 @@ namespace Terminaux.Reader
 
                     // Save histories
                     HistoryTools.SaveHistories();
+
+                    // Wait for lock release by condition
+                    if (!settings.DisableLock)
+                        SpinWait.SpinUntil(settings.LockCondition);
                 }
                 state = null;
                 ConsoleLogger.Debug("Attempting to transform input string of {0} bytes to {1}...", input.Length, typeof(T).FullName);
