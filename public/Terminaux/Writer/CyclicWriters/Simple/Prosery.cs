@@ -101,9 +101,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public int WrapWidth { get; set; } = 75;
 
         /// <summary>
-        /// Renders a spinner
+        /// Renders a prosery
         /// </summary>
-        /// <returns>A string representation of the spinner</returns>
+        /// <returns>A string representation of the prosery</returns>
         public override string Render()
         {
             // First, process the prose
@@ -170,28 +170,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     proseLines.Add("");
                 }
             }
-
-            // Trim the lines from the top and the bottom
-            for (int i = proseLines.Count - 1; i >= 0; i--)
-            {
-                string line = proseLines[i];
-
-                // If this line is empty, remove it
-                if (string.IsNullOrWhiteSpace(line))
-                    proseLines.RemoveAt(i);
-                else
-                    break;
-            }
-            while (proseLines.Count > 0)
-            {
-                string line = proseLines[0];
-
-                // If this line is empty, remove it
-                if (string.IsNullOrWhiteSpace(line))
-                    proseLines.RemoveAt(0);
-                else
-                    break;
-            }
+            proseLines = ConsoleMisc.TrimNewLines(proseLines);
 
             // Return the result
             return [.. proseLines];

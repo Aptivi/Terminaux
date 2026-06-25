@@ -148,6 +148,7 @@ namespace Terminaux.Console.Fixtures
             new PrintCowsayAlignRightPositional(),
             new PrintCowsayAlignRightPositionalF(),
             new PrintProsery(),
+            new PrintQuote(),
             new TestDictWriterChar(),
             new TestDictWriterCharWithStringifiers(),
             new TestDictWriterInt(),

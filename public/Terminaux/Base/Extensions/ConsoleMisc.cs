@@ -431,6 +431,45 @@ namespace Terminaux.Base.Extensions
         }
 
         /// <summary>
+        /// Trims the new lines from the top and the bottom of the string array
+        /// </summary>
+        /// <param name="lines">Array of strings</param>
+        /// <returns>A modified array with trimmed new lines from the top and the bottom</returns>
+        public static string[] TrimNewLines(string[] lines) =>
+            [.. TrimNewLines(lines.ToList())];
+
+        /// <summary>
+        /// Trims the new lines from the top and the bottom of the string array
+        /// </summary>
+        /// <param name="lines">Array of strings</param>
+        /// <returns>A modified array with trimmed new lines from the top and the bottom</returns>
+        public static List<string> TrimNewLines(List<string> lines)
+        {
+            // Trim the lines from the top and the bottom
+            for (int i = lines.Count - 1; i >= 0; i--)
+            {
+                string line = lines[i];
+
+                // If this line is empty, remove it
+                if (string.IsNullOrWhiteSpace(line))
+                    lines.RemoveAt(i);
+                else
+                    break;
+            }
+            while (lines.Count > 0)
+            {
+                string line = lines[0];
+
+                // If this line is empty, remove it
+                if (string.IsNullOrWhiteSpace(line))
+                    lines.RemoveAt(0);
+                else
+                    break;
+            }
+            return lines;
+        }
+
+        /// <summary>
         /// Shows the main buffer
         /// </summary>
         public static void ShowMainBuffer()
