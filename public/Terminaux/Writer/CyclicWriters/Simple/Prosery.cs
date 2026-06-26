@@ -170,7 +170,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     proseLines.Add("");
                 }
             }
-            proseLines = ConsoleMisc.TrimNewLines(proseLines);
+            proseLines = proseLines.TrimNewLines();
 
             // Return the result
             return [.. proseLines];

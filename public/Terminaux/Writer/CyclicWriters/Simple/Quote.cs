@@ -114,7 +114,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             // Build the required "prosery" text
             var proseryBuilder = new StringBuilder();
             string[] quoteTextLines = QuoteText.SplitNewLines();
-            quoteTextLines = ConsoleMisc.TrimNewLines(quoteTextLines);
+            quoteTextLines = quoteTextLines.TrimNewLines();
             proseryBuilder.Append(
                 $"{ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Italic)}" +
                 $"“{string.Join("\n", quoteTextLines)}”\n\n" +

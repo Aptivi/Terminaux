@@ -431,42 +431,48 @@ namespace Terminaux.Base.Extensions
         }
 
         /// <summary>
-        /// Trims the new lines from the top and the bottom of the string array
+        /// Makes an array of strings that are processed for printing paragraphs from raw text
         /// </summary>
-        /// <param name="lines">Array of strings</param>
-        /// <returns>A modified array with trimmed new lines from the top and the bottom</returns>
-        public static string[] TrimNewLines(string[] lines) =>
-            [.. TrimNewLines(lines.ToList())];
-
-        /// <summary>
-        /// Trims the new lines from the top and the bottom of the string array
-        /// </summary>
-        /// <param name="lines">Array of strings</param>
-        /// <returns>A modified array with trimmed new lines from the top and the bottom</returns>
-        public static List<string> TrimNewLines(List<string> lines)
+        /// <param name="text">Text to process</param>
+        /// <param name="wrapLines">Whether to wrap lines or not</param>
+        /// <param name="wrapWidth">Word wrap width for each line</param>
+        /// <returns>An array of paragraph lines, with empty lines separating paragraphs</returns>
+        public static string[] Paragraphize(this string text, bool wrapLines = true, int wrapWidth = 75)
         {
-            // Trim the lines from the top and the bottom
-            for (int i = lines.Count - 1; i >= 0; i--)
-            {
-                string line = lines[i];
+            // Find the new lines and split them, eliminating blank lines in the process
+            string[] paragraphs = text.SplitNewLines();
 
-                // If this line is empty, remove it
-                if (string.IsNullOrWhiteSpace(line))
-                    lines.RemoveAt(i);
-                else
-                    break;
-            }
-            while (lines.Count > 0)
+            // Check to see if wrapping is required
+            List<string> paragraphized = [];
+            bool emptyLineAdded = false;
+            for (int i = 0; i < paragraphs.Length; i++)
             {
-                string line = lines[0];
+                string line = paragraphs[i];
 
-                // If this line is empty, remove it
-                if (string.IsNullOrWhiteSpace(line))
-                    lines.RemoveAt(0);
-                else
-                    break;
+                // If wrapping is required, wrap by words, taking VT escape sequences, CJK, and emojis into account
+                if (!string.IsNullOrWhiteSpace(line))
+                {
+                    emptyLineAdded = false;
+                    if (wrapLines)
+                    {
+                        string[] splitLines = GetWrappedSentencesByWords(line, wrapWidth);
+                        paragraphized.AddRange(splitLines);
+                    }
+                    else
+                        paragraphized.Add(line);
+                }
+
+                // Add empty line if this line is not the last one
+                if (i + 1 < paragraphs.Length && string.IsNullOrWhiteSpace(line) && !emptyLineAdded)
+                {
+                    emptyLineAdded = true;
+                    paragraphized.Add("");
+                }
             }
-            return lines;
+            paragraphized = paragraphized.TrimNewLines();
+
+            // Return the result
+            return [.. paragraphized];
         }
 
         /// <summary>
