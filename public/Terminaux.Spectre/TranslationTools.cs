@@ -296,16 +296,16 @@ namespace Terminaux.Spectre
         }
 
         /// <summary>
-        /// Returns a compatible Spectre.Console <see cref="STextPath"/> from Terminaux's <see cref="Writer.CyclicWriters.Graphical.TextPath"/>
+        /// Returns a compatible Spectre.Console <see cref="STextPath"/> from Terminaux's <see cref="Writer.CyclicWriters.Simple.TextPath"/>
         /// </summary>
         /// <param name="textPath">Terminaux's text path instance</param>
         /// <returns>Spectre.Console's text path instance</returns>
-        public static STextPath GetTextPath(Writer.CyclicWriters.Graphical.TextPath textPath)
+        public static STextPath GetTextPath(Writer.CyclicWriters.Simple.TextPath textPath)
         {
             // Make a new text path
             var spectreTextPath = new STextPath(textPath.PathText)
             {
-                Justification = GetAlignment(textPath.Settings.Alignment),
+                Justification = GetAlignment(textPath.Alignment),
                 RootStyle = new(GetColor(textPath.RootDriveColor)),
                 LeafStyle = new(GetColor(textPath.LastPathColor)),
                 StemStyle = new(GetColor(textPath.SeparatorColor)),

@@ -19,7 +19,7 @@
 
 using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -33,8 +33,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var path1 = new TextPath()
             {
                 PathText = @"C:\WINDOWS\System32\very\long\path\so\that\we\can\read-this.txt",
-                Left = 4,
-                Top = 2,
                 Width = 30,
             };
             var path2 = new TextPath()
@@ -45,9 +43,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 SeparatorColor = ConsoleColors.Yellow,
                 RootDriveColor = ConsoleColors.Red,
                 UseColors = true,
-                Settings = new() { Alignment = TextAlignment.Left },
-                Left = 4,
-                Top = 4,
+                Alignment = TextAlignment.Left,
                 Width = 40,
             };
             var path3 = new TextPath()
@@ -58,9 +54,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 SeparatorColor = ConsoleColors.Yellow,
                 RootDriveColor = ConsoleColors.Red,
                 UseColors = true,
-                Settings = new() { Alignment = TextAlignment.Middle },
-                Left = 4,
-                Top = 5,
+                Alignment = TextAlignment.Middle,
                 Width = 40,
             };
             var path4 = new TextPath()
@@ -71,15 +65,13 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 SeparatorColor = ConsoleColors.Yellow,
                 RootDriveColor = ConsoleColors.Red,
                 UseColors = true,
-                Settings = new() { Alignment = TextAlignment.Right },
-                Left = 4,
-                Top = 6,
+                Alignment = TextAlignment.Right,
                 Width = 40,
             };
-            TextWriterRaw.WriteRaw(path1.Render());
-            TextWriterRaw.WriteRaw(path2.Render());
-            TextWriterRaw.WriteRaw(path3.Render());
-            TextWriterRaw.WriteRaw(path4.Render());
+            TextWriterRaw.WritePlain(path1.Render());
+            TextWriterRaw.WritePlain(path2.Render());
+            TextWriterRaw.WritePlain(path3.Render());
+            TextWriterRaw.WritePlain(path4.Render());
         }
     }
 }

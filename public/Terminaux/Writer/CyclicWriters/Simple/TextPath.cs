@@ -26,24 +26,20 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 
-namespace Terminaux.Writer.CyclicWriters.Graphical
+namespace Terminaux.Writer.CyclicWriters.Simple
 {
     /// <summary>
     /// Path text renderable
     /// </summary>
-    public class TextPath : GraphicalCyclicWriter
+    public class TextPath : SimpleCyclicWriter
     {
         private string pathText = "";
-        private bool oneLine = false;
         private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color rootDriveColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color separatorColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color lastPathColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private TextSettings settings = new();
         private bool useColors = true;
-        private bool rainbow = false;
-        private bool rainbowBg = false;
 
         /// <summary>
         /// Path text to render
@@ -91,33 +87,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
-        /// Background color of the text
-        /// </summary>
-        public Color BackgroundColor
-        {
-            get => backgroundColor;
-            set => backgroundColor = value;
-        }
-
-        /// <summary>
-        /// Text settings to use
-        /// </summary>
-        public TextSettings Settings
-        {
-            get => settings;
-            set => settings = value;
-        }
-
-        /// <summary>
-        /// Whether to print all lines or only one line
-        /// </summary>
-        public bool OneLine
-        {
-            get => oneLine;
-            set => oneLine = value;
-        }
-
-        /// <summary>
         /// Whether to use colors or not
         /// </summary>
         public bool UseColors
@@ -127,22 +96,14 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
-        /// Whether to write text with rainbow effects or not
+        /// Width of the text path (0 to disable alignment)
         /// </summary>
-        public bool Rainbow
-        {
-            get => rainbow;
-            set => rainbow = value;
-        }
+        public int Width { get; set; }
 
         /// <summary>
-        /// Whether to write text with rainbow effects in the background or in the foreground
+        /// Alignment of the path text
         /// </summary>
-        public bool RainbowBg
-        {
-            get => rainbowBg;
-            set => rainbowBg = value;
-        }
+        public TextAlignment Alignment { get; set; }
 
         /// <summary>
         /// Renders a path text
@@ -182,7 +143,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     // Add an ellipsis and subtract the length if required
                     string path = paths[i];
                     int pathWidth = ConsoleChar.EstimateCellWidth(path);
-                    if (length > Width)
+                    if (Width > 0 && length > Width)
                     {
                         if (!addedEllipsis)
                         {
@@ -215,21 +176,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Return a rendered AlignedText
                 string finalTokenized = tokenized.ToString();
-                var alignedPath = new AlignedText()
-                {
-                    ForegroundColor = ForegroundColor,
-                    BackgroundColor = BackgroundColor,
-                    UseColors = UseColors,
-                    Top = Top,
-                    Left = Left,
-                    Width = Width,
-                    Settings = Settings,
-                    OneLine = OneLine,
-                    Rainbow = Rainbow,
-                    RainbowBg = RainbowBg,
-                    Text = finalTokenized,
-                };
-                return alignedPath.Render();
+                finalTokenized = ConsoleMisc.Pad(finalTokenized, Width, Alignment);
+                return finalTokenized;
             }
             catch (Exception ex)
             {

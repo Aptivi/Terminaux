@@ -541,7 +541,8 @@ namespace Terminaux.Base.Extensions
             int alignment = TextWriterTools.DetermineTextAlignment(text, totalLength, TextAlignment.Middle);
             int contentWidth = ConsoleChar.EstimateCellWidth(text);
             string padded = PadLeft(text, alignment + contentWidth, padder);
-            string rightPad = new(' ', totalLength - (alignment + contentWidth));
+            int rightPadLength = totalLength - (alignment + contentWidth);
+            string rightPad = rightPadLength > 0 ? new(' ', rightPadLength) : "";
             return padded + rightPad;
         }
 

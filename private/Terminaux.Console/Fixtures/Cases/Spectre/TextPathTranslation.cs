@@ -22,7 +22,8 @@ using Colorimetry.Data;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using TTextPath = Terminaux.Writer.CyclicWriters.Graphical.TextPath;
+using TTextPath = Terminaux.Writer.CyclicWriters.Simple.TextPath;
+using Terminaux.Base;
 
 namespace Terminaux.Console.Fixtures.Cases.Spectre
 {
@@ -40,10 +41,8 @@ namespace Terminaux.Console.Fixtures.Cases.Spectre
                 SeparatorColor = ConsoleColors.Yellow,
                 RootDriveColor = ConsoleColors.Red,
                 UseColors = true,
-                Settings = new() { Alignment = TextAlignment.Left },
-                Left = 4,
-                Top = 4,
-                Width = 40,
+                Alignment = TextAlignment.Middle,
+                Width = ConsoleWrapper.WindowWidth,
             };
 
             // Write our text path
