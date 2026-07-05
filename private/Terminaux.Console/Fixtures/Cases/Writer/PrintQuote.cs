@@ -40,6 +40,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Author = "Vincent van Gogh",
                 WrapLines = true,
                 WrapWidth = 20,
+                EnablePad = false,
             };
             TextWriterRaw.WriteRaw(proseryRenderer2.Render());
         }

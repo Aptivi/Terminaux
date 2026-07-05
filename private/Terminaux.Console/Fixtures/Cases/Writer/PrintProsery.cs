@@ -64,6 +64,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     """,
                 WrapLines = true,
                 WrapWidth = 20,
+                EnablePad = false,
             };
             TextWriterRaw.WriteRaw(proseryRenderer2.Render());
         }

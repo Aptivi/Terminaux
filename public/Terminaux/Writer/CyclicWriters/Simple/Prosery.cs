@@ -41,6 +41,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private Color bgColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
+        /// Whether to print the padding character at the beginning of each line or not
+        /// </summary>
+        public bool EnablePad { get; set; } = true;
+
+        /// <summary>
         /// Prosery padding character at the beginning of each line
         /// </summary>
         public WideChar PadChar
@@ -115,11 +120,14 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             foreach (var line in lines)
             {
                 // Add padding
-                proseBuilder.Append(
-                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(PadColor) : "") +
-                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "") +
-                    prosePadding
-                );
+                if (EnablePad)
+                {
+                    proseBuilder.Append(
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(PadColor) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "") +
+                        prosePadding
+                    );
+                }
 
                 // Add actual line
                 proseBuilder.Append(

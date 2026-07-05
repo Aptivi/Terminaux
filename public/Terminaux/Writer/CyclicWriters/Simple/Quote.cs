@@ -41,6 +41,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private Color bgColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
+        /// Whether to print the padding character at the beginning of each line or not
+        /// </summary>
+        public bool EnablePad { get; set; } = true;
+
+        /// <summary>
         /// Quote padding character at the beginning of each line
         /// </summary>
         public WideChar PadChar
@@ -127,6 +132,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             {
                 BackgroundColor = BackgroundColor,
                 ForegroundColor = ForegroundColor,
+                EnablePad = EnablePad,
                 PadColor = PadColor,
                 PadChar = PadChar,
                 UseColors = UseColors,
