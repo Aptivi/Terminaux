@@ -140,7 +140,7 @@ namespace Terminaux.Spectre
             // Make a new table
             var spectreTable = new Table()
             {
-                Width = table.Width,
+                Width = table.Width > 0 ? table.Width : null,
                 Title = new(table.Title),
                 Border = TableBorder.Rounded,
                 ShowHeaders = table.Header,

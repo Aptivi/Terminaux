@@ -34,8 +34,6 @@ namespace Terminaux.Console.Fixtures.Cases.Spectre
         {
             var table = new Table()
             {
-                Width = 40,
-                Height = 5,
                 Header = true,
                 Rows = new TableCellOptions[,]
                 {
@@ -48,7 +46,6 @@ namespace Terminaux.Console.Fixtures.Cases.Spectre
             // Write our markup
             TextWriterColor.Write("Terminaux's Table:");
             TextWriterColor.Write(table.Render());
-            ConsoleWrapper.CursorTop = 12;
 
             // Now, convert them to Spectre's table
             var spectreTable = TranslationTools.GetTable(table);
