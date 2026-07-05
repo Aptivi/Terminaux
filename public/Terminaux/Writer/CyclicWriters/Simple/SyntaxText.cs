@@ -24,25 +24,19 @@ using System.IO;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Colorimetry;
-using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
 
-namespace Terminaux.Writer.CyclicWriters.Graphical
+namespace Terminaux.Writer.CyclicWriters.Simple
 {
     /// <summary>
     /// Syntax text renderable
     /// </summary>
-    public class SyntaxText : GraphicalCyclicWriter
+    public class SyntaxText : SimpleCyclicWriter
     {
         private string syntax = "csharp";
         private string text = "";
         private string pathToHighlight = "";
-        private int leftMargin = 0;
-        private int rightMargin = 0;
-        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private bool useColors = true;
 
         /// <summary>
@@ -70,42 +64,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             get => pathToHighlight;
             set => pathToHighlight = value;
-        }
-
-        /// <summary>
-        /// Left margin of the syntax figlet text
-        /// </summary>
-        public int LeftMargin
-        {
-            get => leftMargin;
-            set => leftMargin = value;
-        }
-
-        /// <summary>
-        /// Right margin of the syntax figlet text
-        /// </summary>
-        public int RightMargin
-        {
-            get => rightMargin;
-            set => rightMargin = value;
-        }
-
-        /// <summary>
-        /// Foreground color of the text
-        /// </summary>
-        public Color ForegroundColor
-        {
-            get => foregroundColor;
-            set => foregroundColor = value;
-        }
-
-        /// <summary>
-        /// Background color of the text
-        /// </summary>
-        public Color BackgroundColor
-        {
-            get => backgroundColor;
-            set => backgroundColor = value;
         }
 
         /// <summary>
@@ -185,6 +143,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         var highlightProcessInfo = new ProcessStartInfo(command, arguments)
                         {
                             RedirectStandardOutput = true,
+                            UseShellExecute = false,
+                            StandardOutputEncoding = Encoding.UTF8,
                         };
                         ConsoleLogger.Debug("Starting highlight process: {0} {1}", command, arguments);
                         var highlightProcess = Process.Start(highlightProcessInfo);
@@ -200,19 +160,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     }
                 }
 
-                // Add the result
-                syntax.Append(new AlignedText()
-                {
-                    Text = output,
-                    ForegroundColor = ForegroundColor,
-                    BackgroundColor = BackgroundColor,
-                    Left = Left,
-                    Top = Top,
-                    Width = Width,
-                    UseColors = UseColors,
-                }.Render());
-
                 // Write the resulting buffer
+                syntax.Append(output);
                 if (UseColors)
                 {
                     syntax.Append(

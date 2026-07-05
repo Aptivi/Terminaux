@@ -20,7 +20,7 @@
 using Colorimetry;
 using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -31,10 +31,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         public void RunFixture()
         {
             TextWriterColor.WriteColor("This describes a Hello World program in Rust:", true, new Color(ConsoleColors.Green));
-            var chart = new SyntaxText()
+            var syntax = new SyntaxText()
             {
-                Top = 4,
-                LeftMargin = 4,
                 Syntax = "rust",
                 Text =
                     """
@@ -44,7 +42,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     }
                     """
             };
-            TextWriterRaw.WriteRaw(chart.Render());
+            TextWriterRaw.WriteRaw(syntax.Render());
         }
     }
 }
