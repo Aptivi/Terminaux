@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using SpecProbe.Software.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using SpecProbe.Software.Platform;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions.Data;
 using Terminaux.Base.Extensions.Native;
@@ -30,6 +30,7 @@ using Terminaux.Base.TermInfo;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Unicode;
 using Textify.General;
 using Textify.General.Structures;
@@ -517,6 +518,57 @@ namespace Terminaux.Base.Extensions
         {
             string pad = Pad(text, totalLength, padder);
             return text + pad.ToString();
+        }
+
+        /// <summary>
+        /// Pads the string to the middle with spaces
+        /// </summary>
+        /// <param name="text">Text to pad to the middle</param>
+        /// <param name="totalLength">Total length (total cells) of the padded string</param>
+        /// <returns>Padded string</returns>
+        public static string PadMiddle(string text, int totalLength) =>
+            PadMiddle(text, totalLength, (WideChar)" ");
+
+        /// <summary>
+        /// Pads the string to the middle with spaces
+        /// </summary>
+        /// <param name="text">Text to pad to the middle</param>
+        /// <param name="totalLength">Total length (total cells) of the padded string</param>
+        /// <param name="padder">Pad character</param>
+        /// <returns>Padded string</returns>
+        public static string PadMiddle(string text, int totalLength, WideChar padder)
+        {
+            int alignment = TextWriterTools.DetermineTextAlignment(text, totalLength, TextAlignment.Middle);
+            int contentWidth = ConsoleChar.EstimateCellWidth(text);
+            string padded = PadLeft(text, alignment + contentWidth, padder);
+            string rightPad = new(' ', totalLength - (alignment + contentWidth));
+            return padded + rightPad;
+        }
+
+        /// <summary>
+        /// Pads the string to the specified alignment with spaces
+        /// </summary>
+        /// <param name="text">Text to pad to the specified alignment</param>
+        /// <param name="totalLength">Total length (total cells) of the padded string</param>
+        /// <param name="alignment">Text alignment to pad the text</param>
+        /// <returns>Padded string</returns>
+        public static string Pad(string text, int totalLength, TextAlignment alignment) =>
+            Pad(text, totalLength, (WideChar)" ", alignment);
+
+        /// <summary>
+        /// Pads the string to the specified alignment with spaces
+        /// </summary>
+        /// <param name="text">Text to pad to the specified alignment</param>
+        /// <param name="totalLength">Total length (total cells) of the padded string</param>
+        /// <param name="padder">Pad character</param>
+        /// <param name="alignment">Text alignment to pad the text</param>
+        /// <returns>Padded string</returns>
+        public static string Pad(string text, int totalLength, WideChar padder, TextAlignment alignment)
+        {
+            return
+                alignment == TextAlignment.Right ? PadLeft(text, totalLength, padder) :
+                alignment == TextAlignment.Middle ? PadMiddle(text, totalLength, padder) :
+                PadRight(text, totalLength, padder);
         }
 
         internal static string Pad(string text, int totalLength, WideChar padder)

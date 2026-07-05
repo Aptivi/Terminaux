@@ -264,13 +264,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         string text = (rowOption.Value ?? "").Truncate(columnWidth);
 
                         // Process them according to both the cell width and the cell options
-                        var rowAlignment = rowOption.TextSettings.Alignment;
-                        int alignment = TextWriterTools.DetermineTextAlignment(text, columnWidth, rowAlignment);
-                        int contentWidth = ConsoleChar.EstimateCellWidth(text);
-                        finalValue =
-                            rowAlignment == TextAlignment.Right ? ConsoleMisc.PadLeft(text, columnWidth) :
-                            rowAlignment == TextAlignment.Middle ? ConsoleMisc.PadLeft(text, alignment + contentWidth) + new string(' ', columnWidth - (alignment + contentWidth)) :
-                            ConsoleMisc.PadRight(text, columnWidth);
+                        finalValue = ConsoleMisc.Pad(text, columnWidth, rowOption.TextSettings.Alignment);
                         if (rowOption.ColoredCell)
                         {
                             finalColor = rowOption.CellColor;
