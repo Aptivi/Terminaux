@@ -476,6 +476,74 @@ namespace Terminaux.Base.Extensions
         }
 
         /// <summary>
+        /// Pads the string to the left with spaces
+        /// </summary>
+        /// <param name="text">Text to pad to the left</param>
+        /// <param name="totalLength">Total length (total cells) of the padded string</param>
+        /// <returns>Padded string</returns>
+        public static string PadLeft(string text, int totalLength) =>
+            PadLeft(text, totalLength, (WideChar)" ");
+
+        /// <summary>
+        /// Pads the string to the left with spaces
+        /// </summary>
+        /// <param name="text">Text to pad to the left</param>
+        /// <param name="totalLength">Total length (total cells) of the padded string</param>
+        /// <param name="padder">Pad character</param>
+        /// <returns>Padded string</returns>
+        public static string PadLeft(string text, int totalLength, WideChar padder)
+        {
+            string pad = Pad(text, totalLength, padder);
+            return pad.ToString() + text;
+        }
+
+        /// <summary>
+        /// Pads the string to the right with spaces
+        /// </summary>
+        /// <param name="text">Text to pad to the right</param>
+        /// <param name="totalLength">Total length (total cells) of the padded string</param>
+        /// <returns>Padded string</returns>
+        public static string PadRight(string text, int totalLength) =>
+            PadRight(text, totalLength, (WideChar)" ");
+
+        /// <summary>
+        /// Pads the string to the right with spaces
+        /// </summary>
+        /// <param name="text">Text to pad to the right</param>
+        /// <param name="totalLength">Total length (total cells) of the padded string</param>
+        /// <param name="padder">Pad character</param>
+        /// <returns>Padded string</returns>
+        public static string PadRight(string text, int totalLength, WideChar padder)
+        {
+            string pad = Pad(text, totalLength, padder);
+            return text + pad.ToString();
+        }
+
+        internal static string Pad(string text, int totalLength, WideChar padder)
+        {
+            // Process the length and determine how many padders to use
+            int processedLength = ConsoleChar.EstimateCellWidth(text);
+            int padderWidth = padder.GetWidth();
+            int remaining = totalLength - processedLength;
+            StringBuilder pad = new();
+
+            // If the remaining is less than required, bail
+            while (remaining > 0)
+            {
+                // Edge case: padder width may be larger than remaining, so add space instead
+                if (padderWidth > remaining)
+                    padder = (WideChar)" ";
+
+                // Now, pad!
+                pad.Append(padder.ToString());
+                remaining -= padderWidth;
+            }
+
+            // Return pad
+            return pad.ToString();
+        }
+
+        /// <summary>
         /// Shows the main buffer
         /// </summary>
         public static void ShowMainBuffer()

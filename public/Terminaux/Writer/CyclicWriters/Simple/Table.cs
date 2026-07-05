@@ -214,9 +214,14 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 if (columnWidth > 0)
                 {
                     tableBuilder.Append(
-                        new string(tableBorderSettings.BorderUpperFrameEnabled ? tableBorderSettings.BorderUpperFrameChar : ' ', columnWidth) +
-                        (tableBorderSettings.BorderTopVerticalIntersectionEnabled ? tableBorderSettings.BorderTopVerticalIntersectionChar : ' ')
+                        new string(tableBorderSettings.BorderUpperFrameEnabled ? tableBorderSettings.BorderUpperFrameChar : ' ', columnWidth)
                     );
+                    if (c < columnsCount - 1)
+                    {
+                        tableBuilder.Append(
+                            tableBorderSettings.BorderTopVerticalIntersectionEnabled ? tableBorderSettings.BorderTopVerticalIntersectionChar : ' '
+                        );
+                    }
                 }
             }
             tableBuilder.Append(
@@ -263,9 +268,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         int alignment = TextWriterTools.DetermineTextAlignment(text, columnWidth, rowAlignment);
                         int contentWidth = ConsoleChar.EstimateCellWidth(text);
                         finalValue =
-                            rowAlignment == TextAlignment.Right ? text.PadLeft(columnWidth) :
-                            rowAlignment == TextAlignment.Middle ? text.PadLeft(alignment + contentWidth) :
-                            text.PadRight(columnWidth);
+                            rowAlignment == TextAlignment.Right ? ConsoleMisc.PadLeft(text, columnWidth) :
+                            rowAlignment == TextAlignment.Middle ? ConsoleMisc.PadLeft(text, alignment + contentWidth) + new string(' ', columnWidth - (alignment + contentWidth)) :
+                            ConsoleMisc.PadRight(text, columnWidth);
                         if (rowOption.ColoredCell)
                         {
                             finalColor = rowOption.CellColor;
@@ -285,7 +290,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     if (UseColors)
                     {
                         tableBuilder.Append(
-                            ConsoleColoring.RenderSetConsoleColor(SeparatorColor)
+                            ConsoleColoring.RenderSetConsoleColor(SeparatorColor) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     tableBuilder.Append(
@@ -314,9 +320,14 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         if (columnWidth > 0)
                         {
                             tableBuilder.Append(
-                                new string(tableBorderSettings.BorderUpperFrameEnabled ? tableBorderSettings.BorderUpperFrameChar : ' ', columnWidth) +
-                                (tableBorderSettings.BorderWholeIntersectionEnabled ? tableBorderSettings.BorderWholeIntersectionChar : ' ')
+                                new string(tableBorderSettings.BorderUpperFrameEnabled ? tableBorderSettings.BorderUpperFrameChar : ' ', columnWidth)
                             );
+                            if (c < columnsCount - 1)
+                            {
+                                tableBuilder.Append(
+                                    tableBorderSettings.BorderWholeIntersectionEnabled ? tableBorderSettings.BorderWholeIntersectionChar : ' '
+                                );
+                            }
                         }
                     }
                     tableBuilder.Append(
@@ -342,9 +353,14 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 if (columnWidth > 0)
                 {
                     tableBuilder.Append(
-                        new string(tableBorderSettings.BorderLowerFrameEnabled ? tableBorderSettings.BorderLowerFrameChar : ' ', columnWidth) +
-                        (tableBorderSettings.BorderBottomVerticalIntersectionEnabled ? tableBorderSettings.BorderBottomVerticalIntersectionChar : ' ')
+                        new string(tableBorderSettings.BorderLowerFrameEnabled ? tableBorderSettings.BorderLowerFrameChar : ' ', columnWidth)
                     );
+                    if (c < columnsCount - 1)
+                    {
+                        tableBuilder.Append(
+                            tableBorderSettings.BorderBottomVerticalIntersectionEnabled ? tableBorderSettings.BorderBottomVerticalIntersectionChar : ' '
+                        );
+                    }
                 }
             }
             tableBuilder.Append(

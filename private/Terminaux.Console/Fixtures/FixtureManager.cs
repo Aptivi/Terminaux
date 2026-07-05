@@ -164,6 +164,8 @@ namespace Terminaux.Console.Fixtures
             new TestNonGenericListWriterInt(),
             new TestTable(),
             new TestTableCjk(),
+            new TestTableDynamic(),
+            new TestTableDynamicCjk(),
             new TestTableCalendar(),
             new TestTableCalendarHijri(),
             new TestTableCalendarCjk(),
