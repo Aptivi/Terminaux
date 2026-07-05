@@ -22,7 +22,7 @@ using Terminaux.Base;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Table = Terminaux.Writer.CyclicWriters.Graphical.Table;
+using Table = Terminaux.Writer.CyclicWriters.Simple.Table;
 
 namespace Terminaux.Console.Fixtures.Cases.Spectre
 {
@@ -34,8 +34,6 @@ namespace Terminaux.Console.Fixtures.Cases.Spectre
         {
             var table = new Table()
             {
-                Left = 8,
-                Top = 4,
                 Width = 40,
                 Height = 5,
                 Header = true,

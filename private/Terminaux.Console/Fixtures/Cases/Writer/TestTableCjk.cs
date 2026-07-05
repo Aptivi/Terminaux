@@ -21,7 +21,7 @@ using System;
 using Terminaux.Base;
 using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -48,8 +48,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var table = new Table()
             {
                 Rows = Rows,
-                Left = 4,
-                Top = 2,
                 Width = ConsoleWrapper.WindowWidth - 7,
                 Height = ConsoleWrapper.WindowHeight - 5,
                 Header = true,

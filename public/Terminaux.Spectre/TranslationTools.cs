@@ -131,11 +131,11 @@ namespace Terminaux.Spectre
         }
 
         /// <summary>
-        /// Returns a compatible Spectre.Console <see cref="Table"/> from Terminaux's <see cref="Writer.CyclicWriters.Graphical.Table"/>
+        /// Returns a compatible Spectre.Console <see cref="Table"/> from Terminaux's <see cref="Writer.CyclicWriters.Simple.Table"/>
         /// </summary>
         /// <param name="table">Terminaux's table instance</param>
         /// <returns>Spectre.Console's table instance</returns>
-        public static Table GetTable(Writer.CyclicWriters.Graphical.Table table)
+        public static Table GetTable(Writer.CyclicWriters.Simple.Table table)
         {
             // Make a new table
             var spectreTable = new Table()
