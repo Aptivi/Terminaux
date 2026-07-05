@@ -24,10 +24,11 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
 using Colorimetry;
 using Colorimetry.Data;
+using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Inputs;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
@@ -308,37 +309,15 @@ namespace Terminaux.Reader
 
         internal static void RemoveText(ref TermReaderState state, int startIndex, int length, bool step = false)
         {
-            // Check for surrogate pairs in case a user tries to remove them. Surrogate pairs require two characters: high and low.
-            if (state.CurrentText.Length >= 2)
+            string text = state.CurrentText.ToString();
+
+            // Check the grapheme clusters.
+            if (text.Length >= 2 && length == 1 && startIndex >= 0 && startIndex < text.Length)
             {
-                bool isStartIndexHigh = char.IsHighSurrogate(state.CurrentText[startIndex]);
-                bool isStartIndexLow = char.IsLowSurrogate(state.CurrentText[startIndex]);
-                if (isStartIndexHigh)
-                {
-                    // We're at the high surrogate character. Check the index, then get the low one.
-                    int lowIndex = startIndex + 1;
-                    if (lowIndex >= state.CurrentText.Length)
-                        return;
-
-                    bool isLowIndexLow = char.IsLowSurrogate(state.CurrentText[lowIndex]);
-                    if (isLowIndexLow && length == 1)
-                        length++;
-                }
-                else if (isStartIndexLow)
-                {
-                    // We're at the low surrogate character. Check the index, then get the high one.
-                    int highIndex = startIndex - 1;
-                    if (highIndex >= state.CurrentText.Length)
-                        return;
-
-                    bool isHighIndexHigh = char.IsHighSurrogate(state.CurrentText[highIndex]);
-                    if (isHighIndexHigh)
-                    {
-                        startIndex = highIndex;
-                        if (length == 1)
-                            length++;
-                    }
-                }
+                int clusterStart = GraphemeCluster.GetStart(text, startIndex);
+                int clusterLength = GraphemeCluster.GetLength(text, clusterStart);
+                startIndex = clusterStart;
+                length = clusterLength;
             }
 
             // Remove this amount of characters

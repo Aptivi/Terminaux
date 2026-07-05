@@ -19,6 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 
 namespace Terminaux.Reader.Tools
 {
@@ -195,12 +196,13 @@ namespace Terminaux.Reader.Tools
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
                 int oldWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(oldSentences, state));
-                state.currentTextPos++;
-                if (state.currentTextPos + 1 <= state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
-                {
-                    state.currentTextPos++;
-                    i++;
-                }
+
+                // Process the grapheme cluster length
+                string text = state.currentText.ToString();
+                int seqLen = GraphemeCluster.GetLength(text, state.currentTextPos);
+                state.currentTextPos += seqLen;
+                if (seqLen > 1)
+                    i += seqLen - 1;
 
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
@@ -245,15 +247,16 @@ namespace Terminaux.Reader.Tools
                     return;
 
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
-                int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
                 int oldWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(oldSentences, state));
-                state.currentTextPos--;
-                if (state.currentTextPos - 1 >= 0 && state.currentTextPos < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
-                {
-                    cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
-                    state.currentTextPos--;
-                    i++;
-                }
+
+                // Process the grapheme cluster length
+                string text = state.currentText.ToString();
+                int seqLen = GraphemeCluster.GetLengthBackward(text, state.currentTextPos);
+                state.currentTextPos -= seqLen;
+                if (seqLen > 1)
+                    i += seqLen - 1;
+
+                int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
 
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
@@ -307,12 +310,13 @@ namespace Terminaux.Reader.Tools
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
                 int oldWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(oldSentences, state));
-                state.currentTextPos++;
-                if (state.currentTextPos + 1 <= state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
-                {
-                    state.currentTextPos++;
-                    i++;
-                }
+
+                // Process the grapheme cluster length
+                string text = state.currentText.ToString();
+                int seqLen = GraphemeCluster.GetLength(text, state.currentTextPos);
+                state.currentTextPos += seqLen;
+                if (seqLen > 1)
+                    i += seqLen - 1;
 
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
@@ -351,15 +355,16 @@ namespace Terminaux.Reader.Tools
                     return;
 
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
-                int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
                 int oldWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(oldSentences, state));
-                state.currentTextPos--;
-                if (state.currentTextPos - 1 >= 0 && state.currentTextPos < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
-                {
-                    cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
-                    state.currentTextPos--;
-                    i++;
-                }
+
+                // Process the grapheme cluster length
+                string text = state.currentText.ToString();
+                int seqLen = GraphemeCluster.GetLengthBackward(text, state.currentTextPos);
+                state.currentTextPos -= seqLen;
+                if (seqLen > 1)
+                    i += seqLen - 1;
+
+                int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
 
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
