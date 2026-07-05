@@ -125,7 +125,9 @@ namespace Terminaux.Reader.Bindings
                 {
                     // Get all the input, or discard the surrogate because it's a zero width character
                     bool isNextKeySurrogate = char.IsLowSurrogate(pressed.KeyChar);
-                    if (!ConditionalTools.ShouldNot(TextTools.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate, state))
+                    bool isZeroWidthJoiner = pressed.KeyChar == 0x200d;
+                    bool isVariaionSelector = pressed.KeyChar == 0xfe0e || pressed.KeyChar == 0xfe0f;
+                    if (!ConditionalTools.ShouldNot(TextTools.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate && !isZeroWidthJoiner && !isVariaionSelector, state))
                     {
                         Input.InvalidateInput();
                         return;
