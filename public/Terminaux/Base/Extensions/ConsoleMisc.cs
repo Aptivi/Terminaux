@@ -181,7 +181,8 @@ namespace Terminaux.Base.Extensions
                     }
 
                     // Append the character into the incomplete sentence builder.
-                    if (!isNewLine)
+                    bool notOverflow = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString()) + width <= maximumLength - indentLength + compensate;
+                    if (!isNewLine && notOverflow)
                         IncompleteSentenceBuilder.Append(sequence);
 
                     // Also, compensate the \0 characters and the VT sequences
@@ -192,7 +193,8 @@ namespace Terminaux.Base.Extensions
 
                     // Check to see if we're at the maximum character number or at the new line
                     string sentence = IncompleteSentenceBuilder.ToString();
-                    if (ConsoleChar.EstimateCellWidth(sentence) >= maximumLength - indentLength + compensate - 1 |
+                    int nextCharWidth = ConsoleChar.EstimateCellWidth(splitText, i);
+                    if (ConsoleChar.EstimateCellWidth(sentence) + nextCharWidth > maximumLength - indentLength + compensate |
                         i == splitText.Length - 1 |
                         isNewLine)
                     {
@@ -205,6 +207,8 @@ namespace Terminaux.Base.Extensions
                         IncompleteSentenceBuilder.Clear();
                         indentLength = 0;
                         compensate = 0;
+                        if (!notOverflow)
+                            IncompleteSentenceBuilder.Append(sequence);
                     }
                 }
             }
