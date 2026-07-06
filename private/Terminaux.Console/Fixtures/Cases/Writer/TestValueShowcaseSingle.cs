@@ -21,7 +21,7 @@ using Terminaux.Base;
 using Colorimetry;
 using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -37,8 +37,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             {
                 Width = ConsoleWrapper.WindowWidth - 4,
                 Height = ConsoleWrapper.WindowHeight - 8,
-                Left = 2,
-                Top = 4,
                 Elements =
                 [
                     new()

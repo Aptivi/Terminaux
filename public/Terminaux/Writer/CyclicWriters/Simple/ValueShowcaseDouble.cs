@@ -24,12 +24,12 @@ using Terminaux.Base.Structures;
 using Colorimetry.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
-namespace Terminaux.Writer.CyclicWriters.Graphical
+namespace Terminaux.Writer.CyclicWriters.Simple
 {
     /// <summary>
     /// Value showcase (for two values) renderable
     /// </summary>
-    public class ValueShowcaseDouble : GraphicalCyclicWriter
+    public class ValueShowcaseDouble : SimpleCyclicWriter
     {
         private (string, ChartElement element1, ChartElement element2)[] elements = [];
         private bool useColors = true;
@@ -58,6 +58,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool ShowSeparator { get; set; } = true;
 
         /// <summary>
+        /// Maximum width of the showcase (0 to automatically determine based on content)
+        /// </summary>
+        public int Width { get; set; }
+
+        /// <summary>
+        /// Maximum height of the showcase (0 to automatically determine based on content)
+        /// </summary>
+        public int Height { get; set; }
+
+        /// <summary>
         /// Calculated length of the showcase panel
         /// </summary>
         public int Length
@@ -72,8 +82,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 var shownLossElementHeights = elements.Select((ce) => (ce.element2, (int)(ce.element2.Value * wholeLength / 2 / maxLossValue))).ToArray();
 
                 // Fill the showcase panel with the elements first
-                int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.element1.Value:0.##}/{element.element2.Value:0.##}".Length);
-                nameLength = nameLength > Width ? Width : nameLength;
+                int nameLength = elements.Max((element) => ConsoleChar.EstimateCellWidth($" ■ {element.Item1}  {element.element1.Value:0.##}/{element.element2.Value:0.##}"));
+                nameLength = nameLength > Width && Width > 0 ? Width : nameLength;
                 return nameLength + (ShowSeparator ? 2 : 0);
             }
         }
@@ -93,20 +103,21 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             var shownSecondGroupElementHeights = elements.Select((ce) => (ce.element2, (int)(ce.element2.Value * wholeLength / 2 / maxSecondGroupValue))).ToArray();
 
             // Fill the showcase panel with the elements first
-            int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.element1.Value:0.##}/{element.element2.Value:0.##}".Length);
-            nameLength = nameLength > Width ? Width : nameLength;
+            int nameLength = elements.Max((element) => ConsoleChar.EstimateCellWidth($" ■ {element.Item1}  {element.element1.Value:0.##}/{element.element2.Value:0.##}"));
+            nameLength = nameLength > Width && Width > 0 ? Width : nameLength;
+            int processedHeight = 0;
             for (int i = 0; i < elements.Length; i++)
             {
+                StringBuilder elementBuilder = new();
+
                 // Get the element showcase position and write it there
                 bool canShow = Height > i;
                 if (!canShow)
                     break;
-                Coordinate coord = new(Left, Top + i);
                 var element = elements[i];
 
                 // Now, write it at the selected position
-                showcase.Append(
-                    ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
+                elementBuilder.Append(
                     (UseColors ? ConsoleColoring.RenderSetConsoleColor(element.element1.Color) : "") +
                     " ■ " +
                     (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
@@ -118,19 +129,39 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red) : "") +
                     $"{element.element2.Value:0.##}"
                 );
-            }
+                string builtElement = elementBuilder.ToString();
+                showcase.Append(builtElement);
 
-            // Show the separator
-            if (ShowSeparator)
-            {
-                showcase.Append(UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "");
-                for (int h = 0; h < Height; h++)
+                // Write the separator
+                if (ShowSeparator)
                 {
-                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
+                    int currentWidth = ConsoleChar.EstimateCellWidth(builtElement);
+                    int spaces = nameLength - currentWidth;
                     showcase.Append(
-                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        new string(' ', spaces) +
                         " ▐"
                     );
+                }
+                if (i < elements.Length - 1)
+                    showcase.AppendLine();
+                processedHeight++;
+            }
+
+            // In case we've specified height, we need to write the separator appropriately
+            int remainingHeight = Height - processedHeight;
+            if (remainingHeight > 0)
+            {
+                showcase.AppendLine();
+                for (int i = 0; i < remainingHeight; i++)
+                {
+                    showcase.Append(
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        new string(' ', nameLength) +
+                        " ▐"
+                    );
+                    if (i < remainingHeight - 1)
+                        showcase.AppendLine();
                 }
             }
 

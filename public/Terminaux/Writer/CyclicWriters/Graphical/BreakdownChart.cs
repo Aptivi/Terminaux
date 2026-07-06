@@ -20,11 +20,13 @@
 using System;
 using System.Linq;
 using System.Text;
+using Colorimetry.Data;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
-using Colorimetry.Data;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
 {
@@ -91,8 +93,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 // Showcase variables
                 var showcase = new ValueShowcase()
                 {
-                    Left = Left,
-                    Top = Top,
                     Width = Width / 4,
                     Height = Height,
                     UseColors = UseColors,
@@ -104,7 +104,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (Showcase)
                 {
                     showcaseLength = showcase.Length;
-                    breakdownChart.Append(showcase.Render());
+                    breakdownChart.Append(RendererTools.RenderRenderable(showcase, new(Left, Top)));
                 }
 
                 // Some variables

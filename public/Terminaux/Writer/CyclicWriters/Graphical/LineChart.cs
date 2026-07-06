@@ -20,7 +20,9 @@
 using System.Linq;
 using System.Text;
 using Colorimetry.Data;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
 {
@@ -86,8 +88,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             double median = shownElements.Average((element) => element.Value);
             var showcase = new ValueShowcase()
             {
-                Left = Left,
-                Top = Top,
                 Width = Width / 4,
                 Height = Height,
                 UseColors = UseColors,
@@ -105,7 +105,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (Showcase)
             {
                 showcaseLength = showcase.Length;
-                lineChart.Append(showcase.Render());
+                lineChart.Append(RendererTools.RenderRenderable(showcase, new(Left, Top)));
             }
 
             // Some variables

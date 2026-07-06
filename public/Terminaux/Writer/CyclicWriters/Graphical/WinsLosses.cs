@@ -19,11 +19,13 @@
 
 using System.Linq;
 using System.Text;
+using Colorimetry.Data;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
-using Colorimetry.Data;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
 {
@@ -72,8 +74,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Showcase variables
             var showcase = new ValueShowcaseDouble()
             {
-                Left = Left,
-                Top = Top,
                 Width = Width / 4,
                 Height = Height,
                 UseColors = UseColors,
@@ -93,7 +93,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (Showcase)
             {
                 showcaseLength = showcase.Length;
-                winsLosses.Append(showcase.Render());
+                winsLosses.Append(RendererTools.RenderRenderable(showcase, new(Left, Top)));
 
                 // Write a separator between wins and losses
                 int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.win.Value:0.00}/{element.loss.Value:0.00}".Length);
