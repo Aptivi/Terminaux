@@ -493,7 +493,7 @@ namespace Terminaux.Inputs.Interactive
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             string finalInfoRendered = RenderFinalInfo(interactiveTui);
             string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-            if (interactiveTui.CurrentInfoLine == finalInfoStrings.Length - 1)
+            if (interactiveTui.CurrentInfoLine + SeparatorMaximumHeightInterior >= finalInfoStrings.Length)
                 return false;
 
             // Now, descend
