@@ -33,6 +33,7 @@ using Terminaux.Inputs;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Textify.Tools;
 
 namespace Terminaux.Reader
 {

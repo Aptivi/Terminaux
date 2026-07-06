@@ -34,6 +34,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Unicode;
 using Textify.General;
 using Textify.General.Structures;
+using Textify.Tools;
 
 namespace Terminaux.Base.Extensions
 {
@@ -168,12 +169,15 @@ namespace Terminaux.Base.Extensions
                     bool isNewLine = splitText[i] == '\n';
 
                     // Append the character into the incomplete sentence builder, but check the surrogate pairs first.
-                    string sequence = ConsolePositioning.BufferChar(splitText, sequencesCollections, ref i, ref vtSeqIdx, out bool isVtSeq);
+                    string buffered = ConsolePositioning.BufferChar(splitText, sequencesCollections, ref i, ref vtSeqIdx, out bool isVtSeq);
+                    string sequence = isVtSeq ? buffered : "";
                     int width = ConsoleChar.EstimateCellWidth(splitText, i);
-                    if (i + 1 < splitText.Length && char.IsSurrogatePair(ParagraphChar, splitText[i + 1]))
+                    if (!isVtSeq)
                     {
-                        sequence += splitText[i + 1];
-                        i++;
+                        int len = GraphemeCluster.GetLength(splitText, i);
+                        sequence += splitText.Substring(i, len);
+                        if (len > 1)
+                            i += len - 1;
                     }
 
                     // Append the character into the incomplete sentence builder.
@@ -188,7 +192,7 @@ namespace Terminaux.Base.Extensions
 
                     // Check to see if we're at the maximum character number or at the new line
                     string sentence = IncompleteSentenceBuilder.ToString();
-                    if (ConsoleChar.EstimateCellWidth(sentence) == maximumLength - indentLength + compensate |
+                    if (ConsoleChar.EstimateCellWidth(sentence) >= maximumLength - indentLength + compensate - 1 |
                         i == splitText.Length - 1 |
                         isNewLine)
                     {

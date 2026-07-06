@@ -20,6 +20,7 @@
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Extensions.Data;
+using Textify.Tools;
 
 namespace Terminaux.Reader.Tools
 {

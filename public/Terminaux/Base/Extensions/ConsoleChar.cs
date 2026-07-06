@@ -18,9 +18,11 @@
 //
 
 using System.Collections.Generic;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Sequences;
 using Textify.General;
 using Textify.General.Structures;
+using Textify.Tools;
 
 namespace Terminaux.Base.Extensions
 {
@@ -48,11 +50,14 @@ namespace Terminaux.Base.Extensions
             // Iterate through every character inside this string to get their widths according to the Unicode
             // standards to ensure that we have the correct cell width count that the string takes up.
             int cells = 0;
-            for (int i = 0; i < sentence.Length; i++)
+            int i = 0;
+            while (i < sentence.Length)
             {
-                cells += EstimateCellWidth(sentence, i);
-                if (i + 1 < sentence.Length && char.IsSurrogatePair(sentence[i], sentence[i + 1]))
-                    i++;
+                int len = GraphemeCluster.GetLength(sentence, i);
+                if (len <= 0)
+                    len = 1;
+                cells += GraphemeCluster.GetClusterWidth(sentence, i);
+                i += len;
             }
             return cells;
         }
@@ -83,18 +88,11 @@ namespace Terminaux.Base.Extensions
 
                 // Iterate through every character inside this string to get their widths according to the Unicode
                 // standards to ensure that we have the correct cell width count that the string takes up.
-                int cells = 0;
-                char c = sentence[index];
+                int clusterStart = GraphemeCluster.GetStart(sentence, index);
+                if (clusterStart != index)
+                    return 0;
 
-                // Emojis and other characters use surrogate pairs, so we need to check them.
-                if (!char.IsSurrogate(c))
-                    cells += TextTools.GetCharWidth(c);
-                else if (index + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[index + 1]))
-                {
-                    int codePoint = char.ConvertToUtf32(c, sentence[index + 1]);
-                    cells += TextTools.GetCharWidth(codePoint);
-                }
-                return cells;
+                return GraphemeCluster.GetClusterWidth(sentence, index);
             }
         }
 
@@ -117,23 +115,15 @@ namespace Terminaux.Base.Extensions
                 // Iterate through every character inside this string to get their widths according to the Unicode
                 // standards to ensure that we calculate all the zero widths.
                 int zeroWidths = 0;
-                for (int i = 0; i < sentence.Length; i++)
+                int i = 0;
+                while (i < sentence.Length)
                 {
-                    char c = sentence[i];
-
-                    // Emojis and other characters use surrogate pairs, so we need to check them.
-                    if (!char.IsSurrogate(c))
-                    {
-                        if (TextTools.GetCharWidth(c) == 0)
-                            zeroWidths++;
-                    }
-                    else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
-                    {
-                        int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
-                        if (TextTools.GetCharWidth(codePoint) == 0)
-                            zeroWidths++;
-                        i++;
-                    }
+                    int len = GraphemeCluster.GetLength(sentence, i);
+                    if (len <= 0)
+                        len = 1;
+                    if (GraphemeCluster.GetClusterWidth(sentence, i) == 0)
+                        zeroWidths++;
+                    i += len;
                 }
                 return zeroWidths;
             }
@@ -158,23 +148,15 @@ namespace Terminaux.Base.Extensions
                 // Iterate through every character inside this string to get their widths according to the Unicode
                 // standards to ensure that we calculate all the full widths.
                 int fullWidths = 0;
-                for (int i = 0; i < sentence.Length; i++)
+                int i = 0;
+                while (i < sentence.Length)
                 {
-                    char c = sentence[i];
-
-                    // Emojis and other characters use surrogate pairs, so we need to check them.
-                    if (!char.IsSurrogate(c))
-                    {
-                        if (TextTools.GetCharWidth(c) == 2)
-                            fullWidths++;
-                    }
-                    else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
-                    {
-                        int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
-                        if (TextTools.GetCharWidth(codePoint) == 2)
-                            fullWidths++;
-                        i++;
-                    }
+                    int len = GraphemeCluster.GetLength(sentence, i);
+                    if (len <= 0)
+                        len = 1;
+                    if (GraphemeCluster.GetClusterWidth(sentence, i) == 2)
+                        fullWidths++;
+                    i += len;
                 }
                 return fullWidths;
             }
