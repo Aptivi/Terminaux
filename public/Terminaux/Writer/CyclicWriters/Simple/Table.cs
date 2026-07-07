@@ -219,7 +219,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     if (c < columnsCount - 1)
                     {
                         tableBuilder.Append(
-                            tableBorderSettings.BorderTopVerticalIntersectionEnabled ? tableBorderSettings.BorderTopVerticalIntersectionChar : ' '
+                            tableBorderSettings.BorderTopVerticalIntersectionEnabled ? tableBorderSettings.BorderTopVerticalIntersectionChar :
+                            tableBorderSettings.BorderUpperFrameEnabled ? tableBorderSettings.BorderUpperFrameChar : ' '
                         );
                     }
                 }
@@ -289,7 +290,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         );
                     }
                     tableBuilder.Append(
-                        x == columnsCount ?
+                        x == columnsCount - 1 ?
                         (tableBorderSettings.BorderRightFrameEnabled ? tableBorderSettings.BorderRightFrameChar : " ") :
                         (tableBorderSettings.BorderVerticalIntersectionEnabled ? tableBorderSettings.BorderVerticalIntersectionChar : " ")
                     );
@@ -306,7 +307,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         );
                     }
                     tableBuilder.Append(
-                        tableBorderSettings.BorderLeftHorizontalIntersectionEnabled ? tableBorderSettings.BorderLeftHorizontalIntersectionChar : " "
+                        tableBorderSettings.BorderLeftHorizontalIntersectionEnabled ? tableBorderSettings.BorderLeftHorizontalIntersectionChar :
+                        tableBorderSettings.BorderLeftFrameEnabled ? tableBorderSettings.BorderLeftFrameChar : ' '
                     );
                     for (int c = 0; c < columnsCount; c++)
                     {
@@ -314,18 +316,21 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         if (columnWidth > 0)
                         {
                             tableBuilder.Append(
-                                new string(tableBorderSettings.BorderUpperFrameEnabled ? tableBorderSettings.BorderUpperFrameChar : ' ', columnWidth)
+                                new string(tableBorderSettings.BorderHorizontalIntersectionEnabled ? tableBorderSettings.BorderHorizontalIntersectionChar : ' ', columnWidth)
                             );
                             if (c < columnsCount - 1)
                             {
                                 tableBuilder.Append(
-                                    tableBorderSettings.BorderWholeIntersectionEnabled ? tableBorderSettings.BorderWholeIntersectionChar : ' '
+                                    tableBorderSettings.BorderWholeIntersectionEnabled ? tableBorderSettings.BorderWholeIntersectionChar :
+                                    tableBorderSettings.BorderHorizontalIntersectionEnabled ? tableBorderSettings.BorderHorizontalIntersectionChar :
+                                    tableBorderSettings.BorderVerticalIntersectionEnabled ? tableBorderSettings.BorderVerticalIntersectionChar : ' '
                                 );
                             }
                         }
                     }
                     tableBuilder.Append(
-                        (tableBorderSettings.BorderRightHorizontalIntersectionEnabled ? tableBorderSettings.BorderRightHorizontalIntersectionChar : " ") +
+                        (tableBorderSettings.BorderRightHorizontalIntersectionEnabled ? tableBorderSettings.BorderRightHorizontalIntersectionChar :
+                         tableBorderSettings.BorderRightFrameEnabled ? tableBorderSettings.BorderRightFrameChar : ' ') +
                         "\n"
                     );
                 }
@@ -352,7 +357,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     if (c < columnsCount - 1)
                     {
                         tableBuilder.Append(
-                            tableBorderSettings.BorderBottomVerticalIntersectionEnabled ? tableBorderSettings.BorderBottomVerticalIntersectionChar : ' '
+                            tableBorderSettings.BorderBottomVerticalIntersectionEnabled ? tableBorderSettings.BorderBottomVerticalIntersectionChar :
+                            tableBorderSettings.BorderLowerFrameEnabled ? tableBorderSettings.BorderLowerFrameChar : ' '
                         );
                     }
                 }
