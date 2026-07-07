@@ -386,57 +386,64 @@ namespace Terminaux.Base.Extensions
                 return target;
 
             // Now, figure out how to select control characters, because UnicodeTools.ReverseRtl might mess them up.
-            var resultBuilder = new StringBuilder(target);
-            if (target.Contains(VtSequenceBasicChars.EscapeChar))
+            // Also, filter new lines.
+            var splitLines = target.SplitNewLines();
+            for (int l = 0; l < splitLines.Length; l++)
             {
-                // We might have VT sequences.
-                var tokenizer = new VtSequenceTokenizer(target.ToCharArray());
-                var tokens = tokenizer.Parse();
-                if (tokens.Length > 0)
+                string line = splitLines[l];
+                var resultBuilder = new StringBuilder(line);
+                if (line.Contains(VtSequenceBasicChars.EscapeChar))
                 {
-                    // We have VT sequences! Process each chunk between two VT sequences.
-                    for (int i = 0; i < tokens.Length; i++)
+                    // We might have VT sequences.
+                    var tokenizer = new VtSequenceTokenizer(line.ToCharArray());
+                    var tokens = tokenizer.Parse();
+                    if (tokens.Length > 0)
                     {
-                        // Get the next match.
-                        VtSequenceInfo? previousMatch = i - 1 >= 0 ? tokens[i - 1] : null;
-                        var currentMatch = tokens[i];
-                        VtSequenceInfo? nextMatch = i + 1 < tokens.Length ? tokens[i + 1] : null;
-                        int lastEnd = previousMatch is not null ? previousMatch.Start + previousMatch.FullSequence.Length : 0;
-                        int nextBegin = nextMatch is not null ? nextMatch.Start : target.Length - 1;
-
-                        // Get the current match left and right indexes
-                        int leftIdx = currentMatch.Start - 1;
-                        int rightIdx = currentMatch.Start + currentMatch.FullSequence.Length;
-
-                        // Process the left string (if found)
-                        if (leftIdx >= 0 && leftIdx + 1 - lastEnd > 0)
+                        // We have VT sequences! Process each chunk between two VT sequences.
+                        for (int i = 0; i < tokens.Length; i++)
                         {
-                            string left = target.Substring(lastEnd, leftIdx + 1 - lastEnd);
-                            if (HasRtl(left))
+                            // Get the next match.
+                            VtSequenceInfo? previousMatch = i - 1 >= 0 ? tokens[i - 1] : null;
+                            var currentMatch = tokens[i];
+                            VtSequenceInfo? nextMatch = i + 1 < tokens.Length ? tokens[i + 1] : null;
+                            int lastEnd = previousMatch is not null ? previousMatch.Start + previousMatch.FullSequence.Length : 0;
+                            int nextBegin = nextMatch is not null ? nextMatch.Start : line.Length - 1;
+
+                            // Get the current match left and right indexes
+                            int leftIdx = currentMatch.Start - 1;
+                            int rightIdx = currentMatch.Start + currentMatch.FullSequence.Length;
+
+                            // Process the left string (if found)
+                            if (leftIdx >= 0 && leftIdx + 1 - lastEnd > 0)
                             {
-                                string newLeft = UnicodeTools.ReverseRtl(left);
-                                resultBuilder.Replace(left, newLeft, lastEnd, leftIdx + 1 - lastEnd);
+                                string left = line.Substring(lastEnd, leftIdx + 1 - lastEnd);
+                                if (HasRtl(left))
+                                {
+                                    string newLeft = UnicodeTools.ReverseRtl(left);
+                                    resultBuilder.Replace(left, newLeft, lastEnd, leftIdx + 1 - lastEnd);
+                                }
                             }
-                        }
                             
-                        // Process the right string (if found)
-                        if (rightIdx < target.Length && nextBegin - rightIdx > 0)
-                        {
-                            string right = target.Substring(rightIdx, nextBegin - rightIdx);
-                            if (HasRtl(right))
+                            // Process the right string (if found)
+                            if (rightIdx < line.Length && nextBegin - rightIdx > 0)
                             {
-                                string newRight = UnicodeTools.ReverseRtl(right);
-                                resultBuilder.Replace(right, newRight, rightIdx, nextBegin - rightIdx);
+                                string right = line.Substring(rightIdx, nextBegin - rightIdx);
+                                if (HasRtl(right))
+                                {
+                                    string newRight = UnicodeTools.ReverseRtl(right);
+                                    resultBuilder.Replace(right, newRight, rightIdx, nextBegin - rightIdx);
+                                }
                             }
                         }
+                        splitLines[l] = resultBuilder.ToString();
                     }
+                    else
+                        splitLines[l] = UnicodeTools.ReverseRtl(line);
                 }
                 else
-                    return UnicodeTools.ReverseRtl(target);
+                    splitLines[l] = UnicodeTools.ReverseRtl(line);
             }
-            else
-                return UnicodeTools.ReverseRtl(target);
-            return resultBuilder.ToString();
+            return string.Join("\n", splitLines);
         }
 
         /// <summary>
