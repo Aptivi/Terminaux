@@ -23,7 +23,7 @@ using System.Globalization;
 using Terminaux.Base;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Spectre
 {
@@ -39,8 +39,6 @@ namespace Terminaux.Console.Fixtures.Cases.Spectre
             {
                 Year = DateTime.Now.Year,
                 Month = DateTime.Now.Month,
-                Left = 4,
-                Top = 4,
                 Width = ConsoleWrapper.WindowWidth - 8,
                 Height = ConsoleWrapper.WindowHeight - 4,
                 Culture = culture,

@@ -21,7 +21,7 @@ using System;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
 using System.Globalization;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -37,8 +37,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             {
                 Year = DateTime.Now.Year,
                 Month = DateTime.Now.Month,
-                Left = 4,
-                Top = 2,
                 Width = ConsoleWrapper.WindowWidth - 8,
                 Height = ConsoleWrapper.WindowHeight - 4,
                 Culture = culture,

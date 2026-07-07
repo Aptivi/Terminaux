@@ -18,13 +18,12 @@
 //
 
 using System;
-using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class TestTableCalendarCjk : IFixture
+    internal class TestTableCalendarDynamicCjk : IFixture
     {
         public FixtureCategory Category => FixtureCategory.Writer;
 
@@ -34,8 +33,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             {
                 Year = DateTime.Now.Year,
                 Month = DateTime.Now.Month,
-                Width = ConsoleWrapper.WindowWidth - 8,
-                Height = ConsoleWrapper.WindowHeight - 4,
                 Culture = new("zh-CN")
             };
             TextWriterRaw.WriteRaw(calendar.Render());

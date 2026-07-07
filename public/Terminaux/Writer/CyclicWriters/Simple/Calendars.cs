@@ -27,16 +27,15 @@ using Colorimetry;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Terminaux.Writer.CyclicWriters.Graphical
+namespace Terminaux.Writer.CyclicWriters.Simple
 {
     /// <summary>
     /// Calendars renderable
     /// </summary>
-    public class Calendars : GraphicalCyclicWriter
+    public class Calendars : SimpleCyclicWriter
     {
-        internal const int calendarWidth = 5 + (6 * 6);
-        internal const int calendarHeight = 13;
         private int year = 0;
         private int month = 0;
         private CultureInfo culture = new("en-US");
@@ -47,18 +46,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private BorderSettings borderSettings = new();
         private bool useColors = true;
-
-        /// <summary>
-        /// Full calendar width (constant)
-        /// </summary>
-        public override int Width =>
-            calendarWidth;
-
-        /// <summary>
-        /// Full calendar height (constant)
-        /// </summary>
-        public override int Height =>
-            calendarHeight;
 
         /// <summary>
         /// Year of the calendar
@@ -167,6 +154,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public DateTime HighlightedDay { get; set; } = DateTime.Today;
 
         /// <summary>
+        /// Maximum width of the table (0 to automatically determine based on content)
+        /// </summary>
+        public int Width { get; set; }
+
+        /// <summary>
+        /// Maximum height of the table (0 to automatically determine based on content)
+        /// </summary>
+        public int Height { get; set; }
+
+        /// <summary>
         /// Renders a calendar
         /// </summary>
         /// <returns>Rendered calendar that will be used by the renderer</returns>
@@ -180,9 +177,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             var maxDate = Calendar.GetDaysInMonth(year, month);
             var selectedDate = new DateTime(year, month, DateTime.Now.Day > maxDate ? 1 : DateTime.Now.Day);
             var (calYear, calMonth, _, _) = GetDateFromCalendar(selectedDate, culture);
-            var DateTo = new DateTime(calYear, calMonth, Calendar.GetDaysInMonth(calYear, calMonth));
-            int CurrentWeek = 1;
-            string CalendarTitle = calendarMonths[calMonth - 1] + " " + calYear;
+            var dateTo = new DateTime(calYear, calMonth, Calendar.GetDaysInMonth(calYear, calMonth));
+            int processedWeeks = 1;
+            string calendarTitle = calendarMonths[calMonth - 1] + " " + calYear;
 
             // Re-arrange the days according to the first day of week
             Dictionary<DayOfWeek, int> mappedDays = [];
@@ -196,97 +193,75 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     dayOfWeek = 0;
             }
 
-            // Write the calendar title in a box
-            var boxForeground = ForegroundColor;
-            var background = BackgroundColor;
-            int boxLeft = Left;
-            int boxTop = Top;
-            int boxWidth = Width;
-            int boxHeight = Height;
-            var border = new Border()
-            {
-                Title = CalendarTitle,
-                Left = boxLeft,
-                Top = boxTop,
-                Width = boxWidth,
-                Height = boxHeight,
-                Color = boxForeground,
-                TextColor = boxForeground,
-                TextSettings = new()
-                {
-                    Alignment = TextAlignment.Middle
-                },
-                BackgroundColor = background,
-            };
-            calendarRendered.Append(border.Render());
-
-            // Make a calendar
-            int dayPosX;
-            int dayPosY = Top + 3;
-            for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
+            // Make a calendar array
+            for (int d = 1; d <= dateTo.Day; d++)
             {
                 // Populate some variables
-                var CurrentDate = new DateTime(year, month, CurrentDay);
-                if (CurrentDate.DayOfWeek == calendarWeek)
-                {
-                    CurrentWeek += 1;
-                    dayPosY += 2;
-                }
-                int currentDay = mappedDays[CurrentDate.DayOfWeek] + 1;
-                dayPosX = boxLeft + 1 + (6 * (currentDay - 1));
+                var currentDate = new DateTime(year, month, d);
+                if (currentDate.DayOfWeek == calendarWeek)
+                    processedWeeks += 1;
+            }
+            TableCellOptions[,] calendarArray = new TableCellOptions[processedWeeks + 1, 7];
 
+            // Actually make a calendar
+            int currentWeek = 1;
+            for (int d = 1; d <= dateTo.Day; d++)
+            {
                 // Some flags
+                var currentDate = new DateTime(year, month, d);
+                if (currentDate.DayOfWeek == calendarWeek)
+                    currentWeek += 1;
+                int currentDay = mappedDays[currentDate.DayOfWeek] + 1;
                 var dateHighlight = HighlightToday ? DateTime.Today : HighlightedDay;
-                bool IsWeekend = currentDay > 5;
-                bool IsToday = CurrentDate == dateHighlight;
-                var foreground =
-                    IsToday ? TodayColor :
-                    IsWeekend ? WeekendColor :
-                    ForegroundColor;
+                bool isWeekend = currentDay > 5;
+                bool isToday = currentDate == dateHighlight;
+                var foreground = isToday ? TodayColor : isWeekend ? WeekendColor : ForegroundColor;
 
                 // Know where and how to put the day number
-                if (useColors)
+                calendarArray[currentWeek, currentDay - 1] = new($"{d}")
                 {
-                    calendarRendered.Append(
-                        $"{ConsoleColoring.RenderSetConsoleColor(foreground)}" +
-                        $"{ConsoleColoring.RenderSetConsoleColor(background, true)}"
-                    );
-                }
-                calendarRendered.Append(
-                    CsiSequences.GenerateCsiCursorPosition(dayPosX + 1, dayPosY + 1) +
-                    $" {CurrentDay}"
-                );
+                    CellBackgroundColor = BackgroundColor,
+                    CellColor = foreground,
+                    ColoredCell = true,
+                    TextSettings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
+                };
             }
 
             // Make day indicators
-            int dayIndicatorPosX = boxLeft + 1;
-            int dayIndicatorPosY = boxTop + 1;
             for (int i = 0; i < mappedDays.Count; i++)
             {
-                string dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}".Truncate(3, false);
-                if (Culture.EnglishName.Contains("Chinese"))
-                    dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}";
-                if (useColors)
+                string dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}";
+                calendarArray[0, i] = new(dayName)
                 {
-                    calendarRendered.Append(
-                        $"{ConsoleColoring.RenderSetConsoleColor(HeaderColor)}" +
-                        $"{ConsoleColoring.RenderSetConsoleColor(background, true)}"
-                    );
-                }
-                calendarRendered.Append(
-                    CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + (6 * i) + 2, dayIndicatorPosY + 1) +
-                    dayName
-                );
+                    CellBackgroundColor = BackgroundColor,
+                    CellColor = HeaderColor,
+                    ColoredCell = true,
+                    TextSettings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
+                };
             }
 
-            // Finalize everything
-            if (useColors)
+            // Create a table
+            var table = new Table()
             {
-                calendarRendered.Append(
-                    ConsoleColoring.RenderRevertForeground() +
-                    ConsoleColoring.RenderRevertBackground()
-                );
-            }
+                SeparatorColor = ForegroundColor,
+                ValueColor = ForegroundColor,
+                HeaderColor = HeaderColor,
+                BackgroundColor = BackgroundColor,
+                UseColors = UseColors,
+                BorderSettings = BorderSettings,
+                Title = calendarTitle,
+                Header = true,
+                Rows = calendarArray,
+                Width = Width,
+                Height = Height,
+            };
+            calendarRendered.Append(table.Render());
             return calendarRendered.ToString();
         }
 

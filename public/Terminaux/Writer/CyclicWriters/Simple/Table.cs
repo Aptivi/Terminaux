@@ -153,7 +153,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     int maximumCellWidth = 0;
                     for (int r = 0; r < rowsCount; r++)
                     {
-                        int valueWidth = r > initialRowsCount ? 0 : ConsoleChar.EstimateCellWidth(Rows[r, c].Value);
+                        int valueWidth = r > initialRowsCount ? 0 : ConsoleChar.EstimateCellWidth(Rows[r, c]?.Value ?? "");
                         if (valueWidth > maximumCellWidth)
                             maximumCellWidth = valueWidth;
                     }
@@ -185,9 +185,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             // Check to see if we need a title
             if (!string.IsNullOrEmpty(Title))
             {
-                int alignment = TextWriterTools.DetermineTextAlignment(Title, totalWidth, TextAlignment.Middle);
-                int titleWidth = ConsoleChar.EstimateCellWidth(Title);
-                string finalTitle = Title.PadLeft(alignment + titleWidth);
+                string finalTitle = ConsoleMisc.PadMiddle(Title, totalWidth + 2);
                 if (UseColors)
                 {
                     tableBuilder.Append(
@@ -260,16 +258,19 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     {
                         // Get the initial values
                         var rowOption = Rows[y, x];
-                        rowOption.RowNumber = y;
-                        rowOption.ColumnNumber = x;
-                        string text = (rowOption.Value ?? "").Truncate(columnWidth);
-
-                        // Process them according to both the cell width and the cell options
-                        finalValue = ConsoleMisc.Pad(text, columnWidth, rowOption.TextSettings.Alignment);
-                        if (rowOption.ColoredCell)
+                        if (rowOption is not null)
                         {
-                            finalColor = rowOption.CellColor;
-                            finalBackgroundColor = rowOption.CellBackgroundColor;
+                            rowOption.RowNumber = y;
+                            rowOption.ColumnNumber = x;
+                            string text = (rowOption.Value ?? "").Truncate(columnWidth);
+
+                            // Process them according to both the cell width and the cell options
+                            finalValue = ConsoleMisc.Pad(text, columnWidth, rowOption.TextSettings.Alignment);
+                            if (rowOption.ColoredCell)
+                            {
+                                finalColor = rowOption.CellColor;
+                                finalBackgroundColor = rowOption.CellBackgroundColor;
+                            }
                         }
                     }
 

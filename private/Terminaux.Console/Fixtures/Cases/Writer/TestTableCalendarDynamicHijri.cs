@@ -18,25 +18,25 @@
 //
 
 using System;
-using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
+using System.Globalization;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class TestTableCalendarCjk : IFixture
+    internal class TestTableCalendarDynamicHijri : IFixture
     {
         public FixtureCategory Category => FixtureCategory.Writer;
 
         public void RunFixture()
         {
+            var culture = new CultureInfo("ar");
+            culture.DateTimeFormat.Calendar = new HijriCalendar();
             var calendar = new Calendars()
             {
                 Year = DateTime.Now.Year,
                 Month = DateTime.Now.Month,
-                Width = ConsoleWrapper.WindowWidth - 8,
-                Height = ConsoleWrapper.WindowHeight - 4,
-                Culture = new("zh-CN")
+                Culture = culture,
             };
             TextWriterRaw.WriteRaw(calendar.Render());
         }
