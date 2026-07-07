@@ -176,7 +176,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             var calendarWeek = culture.DateTimeFormat.FirstDayOfWeek;
             var maxDate = Calendar.GetDaysInMonth(year, month);
             var selectedDate = new DateTime(year, month, DateTime.Now.Day > maxDate ? 1 : DateTime.Now.Day);
-            var (calYear, calMonth, _, _) = GetDateFromCalendar(selectedDate, culture);
+            var (calYear, calMonth, calDay, _) = GetDateFromCalendar(selectedDate, culture);
             var dateTo = new DateTime(calYear, calMonth, Calendar.GetDaysInMonth(calYear, calMonth));
             int processedWeeks = 1;
             string calendarTitle = calendarMonths[calMonth - 1] + " " + calYear;
@@ -197,7 +197,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             for (int d = 1; d <= dateTo.Day; d++)
             {
                 // Populate some variables
-                var currentDate = new DateTime(year, month, d);
+                var currentDate = new DateTime(calYear, calMonth, d);
                 if (currentDate.DayOfWeek == calendarWeek)
                     processedWeeks += 1;
             }
@@ -208,11 +208,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             for (int d = 1; d <= dateTo.Day; d++)
             {
                 // Some flags
-                var currentDate = new DateTime(year, month, d);
+                var currentDate = new DateTime(calYear, calMonth, d);
                 if (currentDate.DayOfWeek == calendarWeek)
                     currentWeek += 1;
                 int currentDay = mappedDays[currentDate.DayOfWeek] + 1;
-                var dateHighlight = HighlightToday ? DateTime.Today : HighlightedDay;
+                var dateHighlight = HighlightToday ? new DateTime(calYear, calMonth, calDay) : HighlightedDay;
                 bool isWeekend = currentDay > 5;
                 bool isToday = currentDate == dateHighlight;
                 var foreground = isToday ? TodayColor : isWeekend ? WeekendColor : ForegroundColor;
