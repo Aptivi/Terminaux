@@ -40,8 +40,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private int month = 0;
         private CultureInfo culture = new("en-US");
         private Color headerColor = ThemeColorsTools.GetColor(ThemeColorType.TableHeader);
-        private Color weekendColor = ThemeColorsTools.GetColor(ThemeColorType.Warning);
-        private Color todayColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
+        private Color weekendColor = ThemeColorsTools.GetColor(ThemeColorType.WeekendDay);
+        private Color todayColor = ThemeColorsTools.GetColor(ThemeColorType.TodayDay);
         private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.TableValue);
         private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private BorderSettings borderSettings = new();
