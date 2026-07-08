@@ -237,7 +237,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 var dateHighlight = HighlightToday ? new DateTime(calYear, calMonth, calDay) : HighlightedDay;
                 bool isWeekend = currentDay > 5;
                 bool isToday = currentDate == dateHighlight;
-                var foreground = isToday ? TodayColor : isWeekend ? WeekendColor : ForegroundColor;
+                var foreground = isWeekend ? WeekendColor : ForegroundColor;
 
                 // Highlight reminders and events
                 bool reminderMarked = false;
@@ -261,6 +261,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         eventMarked = true;
                     }
                 }
+                if (isToday)
+                    foreground = TodayColor;
                 string markStart = reminderMarked && eventMarked ? "[" : reminderMarked ? "(" : eventMarked ? "<" : " ";
                 string markEnd = reminderMarked && eventMarked ? "]" : reminderMarked ? ")" : eventMarked ? ">" : " ";
 
