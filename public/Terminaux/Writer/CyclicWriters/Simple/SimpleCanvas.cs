@@ -77,10 +77,10 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             // Fill the canvas with spaces inside it
             int widthFactor = DoubleWidth ? 2 : 1;
             int heightFactor = HighDensity ? 2 : 1;
+            int heightDivisionFactor = HighDensity ? 1 : 2;
             StringBuilder canvas = new();
             ConsoleLogger.Debug("Canvas width: {0} * {1} ({2})", Width, widthFactor, Width * widthFactor);
-            ConsoleLogger.Debug("Canvas height: {0} * {1} ({2})", Height, heightFactor, Height * heightFactor / 2d);
-            ConsoleLogger.Debug("Canvas height is half: {0}, {1}", Height, HighDensity);
+            ConsoleLogger.Debug("Canvas height: {0} * {1} ({2})", Height, heightFactor, Height * heightDivisionFactor / 2d);
 
             // Check to see if the maximum width and height is zero
             if (Width <= 0)
@@ -120,10 +120,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 if (y < Height - 1)
                     canvas.AppendLine();
             }
-            canvas.Append(
-                ConsoleColoring.RenderRevertForeground() +
-                ConsoleColoring.RenderRevertBackground()
-            );
+            canvas.Append(ConsoleColoring.RenderResetColors());
             return canvas.ToString();
         }
 

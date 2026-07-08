@@ -52,6 +52,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool DoubleWidth { get; set; } = true;
 
         /// <summary>
+        /// Whether this canvas is high density or low density
+        /// </summary>
+        public bool HighDensity { get; set; } = false;
+
+        /// <summary>
         /// Whether this canvas is transparent
         /// </summary>
         public bool Transparent { get; set; } = false;
@@ -77,6 +82,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 Color = Color,
                 DoubleWidth = DoubleWidth,
+                HighDensity = HighDensity,
                 Transparent = Transparent,
                 Pixels = pixelOptionArray,
                 Left = Left,

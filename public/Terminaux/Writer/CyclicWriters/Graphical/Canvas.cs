@@ -55,6 +55,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool DoubleWidth { get; set; } = true;
 
         /// <summary>
+        /// Whether this canvas is high density or low density
+        /// </summary>
+        public bool HighDensity { get; set; } = false;
+
+        /// <summary>
         /// Whether this canvas is transparent
         /// </summary>
         public bool Transparent { get; set; } = false;
@@ -67,6 +72,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             // Fill the canvas with spaces inside it
             int widthFactor = DoubleWidth ? 2 : 1;
+            int heightFactor = HighDensity ? 2 : 1;
+            int heightDivisionFactor = HighDensity ? 1 : 2;
             StringBuilder canvas = new();
             if (!Transparent)
             {
@@ -75,30 +82,43 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     Left = Left,
                     Top = Top,
                     Width = Width * widthFactor,
-                    Height = Height,
+                    Height = (int)(Height * (heightDivisionFactor / 2d)),
                     Color = Color,
                     UseColors = true,
                 };
                 canvas.Append(canvasBackground.Render());
             }
             ConsoleLogger.Debug("Canvas width: {0} * {1} ({2})", Width, widthFactor, Width * widthFactor);
+            ConsoleLogger.Debug("Canvas height: {0} * {1} ({2})", Height, heightFactor, Height * heightDivisionFactor / 2d);
             ConsoleLogger.Debug("Canvas position: {0}, {1}", Left, Top);
-            foreach (var pixel in Pixels)
+            int actualY = 0;
+            for (int y = 0; y < Height; y += heightFactor, actualY++)
             {
-                // Check the pixel locations
-                int left = pixel.ColumnIndex;
-                int top = pixel.RowIndex;
-                if (left < 0 || left > Width)
-                    continue;
-                if (top < 0 || top > Height)
-                    continue;
+                for (int x = 0; x < Width; x++)
+                {
+                    // Get effective pixels
+                    var effectivePixel = Pixels.LastOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
+                    var effectiveNextRowPixel = Pixels.LastOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y + 1);
 
-                // Print this individual pixel
-                canvas.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(new(' ', widthFactor), Left + (left * widthFactor), Top + top, ConsoleColoring.CurrentForegroundColor, pixel.CellColor)
-                );
+                    // Choose how to draw
+                    if (HighDensity)
+                    {
+                        var highColor = effectivePixel?.CellColor ?? Color;
+                        var lowColor = effectiveNextRowPixel?.CellColor ?? Color;
+                        canvas.Append(
+                            TextWriterWhereColor.RenderWhereColorBack(new('▀', widthFactor), Left + (x * widthFactor), Top + actualY, highColor, lowColor)
+                        );
+                    }
+                    else
+                    {
+                        var color = effectivePixel?.CellColor ?? Color;
+                        canvas.Append(
+                            TextWriterWhereColor.RenderWhereColor(new('█', widthFactor), Left + (x * widthFactor), Top + actualY, color)
+                        );
+                    }
+                }
             }
-            canvas.Append(ConsoleColoring.RenderRevertBackground());
+            canvas.Append(ConsoleColoring.RenderResetColors());
             return canvas.ToString();
         }
 
