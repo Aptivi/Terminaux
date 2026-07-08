@@ -21,13 +21,15 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
-using Terminaux.Base.Extensions;
+using Calendrier;
 using Colorimetry;
+using Terminaux.Base.Extensions;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Themes.Colors;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -42,6 +44,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private Color headerColor = ThemeColorsTools.GetColor(ThemeColorType.TableHeader);
         private Color weekendColor = ThemeColorsTools.GetColor(ThemeColorType.WeekendDay);
         private Color todayColor = ThemeColorsTools.GetColor(ThemeColorType.TodayDay);
+        private Color eventColor = ThemeColorsTools.GetColor(ThemeColorType.EventDay);
         private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.TableValue);
         private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private BorderSettings borderSettings = new();
@@ -102,6 +105,15 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         }
 
         /// <summary>
+        /// Event day color
+        /// </summary>
+        public Color EventColor
+        {
+            get => eventColor;
+            set => eventColor = value;
+        }
+
+        /// <summary>
         /// Foreground color
         /// </summary>
         public Color ForegroundColor
@@ -152,6 +164,16 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// Highlight a specified day
         /// </summary>
         public DateTime HighlightedDay { get; set; } = DateTime.Today;
+
+        /// <summary>
+        /// Sets the event dates
+        /// </summary>
+        public DateTime[]? EventDates { get; set; }
+
+        /// <summary>
+        /// Sets the reminder dates
+        /// </summary>
+        public DateTime[]? ReminderDates { get; set; }
 
         /// <summary>
         /// Maximum width of the table (0 to automatically determine based on content)
@@ -217,8 +239,33 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 bool isToday = currentDate == dateHighlight;
                 var foreground = isToday ? TodayColor : isWeekend ? WeekendColor : ForegroundColor;
 
+                // Highlight reminders and events
+                bool reminderMarked = false;
+                bool eventMarked = false;
+                foreach (var reminderDate in ReminderDates ?? [])
+                {
+                    var rDate = reminderDate;
+                    var (rYear, rMonth, rDay, _) = GetDateFromCalendar(new DateTime(rDate.Year, rDate.Month, rDate.Day), culture);
+                    rDate = new(rYear, rMonth, rDay);
+                    if (rDate == currentDate & !reminderMarked)
+                        reminderMarked = true;
+                }
+                foreach (var eventDate in EventDates ?? [])
+                {
+                    var eDate = eventDate;
+                    var (eYear, eMonth, eDay, _) = GetDateFromCalendar(new DateTime(eDate.Year, eDate.Month, eDate.Day), culture);
+                    eDate = new(eYear, eMonth, eDay);
+                    if (eDate == currentDate & !eventMarked)
+                    {
+                        foreground = EventColor;
+                        eventMarked = true;
+                    }
+                }
+                string markStart = reminderMarked && eventMarked ? "[" : reminderMarked ? "(" : eventMarked ? "<" : " ";
+                string markEnd = reminderMarked && eventMarked ? "]" : reminderMarked ? ")" : eventMarked ? ">" : " ";
+
                 // Know where and how to put the day number
-                calendarArray[currentWeek, currentDay - 1] = new($"{d}")
+                calendarArray[currentWeek, currentDay - 1] = new($"{markStart}{d}{markEnd}")
                 {
                     CellBackgroundColor = BackgroundColor,
                     CellColor = foreground,
