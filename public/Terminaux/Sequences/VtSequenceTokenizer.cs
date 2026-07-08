@@ -203,10 +203,11 @@ namespace Terminaux.Sequences
             char[] finalChars = new char[advance + increment - 1];
             Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
             string finalSeq = new(finalChars);
+            string fullSeq = new(charRead);
 
             // Make a VT sequence instance
             string finalPrefix = offset == 1 ? VtSequenceBasicChars.CsiSequencePrefix : $"{VtSequenceBasicChars.CsiChar}";
-            seq = new VtSequenceInfo(VtSequenceType.Csi, sequenceType, finalPrefix, parameters.ToString(), intermediates.ToString(), finalSeq, ending, idx);
+            seq = new VtSequenceInfo(VtSequenceType.Csi, sequenceType, finalPrefix, parameters.ToString(), intermediates.ToString(), finalSeq, fullSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -268,10 +269,11 @@ namespace Terminaux.Sequences
             char[] finalChars = new char[advance + increment - 1];
             Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
             string finalSeq = new(finalChars);
+            string fullSeq = new(charRead);
 
             // Make a VT sequence instance
             string finalPrefix = offset == 1 ? VtSequenceBasicChars.OSCSequencePrefix : $"{VtSequenceBasicChars.OSCChar}";
-            seq = new VtSequenceInfo(VtSequenceType.Osc, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, ending, idx);
+            seq = new VtSequenceInfo(VtSequenceType.Osc, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, fullSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -333,9 +335,10 @@ namespace Terminaux.Sequences
             char[] finalChars = new char[idx + advance - sequenceStart + 1];
             Array.Copy(charRead, idx, finalChars, 0, idx + advance - sequenceStart + 1);
             string finalSeq = new(finalChars);
+            string fullSeq = new(charRead);
 
             // Make a VT sequence instance
-            seq = new VtSequenceInfo(VtSequenceType.Esc, sequenceType, $"{VtSequenceBasicChars.EscapeChar}", "", "", finalSeq, '\0', idx);
+            seq = new VtSequenceInfo(VtSequenceType.Esc, sequenceType, $"{VtSequenceBasicChars.EscapeChar}", "", "", finalSeq, fullSeq, '\0', idx);
             return true;
         }
 
@@ -396,10 +399,11 @@ namespace Terminaux.Sequences
             char[] finalChars = new char[advance + increment - 1];
             Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
             string finalSeq = new(finalChars);
+            string fullSeq = new(charRead);
 
             // Make a VT sequence instance
             string finalPrefix = offset == 1 ? VtSequenceBasicChars.APCSequencePrefix : $"{VtSequenceBasicChars.APCChar}";
-            seq = new VtSequenceInfo(VtSequenceType.Apc, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, ending, idx);
+            seq = new VtSequenceInfo(VtSequenceType.Apc, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, fullSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -461,10 +465,11 @@ namespace Terminaux.Sequences
             char[] finalChars = new char[advance + increment - 1];
             Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
             string finalSeq = new(finalChars);
+            string fullSeq = new(charRead);
 
             // Make a VT sequence instance
             string finalPrefix = offset == 1 ? VtSequenceBasicChars.DCSSequencePrefix : $"{VtSequenceBasicChars.DCSChar}";
-            seq = new VtSequenceInfo(VtSequenceType.Dcs, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, ending, idx);
+            seq = new VtSequenceInfo(VtSequenceType.Dcs, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, fullSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -526,10 +531,11 @@ namespace Terminaux.Sequences
             char[] finalChars = new char[advance + increment - 1];
             Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
             string finalSeq = new(finalChars);
+            string fullSeq = new(charRead);
 
             // Make a VT sequence instance
             string finalPrefix = offset == 1 ? VtSequenceBasicChars.PMSequencePrefix : $"{VtSequenceBasicChars.PMChar}";
-            seq = new VtSequenceInfo(VtSequenceType.Pm, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, ending, idx);
+            seq = new VtSequenceInfo(VtSequenceType.Pm, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, fullSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -562,9 +568,10 @@ namespace Terminaux.Sequences
             char[] finalChars = new char[idx + advance - sequenceStart + 1];
             Array.Copy(charRead, idx, finalChars, 0, idx + advance - sequenceStart + 1);
             string finalSeq = new(finalChars);
+            string fullSeq = new(charRead);
 
             // Make a VT sequence instance
-            seq = new VtSequenceInfo(VtSequenceType.C1, sequenceType, $"{VtSequenceBasicChars.EscapeChar}", "", "", finalSeq, '\0', idx);
+            seq = new VtSequenceInfo(VtSequenceType.C1, sequenceType, $"{VtSequenceBasicChars.EscapeChar}", "", "", finalSeq, fullSeq, '\0', idx);
             return true;
         }
 

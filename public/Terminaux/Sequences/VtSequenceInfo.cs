@@ -65,6 +65,11 @@ namespace Terminaux.Sequences
         public string FullSequence { get; } = string.Empty;
 
         /// <summary>
+        /// Original sequence
+        /// </summary>
+        public string OriginalSequence { get; } = string.Empty;
+
+        /// <summary>
         /// Final char
         /// </summary>
         public char FinalChar { get; }
@@ -83,7 +88,7 @@ namespace Terminaux.Sequences
         private VtSequenceSpecificTypes GetSpecificType()
         {
             var specificType = (VtSequenceSpecificTypes)(-1);
-            char lastChar = FullSequence[End];
+            char lastChar = OriginalSequence[End];
             switch (Type)
             {
                 case VtSequenceType.Csi:
@@ -317,9 +322,9 @@ namespace Terminaux.Sequences
                     }
                     else if (FinalChar == 'x')
                     {
-                        specificType = FullSequence[End - 1] == '*' ?
+                        specificType = OriginalSequence[End - 1] == '*' ?
                             VtSequenceSpecificTypes.CsiSelectAttributeChangeExtent :
-                            FullSequence[End - 1] == '$' ?
+                            OriginalSequence[End - 1] == '$' ?
                             VtSequenceSpecificTypes.CsiFillRectangularArea :
                             VtSequenceSpecificTypes.CsiRequestTerminalParameters;
                     }
@@ -546,7 +551,7 @@ namespace Terminaux.Sequences
         internal VtSequenceInfo()
         { }
 
-        internal VtSequenceInfo(VtSequenceType type, VtSequenceStartType startType, string prefix, string parameters, string intermediates, string fullSequence, char finalChar, int start)
+        internal VtSequenceInfo(VtSequenceType type, VtSequenceStartType startType, string prefix, string parameters, string intermediates, string fullSequence, string originalSequence, char finalChar, int start)
         {
             Type = type;
             StartType = startType;
@@ -554,6 +559,7 @@ namespace Terminaux.Sequences
             Parameters = parameters;
             Intermediates = intermediates;
             FullSequence = fullSequence;
+            OriginalSequence = originalSequence;
             FinalChar = finalChar;
             Start = start;
         }
