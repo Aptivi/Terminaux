@@ -209,6 +209,7 @@ namespace Terminaux.Console.Fixtures
             new TestBreakdownChart(),
             new TestBreakdownChartVertical(),
             new TestStickChart(),
+            new TestSimpleCanvas(),
             new TestCanvas(),
             new TestCanvasErase(),
             new TestAnimatedCanvas(),
