@@ -18,12 +18,11 @@
 //
 
 using System;
-using System.Text;
 using Terminaux.Base;
-using Terminaux.Base.Extensions;
 using Colorimetry;
 using Terminaux.Themes.Colors;
 using Textify.General;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -172,56 +171,14 @@ namespace Terminaux.Writer.ConsoleWriters
         {
             try
             {
-                var separator = new StringBuilder();
-                bool canPosition = !ConsoleWrapper.IsDumb;
-                Text = Text.FormatString(Vars);
-
-                // Print the suffix and the text
-                if (!string.IsNullOrWhiteSpace(Text))
+                var separator = new Separator()
                 {
-                    // Render the text accordingly
-                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 8) : Text;
-                    if (useColor)
-                    {
-                        separator.Append(
-                            ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
-                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
-                        );
-                    }
-                    separator.Append($"──╢ {Text} ");
-                }
-
-                // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
-                int RepeatTimes = 0;
-                if (canPosition)
-                {
-                    int width = ConsoleChar.EstimateCellWidth(separator.ToString());
-                    RepeatTimes = ConsoleWrapper.WindowWidth - width - 1;
-                }
-
-                // Write the closing minus sign.
-                if (RepeatTimes > 0)
-                {
-                    separator.Append('╟');
-                    if (useColor)
-                    {
-                        separator.Append(
-                            ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
-                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
-                        );
-                    }
-                    separator.Append(new string('─', RepeatTimes));
-                }
-
-                // Return the resulting separator
-                if (useColor)
-                {
-                    separator.Append(
-                        ConsoleColoring.RenderRevertForeground() +
-                        ConsoleColoring.RenderRevertBackground()
-                    );
-                }
-                return separator.ToString();
+                    ForegroundColor = ForegroundColor,
+                    BackgroundColor = BackgroundColor,
+                    Text = Text.FormatString(Vars),
+                    UseColors = useColor,
+                };
+                return separator.Render();
             }
             catch (Exception ex)
             {

@@ -231,6 +231,7 @@ namespace Terminaux.Console.Fixtures
             new TestBoxFrame(),
             new TestRulers(),
             new TestRulers2(),
+            new TestSeparators(),
             new TestValueShowcaseSingle(),
             new TestValueShowcaseDouble(),
             new TestQrCode(),
