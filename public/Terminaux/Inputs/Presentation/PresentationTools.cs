@@ -164,7 +164,7 @@ namespace Terminaux.Inputs.Presentation
                         if (elementIdx < pageElements.Length - 1)
                             renderedElements.Append("\n\n");
                     }
-                    string rendered = renderedElements.ToString();
+                    rendered = renderedElements.ToString();
 
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = GetFinalLines(rendered);
