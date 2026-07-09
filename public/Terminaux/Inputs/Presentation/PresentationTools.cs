@@ -246,7 +246,7 @@ namespace Terminaux.Inputs.Presentation
                         var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), (_) => GoDown(rendered, ref currIdx)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                         var scrollUpHitbox = new PointerHitbox(new(presentationUpperInnerBorderLeft, presentationUpperInnerBorderTop), new Coordinate(presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop), (_) => GoUp(ref currIdx, 3)) { Button = PointerButton.WheelUp, ButtonPress = PointerButtonPress.Scrolled };
                         var scrollDownHitbox = new PointerHitbox(new(presentationUpperInnerBorderLeft, presentationUpperInnerBorderTop), new Coordinate(presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop), (_) => GoDown(rendered, ref currIdx, 3)) { Button = PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
-                        var inputHitbox = new PointerHitbox(new(presentationUpperInnerBorderLeft, presentationUpperInnerBorderTop), new Coordinate(presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop), (_) => ProcessInput(page, screen)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var inputHitbox = new PointerHitbox(new(presentationUpperInnerBorderLeft, presentationUpperInnerBorderTop), new Coordinate(presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop), (_) => ProcessInput(page)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                         // Mouse input received.
                         switch (mouse.Button)
@@ -283,7 +283,7 @@ namespace Terminaux.Inputs.Presentation
                                 pageExit = true;
                                 break;
                             case ConsoleKey.Enter:
-                                pageExit = ProcessInput(page, screen);
+                                pageExit = ProcessInput(page);
                                 screen.RequireRefresh();
                                 break;
                             case ConsoleKey.PageUp:
@@ -367,7 +367,7 @@ namespace Terminaux.Inputs.Presentation
                 currIdx = 0;
         }
 
-        private static bool ProcessInput(PresentationPage page, Screen screen)
+        private static bool ProcessInput(PresentationPage page)
         {
             if (page.Inputs.Length > 0)
             {
