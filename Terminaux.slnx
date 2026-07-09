@@ -5,7 +5,7 @@
     <File Path="Directory.Build.props" />
   </Folder>
   <Folder Name="/Private/">
-    <Project Path="private/BuildTargets/BuildTargets.csproj" />
+    <Project Path="private/Dtp/Dtp.csproj" />
   </Folder>
   <Folder Name="/Private/Generators/">
     <Project Path="private/Terminaux.NerdFontGen/Terminaux.NerdFontGen.csproj" />
