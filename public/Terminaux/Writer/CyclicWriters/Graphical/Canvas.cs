@@ -103,17 +103,21 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     // Choose how to draw
                     if (HighDensity)
                     {
+                        if (effectivePixel is null && effectiveNextRowPixel is null)
+                            continue;
                         var highColor = effectivePixel?.CellColor ?? Color;
                         var lowColor = effectiveNextRowPixel?.CellColor ?? Color;
                         canvas.Append(
-                            TextWriterWhereColor.RenderWhereColorBack(new('▀', widthFactor), Left + (x * widthFactor), Top + actualY, highColor, lowColor)
+                            TextWriterWhereColor.RenderWhereColorBack(new('▄', widthFactor), Left + (x * widthFactor), Top + actualY, lowColor, highColor)
                         );
                     }
                     else
                     {
+                        if (effectivePixel is null)
+                            continue;
                         var color = effectivePixel?.CellColor ?? Color;
                         canvas.Append(
-                            TextWriterWhereColor.RenderWhereColor(new('█', widthFactor), Left + (x * widthFactor), Top + actualY, color)
+                            TextWriterWhereColor.RenderWhereColorBack(new(' ', widthFactor), Left + (x * widthFactor), Top + actualY, ConsoleColoring.CurrentForegroundColor, color)
                         );
                     }
                 }
