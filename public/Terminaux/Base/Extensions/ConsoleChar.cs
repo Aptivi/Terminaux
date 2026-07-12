@@ -46,6 +46,8 @@ namespace Terminaux.Base.Extensions
 
             // We need to filter VT sequences if we suspect that we can find one of them
             sentence = VtSequenceTools.FilterVTSequences(sentence);
+            if (sentence.Contains("\t"))
+                sentence = sentence.Replace("\t", new string(' ', ConsoleMisc.TabWidth));
 
             // Iterate through every character inside this string to get their widths according to the Unicode
             // standards to ensure that we have the correct cell width count that the string takes up.
@@ -81,6 +83,8 @@ namespace Terminaux.Base.Extensions
                 // We need to filter VT sequences if we suspect that we can find one of them
                 if (processed)
                     sentence = VtSequenceTools.FilterVTSequences(sentence);
+                if (sentence.Contains("\t"))
+                    sentence = sentence.Replace("\t", new string(' ', ConsoleMisc.TabWidth));
 
                 // Process index
                 if (index > sentence.Length - 1)
@@ -111,6 +115,8 @@ namespace Terminaux.Base.Extensions
 
                 // We need to filter VT sequences if we suspect that we can find one of them
                 sentence = VtSequenceTools.FilterVTSequences(sentence);
+                if (sentence.Contains("\t"))
+                    sentence = sentence.Replace("\t", new string(' ', ConsoleMisc.TabWidth));
 
                 // Iterate through every character inside this string to get their widths according to the Unicode
                 // standards to ensure that we calculate all the zero widths.
@@ -144,6 +150,8 @@ namespace Terminaux.Base.Extensions
 
                 // We need to filter VT sequences if we suspect that we can find one of them
                 sentence = VtSequenceTools.FilterVTSequences(sentence);
+                if (sentence.Contains("\t"))
+                    sentence = sentence.Replace("\t", new string(' ', ConsoleMisc.TabWidth));
 
                 // Iterate through every character inside this string to get their widths according to the Unicode
                 // standards to ensure that we calculate all the full widths.
