@@ -158,7 +158,6 @@ namespace Terminaux.Base.Extensions
             {
                 var sequencesCollections = VtSequenceTools.MatchVTSequences(splitText);
                 int vtSeqIdx = 0;
-                int compensate = 0;
                 if (splitText.Length == 0)
                     IncompleteSentences.Add(splitText);
                 for (int i = 0; i < splitText.Length; i++)
@@ -181,20 +180,14 @@ namespace Terminaux.Base.Extensions
                     }
 
                     // Append the character into the incomplete sentence builder.
-                    bool notOverflow = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString()) + width <= maximumLength - indentLength + compensate;
+                    bool notOverflow = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString()) + width <= maximumLength - indentLength;
                     if (!isNewLine && notOverflow)
                         IncompleteSentenceBuilder.Append(sequence);
-
-                    // Also, compensate the \0 characters and the VT sequences
-                    if (isVtSeq)
-                        compensate += width;
-                    if (splitText[i] == '\0')
-                        compensate++;
 
                     // Check to see if we're at the maximum character number or at the new line
                     string sentence = IncompleteSentenceBuilder.ToString();
                     int nextCharWidth = ConsoleChar.EstimateCellWidth(splitText, i);
-                    if (ConsoleChar.EstimateCellWidth(sentence) + nextCharWidth > maximumLength - indentLength + compensate |
+                    if (ConsoleChar.EstimateCellWidth(sentence) + nextCharWidth > maximumLength - indentLength |
                         i == splitText.Length - 1 |
                         isNewLine)
                     {
@@ -206,7 +199,6 @@ namespace Terminaux.Base.Extensions
                         // Clean everything up
                         IncompleteSentenceBuilder.Clear();
                         indentLength = 0;
-                        compensate = 0;
                         if (!notOverflow)
                             IncompleteSentenceBuilder.Append(sequence);
                     }
