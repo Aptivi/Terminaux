@@ -215,7 +215,7 @@ namespace Terminaux.Writer.ConsoleWriters
             // Check for dumb console
             if (ConsoleWrapper.IsDumb)
             {
-                TextWriterColor.Write(Text, vars);
+                TextWriterColor.Write(Text, Line, vars);
                 return;
             }
 
@@ -225,7 +225,6 @@ namespace Terminaux.Writer.ConsoleWriters
                 // Format string as needed
                 if (vars.Length > 0)
                     Text = TextTools.FormatString(Text, vars);
-                Text = Text.Replace(Convert.ToChar(13), default);
 
                 // First, split the text to wrap
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth);
@@ -242,8 +241,6 @@ namespace Terminaux.Writer.ConsoleWriters
                     bool bail = false;
                     for (int i = 0; i < sentence.Length; i++)
                     {
-                        char TextChar = sentence[i];
-
                         // Write a character individually
                         if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                         {
