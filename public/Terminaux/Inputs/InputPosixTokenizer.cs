@@ -434,13 +434,21 @@ namespace Terminaux.Inputs
                 PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
                 if (button >= 64 && button < 96)
                     state = PosixButtonState.Movement;
-                if (button >= 96 && button % 2 == 0)
+
+                // Determine vertical scroll
+                if (button == 96)
                     state = PosixButtonState.WheelUp;
-                else if (button >= 97)
+                else if (button == 97)
                     state = PosixButtonState.WheelDown;
-                ConsoleLogger.Debug($"X10: [{button}: {state} {modState}] X={x} Y={y}");
+
+                // Determine horizontal scroll
+                if (button == 98)
+                    state = PosixButtonState.WheelRight;
+                else if (button == 99)
+                    state = PosixButtonState.WheelLeft;
 
                 // Now, translate them to something Terminaux understands
+                ConsoleLogger.Debug($"X10: [{button}: {state} {modState}] X={x} Y={y}");
                 (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = Input.ProcessPointerEventPosix(state, modState);
                 if (Input.EnableMovementEvents || press != PointerButtonPress.Moved)
                 {
@@ -508,7 +516,10 @@ namespace Terminaux.Inputs
                             moving ? PosixButtonState.Movement :
                             releasing ? PosixButtonState.Released :
                             wheelScroll ?
-                                (b & 0x1) == 0 ? PosixButtonState.WheelUp : PosixButtonState.WheelDown :
+                                (finalButton == 0 ? PosixButtonState.WheelUp : 
+                                 finalButton == 2 ? PosixButtonState.WheelRight : 
+                                 finalButton == 3 ? PosixButtonState.WheelLeft : 
+                                 PosixButtonState.WheelDown) :
                             finalButton == 0 ? PosixButtonState.Left :
                             finalButton == 1 ? PosixButtonState.Middle :
                             finalButton == 2 ? PosixButtonState.Right : PosixButtonState.Movement;

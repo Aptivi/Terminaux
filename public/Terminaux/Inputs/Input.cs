@@ -122,6 +122,15 @@ namespace Terminaux.Inputs
         public static bool InvertScrollYAxis { get; set; }
 
         /// <summary>
+        /// Whether to invert the X axis for scrolling or not.
+        /// </summary>
+        /// <remarks>
+        /// If this option is enabled, scrolling left emits the scroll right event, and scrolling right emits the scroll left event.
+        /// Otherwise, scrolling left emits the scroll left event, and scrolling right emits the scroll right event.
+        /// </remarks>
+        public static bool InvertScrollXAxis { get; set; }
+
+        /// <summary>
         /// Whether to invert the left and the right mouse buttons for left-handed people or not.
         /// </summary>
         /// <remarks>
@@ -588,10 +597,19 @@ namespace Terminaux.Inputs
                 eventRecord.dwButtonState == ButtonState.Middle ? PointerButton.Middle :
                 eventRecord.dwButtonState == ButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
                 PointerButton.None;
-            button = (eventRecord.dwEventFlags == EventFlags.WheelScrolled || eventRecord.dwEventFlags == EventFlags.HorizontalWheelScrolled) ?
+
+            // Determine vertical scrolling
+            button = eventRecord.dwEventFlags == EventFlags.WheelScrolled ?
                 ((int)eventRecord.dwButtonState >> 16 < 0 ?
                     (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
                     (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp)) :
+                button;
+
+            // Determine horizontal scrolling
+            button = eventRecord.dwEventFlags == EventFlags.HorizontalWheelScrolled ?
+                ((int)eventRecord.dwButtonState >> 16 < 0 ?
+                    (InvertScrollXAxis ? PointerButton.WheelLeft : PointerButton.WheelRight) :
+                    (InvertScrollXAxis ? PointerButton.WheelRight : PointerButton.WheelLeft)) :
                 button;
 
             // Determine the button press
@@ -599,7 +617,7 @@ namespace Terminaux.Inputs
                 eventRecord.dwButtonState != ButtonState.None && eventRecord.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Clicked :
                 eventRecord.dwButtonState != ButtonState.None && eventRecord.dwEventFlags == EventFlags.DoubleClicked ? PointerButtonPress.Clicked :
                 eventRecord.dwButtonState == ButtonState.None && eventRecord.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Released :
-                button == PointerButton.WheelDown || button == PointerButton.WheelUp ? PointerButtonPress.Scrolled :
+                eventRecord.dwEventFlags == EventFlags.WheelScrolled || eventRecord.dwEventFlags == EventFlags.HorizontalWheelScrolled ? PointerButtonPress.Scrolled :
                 PointerButtonPress.Moved;
 
             // Determine the modifiers
@@ -625,7 +643,8 @@ namespace Terminaux.Inputs
             PointerButtonPress press =
                 state == PosixButtonState.Left || state == PosixButtonState.Middle || state == PosixButtonState.Right ? PointerButtonPress.Clicked :
                 state == PosixButtonState.Released ? PointerButtonPress.Released :
-                state == PosixButtonState.WheelDown || state == PosixButtonState.WheelUp ? PointerButtonPress.Scrolled :
+                state == PosixButtonState.WheelDown || state == PosixButtonState.WheelUp ||
+                state == PosixButtonState.WheelLeft || state == PosixButtonState.WheelRight ? PointerButtonPress.Scrolled :
                 PointerButtonPress.Moved;
 
             // Determine the button
@@ -635,6 +654,8 @@ namespace Terminaux.Inputs
                 state == PosixButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
                 state == PosixButtonState.WheelDown ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
                 state == PosixButtonState.WheelUp ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
+                state == PosixButtonState.WheelLeft ? (InvertScrollXAxis ? PointerButton.WheelRight : PointerButton.WheelLeft) :
+                state == PosixButtonState.WheelRight ? (InvertScrollXAxis ? PointerButton.WheelLeft : PointerButton.WheelRight) :
                 PointerButton.None;
 
             // Determine the modifiers

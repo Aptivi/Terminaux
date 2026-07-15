@@ -51,5 +51,13 @@ namespace Terminaux.Inputs.Pointer
         /// Wheel scrolling down
         /// </summary>
         WheelDown,
+        /// <summary>
+        /// Wheel scrolling left
+        /// </summary>
+        WheelLeft,
+        /// <summary>
+        /// Wheel scrolling right
+        /// </summary>
+        WheelRight,
     }
 }

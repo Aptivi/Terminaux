@@ -41,6 +41,8 @@ namespace Terminaux.Base.Extensions.Native
             Movement = 0x0004,
             WheelUp = 0x0005,
             WheelDown = 0x0006,
+            WheelLeft = 0x0007,
+            WheelRight = 0x0008,
         }
 
         internal enum PosixButtonModifierState : uint
