@@ -1,10 +1,17 @@
-This version of Terminaux fixes a critical bug that was introduced in 8.5.1.
+This is a big monthly release of Terminaux that brings some of the biggest new features and the most promising improvements to make your console applications more powerful!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed critical bug causing Terminaux applications to crash at startup
+- `[+]` Added horizontal scrolling support
+- `[+]` Added Prosery, Quote, and Separator writers
+- `[+]` Added high-density and simple canvases
+- `[+]` Added input locks
+- `[*]` Improved handling of grapheme clusters
+- `[*]` Improved handling of cell width estimation
+- `[*]` Made several graphical writers accessible to CLI apps
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
