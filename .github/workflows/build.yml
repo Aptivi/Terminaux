@@ -30,7 +30,9 @@ jobs:
         if: matrix.runs-on == 'macos-latest'
         run: brew install mono
       - name: Solution Compilation
-        run: python tools/adt.py build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
+        run: |
+          pip install aptivi-adt
+          adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
       - name: Testing
-        run: python tools/adt.py test -t="--no-build --configuration Debug"
+        run: adt test -t="--no-build --configuration Debug"
         
