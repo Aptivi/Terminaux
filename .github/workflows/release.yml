@@ -27,9 +27,10 @@ jobs:
       - name: Release Asset Preparation
         id: release-asset
         run: |
+          pip install aptivi-adt
           make rel-ci
           make doc
-          python tools/adt.py packdocs
+          adt packdocs
           echo "SUBJECT=$(cat CHANGES.TITLE)" >> "$GITHUB_OUTPUT"
           echo 'BODY<<EOF' >> "$GITHUB_OUTPUT"
           cat CHANGES >> "$GITHUB_OUTPUT"
@@ -47,4 +48,4 @@ jobs:
           files: |
             artifacts/*.zip
       - name: Package Publication
-        run: python tools/adt.py pushbin -a "${{ secrets.NUGET_APIKEY }}"
+        run: adt pushbin -a "${{ secrets.NUGET_APIKEY }}"
