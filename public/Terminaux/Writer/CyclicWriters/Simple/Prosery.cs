@@ -26,6 +26,7 @@ using Terminaux.Shell.Shells.Unified;
 using Textify.General;
 using System.Collections.Generic;
 using System.Text;
+using Magico.Enumeration;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -117,8 +118,10 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             // Now, append prose padding
             var proseBuilder = new StringBuilder();
             string prosePadding = $"{PadChar}  ";
-            foreach (var line in lines)
+            for (int i = 0; i < lines.Length; i++)
             {
+                string? line = lines[i];
+
                 // Add padding
                 if (EnablePad)
                 {
@@ -132,15 +135,19 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 // Add actual line
                 proseBuilder.Append(
                     (UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "") +
                     line
                 );
 
-                // Reset colors
-                proseBuilder.AppendLine(
-                    (UseColors ? ConsoleColoring.RenderResetBackground() : "") +
-                    (UseColors ? ConsoleColoring.RenderResetForeground() : "")
-                );
+                if (i < lines.Length - 1)
+                    proseBuilder.AppendLine();
             }
+
+            // Reset colors
+            proseBuilder.Append(
+                (UseColors ? ConsoleColoring.RenderResetBackground() : "") +
+                (UseColors ? ConsoleColoring.RenderResetForeground() : "")
+            );
 
             // Return the spinner
             return proseBuilder.ToString();
