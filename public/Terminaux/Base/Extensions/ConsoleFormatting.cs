@@ -88,7 +88,7 @@ namespace Terminaux.Base.Extensions
             // Work on all the possible types
             foreach (var type in formattings)
             {
-                if (types.HasFlag(type))
+                if (types == ConsoleFormattingType.Default || (type > ConsoleFormattingType.Default && types.HasFlag(type)))
                 {
                     ConsoleLogger.Debug("Parsing type {0} to get formatting sequence...", type);
                     var sequenceTuple = TypeSequenceNumbers[type];
@@ -99,6 +99,8 @@ namespace Terminaux.Base.Extensions
                         finalValue = VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, sequenceTuple.Item1);
                     ConsoleLogger.Debug("Adding {0} bytes representing {1} ({2})...", finalValue.Length, type, sequenceTuple.Item1);
                     builder.Append(finalValue);
+                    if (types == ConsoleFormattingType.Default)
+                        break;
                 }
             }
 
