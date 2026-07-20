@@ -1,16 +1,9 @@
-This is a big monthly release of Terminaux that brings some of the biggest new features and the most promising improvements to make your console applications more powerful!
+This is a small release intended to fix bugs regarding console formatting combination.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added horizontal scrolling support
-- `[+]` Added Prosery, Quote, and Separator writers
-- `[+]` Added high-density and simple canvases
-- `[+]` Added input locks
-- `[*]` Improved handling of grapheme clusters
-- `[*]` Improved handling of cell width estimation
-- `[*]` Made several graphical writers accessible to CLI apps
 - `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
