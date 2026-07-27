@@ -25,6 +25,9 @@ using System.Linq;
 using Terminaux.Themes;
 using Terminaux.Themes.Colors;
 using Colorimetry.Data;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using Textify.General;
 
 namespace Terminaux.Tests.Themes
 {
@@ -32,7 +35,6 @@ namespace Terminaux.Tests.Themes
     [TestClass]
     public class ThemeInfoInitializationTests
     {
-
         /// <summary>
         /// Tests initializing an instance of ThemeInfo from resources
         /// </summary>
@@ -202,5 +204,170 @@ namespace Terminaux.Tests.Themes
             }
         }
 
+        /// <summary>
+        /// Tests exporting theme info to JSON object
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestExportThemeInfoJson()
+        {
+            // Create instance
+            var ThemeInfoInstance = new ThemeInfo();
+
+            // Check for null
+            ThemeInfoInstance.themeColors.ShouldNotBeNull();
+
+            // Export to JSON
+            JObject jsonObject = ThemeInfoInstance.ExportToJson();
+            string jsonString = JsonConvert.SerializeObject(jsonObject, Formatting.Indented).UnixifyNewLines();
+
+            // Verify that the JSON object contains all colors
+            string jsonStringExpected =
+            """
+            {
+              "Metadata": {
+                "Name": "Default"
+              },
+              "InputColor": "15",
+              "LicenseColor": "15",
+              "BackgroundColor": "0",
+              "NeutralTextColor": "7",
+              "ListEntryColor": "3",
+              "ListValueColor": "8",
+              "StageColor": "10",
+              "ErrorColor": "9",
+              "WarningColor": "11",
+              "OptionColor": "3",
+              "BannerColor": "10",
+              "QuestionColor": "11",
+              "SuccessColor": "10",
+              "UserDollarColor": "7",
+              "TipColor": "11",
+              "SeparatorTextColor": "15",
+              "SeparatorColor": "7",
+              "ListTitleColor": "15",
+              "ProgressColor": "10",
+              "BackOptionColor": "1",
+              "TableSeparatorColor": "8",
+              "TableHeaderColor": "15",
+              "TableValueColor": "7",
+              "SelectedOptionColor": "14",
+              "AlternativeOptionColor": "11",
+              "WeekendDayColor": "14",
+              "EventDayColor": "14",
+              "TableTitleColor": "14",
+              "TodayDayColor": "10",
+              "TuiBackgroundColor": "0",
+              "TuiForegroundColor": "11",
+              "TuiPaneBackgroundColor": "0",
+              "TuiPaneSeparatorColor": "2",
+              "TuiPaneSelectedSeparatorColor": "10",
+              "TuiPaneSelectedItemForeColor": "0",
+              "TuiPaneSelectedItemBackColor": "3",
+              "TuiPaneItemForeColor": "3",
+              "TuiPaneItemBackColor": "0",
+              "TuiOptionBackgroundColor": "3",
+              "TuiKeyBindingOptionColor": "0",
+              "TuiOptionForegroundColor": "11",
+              "TuiBoxBackgroundColor": "9",
+              "TuiBoxForegroundColor": "15",
+              "DisabledOptionColor": "8",
+              "TuiKeyBindingBuiltinBackgroundColor": "3",
+              "TuiKeyBindingBuiltinColor": "0",
+              "TuiKeyBindingBuiltinForegroundColor": "10",
+              "ProgressFailedColor": "9",
+              "ProgressPausedColor": "11",
+              "ProgressWarningColor": "11"
+            }
+            """.UnixifyNewLines();
+            jsonString.ShouldBe(jsonStringExpected);
+        }
+
+        /// <summary>
+        /// Tests exporting theme info to JSON object with custom colors
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestExportThemeInfoJsonWithCustomColors()
+        {
+            // Create instance
+            var ThemeInfoInstance = new ThemeInfo();
+
+            // Check for null
+            ThemeInfoInstance.themeColors.ShouldNotBeNull();
+
+            // Add custom colors
+            ThemeInfoInstance.SetColor("Custom", new(ConsoleColors.Red));
+            ThemeInfoInstance.SetColor("Custom2", new(ConsoleColors.Green));
+            ThemeInfoInstance.SetColor("Custom3", new(ConsoleColors.Blue));
+
+            // Export to JSON
+            JObject jsonObject = ThemeInfoInstance.ExportToJson();
+            string jsonString = JsonConvert.SerializeObject(jsonObject, Formatting.Indented).UnixifyNewLines();
+
+            // Verify that the JSON object contains all colors
+            string jsonStringExpected =
+            """
+            {
+              "Metadata": {
+                "Name": "Default"
+              },
+              "InputColor": "15",
+              "LicenseColor": "15",
+              "BackgroundColor": "0",
+              "NeutralTextColor": "7",
+              "ListEntryColor": "3",
+              "ListValueColor": "8",
+              "StageColor": "10",
+              "ErrorColor": "9",
+              "WarningColor": "11",
+              "OptionColor": "3",
+              "BannerColor": "10",
+              "QuestionColor": "11",
+              "SuccessColor": "10",
+              "UserDollarColor": "7",
+              "TipColor": "11",
+              "SeparatorTextColor": "15",
+              "SeparatorColor": "7",
+              "ListTitleColor": "15",
+              "ProgressColor": "10",
+              "BackOptionColor": "1",
+              "TableSeparatorColor": "8",
+              "TableHeaderColor": "15",
+              "TableValueColor": "7",
+              "SelectedOptionColor": "14",
+              "AlternativeOptionColor": "11",
+              "WeekendDayColor": "14",
+              "EventDayColor": "14",
+              "TableTitleColor": "14",
+              "TodayDayColor": "10",
+              "TuiBackgroundColor": "0",
+              "TuiForegroundColor": "11",
+              "TuiPaneBackgroundColor": "0",
+              "TuiPaneSeparatorColor": "2",
+              "TuiPaneSelectedSeparatorColor": "10",
+              "TuiPaneSelectedItemForeColor": "0",
+              "TuiPaneSelectedItemBackColor": "3",
+              "TuiPaneItemForeColor": "3",
+              "TuiPaneItemBackColor": "0",
+              "TuiOptionBackgroundColor": "3",
+              "TuiKeyBindingOptionColor": "0",
+              "TuiOptionForegroundColor": "11",
+              "TuiBoxBackgroundColor": "9",
+              "TuiBoxForegroundColor": "15",
+              "DisabledOptionColor": "8",
+              "TuiKeyBindingBuiltinBackgroundColor": "3",
+              "TuiKeyBindingBuiltinColor": "0",
+              "TuiKeyBindingBuiltinForegroundColor": "10",
+              "ProgressFailedColor": "9",
+              "ProgressPausedColor": "11",
+              "ProgressWarningColor": "11",
+              "Custom": "9",
+              "Custom2": "2",
+              "Custom3": "12"
+            }
+            """.UnixifyNewLines();
+            jsonString.ShouldBe(jsonStringExpected);
+        }
     }
 }

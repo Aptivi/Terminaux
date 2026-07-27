@@ -150,11 +150,56 @@ namespace Terminaux.Themes
             themeColors[type] = color;
         }
 
+        /// <summary>
+        /// Exports theme information to a JSON instance
+        /// </summary>
+        /// <returns>JSON object instance that describes a theme</returns>
+        public JObject ExportToJson()
+        {
+            JObject themeJson = [];
+
+            // Populate the metadata
+            JProperty metadata =
+                /*
+                 * Metadata instance with the format of:
+                 * 
+                 *     "Metadata": {
+                 *         "Name": "ThemeName"
+                 *     },
+                 *     "InputColor": "#629755",
+                 *     [...]
+                 */
+                new("Metadata",
+                    new JObject(
+                        new JProperty("Name", Name)
+                    )
+                );
+            themeJson.Add(metadata);
+
+            // Populate the colors
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
+            {
+                // Add the color to the final object
+                string type = themeColors.Keys.ElementAt(typeIndex);
+                themeJson.Add(new JProperty($"{type}Color", themeColors[type].PlainSequence));
+            }
+
+            // Populate the extra color
+            foreach (var extraColor in themeExtraColors)
+            {
+                // Add the color to the final object
+                themeJson.Add(new JProperty(extraColor, themeColors[extraColor].PlainSequence));
+            }
+
+            // Return the final object with the metadata
+            return themeJson;
+        }
+
         internal void UpdateColors()
         {
             // Populate the colors
             ConsoleLogger.Debug($"Updating color according to theme info for {Name}...");
-            useAccentTypes = [.. metadata.UseAccentTypes.Where((type) => Enum.IsDefined(typeof(ThemeColorType), type.Remove(type.Length - 5)) || themeExtraColors.Contains(type))];
+            useAccentTypes = [.. metadata.UseAccentTypes.Where((type) => Enum.IsDefined(typeof(ThemeColorType), type.RemoveSuffix("Color")) || themeExtraColors.Contains(type))];
 
             // Deal with base color types
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
