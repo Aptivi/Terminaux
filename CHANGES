@@ -1,10 +1,10 @@
-This is a small release intended to fix bugs regarding console formatting combination.
+This is a small release intended to add a new feature that allows you to export themes more easily.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements and bug fixes
+- `[+]` Added exporting themes to JSON object
 
 Review the commit history if you want to get a deep insight about the changes.
 
