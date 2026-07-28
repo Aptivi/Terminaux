@@ -1994,6 +1994,12 @@ namespace Terminaux.Shell.Shells
             new(availableShells);
 
         /// <summary>
+        /// Current shell instance
+        /// </summary>
+        public static IShell? CurrentShell =>
+            ShellStack[ShellStack.Count - 1].ShellBase;
+
+        /// <summary>
         /// Current shell type
         /// </summary>
         public static string CurrentShellType =>
