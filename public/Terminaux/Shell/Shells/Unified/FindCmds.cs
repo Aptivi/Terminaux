@@ -33,7 +33,7 @@ namespace Terminaux.Shell.Shells.Unified
     class FindCmdsUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var commands = CommandManager.FindCommands(parameters.ArgumentsList[0], ShellManager.CurrentShellType);
             foreach (var command in commands)

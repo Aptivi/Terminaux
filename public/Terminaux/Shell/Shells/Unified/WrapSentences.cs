@@ -31,7 +31,7 @@ namespace Terminaux.Shell.Shells.Unified
     class WrapSentencesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Flags
             bool charWise = parameters.ContainsSwitch("-charwise");

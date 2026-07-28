@@ -33,7 +33,7 @@ namespace Terminaux.Shell.Shells.Unified
     class DecodeBase64Command : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string orig = parameters.ArgumentsList[0];
             string decoded = orig.GetBase64Decoded();

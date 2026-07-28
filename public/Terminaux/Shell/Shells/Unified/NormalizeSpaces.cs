@@ -30,7 +30,7 @@ namespace Terminaux.Shell.Shells.Unified
     class NormalizeSpacesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Flags
             bool simple = parameters.ContainsSwitch("-simple");

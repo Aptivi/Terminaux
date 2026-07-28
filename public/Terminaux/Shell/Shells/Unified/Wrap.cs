@@ -32,13 +32,13 @@ namespace Terminaux.Shell.Shells.Unified
     class WrapUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             CommandExecutor.ExecuteCommandWrapped(parameters.ArgumentsText);
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             // Print the wrappable commands along with help description
             var currentShell = ShellManager.ShellStack[ShellManager.ShellStack.Count - 1];

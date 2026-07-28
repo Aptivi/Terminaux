@@ -50,7 +50,7 @@ namespace Terminaux.Shell.Shells.Unified
     class GenLastNamesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int SurnamesCount = 10;
             string SurnamePrefix = "";

@@ -30,7 +30,7 @@ namespace Terminaux.Shell.Shells.Unified
     class PrintFCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Text to process
             string text = parameters.ArgumentsList[0];

@@ -35,7 +35,7 @@ namespace Terminaux.Shell.Shells.Unified
     class RepeatUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string timesString = parameters.ArgumentsList[0];
             bool valid = uint.TryParse(timesString, out uint times);

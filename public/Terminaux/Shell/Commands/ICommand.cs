@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Shell.Shells;
+
 namespace Terminaux.Shell.Commands
 {
     /// <summary>
@@ -28,23 +30,26 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Executes the command with the given argument
         /// </summary>
+        /// <param name="shell">Shell instance that was used</param>
         /// <param name="parameters">Command parameters including passed arguments and switches information</param>
         /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
         /// <returns>Error code for the command</returns>
-        int Execute(CommandParameters parameters, ref string variableValue);
+        int Execute(IShell? shell, CommandParameters parameters, ref string variableValue);
 
         /// <summary>
         /// Executes the command with the given argument on dumb consoles
         /// </summary>
+        /// <param name="shell">Shell instance that was used</param>
         /// <param name="parameters">Command parameters including passed arguments and switches information</param>
         /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
         /// <returns>Error code for the command</returns>
-        int ExecuteDumb(CommandParameters parameters, ref string variableValue);
+        int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue);
 
         /// <summary>
         /// Shows additional information for the command when "help command" is invoked
         /// </summary>
-        void HelpHelper();
+        /// <param name="shell">Shell instance that was used</param>
+        void HelpHelper(IShell? shell);
 
     }
 }

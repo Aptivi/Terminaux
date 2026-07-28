@@ -29,7 +29,7 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class ExitUnifiedCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             ShellManager.KillShell();
             return 0;

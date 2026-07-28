@@ -31,7 +31,7 @@ namespace Terminaux.Shell.Shells.Unified
     class ClsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             ConsoleWrapper.Clear();
             return 0;

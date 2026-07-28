@@ -282,7 +282,7 @@ namespace Terminaux.Shell.Help
                 }
 
                 // Extra help action for some commands
-                FinalCommandList[FinalCommand].CommandBase?.HelpHelper();
+                FinalCommandList[FinalCommand].CommandBase?.HelpHelper(shellInfo.ShellBase);
             }
             else
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_CMDNOHELP"), ThemeColorType.Error, command);

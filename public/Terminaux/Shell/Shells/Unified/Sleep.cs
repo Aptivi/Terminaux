@@ -25,7 +25,7 @@ namespace Terminaux.Shell.Shells.Unified
     class SleepCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             Thread.CurrentThread.Join(int.Parse(parameters.ArgumentsList[0]));
             return 0;

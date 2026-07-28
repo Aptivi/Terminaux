@@ -19,13 +19,14 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Terminaux.Tests.Shell.ShellBase.Commands.TestCommands
 {
     internal class CustomCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write($"Passed arguments: [{string.Join(", ", parameters.ArgumentsList)}]");
             return 0;

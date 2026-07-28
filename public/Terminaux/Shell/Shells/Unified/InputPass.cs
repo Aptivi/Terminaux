@@ -31,7 +31,7 @@ namespace Terminaux.Shell.Shells.Unified
     class InputPassCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Answer = TermReader.Read(parameters.ArgumentsList[0], true);
             variableValue = Answer;

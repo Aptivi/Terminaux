@@ -32,7 +32,7 @@ namespace Terminaux.Shell.Shells.Unified
     class LastNamesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string term = "";
             string SurnamePrefix = "";

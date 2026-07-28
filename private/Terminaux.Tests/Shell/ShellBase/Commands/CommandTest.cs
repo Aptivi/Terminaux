@@ -19,6 +19,7 @@
 
 using Terminaux.Shell.Commands;
 using System;
+using Terminaux.Shell.Shells;
 
 namespace Terminaux.Tests.Shell.ShellBase.Commands
 {
@@ -26,7 +27,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
     class CommandTest : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             Console.WriteLine("We're on CommandTest with:");
             Console.WriteLine(format: "- parameters.ArgumentsText: {0}", parameters.ArgumentsText);

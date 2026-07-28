@@ -24,7 +24,7 @@ namespace Terminaux.Tests.Shared.Shells.Commands
 {
     class OpenEmptyCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             ShellManager.RegisterShell("TestShellEmpty", new TestShellEmptyInfo());
             ShellManager.StartShell("TestShellEmpty");

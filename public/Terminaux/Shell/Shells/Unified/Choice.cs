@@ -63,7 +63,7 @@ namespace Terminaux.Shell.Shells.Unified
     class ChoiceCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var Titles = new List<(string, string)>();
             var PressEnter = false;
@@ -105,7 +105,7 @@ namespace Terminaux.Shell.Shells.Unified
             return 0;
         }
 
-        public override void HelpHelper() =>
+        public override void HelpHelper(IShell? shell) =>
             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_CHOICE_HELPER"));
 
     }

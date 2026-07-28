@@ -41,7 +41,7 @@ namespace Terminaux.Shell.Shells.Unified
     class AliasCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string mode = parameters.ArgumentsList[0];
             string type = parameters.ArgumentsList[1];

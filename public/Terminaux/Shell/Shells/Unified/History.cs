@@ -29,7 +29,7 @@ namespace Terminaux.Shell.Shells.Unified
     class HistoryCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var histories = HistoryTools.GetHistoryEntries(ShellManager.CurrentShellType);
             ListWriterColor.WriteList(histories);

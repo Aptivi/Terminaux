@@ -34,7 +34,7 @@ namespace Terminaux.Shell.Shells.Unified
     class NowCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Determine how to show date and time
             bool showDate = true;

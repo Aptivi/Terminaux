@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Shell.Shells;
 
 namespace Terminaux.Shell.Commands
 {
@@ -28,14 +29,14 @@ namespace Terminaux.Shell.Commands
     {
 
         /// <inheritdoc/>
-        public abstract int Execute(CommandParameters parameters, ref string variableValue);
+        public abstract int Execute(IShell? shell, CommandParameters parameters, ref string variableValue);
 
         /// <inheritdoc/>
-        public virtual int ExecuteDumb(CommandParameters parameters, ref string variableValue) =>
-            Execute(parameters, ref variableValue);
+        public virtual int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue) =>
+            Execute(shell, parameters, ref variableValue);
 
         /// <inheritdoc/>
-        public virtual void HelpHelper() =>
+        public virtual void HelpHelper(IShell? shell) =>
             ConsoleLogger.Debug("No additional information found.");
 
     }

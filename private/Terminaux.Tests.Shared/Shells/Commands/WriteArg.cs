@@ -18,13 +18,14 @@
 //
 
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Tests.Shared.Shells.Commands
 {
     class WriteArgCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(parameters.ArgumentsText);
             return 0;

@@ -54,7 +54,7 @@ namespace Terminaux.Shell.Shells.Unified
     class GenNamesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int NamesCount = 10;
             string NamePrefix = "";

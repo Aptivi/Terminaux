@@ -314,7 +314,7 @@ namespace Terminaux.Shell.Commands
             }
         }
         /// <summary>
-        /// Executes a command in a wrapped mode (must be run from a separate command execution entry point, <see cref="BaseCommand.Execute(CommandParameters, ref string)"/>.)
+        /// Executes a command in a wrapped mode (must be run from a separate command execution entry point, <see cref="BaseCommand.Execute(IShell, CommandParameters, ref string)"/>.)
         /// </summary>
         /// <param name="Command">Requested command with its arguments and switches</param>
         public static void ExecuteCommandWrapped(string Command)
@@ -460,9 +460,9 @@ namespace Terminaux.Shell.Commands
             try
             {
                 if (ConsoleWrapperTools.Wrapper.IsDumb)
-                    ShellInstance.lastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
+                    ShellInstance.lastErrorCode = CommandBase.ExecuteDumb(ShellInstance.ShellBase, parameters, ref value);
                 else
-                    ShellInstance.lastErrorCode = CommandBase.Execute(parameters, ref value);
+                    ShellInstance.lastErrorCode = CommandBase.Execute(ShellInstance.ShellBase, parameters, ref value);
             }
             catch (Exception ex)
             {

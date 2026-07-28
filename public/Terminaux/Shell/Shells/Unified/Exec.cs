@@ -32,7 +32,7 @@ namespace Terminaux.Shell.Shells.Unified
     class ExecUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string command = parameters.ArgumentsList[0];
             string arguments = string.Join(" ", [.. parameters.ArgumentsList.Skip(1)]);

@@ -35,7 +35,7 @@ namespace Terminaux.Shell.Shells.Unified
     class PipeUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string sourceCommand = parameters.ArgumentsList[0];
             StringBuilder targetCommandBuilder = new(parameters.ArgumentsList[1] + " ");

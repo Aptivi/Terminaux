@@ -29,7 +29,7 @@ namespace Terminaux.Shell.Shells.Unified
     class RemPrefixCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Flags
             bool print = parameters.ContainsSwitch("-verbose");

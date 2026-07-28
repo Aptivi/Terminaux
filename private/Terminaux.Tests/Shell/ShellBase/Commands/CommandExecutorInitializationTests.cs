@@ -55,7 +55,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
             CommandInstance.ShouldNotBeNull();
             string dummy = "";
             var parameters = new CommandParameters("", [], "", [], [], "say");
-            Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
+            Should.NotThrow(new Action(() => CommandInstance.Execute(null, parameters, ref dummy)));
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
             CommandInstance.ShouldNotBeNull();
             string dummy = "";
             var parameters = new CommandParameters("Hello World", ["Hello", "World"], "Hello World", ["Hello", "World"], [], "say");
-            Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
+            Should.NotThrow(new Action(() => CommandInstance.Execute(null, parameters, ref dummy)));
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
             CommandInstance.ShouldNotBeNull();
             string dummy = "";
             var parameters = new CommandParameters("-s", [], "-s", [], ["-s"], "say");
-            Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
+            Should.NotThrow(new Action(() => CommandInstance.Execute(null, parameters, ref dummy)));
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
             CommandInstance.ShouldNotBeNull();
             string dummy = "";
             var parameters = new CommandParameters("-s Hello!", ["Hello!"], "-s Hello!", ["Hello!"], ["-s"], "say");
-            Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
+            Should.NotThrow(new Action(() => CommandInstance.Execute(null, parameters, ref dummy)));
         }
 
     }
