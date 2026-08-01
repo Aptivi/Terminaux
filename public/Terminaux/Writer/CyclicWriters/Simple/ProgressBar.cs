@@ -35,7 +35,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// </summary>
     public class ProgressBar : SimpleCyclicWriter
     {
-        private bool useDefaultText = true;
         private string text = "";
         private int position = 0;
         private int maxPosition = 0;
@@ -288,7 +287,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 progressMarquee.UseColors = UseColors;
                 progressMarquee.ForegroundColor = ProgressTextColor;
                 progressMarquee.BackgroundColor = ProgressBackgroundColor;
-                if (useDefaultText)
+                if (string.IsNullOrEmpty(progressMarquee.text))
                     progressMarquee.text = "Please wait while the current operation is being processed...";
                 string marqueeText = progressMarquee.Render();
                 int marqueeWidth = ConsoleChar.EstimateCellWidth(marqueeText);
@@ -354,7 +353,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public ProgressBar(Mark text, int position, int maxPosition, Spinner? progressSpinner = null, TextMarquee? progressMarquee = null, params object?[]? args)
         {
             this.text = ((string)text).FormatString(args);
-            useDefaultText = string.IsNullOrWhiteSpace(this.text);
             this.position = position;
             this.maxPosition = maxPosition;
             this.progressSpinner = progressSpinner ?? BuiltinSpinners.SpinMore;
