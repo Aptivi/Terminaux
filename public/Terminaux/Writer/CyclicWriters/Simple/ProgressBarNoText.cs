@@ -62,6 +62,22 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         }
 
         /// <summary>
+        /// Maximum position of the progress bar
+        /// </summary>
+        public int MaxPosition
+        {
+            get => maxPosition;
+            set
+            {
+                maxPosition = value;
+                if (position < 0)
+                    position = 0;
+                else if (position > maxPosition)
+                    position = maxPosition;
+            }
+        }
+
+        /// <summary>
         /// Specifies whether the progress is indeterminate
         /// </summary>
         public bool Indeterminate { get; set; }
@@ -236,7 +252,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             );
 
             // Render the actual bar
-            var bar = new SimpleProgress(Position, maxPosition)
+            var bar = new SimpleProgress(Position, MaxPosition)
             {
                 Indeterminate = Indeterminate,
                 Width = Width - spinnerWidth,

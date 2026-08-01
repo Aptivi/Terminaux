@@ -48,8 +48,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Text to render. All VT sequences and control characters are trimmed away.
         /// </summary>
-        public string Text =>
-            text;
+        public string Text
+        {
+            get => text;
+            set => text = value;
+        }
 
         /// <summary>
         /// Width of the progress bar
@@ -70,6 +73,22 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             set
             {
                 position = value;
+                if (position < 0)
+                    position = 0;
+                else if (position > maxPosition)
+                    position = maxPosition;
+            }
+        }
+
+        /// <summary>
+        /// Maximum position of the progress bar
+        /// </summary>
+        public int MaxPosition
+        {
+            get => maxPosition;
+            set
+            {
+                maxPosition = value;
                 if (position < 0)
                     position = 0;
                 else if (position > maxPosition)
@@ -283,7 +302,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             }
 
             // Render the actual bar
-            var bar = new SimpleProgress(Position, maxPosition)
+            var bar = new SimpleProgress(Position, MaxPosition)
             {
                 Indeterminate = Indeterminate,
                 Width = Width - (spinnerWidth + finalMarqueeWidth + 1),
