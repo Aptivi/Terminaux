@@ -27,6 +27,7 @@ using Terminaux.Writer.CyclicWriters.Builtins;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -287,8 +288,10 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 progressMarquee.UseColors = UseColors;
                 progressMarquee.ForegroundColor = ProgressTextColor;
                 progressMarquee.BackgroundColor = ProgressBackgroundColor;
-                if (string.IsNullOrEmpty(progressMarquee.text))
-                    progressMarquee.text = "Please wait while the current operation is being processed...";
+
+                // TODO: T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC -> Please wait while the current operation is being processed...
+                if (string.IsNullOrEmpty(Text))
+                    progressMarquee.text = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC");
                 string marqueeText = progressMarquee.Render();
                 int marqueeWidth = ConsoleChar.EstimateCellWidth(marqueeText);
                 int spaces = Width - (spinnerWidth + progressWidth + percentageWidth + marqueeWidth);
