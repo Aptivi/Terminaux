@@ -292,6 +292,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 // TODO: T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC -> Please wait while the current operation is being processed...
                 if (string.IsNullOrEmpty(Text))
                     progressMarquee.text = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC");
+                else
+                    progressMarquee.text = Text;
                 string marqueeText = progressMarquee.Render();
                 int marqueeWidth = ConsoleChar.EstimateCellWidth(marqueeText);
                 int spaces = Width - (spinnerWidth + progressWidth + percentageWidth + marqueeWidth);
