@@ -37,12 +37,8 @@ namespace Terminaux.Shell.Arguments.Base.Help
             {
                 var argumentInstance = arguments[arg];
                 string[] usages = [.. argumentInstance.ArgArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
-                TextWriterRaw.WriteRaw(new ListEntry()
-                {
-                    Entry = "  --{0}{1}".FormatString(argumentInstance.Argument, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
-                    Value = LanguageTools.GetLocalized(argumentInstance.HelpDefinition),
-                    Indicator = false,
-                }.Render() + "\n");
+                string argumentEntry = "  --{0}{1}".FormatString(argumentInstance.Argument, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
+                ListEntryWriterColor.WriteListEntry(argumentEntry, LanguageTools.GetLocalized(argumentInstance.HelpDefinition), needsIndent: false);
             }
         }
 
@@ -65,12 +61,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 ConsoleLogger.Warning("No argument help description for {0}", argument);
                 HelpDefinition = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELPDESC_ARG");
             }
-            TextWriterRaw.WriteRaw(new ListEntry()
-            {
-                Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC"),
-                Value = HelpDefinition,
-                Indicator = false,
-            }.Render() + "\n");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC"), HelpDefinition, needsIndent: false);
 
             // Now, populate usages for each argument
             var argumentInfos = argInfo.ArgArgumentInfo;
@@ -91,16 +82,12 @@ namespace Terminaux.Shell.Arguments.Base.Help
 
                 // Print usage information
                 TextWriterRaw.Write();
-                TextWriterRaw.WriteRaw(new ListEntry()
-                {
-                    Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE"),
-                    Value = $"--{argument} {renderedUsage}",
-                    Indicator = false,
-                }.Render() + "\n");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE"), $"--{argument} {renderedUsage}", needsIndent: false);
 
                 // If we have arguments, print their descriptions
                 if (Arguments.Length != 0)
                 {
+                    TextWriterRaw.Write();
                     TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGSLIST"), ThemeColorType.ListTitle);
                     foreach (var argumentPart in Arguments)
                     {
@@ -108,19 +95,14 @@ namespace Terminaux.Shell.Arguments.Base.Help
                         string argumentDesc = LanguageTools.GetLocalized(argumentPart.Options.ArgumentDescription);
                         if (string.IsNullOrWhiteSpace(argumentDesc))
                             argumentDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED");
-                        TextWriterRaw.WriteRaw(new ListEntry()
-                        {
-                            Entry = argumentName,
-                            Value = argumentDesc,
-                            Indentation = 1,
-                            Indicator = false,
-                        }.Render() + "\n");
+                        ListEntryWriterColor.WriteListEntry(argumentName, argumentDesc, indent: 1, needsIndent: false);
                     }
                 }
 
                 // If we have switches, print their descriptions
                 if (Switches.Length != 0)
                 {
+                    TextWriterRaw.Write();
                     TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST"), ThemeColorType.ListTitle);
                     foreach (var Switch in Switches)
                     {
@@ -128,13 +110,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                         string switchDesc = LanguageTools.GetLocalized(Switch.HelpDefinition);
                         if (string.IsNullOrWhiteSpace(switchDesc))
                             switchDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED");
-                        TextWriterRaw.WriteRaw(new ListEntry()
-                        {
-                            Entry = $"-{switchName}",
-                            Value = switchDesc,
-                            Indentation = 1,
-                            Indicator = false,
-                        }.Render() + "\n");
+                        ListEntryWriterColor.WriteListEntry($"-{switchName}", switchDesc, indent: 1, needsIndent: false);
                     }
                 }
             }

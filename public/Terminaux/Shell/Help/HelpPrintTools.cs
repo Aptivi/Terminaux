@@ -18,7 +18,9 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Terminaux.Base;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
@@ -44,116 +46,41 @@ namespace Terminaux.Shell.Help
             // Add every command from each extra and alias
             var ExtraCommandList = shellInfo.extraCommands;
             var unifiedCommandList = ShellManager.unifiedCommandDict;
-            var AliasedCommandList = AliasManager.GetAliasListFromType(commandType)
-                .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
+            var AliasedCommandList = AliasManager.GetAliasListFromType(commandType);
             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, commands.Length);
 
-            // The built-in commands
-            if (showGeneral)
+            // The unified commands
+            if (showUnified && unifiedCommandList.Count > 0)
             {
-                int hiddenProcessed = 0;
-                TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_GENERALCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, commandList.Count);
-                if (commandList.Count == 0)
-                    TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS"), ThemeColorType.ListTitle);
-                foreach (var cmd in commandList)
-                {
-                    if (cmd.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
-                    {
-                        hiddenProcessed++;
-                        continue;
-                    }
-                    string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
-                    TextWriterRaw.WriteRaw(new ListEntry()
-                    {
-                        Entry = "{0}{1}".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
-                        Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
-                        Indentation = 1,
-                        Indicator = false,
-                    }.Render() + "\n");
-                }
-                if (hiddenProcessed > 0 && showCount)
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
+                TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, unifiedCommandList.Count);
+                ShowCommandListInternal(unifiedCommandList, showHidden, showCount);
+                if (showGeneral && commandList.Count > 0)
+                    TextWriterRaw.Write();
+            }
+
+            // The built-in commands
+            if (showGeneral && commandList.Count > 0)
+            {
+                TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_GENERALCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, commandList.Count);
+                ShowCommandListInternal(commandList, showHidden, showCount);
+                if (showExtra && ExtraCommandList.Count > 0)
+                    TextWriterRaw.Write();
             }
 
             // The extra commands
-            if (showExtra)
+            if (showExtra && ExtraCommandList.Count > 0)
             {
-                int hiddenProcessed = 0;
-                TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXTRACMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, ExtraCommandList.Count);
-                if (ExtraCommandList.Count == 0)
-                    TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS"), ThemeColorType.ListTitle);
-                foreach (var cmd in ExtraCommandList)
-                {
-                    if (cmd.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
-                    {
-                        hiddenProcessed++;
-                        continue;
-                    }
-                    string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
-                    TextWriterRaw.WriteRaw(new ListEntry()
-                    {
-                        Entry = "{0}{1}".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
-                        Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
-                        Indentation = 1,
-                        Indicator = false,
-                    }.Render() + "\n");
-                }
-                if (hiddenProcessed > 0 && showCount)
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
+                TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXTRACMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, ExtraCommandList.Count);
+                ShowCommandListInternal(ExtraCommandList, showHidden, showCount);
+                if (showAlias && AliasedCommandList.Count > 0)
+                    TextWriterRaw.Write();
             }
 
             // The alias commands
-            if (showAlias)
+            if (showAlias && AliasedCommandList.Count > 0)
             {
-                int hiddenProcessed = 0;
-                TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ALIASCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, AliasedCommandList.Count);
-                if (AliasedCommandList.Count == 0)
-                    TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS"), ThemeColorType.ListTitle);
-                foreach (var cmd in AliasedCommandList)
-                {
-                    if (cmd.Value.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
-                    {
-                        hiddenProcessed++;
-                        continue;
-                    }
-                    string[] usages = [.. cmd.Value.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
-                    TextWriterRaw.WriteRaw(new ListEntry()
-                    {
-                        Entry = "{0} -> {1}{2}".FormatString(cmd.Key.Alias, cmd.Value.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
-                        Value = LanguageTools.GetLocalized(cmd.Value.HelpDefinition),
-                        Indentation = 1,
-                        Indicator = false,
-                    }.Render() + "\n");
-                }
-                if (hiddenProcessed > 0 && showCount)
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
-            }
-
-            // The unified commands
-            if (showUnified)
-            {
-                int hiddenProcessed = 0;
-                TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, unifiedCommandList.Count);
-                if (unifiedCommandList.Count == 0)
-                    TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS"), ThemeColorType.ListTitle);
-                foreach (var cmd in unifiedCommandList)
-                {
-                    if (cmd.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
-                    {
-                        hiddenProcessed++;
-                        continue;
-                    }
-                    string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
-                    TextWriterRaw.WriteRaw(new ListEntry()
-                    {
-                        Entry = "{0}{1}".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
-                        Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
-                        Indentation = 1,
-                        Indicator = false,
-                    }.Render() + "\n");
-                }
-                if (hiddenProcessed > 0 && showCount)
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
+                TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ALIASCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, AliasedCommandList.Count);
+                ShowAliasCommandListInternal(AliasedCommandList, showHidden, showCount);
             }
         }
 
@@ -202,18 +129,8 @@ namespace Terminaux.Shell.Help
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
                     HelpDefinition = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY") + $" {command}";
-                TextWriterRaw.WriteRaw(new ListEntry()
-                {
-                    Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD"),
-                    Value = FinalCommand,
-                    Indicator = false,
-                }.Render() + "\n");
-                TextWriterRaw.WriteRaw(new ListEntry()
-                {
-                    Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC"),
-                    Value = HelpDefinition,
-                    Indicator = false,
-                }.Render() + "\n");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD"), FinalCommand, needsIndent: false);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC"), HelpDefinition, needsIndent: false);
 
                 // Iterate through command argument information instances
                 var argumentInfos = FinalCommandList[FinalCommand].CommandArgumentInfo ?? [];
@@ -233,16 +150,12 @@ namespace Terminaux.Shell.Help
 
                     // Print usage information
                     TextWriterRaw.Write();
-                    TextWriterRaw.WriteRaw(new ListEntry()
-                    {
-                        Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE"),
-                        Value = $"{FinalCommand} {renderedUsage}",
-                        Indicator = false,
-                    }.Render() + "\n");
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE"), $"{FinalCommand} {renderedUsage}", needsIndent: false);
 
                     // If we have arguments, print their descriptions
                     if (Arguments.Length != 0)
                     {
+                        TextWriterRaw.Write();
                         TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGSLIST"), ThemeColorType.ListTitle);
                         foreach (var argument in Arguments)
                         {
@@ -250,19 +163,14 @@ namespace Terminaux.Shell.Help
                             string argumentDesc = LanguageTools.GetLocalized(argument.Options.ArgumentDescription);
                             if (string.IsNullOrWhiteSpace(argumentDesc))
                                 argumentDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED");
-                            TextWriterRaw.WriteRaw(new ListEntry()
-                            {
-                                Entry = argumentName,
-                                Value = argumentDesc,
-                                Indentation = 1,
-                                Indicator = false,
-                            }.Render() + "\n");
+                            ListEntryWriterColor.WriteListEntry(argumentName, argumentDesc, indent: 1, needsIndent: false);
                         }
                     }
 
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
+                        TextWriterRaw.Write();
                         TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST"), ThemeColorType.ListTitle);
                         foreach (var Switch in Switches)
                         {
@@ -270,13 +178,7 @@ namespace Terminaux.Shell.Help
                             string switchDesc = LanguageTools.GetLocalized(Switch.HelpDefinition);
                             if (string.IsNullOrWhiteSpace(switchDesc))
                                 switchDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED");
-                            TextWriterRaw.WriteRaw(new ListEntry()
-                            {
-                                Entry = $"-{switchName}",
-                                Value = switchDesc,
-                                Indentation = 1,
-                                Indicator = false,
-                            }.Render() + "\n");
+                            ListEntryWriterColor.WriteListEntry($"-{switchName}", switchDesc, indent: 1, needsIndent: false);
                         }
                     }
                 }
@@ -286,6 +188,43 @@ namespace Terminaux.Shell.Help
             }
             else
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_CMDNOHELP"), ThemeColorType.Error, command);
+        }
+
+        private static void ShowCommandListInternal(List<CommandInfo> commands, bool showHidden, bool showCount)
+        {
+            int hiddenProcessed = 0;
+            foreach (var cmd in commands)
+            {
+                if (cmd.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
+                {
+                    hiddenProcessed++;
+                    continue;
+                }
+                string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
+                string commandEntry = "{0}{1}".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
+                ListEntryWriterColor.WriteListEntry(commandEntry, LanguageTools.GetLocalized(cmd.HelpDefinition), indent: 1);
+            }
+            if (hiddenProcessed > 0 && showCount)
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
+        }
+
+        private static void ShowAliasCommandListInternal(List<AliasInfo> aliases, bool showHidden, bool showCount)
+        {
+            int hiddenProcessed = 0;
+            foreach (var alias in aliases)
+            {
+                var cmd = alias.TargetCommand;
+                if (cmd.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
+                {
+                    hiddenProcessed++;
+                    continue;
+                }
+                string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
+                string aliasEntry = "{0} -> {1}{2}".FormatString(alias.Alias, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
+                ListEntryWriterColor.WriteListEntry(aliasEntry, LanguageTools.GetLocalized(cmd.HelpDefinition), indent: 1);
+            }
+            if (hiddenProcessed > 0 && showCount)
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
         }
     }
 }
