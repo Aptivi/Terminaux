@@ -382,6 +382,174 @@ namespace Terminaux.Shell.Shells
                     ])
                 ], new ContainsCommand(), CommandFlags.Hidden),
 
+            new CommandInfo("colorto", /* Localizable */ "T_SHELL_UNIFIED_COMMAND_COLORTO_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC"
+                        }),
+                        new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC"
+                        }),
+                        new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC"
+                        }),
+                        new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC"
+                        }),
+                        new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC"
+                        }),
+                        new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC"
+                        }),
+                        new CommandArgumentPart(false, "number5", new CommandArgumentPartOptions()
+                        {
+                            // TODO: T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC -> Fifth number
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC"
+                        }),
+                    ], true)
+                ], new ColorToCommand()),
+
+            new CommandInfo("colortoks", /* Localizable */ "T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC"
+                        }),
+                        new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC"
+                        }),
+                        new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC"
+                        }),
+                        new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC"
+                        }),
+                        new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC"
+                        }),
+                        new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC"
+                        }),
+                        new CommandArgumentPart(false, "number5", new CommandArgumentPartOptions()
+                        {
+                            // TODO: T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC -> Fifth number
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC"
+                        }),
+                    ], true)
+                ], new ColorToKSCommand()),
+
+            new CommandInfo("colortohex", /* Localizable */ "T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC"
+                        }),
+
+                        new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC"
+                        }),
+                        new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC"
+                        }),
+                        new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC"
+                        }),
+                        new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC"
+                        }),
+                        new CommandArgumentPart(false, "number5", new CommandArgumentPartOptions()
+                        {
+                            // TODO: T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC -> Fifth number
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC"
+                        }),
+                    ], true)
+                ], new ColorToHexCommand()),
+
+            new CommandInfo("colorspecto", /* Localizable */ "T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC"
+                        }),
+                        new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC"
+                        }),
+                    ], true)
+                ], new ColorSpecToCommand()),
+
+            new CommandInfo("colorspectoks", /* Localizable */ "T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC"
+                        }),
+                        new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC"
+                        }),
+                    ], true)
+                ], new ColorSpecToKSCommand()),
+
+            new CommandInfo("colorspectohex", /* Localizable */ "T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC"
+                        }),
+                    ], true)
+                ], new ColorSpecToHexCommand()),
+
             new CommandInfo("degrees", /* Localizable */ "T_SHELL_UNIFIED_DEGREES_DESC",
                 [
                     new CommandArgumentInfo(
