@@ -137,6 +137,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Prepare the selections
                     int maxModuleWidth = maxSelectionWidth - maxModuleSelectWidth;
+                    if (maxModuleWidth < 0)
+                        maxModuleWidth = maxSelectionWidth;
                     List<InputChoiceInfo> choices = [];
                     foreach (var module in modules)
                     {
@@ -216,6 +218,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                         {
                             // Prepare the selections
                             int maxModuleWidth = maxSelectionWidth - maxModuleSelectWidth;
+                            if (maxModuleWidth < 0)
+                                maxModuleWidth = maxSelectionWidth;
                             List<InputChoiceInfo> choices = [];
                             InputModule chosenModule = modules[currentSelection];
                             foreach (var module in modules)
@@ -237,8 +241,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                             };
                             int hitboxIdx = selectionsRendered.GetHitboxIndex();
                             var hitbox = selectionsRendered.GenerateSelectionHitbox(hitboxIdx);
-                            popoverPos = new(hitbox.hitbox.Start.X + 1 + maxModuleSelectWidth, hitbox.hitbox.Start.Y);
-                            popoverSize = new(hitbox.hitbox.Size.Width - maxModuleSelectWidth - 2, chosenModule.ExtraPopoverHeight > 0 ? chosenModule.ExtraPopoverHeight : hitbox.hitbox.Size.Height);
+                            int popoverX = hitbox.hitbox.Start.X + 1 + maxModuleSelectWidth;
+                            int popoverWidth = hitbox.hitbox.Size.Width - maxModuleSelectWidth - 2;
+                            popoverPos = new(maxModuleSelectWidth < maxSelectionWidth ? popoverX : hitbox.hitbox.Start.X, hitbox.hitbox.Start.Y);
+                            popoverSize = new(popoverWidth > 0 ? popoverWidth : hitbox.hitbox.Size.Width - 1, chosenModule.ExtraPopoverHeight > 0 ? chosenModule.ExtraPopoverHeight : hitbox.hitbox.Size.Height);
                         }
                     }
 
