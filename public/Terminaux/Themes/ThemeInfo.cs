@@ -36,11 +36,10 @@ namespace Terminaux.Themes
     /// </summary>
     public class ThemeInfo
     {
-
+        internal DateTime start = DateTime.Today;
+        internal DateTime end = DateTime.Today;
         internal readonly Dictionary<string, Color> themeColors = ThemeColorsTools.PopulateColorsEmpty();
         internal readonly List<string> themeExtraColors = [];
-        internal readonly DateTime start = DateTime.Today;
-        internal readonly DateTime end = DateTime.Today;
         private string[] useAccentTypes = [];
         private readonly ThemeMetadata metadata;
         private readonly JToken metadataToken;
@@ -48,64 +47,92 @@ namespace Terminaux.Themes
         /// <summary>
         /// Theme name
         /// </summary>
-        public string Name { get; }
+        public string Name { get; set; }
+
         /// <summary>
         /// Theme description
         /// </summary>
-        public string Description { get; }
+        public string Description { get; set; }
+
         /// <summary>
         /// Is true color required?
         /// </summary>
-        public bool TrueColorRequired { get; }
+        public bool TrueColorRequired { get; set; }
+
         /// <summary>
         /// Whether this theme celebrates a specific event
         /// </summary>
-        public bool IsEvent { get; }
+        public bool IsEvent { get; set; }
+
         /// <summary>
         /// The month in which the event starts
         /// </summary>
-        public int StartMonth { get; }
+        public int StartMonth { get; set; }
+
         /// <summary>
         /// The day in which the event starts
         /// </summary>
-        public int StartDay { get; }
+        public int StartDay { get; set; }
+
         /// <summary>
         /// The start <see cref="DateTime"/> instance representing the start of the event
         /// </summary>
-        public DateTime Start =>
-            start;
+        public DateTime Start
+        {
+            get
+            {
+                UpdateEventInfo();
+                return start;
+            }
+        }
+
         /// <summary>
         /// The month in which the event ends
         /// </summary>
-        public int EndMonth { get; }
+        public int EndMonth { get; set; }
+
         /// <summary>
         /// The day in which the event ends
         /// </summary>
-        public int EndDay { get; }
+        public int EndDay { get; set; }
+
         /// <summary>
         /// The end <see cref="DateTime"/> instance representing the end of the event
         /// </summary>
-        public DateTime End =>
-            end;
+        public DateTime End
+        {
+            get
+            {
+                UpdateEventInfo();
+                return end;
+            }
+        }
+
         /// <summary>
         /// Whether you can set this theme or not. Always false in non-event themes. False if the theme is an event and the current
         /// time and date is between <see cref="StartMonth"/>/<see cref="StartDay"/> and <see cref="EndMonth"/>/<see cref="EndDay"/>
         /// </summary>
         public bool IsExpired =>
             IsEvent && (DateTime.Now < Start || DateTime.Now > End);
+
         /// <summary>
         /// The category in which the theme is categorized
         /// </summary>
-        public ThemeCategory Category { get; }
+        public ThemeCategory Category { get; set; }
+
         /// <summary>
         /// The calendar name in which the event is assigned to
         /// </summary>
-        public string Calendar { get; }
+        public string Calendar { get; set; }
+
         /// <summary>
-        /// Kernel color type list to use accent color
+        /// Color type list to use accent color
         /// </summary>
-        public string[] UseAccentTypes =>
-            useAccentTypes;
+        public string[] UseAccentTypes
+        {
+            get => useAccentTypes;
+            set => useAccentTypes = value;
+        }
 
         /// <summary>
         /// Gets a color from the color type
@@ -246,67 +273,9 @@ namespace Terminaux.Themes
             }
         }
 
-        /// <summary>
-        /// Generates a new theme info from default resources
-        /// </summary>
-        public ThemeInfo() :
-            this(JToken.Parse(ThemeTools.GetThemeInfoJsonFromResources("Default")) ??
-                throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED")))
-        { }
-
-        /// <summary>
-        /// Generates a new theme info from file path
-        /// </summary>
-        /// <param name="themePath">Theme file path</param>
-        public ThemeInfo(string themePath) :
-            this(JToken.Parse(File.ReadAllText(themePath)))
-        { }
-
-        /// <summary>
-        /// Generates a new theme info from file stream
-        /// </summary>
-        /// <param name="ThemeFileStream">Theme file stream reader</param>
-        public ThemeInfo(StreamReader ThemeFileStream) :
-            this(JToken.Parse(ThemeFileStream.ReadToEnd()))
-        { }
-
-        /// <summary>
-        /// Generates a new theme info from theme resource JSON
-        /// </summary>
-        /// <param name="ThemeResourceJson">Theme resource JSON</param>
-        public ThemeInfo(JToken ThemeResourceJson)
+        private void UpdateEventInfo()
         {
-            // Parse the metadata
-            var metadataObj = ThemeResourceJson["Metadata"] ??
-                throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA"));
-            metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString()) ??
-                throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID"));
-            metadataToken = ThemeResourceJson;
-
-            // Populate colors
-            Name = metadata.Name;
-            foreach (JProperty token in ThemeResourceJson.Cast<JProperty>())
-            {
-                if (Enum.IsDefined(typeof(ThemeColorType), token.Name.RemoveSuffix("Color")))
-                    continue;
-                if (token.Name == "Metadata")
-                    continue;
-                themeExtraColors.Add(token.Name);
-            }
-            UpdateColors();
-
-            // Install some info to the class
-            Description = metadata.Description;
-            TrueColorRequired = ThemeTools.MinimumTypeRequired(themeColors, ColorType.TrueColor);
-            Category = metadata.Category;
-
             // Parse event-related info
-            IsEvent = metadata.IsEvent;
-            StartMonth = metadata.StartMonth;
-            StartDay = metadata.StartDay;
-            EndMonth = metadata.EndMonth;
-            EndDay = metadata.EndDay;
-            Calendar = metadata.Calendar;
             if (!Enum.TryParse(Calendar, out CalendarTypes calendar))
                 calendar = CalendarTypes.Gregorian;
 
@@ -370,5 +339,68 @@ namespace Terminaux.Themes
             }
         }
 
+        /// <summary>
+        /// Generates a new theme info from default resources
+        /// </summary>
+        public ThemeInfo() :
+            this(JToken.Parse(ThemeTools.GetThemeInfoJsonFromResources("Default")) ??
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED")))
+        { }
+
+        /// <summary>
+        /// Generates a new theme info from file path
+        /// </summary>
+        /// <param name="themePath">Theme file path</param>
+        public ThemeInfo(string themePath) :
+            this(JToken.Parse(File.ReadAllText(themePath)))
+        { }
+
+        /// <summary>
+        /// Generates a new theme info from file stream
+        /// </summary>
+        /// <param name="ThemeFileStream">Theme file stream reader</param>
+        public ThemeInfo(StreamReader ThemeFileStream) :
+            this(JToken.Parse(ThemeFileStream.ReadToEnd()))
+        { }
+
+        /// <summary>
+        /// Generates a new theme info from theme resource JSON
+        /// </summary>
+        /// <param name="ThemeResourceJson">Theme resource JSON</param>
+        public ThemeInfo(JToken ThemeResourceJson)
+        {
+            // Parse the metadata
+            var metadataObj = ThemeResourceJson["Metadata"] ??
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA"));
+            metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString()) ??
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID"));
+            metadataToken = ThemeResourceJson;
+
+            // Populate colors
+            Name = metadata.Name;
+            foreach (JProperty token in ThemeResourceJson.Cast<JProperty>())
+            {
+                if (Enum.IsDefined(typeof(ThemeColorType), token.Name.RemoveSuffix("Color")))
+                    continue;
+                if (token.Name == "Metadata")
+                    continue;
+                themeExtraColors.Add(token.Name);
+            }
+            UpdateColors();
+
+            // Install some info to the class
+            Description = metadata.Description;
+            TrueColorRequired = ThemeTools.MinimumTypeRequired(themeColors, ColorType.TrueColor);
+            Category = metadata.Category;
+
+            // Update event info
+            IsEvent = metadata.IsEvent;
+            StartMonth = metadata.StartMonth;
+            StartDay = metadata.StartDay;
+            EndMonth = metadata.EndMonth;
+            EndDay = metadata.EndDay;
+            Calendar = metadata.Calendar;
+            UpdateEventInfo();
+        }
     }
 }
