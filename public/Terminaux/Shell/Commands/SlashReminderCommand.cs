@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -26,6 +27,11 @@ namespace Terminaux.Shell.Commands
 {
     internal class SlashReminderCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "slashreminder";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

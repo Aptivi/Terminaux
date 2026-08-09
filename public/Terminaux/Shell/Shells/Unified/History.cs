@@ -20,6 +20,8 @@
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Reader.History;
+using Terminaux.Shell.Arguments;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -28,6 +30,19 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class HistoryCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "history";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_HISTORY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

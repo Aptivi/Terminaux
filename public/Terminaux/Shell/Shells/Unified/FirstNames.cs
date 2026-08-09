@@ -17,8 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.NameGen;
 
 namespace Terminaux.Shell.Shells.Unified
@@ -53,6 +56,54 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class FirstNamesCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "firstnames";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIRSTNAMES_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC"
+                    }),
+                    new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC"
+                    }),
+                    new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("t", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("male", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["female", "both"],
+                        AcceptsValues = false,
+                    }),
+                    new SwitchInfo("female", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["male", "both"],
+                        AcceptsValues = false,
+                    }),
+                    new SwitchInfo("both", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["female", "male"],
+                        AcceptsValues = false,
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable | CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

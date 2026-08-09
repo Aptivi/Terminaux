@@ -58,7 +58,7 @@ namespace Terminaux.Shell.Aliases
         /// Resolved target command info (for execution)
         /// </summary>
         [JsonIgnore]
-        public CommandInfo TargetCommand =>
+        public BaseCommand TargetCommand =>
             CommandManager.GetCommand(Command, Type);
 
         [JsonConstructor]

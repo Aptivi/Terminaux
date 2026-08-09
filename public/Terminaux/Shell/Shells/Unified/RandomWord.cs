@@ -17,7 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.Words;
 
@@ -28,6 +31,25 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class RandomWordCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "randomword";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_RANDOMWORD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

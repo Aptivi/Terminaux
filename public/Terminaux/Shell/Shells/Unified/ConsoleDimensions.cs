@@ -20,6 +20,7 @@
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -28,6 +29,19 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class ConsoleDimensionsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "consoledimensions";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

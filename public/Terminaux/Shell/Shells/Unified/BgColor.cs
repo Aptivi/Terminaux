@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Terminaux.Base;
-using Terminaux.Writer.ConsoleWriters;
 using Colorimetry;
-using Terminaux.Themes.Colors;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -31,6 +33,39 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class BgColorCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "bgcolor";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_BGCOLOR_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "specifier", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("plain", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("truevt", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

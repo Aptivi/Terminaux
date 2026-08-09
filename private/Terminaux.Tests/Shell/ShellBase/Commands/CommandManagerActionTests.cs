@@ -73,12 +73,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
         [Description("Action")]
         public void TestRegisterCommand(string type)
         {
-            Should.NotThrow(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("mycmd2", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand())
-            ));
+            Should.NotThrow(() => CommandManager.RegisterCustomCommand(type, new CustomCommand()));
             CommandManager.IsCommandFound("mycmd2", type).ShouldBeTrue();
         }
 
@@ -90,12 +85,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
         [Description("Action")]
         public void TestRegisterEmptyCommandName(string type)
         {
-            Should.Throw(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand())
-            ), typeof(TerminauxException));
+            Should.Throw(() => CommandManager.RegisterCustomCommand(type, new CustomCommandEmpty()), typeof(TerminauxException));
         }
 
         /// <summary>
@@ -106,12 +96,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
         [Description("Action")]
         public void TestRegisterCommandConflicting(string type)
         {
-            Should.Throw(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("exit", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand())
-            ), typeof(TerminauxException));
+            Should.Throw(() => CommandManager.RegisterCustomCommand(type, new CustomCommandConflicting()), typeof(TerminauxException));
         }
 
         /// <summary>
@@ -152,22 +137,11 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
         [Description("Action")]
         public void TestRegisterCommands(string type)
         {
-            var commandInfos = new CommandInfo[]
+            var commandInfos = new BaseCommand[]
             {
-                new("cmdgroup3", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand()),
-
-                new("cmdgroup4", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand()),
-
-                new("cmdgroup5", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand()),
+                new CustomCommandGroup3(),
+                new CustomCommandGroup4(),
+                new CustomCommandGroup5(),
             };
             Should.NotThrow(() => CommandManager.RegisterCustomCommands(type, commandInfos));
             CommandManager.IsCommandFound("cmdgroup3", type).ShouldBeTrue();
@@ -183,22 +157,11 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
         [Description("Action")]
         public void TestRegisterCommandsWithErrors(string type)
         {
-            var commandInfos = new CommandInfo[]
+            var commandInfos = new BaseCommand[]
             {
-                new("command2", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand()),
-
-                new("exit", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand()),
-
-                new("", $"My command help definition for type {type}...",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CustomCommand()),
+                new CustomCommandGroup3(),
+                new CustomCommandGroup4(),
+                new CustomCommandGroup5(),
             };
             Should.Throw(() => CommandManager.RegisterCustomCommands(type, commandInfos), typeof(TerminauxException));
             CommandManager.IsCommandFound("command2", type).ShouldBeTrue();

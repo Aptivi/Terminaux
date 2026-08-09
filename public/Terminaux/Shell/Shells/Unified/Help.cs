@@ -17,8 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Help;
+using Terminaux.Shell.Switches;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified
@@ -31,6 +34,64 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class HelpUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "help";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_HELP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => CommandManager.GetCommandNames(ShellManager.CurrentShellType),
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("general", /* Localizable */ "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("alias", /* Localizable */ "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("unified", /* Localizable */ "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("extra", /* Localizable */ "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("all", /* Localizable */ "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("simplified", /* Localizable */ "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("hidden", /* Localizable */ "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("count", /* Localizable */ "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("markdown", /* Localizable */ "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ], false)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

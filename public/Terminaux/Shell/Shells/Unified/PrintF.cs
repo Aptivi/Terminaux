@@ -21,6 +21,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using System.Linq;
 using Textify.General;
+using Terminaux.Shell.Arguments;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -29,6 +31,29 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class PrintFCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "printf";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_PRINTF_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "text", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                    }),
+                    new CommandArgumentPart(false, "parameters", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC"
+                    }),
+                ], true, true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

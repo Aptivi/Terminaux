@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
+using System.Text;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.Figlet;
-using System.Text;
-using Terminaux.Themes.Colors;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -31,6 +33,44 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class FigletMetricsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "figletmetrics";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIGLETMETRICS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "text", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                    }),
+                    new CommandArgumentPart(false, "font", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC"
+                    }),
+                    new CommandArgumentPart(false, "width", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+                        IsNumeric = true,
+                    }),
+                ],
+                [
+                    new SwitchInfo("detailed", /* Localizable */ "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

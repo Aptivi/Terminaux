@@ -17,34 +17,27 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using System;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Arguments;
 
-namespace Terminaux.Tests.Shell.ShellBase.Commands
+namespace Terminaux.Tests.Shell.ShellBase.Commands.TestCommands
 {
-
-    class CommandTest : BaseCommand, ICommand
+    internal class CustomCommandGroup3 : BaseCommand, ICommand
     {
         public override string Command =>
-            throw new NotImplementedException();
+            "cmdgroup3";
 
         public override string HelpDefinition =>
-            throw new NotImplementedException();
+            "My command help definition...";
 
-        public override CommandArgumentInfo[] CommandArgumentInfo =>
-            throw new NotImplementedException();
-
-        public override CommandFlags Flags =>
-            throw new NotImplementedException();
+        public override CommandArgumentInfo[] CommandArgumentInfo => 
+            [];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            Console.WriteLine("We're on CommandTest with:");
-            Console.WriteLine(format: "- parameters.ArgumentsText: {0}", parameters.ArgumentsText);
-            Console.WriteLine(format: "- parameters.ArgumentsList: {0}", string.Join(", ", parameters.ArgumentsList));
-            Console.WriteLine(format: "- parameters.SwitchesList: {0}", string.Join(", ", parameters.SwitchesList));
+            TextWriterColor.Write($"Passed arguments: [{string.Join(", ", parameters.ArgumentsList)}]");
             return 0;
         }
 

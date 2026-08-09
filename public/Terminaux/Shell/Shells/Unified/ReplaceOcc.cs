@@ -17,11 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
 using Terminaux.Base;
-using Textify.General;
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -30,6 +32,44 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class ReplaceOccCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "replaceocc";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_REPLACEOCC_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "text", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "toreplace", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "replacewith", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC"
+                    }),
+                    new CommandArgumentPart(true, "occurrencenum", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+                        IsNumeric = true,
+                    }),
+                ],
+                [
+                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

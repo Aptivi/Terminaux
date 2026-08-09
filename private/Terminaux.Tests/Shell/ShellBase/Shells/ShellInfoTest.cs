@@ -27,11 +27,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Shells
 
     class ShellInfoTest : BaseShellInfo<ShellTest>, IShellInfo
     {
-        public override List<CommandInfo> Commands =>
-        [
-            new CommandInfo("test", "Test command", [
-                new CommandArgumentInfo()
-            ], null)
-        ];
+        public override List<BaseCommand> Commands =>
+            [];
     }
 }

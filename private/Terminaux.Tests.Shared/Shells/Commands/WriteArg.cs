@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
@@ -25,6 +26,20 @@ namespace Terminaux.Tests.Shared.Shells.Commands
 {
     class WriteArgCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "writearg";
+
+        public override string HelpDefinition =>
+            "Writes test text with argument support";
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "text")
+                ])
+            ];
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(parameters.ArgumentsText);

@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
 using Terminaux.Reader.History;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 
 namespace Terminaux.Shell.Shells.Unified
@@ -30,6 +32,11 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class LoadHistoriesUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "loadhistories";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_LOADHISTORIES_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

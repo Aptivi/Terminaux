@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -31,6 +32,23 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class WrapUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "wrap";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_WRAP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(ShellManager.CurrentShellType),
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC"
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

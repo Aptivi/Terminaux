@@ -17,8 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools.Placeholder;
 
 namespace Terminaux.Shell.Shells.Unified
@@ -31,6 +34,28 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class EchoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "echo";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_ECHO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "text", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("noparse", /* Localizable */ "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC", false, false, [], 0, false)
+                ], true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

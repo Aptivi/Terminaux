@@ -19,6 +19,7 @@
 
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -30,6 +31,11 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class ClsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "cls";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_CLS_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

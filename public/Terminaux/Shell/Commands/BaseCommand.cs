@@ -17,7 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
 using Terminaux.Base;
+using Terminaux.Shell.Aliases;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Shells;
 
 namespace Terminaux.Shell.Commands
@@ -27,6 +30,33 @@ namespace Terminaux.Shell.Commands
     /// </summary>
     public abstract class BaseCommand : ICommand
     {
+        /// <summary>
+        /// The command
+        /// </summary>
+        public abstract string Command { get; }
+
+        /// <summary>
+        /// The help definition of command.
+        /// </summary>
+        public abstract string HelpDefinition { get; }
+
+        /// <summary>
+        /// Command argument info
+        /// </summary>
+        public virtual CommandArgumentInfo[] CommandArgumentInfo =>
+            [];
+
+        /// <summary>
+        /// Command properties
+        /// </summary>
+        public virtual CommandFlags Flags =>
+            CommandFlags.None;
+
+        /// <summary>
+        /// Aliases for this command
+        /// </summary>
+        public AliasInfo[] Aliases =>
+            [.. AliasManager.aliases.Where((ai) => ai.Command == Command)];
 
         /// <inheritdoc/>
         public abstract int Execute(IShell? shell, CommandParameters parameters, ref string variableValue);

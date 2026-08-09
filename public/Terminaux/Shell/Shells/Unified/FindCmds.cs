@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -32,6 +33,22 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class FindCmdsUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "findcmds";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_FINDCMDS_HELP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "search", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC"
+                    })
+                ], false)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

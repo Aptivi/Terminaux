@@ -67,12 +67,12 @@ namespace Terminaux.Shell.Commands
         /// Gets the command list according to the shell type
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        public static CommandInfo[] GetCommands(string ShellType)
+        public static BaseCommand[] GetCommands(string ShellType)
         {
             // Individual shells
             var shellInfo = ShellManager.GetShellInfo(ShellType);
             var extraCommands = ShellManager.GetShellInfo(ShellType).extraCommands;
-            List<CommandInfo> FinalCommands = shellInfo.Commands;
+            List<BaseCommand> FinalCommands = shellInfo.Commands;
 
             // Unified commands
             foreach (var UnifiedCommand in ShellManager.UnifiedCommands)
@@ -107,7 +107,7 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         /// <param name="namePattern">A valid regex pattern for command name</param>
         /// <param name="ShellType">The shell type</param>
-        public static CommandInfo[] FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType)
+        public static BaseCommand[] FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType)
         {
             // Verify that the provided regex is valid
             if (!RegexTools.IsValidRegex(namePattern))
@@ -129,7 +129,7 @@ namespace Terminaux.Shell.Commands
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static CommandInfo GetCommand(string Command, string ShellType)
+        public static BaseCommand GetCommand(string Command, string ShellType)
         {
             ConsoleLogger.Debug("Command: {0}, ShellType: {1}", Command, ShellType);
             var commandList = GetCommands(ShellType);
@@ -143,7 +143,7 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         /// <param name="ShellType">Type of a shell, including your custom type and other mod's custom type to extend it</param>
         /// <param name="commandBase">Custom command base to register</param>
-        public static void RegisterCustomCommand(string ShellType, CommandInfo? commandBase)
+        public static void RegisterCustomCommand(string ShellType, BaseCommand? commandBase)
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))
@@ -164,13 +164,6 @@ namespace Terminaux.Shell.Commands
                 throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDALREADYADDED"));
             }
 
-            // Check to see if the help definition is full
-            if (string.IsNullOrEmpty(commandBase.HelpDefinition))
-            {
-                ConsoleLogger.Warning("No definition, {0}.Def = \"Command not defined\"", command);
-                commandBase.HelpDefinition = "Command not defined";
-            }
-
             // Now, add the command to the extra list
             ConsoleLogger.Debug("Adding command {0} for {1}...", command, ShellType);
             var info = ShellManager.GetShellInfo(ShellType);
@@ -184,7 +177,7 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         /// <param name="ShellType">Type of a shell, including your custom type and other mod's custom type to extend it</param>
         /// <param name="commandBases">Custom command bases to register</param>
-        public static void RegisterCustomCommands(string ShellType, CommandInfo[] commandBases)
+        public static void RegisterCustomCommands(string ShellType, BaseCommand[] commandBases)
         {
             List<string> failedCommands = [];
             foreach (var commandBase in commandBases)

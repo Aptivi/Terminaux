@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
 using Terminaux.Base;
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -29,6 +31,34 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class DpiCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "dpi";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_DPI_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "pixels", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(true, "lengthinches", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+                        IsNumeric = true,
+                    })
+                ],
+                [
+                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

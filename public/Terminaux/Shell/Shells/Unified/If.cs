@@ -20,6 +20,7 @@
 using System;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting.Conditions;
 using Terminaux.Themes.Colors;
@@ -36,6 +37,26 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class IfCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "if";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_IF_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "MESHExpression", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC"
+                    }),
+                    new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

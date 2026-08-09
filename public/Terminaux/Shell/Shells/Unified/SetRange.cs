@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -32,6 +33,30 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class SetRangeCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "setrange";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_SETRANGE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC"
+                    }),
+                    new CommandArgumentPart(false, "value2", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC"
+                    }),
+                    new CommandArgumentPart(false, "value3", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC"
+                    }),
+                ], true, true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

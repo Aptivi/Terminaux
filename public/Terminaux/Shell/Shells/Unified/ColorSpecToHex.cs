@@ -21,6 +21,8 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Colorimetry;
+using Terminaux.Shell.Arguments;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -32,6 +34,22 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class ColorSpecToHexCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "colorspectohex";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC"
+                    }),
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -53,10 +53,10 @@ namespace Terminaux.Shell.Arguments
         /// <param name="cmdInfo">Command information</param>
         /// <param name="CommandType">Shell command type.</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo? cmdInfo, string CommandType)
+        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, BaseCommand? cmdInfo, string CommandType)
         {
             string Command;
-            CommandInfo[] ShellCommands;
+            BaseCommand[] ShellCommands;
 
             // Change the available commands list according to command type
             ShellCommands = CommandManager.GetCommands(CommandType);
@@ -123,7 +123,7 @@ namespace Terminaux.Shell.Arguments
                 return (fallback, new[] { fallback });
         }
 
-        private static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo? CommandInfo, ArgumentInfo? argumentInfo)
+        private static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, BaseCommand? CommandInfo, ArgumentInfo? argumentInfo)
         {
             ProvidedArgumentsInfo? satisfiedArg = null;
             List<ProvidedArgumentsInfo> totalArgs = [];

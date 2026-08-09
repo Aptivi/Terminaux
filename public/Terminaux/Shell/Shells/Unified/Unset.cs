@@ -17,8 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting;
+using Terminaux.Shell.Switches;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -30,6 +33,28 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class UnsetCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "unset";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_UNSET_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "$variable", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("justwipe", /* Localizable */ "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

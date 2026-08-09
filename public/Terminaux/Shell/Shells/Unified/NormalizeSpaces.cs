@@ -17,10 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.SpaceManager.Conversion;
 using Textify.SpaceManager.Analysis;
+using Textify.SpaceManager.Conversion;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -29,6 +32,41 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class NormalizeSpacesCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "normalizespaces";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_NORMALIZESPACES_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "text", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("simple", /* Localizable */ "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["analytical"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("analytical", /* Localizable */ "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["simple"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

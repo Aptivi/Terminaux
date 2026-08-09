@@ -19,10 +19,12 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Inputs.Styles.Choice;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using Terminaux.Base;
+using Terminaux.Inputs.Styles.Choice;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -62,6 +64,61 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class ChoiceCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "choice";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "answers", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
+                    }),
+                    new CommandArgumentPart(true, "input", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                    }),
+                    new CommandArgumentPart(false, "answertitle1", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
+                    }),
+                    new CommandArgumentPart(false, "answertitle2", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("o", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["t", "m"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("t", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["o", "m"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("m", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["t", "o"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("single", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["multiple"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("multiple", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["single"],
+                        AcceptsValues = false
+                    })
+                ], true, true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

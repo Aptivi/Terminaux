@@ -34,6 +34,24 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class RepeatUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "repeat";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_REPEAT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC"
+                    }),
+                    new CommandArgumentPart(false, "command"),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

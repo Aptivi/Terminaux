@@ -19,11 +19,29 @@
 
 using Terminaux.Shell.Commands;
 using System.Threading;
+using Terminaux.Shell.Arguments;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Shells.Unified
 {
     class SleepCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "sleep";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_SLEEP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "ms", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

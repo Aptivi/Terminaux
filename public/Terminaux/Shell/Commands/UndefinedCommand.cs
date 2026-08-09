@@ -19,12 +19,21 @@
 
 using System;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Shells;
 
 namespace Terminaux.Shell.Commands
 {
     internal class UndefinedCommand : BaseCommand, ICommand
     {
+        public override string Command => throw new NotImplementedException();
+
+        public override string HelpDefinition => throw new NotImplementedException();
+
+        public override CommandArgumentInfo[] CommandArgumentInfo => throw new NotImplementedException();
+
+        public override CommandFlags Flags => throw new NotImplementedException();
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             throw new NotImplementedException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNDEFINED"));

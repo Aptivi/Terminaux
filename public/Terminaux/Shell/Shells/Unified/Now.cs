@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using System;
 using System.Globalization;
 using System.Text;
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -33,6 +36,39 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class NowCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "now";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_SHOWTD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("date", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["time", "full"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("time", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["date", "full"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("full", /* Localizable */ "T_SHELL_UNIFIED_SHOWTD_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["date", "time"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("utc", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ], true)
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

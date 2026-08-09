@@ -23,6 +23,7 @@ using Terminaux.Shell.Commands;
 using Colorimetry.Models;
 using Terminaux.Base;
 using Colorimetry.Models.Conversion;
+using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -34,6 +35,54 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class ColorToKSCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "colortoks";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC"
+                    }),
+                    new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC"
+                    }),
+                    new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC"
+                    }),
+                    new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC"
+                    }),
+                    new CommandArgumentPart(false, "number5", new CommandArgumentPartOptions()
+                    {
+                        // TODO: T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC -> Fifth number
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC"
+                    }),
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

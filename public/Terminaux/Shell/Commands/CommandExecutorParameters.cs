@@ -33,7 +33,7 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// The requested command info
         /// </summary>
-        internal CommandInfo RequestedCommandInfo;
+        internal BaseCommand RequestedCommandInfo;
         /// <summary>
         /// The shell type
         /// </summary>
@@ -47,7 +47,7 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         internal ShellExecuteInfo ShellInstance;
 
-        internal CommandExecutorParameters(string RequestedCommand, CommandInfo RequestedCommandInfo, string ShellType, ShellExecuteInfo ShellInstance)
+        internal CommandExecutorParameters(string RequestedCommand, BaseCommand RequestedCommandInfo, string ShellType, ShellExecuteInfo ShellInstance)
         {
             this.RequestedCommand = RequestedCommand;
             this.RequestedCommandInfo = RequestedCommandInfo;

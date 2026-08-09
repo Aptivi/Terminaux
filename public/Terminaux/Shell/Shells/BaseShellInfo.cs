@@ -30,13 +30,13 @@ namespace Terminaux.Shell.Shells
     /// </summary>
     public abstract class BaseShellInfo : IShellInfo
     {
-        internal List<CommandInfo> extraCommands = [];
+        internal List<BaseCommand> extraCommands = [];
         internal Dictionary<string, PromptPresetBase> customShellPresets = [];
 
         /// <inheritdoc/>
         public virtual object ShellLock => new();
         /// <inheritdoc/>
-        public virtual List<CommandInfo> Commands => [];
+        public virtual List<BaseCommand> Commands => [];
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> ShellPresets => [];
         /// <inheritdoc/>
@@ -50,8 +50,8 @@ namespace Terminaux.Shell.Shells
         /// <inheritdoc/>
         public virtual bool SlashCommand => false;
         /// <inheritdoc/>
-        public virtual CommandInfo NonSlashCommandInfo =>
-            new("slashreminder", LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC"), new SlashReminderCommand());
+        public virtual BaseCommand NonSlashCommandInfo =>
+            new SlashReminderCommand();
         /// <inheritdoc/>
         public virtual BaseShell? ShellBase =>
             Activator.CreateInstance<BaseShell>();

@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -32,6 +33,22 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class SetCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "set";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_SET_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "value", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC"
+                    }),
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

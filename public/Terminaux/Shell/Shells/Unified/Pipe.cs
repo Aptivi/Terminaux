@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
 using System;
 using System.Text;
 using Terminaux.Base;
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -34,6 +36,31 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class PipeUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "pipe";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_PIPE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "sourceCommand", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => CommandManager.GetCommandNames(ShellManager.CurrentShellType),
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "targetCommand", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => CommandManager.GetCommandNames(ShellManager.CurrentShellType),
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("quoted", /* Localizable */ "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC")
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

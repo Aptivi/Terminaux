@@ -23,6 +23,7 @@ using Terminaux.Shell.Commands;
 using Colorimetry.Models;
 using Colorimetry.Models.Conversion;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -34,6 +35,27 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class ColorSpecToKSCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "colorspectoks";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz", "yxy", "cielab", "cielch", "cieluv", "hwb", "hunterlab", "lms", "ycbcrsdtv", "ycbcrhdtv", "ycbcrhivi", "ypbprsdtv", "ypbprhdtv", "ypbprhivi", "ydbdr"],
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC"
+                    }),
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -21,6 +21,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Textify.General;
 using Terminaux.Themes.Colors;
+using Terminaux.Shell.Arguments;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -32,6 +34,25 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class EncodeBase64Command : BaseCommand, ICommand
     {
+        public override string Command => 
+            "encodebase64";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_ENCODEBASE64_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "string", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -35,7 +35,7 @@ namespace Terminaux.Shell.Shells
         /// <summary>
         /// Built-in shell commands
         /// </summary>
-        List<CommandInfo> Commands { get; }
+        List<BaseCommand> Commands { get; }
         /// <summary>
         /// Built-in shell presets
         /// </summary>
@@ -63,6 +63,6 @@ namespace Terminaux.Shell.Shells
         /// <summary>
         /// For shells that have <see cref="SlashCommand"/> enabled, this is the command that gets executed every time we encounter text that doesn't start with the slash.
         /// </summary>
-        CommandInfo NonSlashCommandInfo { get; }
+        BaseCommand NonSlashCommandInfo { get; }
     }
 }

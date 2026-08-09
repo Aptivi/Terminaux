@@ -24,11 +24,28 @@ using System;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Themes.Colors;
+using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Shell.Shells.Unified
 {
     class LintScriptCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lintscript";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_LINTSCRIPT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "script", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC"
+                    }),
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

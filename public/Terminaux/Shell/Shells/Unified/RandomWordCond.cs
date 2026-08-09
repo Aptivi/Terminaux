@@ -17,11 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.Words;
-using Terminaux.Themes.Colors;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -30,6 +32,45 @@ namespace Terminaux.Shell.Shells.Unified
     /// </summary>
     class RandomWordCondCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "randomwordcond";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_RANDOMWORDCOND_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "maxLength", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "startsWith", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC"
+                    }),
+                    new CommandArgumentPart(false, "endsWith", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC"
+                    }),
+                    new CommandArgumentPart(false, "exactLength", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+                        IsNumeric = true,
+                    }),
+                ],
+                [
+                    new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags => 
+            CommandFlags.Hidden;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -24,6 +25,12 @@ namespace Terminaux.Tests.Shared.Shells.Commands
 {
     class OpenEmptyCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "openempty";
+
+        public override string HelpDefinition =>
+            "Opens an empty shell";
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             ShellManager.RegisterShell("TestShellEmpty", new TestShellEmptyInfo());

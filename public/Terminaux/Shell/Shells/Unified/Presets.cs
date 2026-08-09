@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Prompts;
 
@@ -30,6 +32,12 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class PresetsUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "presets";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_PRESETS_HELP_DESC");
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PromptPresetManager.PromptForPresets();

@@ -262,9 +262,8 @@ namespace Terminaux.Shell.Commands
                 {
                     // Now, get the base command and execute it
                     ConsoleLogger.Debug("Really executing command {0} with args {1}", Command, StrArgs);
-                    var CommandBase = RequestedCommandInfo.CommandBase;
                     string value = "";
-                    CommandDelegate(ShellInstance, CommandBase, parameters, ref value);
+                    CommandDelegate(ShellInstance, RequestedCommandInfo, parameters, ref value);
 
                     // Set the error code and set the MESH variable as appropriate
                     ConsoleLogger.Debug("Error code is {0}", ShellInstance.lastErrorCode);

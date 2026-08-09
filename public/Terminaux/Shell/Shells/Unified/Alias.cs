@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Shell.Aliases;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -40,6 +41,51 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class AliasCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "alias";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_ALIAS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "add", new()
+                    {
+                        ExactWording = ["add"],
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC"
+                    }),
+                    new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
+                    }),
+                    new CommandArgumentPart(true, "cmd", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "rem", new()
+                    {
+                        ExactWording = ["rem"],
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC"
+                    }),
+                    new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
+                    }),
+                ]),
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

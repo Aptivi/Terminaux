@@ -23,6 +23,7 @@ using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -34,6 +35,34 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class SelectCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "select";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_SELECT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "answers", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
+                    }),
+                    new CommandArgumentPart(true, "input", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                    }),
+                    new CommandArgumentPart(false, "answertitle1", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
+                    }),
+                    new CommandArgumentPart(false, "answertitle2", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
+                    }),
+                ], true, true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

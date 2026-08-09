@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
 using System.Linq;
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Commands.ProcessExecution;
+using Terminaux.Shell.Switches;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -31,6 +34,32 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class ExecUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "exec";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_EXEC_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "process", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC"
+                    }),
+                    new CommandArgumentPart(false, "args", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("forked", /* Localizable */ "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

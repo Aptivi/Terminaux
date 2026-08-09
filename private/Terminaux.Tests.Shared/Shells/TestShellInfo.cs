@@ -32,19 +32,11 @@ namespace Terminaux.Tests.Shared.Shells
         /// <summary>
         /// List of commands
         /// </summary>
-        public override List<CommandInfo> Commands =>
+        public override List<BaseCommand> Commands =>
         [
-            new CommandInfo("openempty", "Opens an empty shell", new OpenEmptyCommand()),
-
-            new CommandInfo("write", "Writes test text", new WriteCommand()),
-
-            new CommandInfo("writearg", "Writes test text with argument support",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "text")
-                    ])
-                ], new WriteArgCommand()),
+            new OpenEmptyCommand(),
+            new WriteCommand(),
+            new WriteArgCommand(),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

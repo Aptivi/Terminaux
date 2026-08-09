@@ -60,7 +60,7 @@ namespace Terminaux.Shell.Help
                 target.Replace("|", "\\|");
 
             // Helper function for commands
-            void ProcessCommands(List<CommandInfo> commands)
+            void ProcessCommands(List<BaseCommand> commands)
             {
                 markdown.AppendLine(
                     $"| {LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND")} " +

@@ -20,11 +20,20 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Tests.Shell.ShellBase.Commands.TestCommands
 {
     internal class CustomCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "mycmd2";
+
+        public override string HelpDefinition =>
+            "My command help definition...";
+
+        public override CommandArgumentInfo[] CommandArgumentInfo => 
+            [];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

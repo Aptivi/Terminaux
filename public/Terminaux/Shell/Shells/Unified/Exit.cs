@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 
 namespace Terminaux.Shell.Shells.Unified
@@ -29,6 +31,12 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class ExitUnifiedCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "exit";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("T_SHELL_UNIFIED_EXIT_HELP_DESC");
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             ShellManager.KillShell();
