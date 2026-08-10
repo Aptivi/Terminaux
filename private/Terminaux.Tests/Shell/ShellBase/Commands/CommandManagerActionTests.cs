@@ -159,12 +159,12 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new BaseCommand[]
             {
-                new CustomCommandGroup3(),
-                new CustomCommandGroup4(),
-                new CustomCommandGroup5(),
+                new CustomCommand(),
+                new CustomCommandConflicting(),
+                new CustomCommandEmpty(),
             };
             Should.Throw(() => CommandManager.RegisterCustomCommands(type, commandInfos), typeof(TerminauxException));
-            CommandManager.IsCommandFound("command2", type).ShouldBeTrue();
+            CommandManager.IsCommandFound("mycmd2", type).ShouldBeTrue();
         }
 
         /// <summary>
@@ -197,12 +197,12 @@ namespace Terminaux.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new string[]
             {
-                "command2",
+                "mycmd2",
                 "exit",
                 ""
             };
             Should.Throw(() => CommandManager.UnregisterCustomCommands(type, commandInfos), typeof(TerminauxException));
-            CommandManager.IsCommandFound("command2", type).ShouldBeFalse();
+            CommandManager.IsCommandFound("mycmd2", type).ShouldBeFalse();
         }
     }
 }
