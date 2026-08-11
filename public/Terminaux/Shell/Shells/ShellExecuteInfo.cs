@@ -22,10 +22,7 @@ using Threadify.Manager;
 
 namespace Terminaux.Shell.Shells
 {
-    /// <summary>
-    /// Shell execution information
-    /// </summary>
-    public class ShellExecuteInfo
+    internal class ShellExecuteInfo
     {
         internal int lastErrorCode = 0;
         internal readonly List<ThreadInstance> AltCommandThreads = [];
@@ -70,6 +67,5 @@ namespace Terminaux.Shell.Shells
             shellBase = ShellBase;
             shellCommandThread = ShellCommandThread;
         }
-
     }
 }
