@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Shells
         /// <inheritdoc/>
         public virtual object ShellLock => new();
         /// <inheritdoc/>
-        public virtual List<BaseCommand> Commands => [];
+        public virtual BaseCommand[] Commands => [];
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> ShellPresets => [];
         /// <inheritdoc/>

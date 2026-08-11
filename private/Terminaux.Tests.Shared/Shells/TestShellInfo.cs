@@ -32,7 +32,7 @@ namespace Terminaux.Tests.Shared.Shells
         /// <summary>
         /// List of commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new OpenEmptyCommand(),
             new WriteCommand(),

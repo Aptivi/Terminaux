@@ -50,18 +50,18 @@ namespace Terminaux.Shell.Help
             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, commands.Length);
 
             // The unified commands
-            if (showUnified && unifiedCommandList.Count > 0)
+            if (showUnified && unifiedCommandList.Length > 0)
             {
-                TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, unifiedCommandList.Count);
+                TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, unifiedCommandList.Length);
                 ShowCommandListInternal(unifiedCommandList, showHidden, showCount);
-                if (showGeneral && commandList.Count > 0)
+                if (showGeneral && commandList.Length > 0)
                     TextWriterRaw.Write();
             }
 
             // The built-in commands
-            if (showGeneral && commandList.Count > 0)
+            if (showGeneral && commandList.Length > 0)
             {
-                TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_GENERALCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, commandList.Count);
+                TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_GENERALCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, commandList.Length);
                 ShowCommandListInternal(commandList, showHidden, showCount);
                 if (showExtra && ExtraCommandList.Count > 0)
                     TextWriterRaw.Write();
@@ -71,7 +71,7 @@ namespace Terminaux.Shell.Help
             if (showExtra && ExtraCommandList.Count > 0)
             {
                 TextWriterColor.Write("  " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXTRACMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, ExtraCommandList.Count);
-                ShowCommandListInternal(ExtraCommandList, showHidden, showCount);
+                ShowCommandListInternal([.. ExtraCommandList], showHidden, showCount);
                 if (showAlias && AliasedCommandList.Count > 0)
                     TextWriterRaw.Write();
             }
@@ -190,7 +190,7 @@ namespace Terminaux.Shell.Help
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_CMDNOHELP"), ThemeColorType.Error, command);
         }
 
-        private static void ShowCommandListInternal(List<BaseCommand> commands, bool showHidden, bool showCount)
+        private static void ShowCommandListInternal(BaseCommand[] commands, bool showHidden, bool showCount)
         {
             int hiddenProcessed = 0;
             foreach (var cmd in commands)

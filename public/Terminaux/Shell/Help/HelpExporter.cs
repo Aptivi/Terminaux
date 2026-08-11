@@ -51,7 +51,7 @@ namespace Terminaux.Shell.Help
             var commands = shellInfo.Commands;
             var extraCommands = shellInfo.extraCommands;
             var unifiedCommands = ShellManager.unifiedCommandDict;
-            var aliasedCommands = AliasManager.GetAliasListFromType(shellType).Select((ai) => ai.TargetCommand).ToList();
+            var aliasedCommands = AliasManager.GetAliasListFromType(shellType).Select((ai) => ai.TargetCommand).ToArray();
 
             // Helper function to sanitize strings
             string SanitizeString(string target) =>
@@ -60,7 +60,7 @@ namespace Terminaux.Shell.Help
                 target.Replace("|", "\\|");
 
             // Helper function for commands
-            void ProcessCommands(List<BaseCommand> commands)
+            void ProcessCommands(BaseCommand[] commands)
             {
                 markdown.AppendLine(
                     $"| {LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND")} " +
@@ -110,7 +110,7 @@ namespace Terminaux.Shell.Help
             {
                 markdown.Append("## ");
                 markdown.Append(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS"));
-                markdown.AppendLine($" {shellType}{(showCount ? $" [{commands.Count}]" : "")}\n");
+                markdown.AppendLine($" {shellType}{(showCount ? $" [{commands.Length}]" : "")}\n");
                 ProcessCommands(commands);
             }
 
@@ -119,7 +119,7 @@ namespace Terminaux.Shell.Help
             {
                 markdown.Append("## ");
                 markdown.Append(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS"));
-                markdown.AppendLine($" {shellType}{(showCount ? $" [{unifiedCommands.Count}]" : "")}\n");
+                markdown.AppendLine($" {shellType}{(showCount ? $" [{unifiedCommands.Length}]" : "")}\n");
                 ProcessCommands(unifiedCommands);
             }
 
@@ -128,7 +128,7 @@ namespace Terminaux.Shell.Help
             {
                 markdown.Append("## ");
                 markdown.Append(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS"));
-                markdown.AppendLine($" {shellType}{(showCount ? $" [{aliasedCommands.Count}]" : "")}\n");
+                markdown.AppendLine($" {shellType}{(showCount ? $" [{aliasedCommands.Length}]" : "")}\n");
                 ProcessCommands(aliasedCommands);
             }
 
@@ -138,7 +138,7 @@ namespace Terminaux.Shell.Help
                 markdown.Append("## ");
                 markdown.Append(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS"));
                 markdown.AppendLine($" {shellType}{(showCount ? $" [{extraCommands.Count}]" : "")}\n");
-                ProcessCommands(extraCommands);
+                ProcessCommands([.. extraCommands]);
             }
 
             // Return the result

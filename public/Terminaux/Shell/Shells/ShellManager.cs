@@ -57,7 +57,7 @@ namespace Terminaux.Shell.Shells
         internal static List<ShellExecuteInfo> ShellStack = [];
         internal static string lastCommand = "";
 
-        internal readonly static List<BaseCommand> unifiedCommandDict =
+        internal readonly static BaseCommand[] unifiedCommandDict =
         [
             new AddPrefixCommand(),
             new AddSuffixCommand(),

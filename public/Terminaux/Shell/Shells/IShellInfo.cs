@@ -35,7 +35,7 @@ namespace Terminaux.Shell.Shells
         /// <summary>
         /// Built-in shell commands
         /// </summary>
-        List<BaseCommand> Commands { get; }
+        BaseCommand[] Commands { get; }
         /// <summary>
         /// Built-in shell presets
         /// </summary>
