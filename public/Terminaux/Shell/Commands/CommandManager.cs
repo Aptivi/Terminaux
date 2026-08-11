@@ -38,25 +38,27 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
+        /// <param name="includeAliases">Whether to include aliases in search</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static bool IsCommandFound(string Command, string ShellType)
+        public static bool IsCommandFound(string Command, string ShellType, bool includeAliases = true)
         {
             ConsoleLogger.Debug("Command: {0}, ShellType: {1}", Command, ShellType);
-            return GetCommands(ShellType).Any((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
+            return GetCommands(ShellType).Any((ci) => ci.Command == Command || (includeAliases && ci.Aliases.Any((ai) => ai.Alias == Command)));
         }
 
         /// <summary>
         /// Checks to see if the command is found in all the shells
         /// </summary>
         /// <param name="Command">A command</param>
+        /// <param name="includeAliases">Whether to include aliases in search</param>
         /// <returns>True if found; False if not found.</returns>
-        public static bool IsCommandFound(string Command)
+        public static bool IsCommandFound(string Command, bool includeAliases = true)
         {
             ConsoleLogger.Debug("Checking command: {0}", Command);
             bool found = false;
             foreach (var ShellType in ShellManager.AvailableShells.Keys)
             {
-                found = GetCommands(ShellType).Any((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
+                found = GetCommands(ShellType).Any((ci) => ci.Command == Command || (includeAliases && ci.Aliases.Any((ai) => ai.Alias == Command)));
                 if (found)
                     break;
             }

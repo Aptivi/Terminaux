@@ -18,9 +18,11 @@
 //
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Terminaux.Shell.Aliases;
-using Terminaux.Shell.Shells;
 using Shouldly;
+using Terminaux.Base.TermInfo.Tabsets;
+using Terminaux.Shell.Aliases;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Tests.Shared.Shells;
 
 namespace Terminaux.Tests.Shell.ShellBase.Aliases
@@ -54,6 +56,8 @@ namespace Terminaux.Tests.Shell.ShellBase.Aliases
             AliasManager.AddAlias(source, target, type).ShouldBeTrue();
             AliasManager.SaveAliases(type);
             AliasManager.DoesAliasExist(target, type).ShouldBeTrue();
+            CommandManager.IsCommandFound(target, type).ShouldBeTrue();
+            CommandManager.IsCommandFound(target, type, false).ShouldBeFalse();
         }
 
         /// <summary>
@@ -67,6 +71,8 @@ namespace Terminaux.Tests.Shell.ShellBase.Aliases
             AliasManager.AddAlias("presets", "p", type).ShouldBeTrue();
             AliasManager.SaveAliases(type);
             AliasManager.DoesAliasExist("p", type).ShouldBeTrue();
+            CommandManager.IsCommandFound("p", type).ShouldBeTrue();
+            CommandManager.IsCommandFound("p", type, false).ShouldBeFalse();
         }
 
         /// <summary>
@@ -81,6 +87,8 @@ namespace Terminaux.Tests.Shell.ShellBase.Aliases
             AliasManager.RemoveAlias(target, type).ShouldBeTrue();
             AliasManager.SaveAliases(type);
             AliasManager.DoesAliasExist(target, type).ShouldBeFalse();
+            CommandManager.IsCommandFound(target, type).ShouldBeFalse();
+            CommandManager.IsCommandFound(target, type, false).ShouldBeFalse();
         }
 
         /// <summary>
@@ -95,6 +103,8 @@ namespace Terminaux.Tests.Shell.ShellBase.Aliases
             AliasManager.RemoveAlias("p", type).ShouldBeTrue();
             AliasManager.SaveAliases(type);
             AliasManager.DoesAliasExist("p", type).ShouldBeFalse();
+            CommandManager.IsCommandFound("p", type).ShouldBeFalse();
+            CommandManager.IsCommandFound("p", type, false).ShouldBeFalse();
         }
     }
 }
