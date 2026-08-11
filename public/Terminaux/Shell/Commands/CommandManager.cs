@@ -216,8 +216,7 @@ namespace Terminaux.Shell.Commands
             {
                 // We have the command. Remove it.
                 var cmd = GetCommand(commandName, ShellType);
-                var info = ShellManager.GetShellInfo(ShellType);
-                info.extraCommands.Remove(cmd);
+                UnregisterCustomCommand(ShellType, cmd);
             }
         }
 
@@ -239,6 +238,47 @@ namespace Terminaux.Shell.Commands
                 {
                     ConsoleLogger.Error(ex, $"Can't unregister custom command: {ex.Message}");
                     failedCommands.Add($"  - {(!string.IsNullOrEmpty(commandBase) ? commandBase : "???")}: {ex.Message}");
+                }
+            }
+            if (failedCommands.Count > 0)
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+        }
+
+        /// <summary>
+        /// Unregisters a custom command
+        /// </summary>
+        /// <param name="ShellType">Type of a shell, including your custom type and other mod's custom type to extend it</param>
+        /// <param name="command">Custom command instance to unregister</param>
+        public static void UnregisterCustomCommand(string ShellType, BaseCommand command)
+        {
+            // First, check the values
+            if (!ShellManager.ShellTypeExists(ShellType))
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND"), ShellType);
+
+            // We have the command instance. Try to remove it.
+            var info = ShellManager.GetShellInfo(ShellType);
+            if (!info.extraCommands.Remove(command))
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND"));
+        }
+
+        /// <summary>
+        /// Unregisters a group of custom commands
+        /// </summary>
+        /// <param name="ShellType">Type of a shell, including your custom type and other mod's custom type to extend it</param>
+        /// <param name="commands">Custom command instances to unregister</param>
+        public static void UnregisterCustomCommands(string ShellType, BaseCommand[] commands)
+        {
+            List<string> failedCommands = [];
+            foreach (var commandBase in commands)
+            {
+                try
+                {
+                    UnregisterCustomCommand(ShellType, commandBase);
+                }
+                catch (Exception ex)
+                {
+                    ConsoleLogger.Error(ex, $"Can't unregister custom command: {ex.Message}");
+                    failedCommands.Add($"  - {(!string.IsNullOrEmpty(commandBase.Command) ? commandBase.Command : "???")}: {ex.Message}");
                 }
             }
             if (failedCommands.Count > 0)
