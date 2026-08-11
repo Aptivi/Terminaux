@@ -55,9 +55,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Draw a separator with text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, params object[] Vars) =>
+            WriteSeparator(Text, ThemeColorType.NeutralText, true, Vars);
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool line = true, params object[] Vars) =>
+        public static void WriteSeparator(string Text, bool line, params object[] Vars) =>
             WriteSeparator(Text, ThemeColorType.NeutralText, line, Vars);
 
         /// <summary>
