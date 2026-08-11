@@ -37,7 +37,6 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
             {
                 TextWriterRaw.WriteRaw(ConsoleFormatting.GetFormattingSequences((ConsoleFormattingType)type));
                 TextWriterColor.WriteColorBack($"{type} text", false, ConsoleColors.DarkGreen, ConsoleColors.DarkBlue);
-                Input.ReadKey();
                 TextWriterRaw.Write();
                 TextWriterRaw.WriteRaw(ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default));
             }
