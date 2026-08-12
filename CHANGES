@@ -1,10 +1,14 @@
-This is a small release intended to add a new feature that allows you to export themes more easily.
+This is a monthly release of Terminaux that brings some of the most promising improvements to make your console applications more powerful!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added exporting themes to JSON object
+- `[+]` Added ability to customize themes further
+- `[+]` Added more shell features, such as getting current shell instance
+- `[+]` Added color conversion commands from Nitrocid
+- `[*]` Significant improvements to shell command class structure
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
