@@ -163,14 +163,16 @@ namespace Terminaux.Sequences
                 endIdx = token.Start;
 
                 // Get this substring
-                part = Text.Substring(startIdx, endIdx - startIdx);
+                int length = endIdx - startIdx - 1;
+                length = Math.Max(0, length);
+                part = Text.Substring(startIdx + 1, length);
                 split.Add(part);
 
                 startIdx = token.End;
             }
 
             // Get the last substring
-            part = Text.Substring(startIdx);
+            part = Text.Substring(startIdx + 1);
             split.Add(part);
             return [.. split];
         }
