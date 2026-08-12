@@ -2392,4 +2392,106 @@
   <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
     <value>Die fünfte Taste muss numerisch sein.</value>
   </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>Rote Farbstufe:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>Grüne Farbstufe:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>Blaue Farbstufe:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>Cyan-Pegel:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>Magenta-Stufe:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>Gelbstufe:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_HUE" xml:space="preserve">
+    <value>Farbton:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>Sättigung:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>Wert:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>Luma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>In-Phase:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>Quadratur:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>U-Chroma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>V-Chroma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>Konvertiert das Quellfarbmodell in das Zielfarbmodell in Zahlen.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>Konvertiert das Quellfarbmodell in das Zielfarbmodell im KS-Format.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>Konvertiert das Quellfarbmodell in Hex.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>Konvertiert das Quellfarbmodell unter Verwendung des Farbspezifizierers in das Zielfarbmodell.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>Konvertiert das Quellfarbmodell mithilfe des Farbspezifizierers in das Zielfarbmodell im KS-Format.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>Konvertiert das Quellfarbmodell unter Verwendung des Farbspezifizierers in das Zielfarbmodell im Hex-Format.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>Die Modellspezifikation ist ungültig.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>Schwarze Tastenebene:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>Die erste Farbebene muss numerisch sein.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>Die zweite Farbebene muss numerisch sein.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>Die dritte Farbebene muss numerisch sein.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>Die vierte Schlüsselebene muss numerisch sein.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>Luminanz (Helligkeit):</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>Quellfarbmodell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>Zielfarbmodell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>Erste Zahl</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>Zweite Zahl</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>Dritte Zahl</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>Vierte Zahl</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Farbspezifizierer</value>
+  </data>
 </root>

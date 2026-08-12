@@ -2392,4 +2392,106 @@
   <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
     <value>Beşinci anahtar seviyesi sayısal olmalıdır.</value>
   </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>Kırmızı renk seviyesi:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>Yeşil renk seviyesi:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>Mavi renk seviyesi:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>Siyan seviyesi:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>Macenta seviyesi:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>Sarı seviye:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_HUE" xml:space="preserve">
+    <value>Renk:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>Doygunluk:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>Değer:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>Luma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>Eş fazlı:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>Dördün:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>U-Kroma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>V-Kroma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>Kaynak renk modelini hedef renk modeline sayılarla dönüştürür.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>Kaynak renk modelini KS formatında hedef renk modeline dönüştürür.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>Kaynak renk modelini onaltılıya dönüştürür.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>Kaynak renk modelini renk belirleyicisini kullanarak hedef renk modeline dönüştürür.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>Kaynak renk modelini, renk belirleyicisini kullanarak KS formatında hedef renk modeline dönüştürür.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>Kaynak renk modelini renk belirtecini kullanarak onaltılık düzende hedef renk modeline dönüştürür.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>Model spesifikasyonu geçersiz.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>Siyah tuş seviyesi:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>İlk renk seviyesi sayısal olmalıdır.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>İkinci renk seviyesi sayısal olmalıdır.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>Üçüncü renk seviyesi sayısal olmalıdır.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>Dördüncü anahtar seviyesi sayısal olmalıdır.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>Parlaklık (Aydınlık):</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>Kaynak renk modeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>Hedef renk modeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>İlk sayı</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>İkinci sayı</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>Üçüncü sayı</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>Dördüncü sayı</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Renk belirleyici</value>
+  </data>
 </root>

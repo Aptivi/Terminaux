@@ -2392,4 +2392,106 @@
   <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
     <value>Tingkat kunci kelima harus berupa angka.</value>
   </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>Tingkat warna merah:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>Tingkat warna hijau:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>Tingkat warna biru:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>Tingkat sian:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>Tingkat magenta:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>Tingkat kuning:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_HUE" xml:space="preserve">
+    <value>Warna:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>Kejenuhan:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>Nilai:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>Luma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>Dalam fase:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>Kuadratur:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>U-Chroma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>V-Chroma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>Mengubah model warna sumber ke model warna target dalam angka.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>Mengonversi model warna sumber ke model warna target dalam format KS.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>Mengubah model warna sumber ke heksadesimal.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>Mengonversi model warna sumber menggunakan penentu warna ke model warna target.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>Mengonversi model warna sumber menggunakan penentu warna ke model warna target dalam format KS.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>Mengonversi model warna sumber menggunakan penentu warna ke model warna target dalam heksadesimal.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>Spesifikasi model tidak valid.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>Tingkat kunci hitam:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>Tingkat warna pertama harus berupa numerik.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>Tingkat warna kedua harus berupa numerik.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>Tingkat warna ketiga harus berupa numerik.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>Tingkat kunci keempat harus berupa angka.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>Luminansi (Kecerahan):</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>Model warna sumber</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>Model warna target</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>Angka pertama</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>Nomor kedua</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>Nomor ketiga</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>Nomor keempat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Penentu warna</value>
+  </data>
 </root>

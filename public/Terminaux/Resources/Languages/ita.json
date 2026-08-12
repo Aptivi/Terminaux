@@ -3120,6 +3120,142 @@
     {
       "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC",
       "text": "Il quinto livello del tasto deve essere numerico."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_REDCOLOR",
+      "text": "Livello di colore rosso:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_GREENCOLOR",
+      "text": "Livello di colore verde:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLUECOLOR",
+      "text": "Livello di colore blu:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_CYANCOLOR",
+      "text": "Livello ciano:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_MAGENTACOLOR",
+      "text": "Livello magenta:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_YELLOWCOLOR",
+      "text": "Livello giallo:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_HUE",
+      "text": "Tinta:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_SATURATION",
+      "text": "Saturazione:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_VALUE",
+      "text": "Valore:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_LUMA",
+      "text": "Luma:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_INPHASE",
+      "text": "In fase:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_QUADRATURE",
+      "text": "Quadratura:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_UCHROMA",
+      "text": "Crominanza U:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_VCHROMA",
+      "text": "Crominanza V:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTO_DESC",
+      "text": "Converte il modello di colore di origine nel modello di colore di destinazione in numeri."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC",
+      "text": "Converte il modello di colore di origine nel modello di colore di destinazione in formato KS."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC",
+      "text": "Converte il modello di colore di origine in esadecimale."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC",
+      "text": "Converte il modello di colore di origine utilizzando l'identificatore di colore nel modello di colore di destinazione."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC",
+      "text": "Converte il modello di colore di origine utilizzando l'identificatore di colore nel modello di colore di destinazione in formato KS."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "Converte il modello di colore di origine utilizzando l'identificatore di colore nel modello di colore di destinazione in formato esadecimale."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_INVALIDMODEL",
+      "text": "La specifica del modello non è valida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLACKKEY",
+      "text": "Livello chiave nera:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "Il primo livello di colore deve essere numerico."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "Il secondo livello di colore deve essere numerico."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "Il terzo livello di colore deve essere numerico."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "Il quarto livello di chiave deve essere numerico."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_LUMINANCE",
+      "text": "Luminanza (Luce):"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "Modello di colore sorgente"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "Modello di colore di destinazione"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "Primo numero"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "Secondo numero"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "Terzo numero"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "Quarto numero"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "Specificatore di colore"
     }
   ]
 }

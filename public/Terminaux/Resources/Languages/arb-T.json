@@ -3143,6 +3143,142 @@
     {
       "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC",
       "text": "يجب أن يكون مستوى المفتاح الخامس رقميًا."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_REDCOLOR",
+      "text": "مستوى اللون الأحمر:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_GREENCOLOR",
+      "text": "مستوى اللون الأخضر:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLUECOLOR",
+      "text": "مستوى اللون الأزرق:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_CYANCOLOR",
+      "text": "مستوى سماوي:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_MAGENTACOLOR",
+      "text": "مستوى أرجواني:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_YELLOWCOLOR",
+      "text": "المستوى الأصفر:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_HUE",
+      "text": "مسحة:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_SATURATION",
+      "text": "التشبع:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_VALUE",
+      "text": "قيمة:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_LUMA",
+      "text": "لوما:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_INPHASE",
+      "text": "في مرحلة:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_QUADRATURE",
+      "text": "التربيع:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_UCHROMA",
+      "text": "يو كروما:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_VCHROMA",
+      "text": "كروما الخامس:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTO_DESC",
+      "text": "يحول نموذج اللون المصدر إلى نموذج اللون الهدف بالأرقام."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC",
+      "text": "يحول نموذج اللون المصدر إلى نموذج اللون المستهدف بتنسيق KS."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC",
+      "text": "يحول نموذج اللون المصدر إلى سداسي عشري."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC",
+      "text": "يحول نموذج اللون المصدر باستخدام محدد اللون إلى نموذج اللون المستهدف."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC",
+      "text": "يحول نموذج اللون المصدر باستخدام محدد اللون إلى نموذج اللون المستهدف بتنسيق KS."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "يحول نموذج اللون المصدر باستخدام محدد اللون إلى نموذج اللون المستهدف بالنظام الست عشري."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_INVALIDMODEL",
+      "text": "مواصفات النموذج غير صالحة."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLACKKEY",
+      "text": "مستوى المفتاح الأسود:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "يجب أن يكون مستوى اللون الأول رقميًا."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "يجب أن يكون مستوى اللون الثاني رقميًا."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "يجب أن يكون مستوى اللون الثالث رقميًا."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "يجب أن يكون مستوى المفتاح الرابع رقميًا."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_LUMINANCE",
+      "text": "السطوع (السطوع):"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "نموذج لون المصدر"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "نموذج اللون المستهدف"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "الرقم الأول"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "الرقم الثاني"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "الرقم الثالث"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "الرقم الرابع"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "محدد اللون"
     }
   ]
 }

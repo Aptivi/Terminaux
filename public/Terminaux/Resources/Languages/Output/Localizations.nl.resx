@@ -2392,4 +2392,106 @@
   <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
     <value>Het vijfde sleutelniveau moet numeriek zijn.</value>
   </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>Rood kleurniveau:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>Groen kleurniveau:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>Blauw kleurniveau:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>Cyaan niveau:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>Magenta-niveau:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>Geel niveau:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_HUE" xml:space="preserve">
+    <value>Tint:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>Verzadiging:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>Waarde:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>Luma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>In fase:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>Kwadratuur:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>U-Chroma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>V-Chroma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>Converteert het bronkleurmodel in cijfers naar het doelkleurmodel.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>Converteert het bronkleurmodel naar het doelkleurmodel in KS-indeling.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>Converteert het bronkleurmodel naar hex.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>Converteert het bronkleurmodel met behulp van de kleurspecificatie naar het doelkleurmodel.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>Converteert het bronkleurmodel met behulp van de kleurspecificatie naar het doelkleurmodel in KS-indeling.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>Converteert het bronkleurmodel met behulp van de kleurspecificatie naar het doelkleurmodel in hex.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>Modelspecificatie is ongeldig.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>Niveau zwarte sleutel:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>Het eerste kleurniveau moet numeriek zijn.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>Het tweede kleurniveau moet numeriek zijn.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>Het derde kleurniveau moet numeriek zijn.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>Het vierde sleutelniveau moet numeriek zijn.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>Luminantie (lichtsterkte):</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>Bronkleurmodel</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>Doelkleurmodel</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>Eerste nummer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>Tweede nummer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>Derde nummer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>Vierde nummer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Kleurspecificatie</value>
+  </data>
 </root>

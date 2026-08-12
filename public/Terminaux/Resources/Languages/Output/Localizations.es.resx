@@ -2392,4 +2392,106 @@
   <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
     <value>El quinto nivel de clave debe ser numérico.</value>
   </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>Nivel de color rojo:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>Nivel de color verde:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>Nivel de color azul:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>Nivel de cian:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>Nivel magenta:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>Nivel amarillo:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_HUE" xml:space="preserve">
+    <value>Matiz:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>Saturación:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>Valor:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>luma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>En fase:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>Cuadratura:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>U-croma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>V-croma:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>Convierte el modelo de color de origen al modelo de color de destino en números.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>Convierte el modelo de color de origen al modelo de color de destino en formato KS.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>Convierte el modelo de color de origen a hexadecimal.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>Convierte el modelo de color de origen utilizando el especificador de color al modelo de color de destino.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>Convierte el modelo de color de origen utilizando el especificador de color al modelo de color de destino en formato KS.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>Convierte el modelo de color de origen utilizando el especificador de color al modelo de color de destino en hexadecimal.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>La especificación del modelo no es válida.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>Nivel de tecla negra:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>El primer nivel de color debe ser numérico.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>El segundo nivel de color debe ser numérico.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>El tercer nivel de color debe ser numérico.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>El cuarto nivel clave debe ser numérico.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>Luminancia (luminosidad):</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>Modelo de color de origen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>Modelo de color de destino</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>Primer numero</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>Segundo numero</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>Tercer numero</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>Cuarto numero</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Especificador de color</value>
+  </data>
 </root>

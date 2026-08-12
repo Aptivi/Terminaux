@@ -3117,6 +3117,142 @@
     {
       "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC",
       "text": "panchavan ki level numeric hona chahiye."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_REDCOLOR",
+      "text": "laal rang ka star:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_GREENCOLOR",
+      "text": "hara rang star:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLUECOLOR",
+      "text": "neela rang star:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_CYANCOLOR",
+      "text": "siyaan star:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_MAGENTACOLOR",
+      "text": "maijenta star:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_YELLOWCOLOR",
+      "text": "peela star:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_HUE",
+      "text": "rang:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_SATURATION",
+      "text": "santrpti:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_VALUE",
+      "text": "maan:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_LUMA",
+      "text": "luma:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_INPHASE",
+      "text": "in-phej:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_QUADRATURE",
+      "text": "chaturbhuj:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_UCHROMA",
+      "text": "u-chhrom:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_VCHROMA",
+      "text": "v-chhrom:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTO_DESC",
+      "text": "srot rang modal ko sankhyaon mein lakshy rang modal mein badalata hai."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTOKS_DESC",
+      "text": "srot rang modal ko ks praaroop mein lakshy rang modal mein badalata hai."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORTOHEX_DESC",
+      "text": "srot rang modal ko heks mein badalata hai."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTO_DESC",
+      "text": "rang vinirdeshak ka upayog karake srot rang modal ko lakshy rang modal mein badalata hai."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTOKS_DESC",
+      "text": "rang vinirdeshak ka upayog karake srot rang modal ko ks praaroop mein lakshy rang modal mein badalata hai."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "rang vinirdeshak ka upayog karake srot rang modal ko heks mein lakshy rang modal mein badalata hai."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_INVALIDMODEL",
+      "text": "modal vinirdesh amaany hai."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLACKKEY",
+      "text": "blaik kee leval:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "pahala rang star sankhyaatmak hona chaahie."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "doosara rang star sankhyaatmak hona chaahie."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "teesara rang star sankhyaatmak hona chaahie."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "chautha kee leval sankhyaatmak hona chaahie."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_LUMINANCE",
+      "text": "chamak (prakaash):"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "srot rang modal"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "lakshy rang modal"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "pahala nambar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "doosara nambar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "teesara nambar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "chautha nambar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "rang vinirdeshak"
     }
   ]
 }
