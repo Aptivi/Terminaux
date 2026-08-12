@@ -37,6 +37,7 @@ namespace Terminaux.Base
             { nameof(Wrappers.Buffered), new Wrappers.Buffered() },
             { nameof(FileSequence), new FileSequence() },
             { nameof(FileWrite), new FileWrite() },
+            { nameof(CleanWrite), new CleanWrite() },
             { nameof(Null), new Null() },
         };
         private readonly static Dictionary<string, BaseConsoleWrapper> customWrappers = [];
