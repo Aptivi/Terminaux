@@ -3089,6 +3089,34 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
       "text": "kalar wheel fail ho gaya hai"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC",
+      "text": "abhi ka operation process ho raha hai, tab tak kripya intezaar karen..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT",
+      "text": "iluminent"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_OBSERVER",
+      "text": "obzarvar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_WHITE",
+      "text": "safed"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLACK",
+      "text": "kala"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC",
+      "text": "panchavan number"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC",
+      "text": "panchavan ki level numeric hona chahiye."
     }
   ]
 }

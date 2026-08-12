@@ -3114,6 +3114,34 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
       "text": "La rueda de colores ha fallado"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC",
+      "text": "Espere mientras se procesa la operación actual..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT",
+      "text": "Iluminante"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_OBSERVER",
+      "text": "Observador"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_WHITE",
+      "text": "Blanco"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLACK",
+      "text": "Negro"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC",
+      "text": "Quinto número"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC",
+      "text": "El quinto nivel de clave debe ser numérico."
     }
   ]
 }

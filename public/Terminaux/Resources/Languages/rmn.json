@@ -3090,6 +3090,34 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
       "text": "Roata cromatică a eșuat"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC",
+      "text": "Vă rugăm să așteptați în timp ce operațiunea curentă este procesată..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT",
+      "text": "Iluminator"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_OBSERVER",
+      "text": "Observator"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_WHITE",
+      "text": "Alb"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLACK",
+      "text": "Negru"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC",
+      "text": "Al cincilea număr"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC",
+      "text": "Al cincilea nivel al cheii trebuie să fie numeric."
     }
   ]
 }

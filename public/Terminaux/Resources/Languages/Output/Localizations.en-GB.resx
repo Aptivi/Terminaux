@@ -2371,4 +2371,25 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>The colour wheel has failed</value>
   </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC" xml:space="preserve">
+    <value>Please wait while the current operation is being processed...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT" xml:space="preserve">
+    <value>Illuminant</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_OBSERVER" xml:space="preserve">
+    <value>Observer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_WHITE" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACK" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC" xml:space="preserve">
+    <value>Fifth number</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
+    <value>The fifth key level must be numeric.</value>
+  </data>
 </root>

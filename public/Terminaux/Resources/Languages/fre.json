@@ -3135,6 +3135,34 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
       "text": "La roue chromatique est défectueuse"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC",
+      "text": "Veuillez patienter pendant le traitement de l'opération en cours..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT",
+      "text": "Illuminant"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_OBSERVER",
+      "text": "Observateur"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_WHITE",
+      "text": "Blanc"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLACK",
+      "text": "Noir"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC",
+      "text": "Cinquième nombre"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC",
+      "text": "Le cinquième niveau de la clé doit être numérique."
     }
   ]
 }

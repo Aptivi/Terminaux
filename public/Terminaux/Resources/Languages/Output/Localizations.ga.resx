@@ -2371,4 +2371,25 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>Theip ar an roth datha</value>
   </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC" xml:space="preserve">
+    <value>Fan le do thoil fad atá an oibríocht reatha á próiseáil...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT" xml:space="preserve">
+    <value>Soilseoir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_OBSERVER" xml:space="preserve">
+    <value>Breathnóir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_WHITE" xml:space="preserve">
+    <value>Bán</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACK" xml:space="preserve">
+    <value>Dubh</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC" xml:space="preserve">
+    <value>Cúigiú huimhir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
+    <value>Ní mór don chúigiú leibhéal eochrach a bheith uimhriúil.</value>
+  </data>
 </root>

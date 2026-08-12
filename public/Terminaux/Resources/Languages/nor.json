@@ -3093,6 +3093,34 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED",
       "text": "Fargehjulet har sviktet"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC",
+      "text": "Vent mens den gjeldende operasjonen behandles..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT",
+      "text": "Lyskilde"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_OBSERVER",
+      "text": "Observatør"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_WHITE",
+      "text": "Hvit"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_BLACK",
+      "text": "Svart"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC",
+      "text": "Femte tall"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC",
+      "text": "Det femte nøkkelnivået må være numerisk."
     }
   ]
 }

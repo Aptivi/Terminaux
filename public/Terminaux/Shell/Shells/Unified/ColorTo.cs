@@ -77,7 +77,6 @@ namespace Terminaux.Shell.Shells.Unified
                     }),
                     new CommandArgumentPart(false, "number5", new CommandArgumentPartOptions()
                     {
-                        // TODO: T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC -> Fifth number
                         IsNumeric = true,
                         ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC"
                     }),
@@ -110,7 +109,6 @@ namespace Terminaux.Shell.Shells.Unified
             }
             if (parameters.ArgumentsList.Length > 6 && !int.TryParse(parameters.ArgumentsList[6], out fifth))
             {
-                // TODO: T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC -> The fifth key level must be numeric.
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC"), true, ThemeColorType.Error);
                 return 48;
             }
@@ -229,9 +227,6 @@ namespace Terminaux.Shell.Shells.Unified
                     TextWriterColor.Write($"{cielab.A:0.##}", true, ThemeColorType.ListValue);
                     TextWriterColor.Write("- B: ", false, ThemeColorType.ListEntry);
                     TextWriterColor.Write($"{cielab.B:0.##}", true, ThemeColorType.ListValue);
-
-                    // TODO: T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT -> Illuminant
-                    // TODO: T_SHELL_UNIFIED_COLORCONVERT_OBSERVER -> Observer
                     TextWriterColor.Write("- " + LanguageTools.GetLocalized("T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT") + " ", false, ThemeColorType.ListEntry);
                     TextWriterColor.Write($"{cielab.Illuminant}", true, ThemeColorType.ListValue);
                     TextWriterColor.Write("- " + LanguageTools.GetLocalized("T_SHELL_UNIFIED_COLORCONVERT_OBSERVER") + " ", false, ThemeColorType.ListEntry);
@@ -267,9 +262,6 @@ namespace Terminaux.Shell.Shells.Unified
                     var hwb = (HueWhiteBlack)modelConverted;
                     TextWriterColor.Write("- " + LanguageTools.GetLocalized("T_SHELL_UNIFIED_COLORCONVERT_HUE") + " ", false, ThemeColorType.ListEntry);
                     TextWriterColor.Write($"{hwb.HueWhole}", true, ThemeColorType.ListValue);
-
-                    // TODO: T_SHELL_UNIFIED_COLORCONVERT_WHITE -> White
-                    // TODO: T_SHELL_UNIFIED_COLORCONVERT_BLACK -> Black
                     TextWriterColor.Write("- " + LanguageTools.GetLocalized("T_SHELL_UNIFIED_COLORCONVERT_WHITE") + " ", false, ThemeColorType.ListEntry);
                     TextWriterColor.Write($"{hwb.WhitenessWhole}", true, ThemeColorType.ListValue);
                     TextWriterColor.Write("- " + LanguageTools.GetLocalized("T_SHELL_UNIFIED_COLORCONVERT_BLACK") + " ", false, ThemeColorType.ListEntry);

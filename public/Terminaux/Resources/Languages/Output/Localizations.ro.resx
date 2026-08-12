@@ -2371,4 +2371,25 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>Roata cromatică a eșuat</value>
   </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC" xml:space="preserve">
+    <value>Vă rugăm să așteptați în timp ce operațiunea curentă este procesată...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT" xml:space="preserve">
+    <value>Iluminator</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_OBSERVER" xml:space="preserve">
+    <value>Observator</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_WHITE" xml:space="preserve">
+    <value>Alb</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACK" xml:space="preserve">
+    <value>Negru</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC" xml:space="preserve">
+    <value>Al cincilea număr</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
+    <value>Al cincilea nivel al cheii trebuie să fie numeric.</value>
+  </data>
 </root>

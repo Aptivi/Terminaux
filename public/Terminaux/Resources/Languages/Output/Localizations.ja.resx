@@ -2371,4 +2371,25 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>カラーホイールが失敗しました</value>
   </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC" xml:space="preserve">
+    <value>現在処理中です。しばらくお待ちください。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT" xml:space="preserve">
+    <value>光源</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_OBSERVER" xml:space="preserve">
+    <value>観測者</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_WHITE" xml:space="preserve">
+    <value>白</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACK" xml:space="preserve">
+    <value>黒</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC" xml:space="preserve">
+    <value>5番目の数字</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
+    <value>5番目のキーレベルは数字でなければなりません。</value>
+  </data>
 </root>

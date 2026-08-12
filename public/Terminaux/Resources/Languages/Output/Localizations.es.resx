@@ -2371,4 +2371,25 @@
   <data name="T_INPUT_STYLES_COLORSELECTOR_COLORWHEEL_EXCEPTION_FAILED" xml:space="preserve">
     <value>La rueda de colores ha fallado</value>
   </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC" xml:space="preserve">
+    <value>Espere mientras se procesa la operación actual...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_ILLUMINANT" xml:space="preserve">
+    <value>Iluminante</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_OBSERVER" xml:space="preserve">
+    <value>Observador</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_WHITE" xml:space="preserve">
+    <value>Blanco</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_BLACK" xml:space="preserve">
+    <value>Negro</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC" xml:space="preserve">
+    <value>Quinto número</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC" xml:space="preserve">
+    <value>El quinto nivel de clave debe ser numérico.</value>
+  </data>
 </root>

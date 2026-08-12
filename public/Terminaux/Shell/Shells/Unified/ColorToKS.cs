@@ -76,7 +76,6 @@ namespace Terminaux.Shell.Shells.Unified
                     }),
                     new CommandArgumentPart(false, "number5", new CommandArgumentPartOptions()
                     {
-                        // TODO: T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC -> Fifth number
                         IsNumeric = true,
                         ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_NUMBER5_DESC"
                     }),
@@ -109,7 +108,6 @@ namespace Terminaux.Shell.Shells.Unified
             }
             if (parameters.ArgumentsList.Length > 6 && !int.TryParse(parameters.ArgumentsList[6], out fifth))
             {
-                // TODO: T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC -> The fifth key level must be numeric.
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_UNIFIED_COLORCONVERT_FIFTHLEVELNUMERIC"), true, ThemeColorType.Error);
                 return 48;
             }

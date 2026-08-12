@@ -288,8 +288,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 progressMarquee.UseColors = UseColors;
                 progressMarquee.ForegroundColor = ProgressTextColor;
                 progressMarquee.BackgroundColor = ProgressBackgroundColor;
-
-                // TODO: T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC -> Please wait while the current operation is being processed...
                 if (string.IsNullOrEmpty(Text))
                     progressMarquee.text = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERIC");
                 else
