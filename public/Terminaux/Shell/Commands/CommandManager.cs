@@ -73,7 +73,7 @@ namespace Terminaux.Shell.Commands
         {
             // Individual shells
             var shellInfo = ShellManager.GetShellInfo(ShellType);
-            var extraCommands = ShellManager.GetShellInfo(ShellType).extraCommands;
+            var extraCommands = shellInfo.extraCommands;
             List<BaseCommand> FinalCommands = [.. shellInfo.Commands];
 
             // Unified commands
