@@ -18,7 +18,6 @@
 //
 
 using System;
-using Terminaux.Base;
 using Colorimetry.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.ConsoleWriters;

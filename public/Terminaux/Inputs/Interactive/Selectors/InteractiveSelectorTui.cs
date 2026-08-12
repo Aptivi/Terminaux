@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using Magico.Enumeration;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
@@ -33,7 +32,6 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Textify.Tools;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {

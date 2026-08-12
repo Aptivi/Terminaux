@@ -19,7 +19,6 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.Base.TermInfo.Tabsets;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;

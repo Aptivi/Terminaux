@@ -19,7 +19,6 @@
 
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
-using Terminaux.Shell.Arguments;
 
 namespace Terminaux.Shell.Shells.Unified
 {

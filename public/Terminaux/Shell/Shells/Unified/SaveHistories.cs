@@ -19,7 +19,6 @@
 
 using Terminaux.Base;
 using Terminaux.Reader.History;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 
 namespace Terminaux.Shell.Shells.Unified

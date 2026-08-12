@@ -18,9 +18,7 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Base.Extensions.Data;
 using Terminaux.Sequences;
-using Textify.General;
 using Textify.General.Structures;
 using Textify.Tools;
 

@@ -17,14 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Colorimetry;
 using Terminaux.Themes.Colors;
 using Textify.General.Structures;
-using Terminaux.Shell.Shells.Unified;
 using Textify.General;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Terminaux.Writer.CyclicWriters.Simple

@@ -24,7 +24,6 @@ using Terminaux.Base;
 using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
 namespace Terminaux.Shell.Arguments.Base.Help

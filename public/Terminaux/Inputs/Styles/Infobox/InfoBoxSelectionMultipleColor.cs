@@ -26,8 +26,6 @@ using Terminaux.Base;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;
-using System.Text.RegularExpressions;
-using Textify.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using Terminaux.Writer.CyclicWriters.Graphical;

@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using Terminaux.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Prompts;
 

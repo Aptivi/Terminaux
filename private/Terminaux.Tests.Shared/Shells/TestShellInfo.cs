@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using Terminaux.Tests.Shared.Shells.Commands;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;

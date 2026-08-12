@@ -18,7 +18,6 @@
 //
 
 using Spectre.Console;
-using Terminaux.Base;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

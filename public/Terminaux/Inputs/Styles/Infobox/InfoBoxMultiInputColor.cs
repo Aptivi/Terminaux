@@ -27,8 +27,6 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Base.Extensions;
 using System.Linq;
-using Textify.Tools;
-using System.Text.RegularExpressions;
 using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using System.Collections.Generic;
 using Terminaux.Base.Structures;

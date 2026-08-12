@@ -19,8 +19,6 @@
 
 using System;
 using System.Linq;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
@@ -32,7 +30,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
-using Textify.Tools;
 using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 
 namespace Terminaux.Inputs.Styles.Infobox

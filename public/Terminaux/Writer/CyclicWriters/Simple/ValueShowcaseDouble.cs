@@ -20,7 +20,6 @@
 using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
-using Terminaux.Base.Structures;
 using Colorimetry.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

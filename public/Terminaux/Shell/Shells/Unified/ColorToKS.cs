@@ -20,7 +20,6 @@
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Colorimetry.Models;
 using Terminaux.Base;
 using Colorimetry.Models.Conversion;
 using Terminaux.Shell.Arguments;

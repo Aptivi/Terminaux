@@ -20,7 +20,6 @@
 using System.Linq;
 using Terminaux.Base.Extensions;
 using Textify.Data.Cowsay;
-using Textify.General;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {

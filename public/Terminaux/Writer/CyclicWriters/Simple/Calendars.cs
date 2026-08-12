@@ -21,14 +21,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using Calendrier;
 using Colorimetry;
-using Terminaux.Base.Extensions;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Themes.Colors;
-using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple

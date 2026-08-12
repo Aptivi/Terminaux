@@ -20,7 +20,6 @@
 using System;
 using Terminaux.Base.Extensions;
 using Colorimetry.Data;
-using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles

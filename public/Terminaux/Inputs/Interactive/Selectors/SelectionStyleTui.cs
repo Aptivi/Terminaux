@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Colorimetry.Transformation;
@@ -36,7 +35,6 @@ using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
-using Textify.Tools;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {

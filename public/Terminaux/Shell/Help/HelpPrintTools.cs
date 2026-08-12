@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using Terminaux.Base;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
@@ -29,7 +28,6 @@ using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
 namespace Terminaux.Shell.Help

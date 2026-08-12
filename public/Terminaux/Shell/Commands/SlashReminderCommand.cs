@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Base;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;

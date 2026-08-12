@@ -28,7 +28,6 @@ using Colorimetry;
 using Colorimetry.Data;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Base.Extensions.Data;
 using Terminaux.Inputs;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
