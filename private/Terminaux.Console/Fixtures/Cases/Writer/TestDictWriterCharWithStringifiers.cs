@@ -33,19 +33,19 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             var NormalCharDict = new Dictionary<string, char>() { { "One", '1' }, { "Two", '2' }, { "Three", '3' } };
             var ArrayCharDict = new Dictionary<string, char[]>() { { "One", new char[] { '1', '2', '3' } }, { "Two", new char[] { '1', '2', '3' } }, { "Three", new char[] { '1', '2', '3' } } };
-            var normalChars = new Listing()
+            var normalChars = new Listing<string, char>()
             {
                 Objects = NormalCharDict,
                 KeyColor = ConsoleColors.Silver,
                 ValueColor = ConsoleColors.Grey,
-                ValueStringifier = (character) => $"{(char)character} [{(int)(char)character}]",
+                ValueStringifier = (character) => $"{character} [{(int)character}]",
             };
-            var arrayChars = new Listing()
+            var arrayChars = new Listing<string, char[]>()
             {
                 Objects = ArrayCharDict,
                 KeyColor = ConsoleColors.Silver,
                 ValueColor = ConsoleColors.Grey,
-                ValueStringifier = (characters) => string.Join(", ", ((char[])characters).Select((character) => $"{character} [{(int)character}]"))
+                ValueStringifier = (characters) => string.Join(", ", characters.Select((character) => $"{character} [{(int)character}]"))
             };
             TextWriterColor.Write("Normal char dictionary:\n{0}", normalChars.Render());
             TextWriterColor.Write("Array char dictionary:\n{0}", arrayChars.Render());

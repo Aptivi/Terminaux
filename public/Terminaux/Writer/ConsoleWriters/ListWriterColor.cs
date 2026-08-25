@@ -156,7 +156,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <returns>A list without the new line at the end</returns>
         public static string RenderListPlain<TKey, TValue>(Dictionary<TKey, TValue> List)
         {
-            var list = new Listing()
+            var list = new Listing<TKey, TValue>()
             {
                 Objects = List,
                 UseColors = false
@@ -171,7 +171,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <returns>A list without the new line at the end</returns>
         public static string RenderListPlain<T>(IEnumerable<T> List)
         {
-            var list = new Listing()
+            var list = new Listing<T>()
             {
                 Objects = List,
                 UseColors = false
@@ -204,7 +204,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <returns>A list without the new line at the end</returns>
         public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor)
         {
-            var list = new Listing()
+            var list = new Listing<TKey, TValue>()
             {
                 Objects = List,
                 KeyColor = ListKeyColor,
@@ -238,7 +238,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <returns>A list without the new line at the end</returns>
         public static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor)
         {
-            var list = new Listing()
+            var list = new Listing<T>()
             {
                 Objects = List,
                 KeyColor = ListKeyColor,

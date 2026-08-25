@@ -30,6 +30,71 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Listing renderable
     /// </summary>
+    public class Listing<T1, T2> : Listing
+    {
+        /// <inheritdoc/>
+        public new IDictionary<T1, T2>? Objects { get; set; }
+
+        /// <inheritdoc/>
+        public new Func<T1, string>? KeyStringifier { get; set; }
+
+        /// <inheritdoc/>
+        public new Func<T2, string>? ValueStringifier { get; set; }
+
+        /// <inheritdoc/>
+        public override string Render()
+        {
+            var listing = new Listing()
+            {
+                KeyColor = KeyColor,
+                ValueColor = ValueColor,
+                Stringifier = Stringifier,
+                KeyStringifier = KeyStringifier is not null ? new Func<object, string>((obj) => KeyStringifier((T1)obj)) : null,
+                ValueStringifier = ValueStringifier is not null ? new Func<object, string>((obj) => ValueStringifier((T2)obj)) : null,
+                RecursiveStringifier = RecursiveStringifier,
+                Objects = Objects,
+                UseColors = UseColors,
+            };
+            return listing.Render();
+        }
+    }
+    
+    /// <summary>
+    /// Listing renderable
+    /// </summary>
+    public class Listing<T> : Listing
+    {
+        /// <summary>
+        /// A list or an array of objects
+        /// </summary>
+        public new IEnumerable<T>? Objects { get; set; }
+
+        /// <summary>
+        /// A stringifier function that converts the object based on its type to a string
+        /// </summary>
+        public new Func<T, string>? Stringifier { get; set; }
+
+        /// <inheritdoc/>
+        public override string Render()
+        {
+            var listing = new Listing()
+            {
+                KeyColor = KeyColor,
+                ValueColor = ValueColor,
+                Stringifier = Stringifier is not null ? new Func<object, string>((obj) => Stringifier((T)obj)) : null,
+                KeyStringifier = KeyStringifier,
+                ValueStringifier = ValueStringifier,
+                RecursiveStringifier = RecursiveStringifier,
+                Objects = Objects,
+                UseColors = UseColors,
+            };
+            return listing.Render();
+        }
+    }
+
+    /// <summary>
+    /// Listing renderable
+    /// </summary>
     public class Listing : SimpleCyclicWriter
     {
         private Color keyColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry);

@@ -32,14 +32,14 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             var NormalCharList = new List<char>() { '1', '2', '3' };
             var ArrayCharList = new List<char[]>() { { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } } };
-            var normalChars = new Listing()
+            var normalChars = new Listing<char>()
             {
                 Objects = NormalCharList,
                 KeyColor = ConsoleColors.Silver,
                 ValueColor = ConsoleColors.Grey,
-                Stringifier = (character) => $"{(char)character} [{(int)(char)character}]",
+                Stringifier = (character) => $"{character} [{(int)character}]",
             };
-            var arrayChars = new Listing()
+            var arrayChars = new Listing<char[]>()
             {
                 Objects = ArrayCharList,
                 KeyColor = ConsoleColors.Silver,
