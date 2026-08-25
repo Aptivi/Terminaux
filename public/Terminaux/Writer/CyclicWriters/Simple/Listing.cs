@@ -200,8 +200,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     listBuilder.AppendLine(
                         new ListEntry()
                         {
-                            Entry = KeyStringifier is not null && key is not null ? new Func<object, string>((obj) => KeyStringifier(obj)).Invoke(key) : key?.ToString() ?? "<<null>>",
-                            Value = ValueStringifier is not null && value is not null ? new Func<object, string>((obj) => ValueStringifier(obj)).Invoke(value) : value?.ToString() ?? "<<null>>",
+                            Entry = KeyStringifier is not null && key is not null ? KeyStringifier(key) : key?.ToString() ?? "<<null>>",
+                            Value = ValueStringifier is not null && value is not null ? ValueStringifier(value) : value?.ToString() ?? "<<null>>",
                             KeyColor = KeyColor,
                             ValueColor = ValueColor,
                             UseColors = UseColors,
