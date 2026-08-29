@@ -103,9 +103,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         var highColor = effectivePixel?.CellColor ?? Color;
                         var lowColor = effectiveNextRowPixel?.CellColor ?? Color;
                         canvas.Append(
-                            ConsoleColoring.RenderSetConsoleColor(highColor) +
-                            ConsoleColoring.RenderSetConsoleColor(lowColor, true) +
-                            new string('▀', widthFactor)
+                            ConsoleColoring.RenderSetConsoleColor(highColor, true) +
+                            ConsoleColoring.RenderSetConsoleColor(lowColor) +
+                            new string(highColor == lowColor ? ' ' : '▄', widthFactor)
                         );
                     }
                     else
