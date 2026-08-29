@@ -41,10 +41,6 @@ namespace Terminaux.Shell.Shells
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> CustomShellPresets => customShellPresets;
         /// <inheritdoc/>
-        public virtual bool AcceptsNetworkConnection => false;
-        /// <inheritdoc/>
-        public virtual string NetworkConnectionType => "";
-        /// <inheritdoc/>
         public virtual bool OneLineWrap => false;
         /// <inheritdoc/>
         public virtual bool SlashCommand => false;
