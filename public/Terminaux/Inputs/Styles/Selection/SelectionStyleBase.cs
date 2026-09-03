@@ -47,6 +47,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
         internal static Keybinding[] Bindings =>
         [
+            // TODO: T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX -> Searches for an element with regular expressions
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO"), ConsoleKey.Spacebar),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS"), ConsoleKey.Escape),
@@ -57,6 +58,7 @@ namespace Terminaux.Inputs.Styles.Selection
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE"), ConsoleKey.PageUp),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE"), ConsoleKey.PageDown),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH"), ConsoleKey.F),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX"), ConsoleKey.F, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR"), ConsoleKey.E, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR"), ConsoleKey.D, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION"), ConsoleKey.E),

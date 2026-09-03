@@ -316,10 +316,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Update(false);
         }
 
-        private void SearchPrompt(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
+        private void SearchPrompt(bool regexMode = false)
         {
             // Prompt the user for search term
-            int idx = InputChoiceTools.GetEntryIdxFromSearchPrompt(allAnswers.ToArray(), out var resultEntries);
+            int idx = InputChoiceTools.GetEntryIdxFromSearchPrompt(allAnswers.ToArray(), regexMode, out var resultEntries);
             if (idx < 0)
                 return;
 
@@ -668,13 +668,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.Bindings[6], GoLast));
             Keybindings.Add((SelectionStyleBase.Bindings[7], PreviousPage));
             Keybindings.Add((SelectionStyleBase.Bindings[8], NextPage));
-            Keybindings.Add((SelectionStyleBase.Bindings[9], SearchPrompt));
-            Keybindings.Add((SelectionStyleBase.Bindings[10], (_, _, _) => ShowcaseGoUp()));
-            Keybindings.Add((SelectionStyleBase.Bindings[11], (_, _, _) => ShowcaseGoDown()));
-            Keybindings.Add((SelectionStyleBase.Bindings[12], QuestionGoUp));
-            Keybindings.Add((SelectionStyleBase.Bindings[13], QuestionGoDown));
-            Keybindings.Add((SelectionStyleBase.Bindings[14], ShowCount));
-            Keybindings.Add((SelectionStyleBase.Bindings[15], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.Bindings[9], (_, _, _) => SearchPrompt()));
+            Keybindings.Add((SelectionStyleBase.Bindings[10], (_, _, _) => SearchPrompt(true)));
+            Keybindings.Add((SelectionStyleBase.Bindings[11], (_, _, _) => ShowcaseGoUp()));
+            Keybindings.Add((SelectionStyleBase.Bindings[12], (_, _, _) => ShowcaseGoDown()));
+            Keybindings.Add((SelectionStyleBase.Bindings[13], QuestionGoUp));
+            Keybindings.Add((SelectionStyleBase.Bindings[14], QuestionGoDown));
+            Keybindings.Add((SelectionStyleBase.Bindings[15], ShowCount));
+            Keybindings.Add((SelectionStyleBase.Bindings[16], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.ShowBindings[1], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.BindingsMouse[0], (_, _, mouse) => ProcessMouseWheel(mouse, true)));
             Keybindings.Add((SelectionStyleBase.BindingsMouse[1], (_, _, mouse) => ProcessMouseWheel(mouse)));

@@ -41,6 +41,7 @@ namespace Terminaux.Inputs.Styles.Infobox
     {
         private static Keybinding[] Keybindings =>
         [
+            // TODO: T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX -> Searches for a choice with a regular expression
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP"), ConsoleKey.UpArrow),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN"), ConsoleKey.DownArrow),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST"), ConsoleKey.Home),
@@ -49,6 +50,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES"), ConsoleKey.PageDown),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO"), ConsoleKey.Tab),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES"), ConsoleKey.F),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX"), ConsoleKey.F, ConsoleModifiers.Shift),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP"), ConsoleKey.W),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN"), ConsoleKey.S),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT"), ConsoleKey.E),
@@ -461,7 +463,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 // Search function
                                 if (selectionChoices <= 0)
                                     break;
-                                int answer = InputChoiceTools.GetEntryIdxFromSearchPrompt(choices, out var resultEntries);
+                                int answer = InputChoiceTools.GetEntryIdxFromSearchPrompt(choices, cki.Modifiers.HasFlag(ConsoleModifiers.Shift), out var resultEntries);
                                 if (answer < 0)
                                     break;
                                 currentSelection = resultEntries[answer].itemIdx;

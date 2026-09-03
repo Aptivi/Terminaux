@@ -597,7 +597,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private void LaunchFinder()
+        private void LaunchFinder(bool regexMode = false)
         {
             if (selectorTui.CurrentPane == 2 && !selectorTui.SecondaryDataSource.Any())
                 return;
@@ -608,7 +608,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                  selectorTui.SecondaryDataSource.Select(selectorTui.GetEntryFromItemSecondary) :
                  selectorTui.PrimaryDataSource.Select(selectorTui.GetEntryFromItem)).ToArray();
             var choices = InputChoiceTools.GetInputChoices(entriesString);
-            int answer = InputChoiceTools.GetEntryIdxFromSearchPrompt(choices, out var resultEntries);
+            int answer = InputChoiceTools.GetEntryIdxFromSearchPrompt(choices, regexMode, out var resultEntries);
             if (answer < 0)
                 return;
             var resultIdx = resultEntries[answer].itemIdx;
@@ -652,6 +652,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR"));
 
             // Base bindings
+            // TODO: T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX -> Search for an element with regular expressions
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2"), ConsoleKey.UpArrow), (_, _, _) => GoUp()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2"), ConsoleKey.DownArrow), (_, _, _) => GoDown()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP1"), PointerButton.WheelUp, PointerButtonPress.Scrolled), (_, _, mouse) => GoUpDeterministic(mouse)));
@@ -664,6 +665,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND"), PointerButton.None, PointerButtonPress.Moved), (_, _, mouse) => UpdateSelectionBasedOnMouse(mouse)));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_CONTEXTMENU"), PointerButton.Right, PointerButtonPress.Released), (_, _, mouse) => ShowContextMenu(mouse)));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCH"), ConsoleKey.F), (_, _, _) => LaunchFinder()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX"), ConsoleKey.F, ConsoleModifiers.Shift), (_, _, _) => LaunchFinder(true)));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_EXIT"), ConsoleKey.Escape), (ui, _, _) => Exit(ui)));
 
             // Informational selector TUI

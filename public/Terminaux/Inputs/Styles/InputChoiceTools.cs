@@ -22,6 +22,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles.Infobox;
+using Textify.General;
 using Textify.Tools;
 
 namespace Terminaux.Inputs.Styles
@@ -58,30 +59,34 @@ namespace Terminaux.Inputs.Styles
             return [.. finalChoices];
         }
 
-        internal static int GetEntryIdxFromSearchPrompt(InputModule[] modules, out (string choiceName, string choiceTitle, bool choiceDisabled, int itemIdx)[] resultEntries)
+        internal static int GetEntryIdxFromSearchPrompt(InputModule[] modules, bool regexMode, out (string choiceName, string choiceTitle, bool choiceDisabled, int itemIdx)[] resultEntries)
         {
             // Convert input module instances to input choice info
             var entriesString = modules.Select((entry) => new InputChoiceInfo(entry.Name, "", entry.Description)).ToArray();
-            return GetEntryIdxFromSearchPrompt(entriesString, out resultEntries);
+            return GetEntryIdxFromSearchPrompt(entriesString, regexMode, out resultEntries);
         }
 
-        internal static int GetEntryIdxFromSearchPrompt(InputChoiceInfo[] allAnswers, out (string choiceName, string choiceTitle, bool choiceDisabled, int itemIdx)[] resultEntries)
+        internal static int GetEntryIdxFromSearchPrompt(InputChoiceInfo[] allAnswers, bool regexMode, out (string choiceName, string choiceTitle, bool choiceDisabled, int itemIdx)[] resultEntries)
         {
             // Prompt the user for search term
+            // TODO: T_INPUT_COMMON_SEARCHPROMPT_NOREGEX -> Write a search term (case insensitive)
             resultEntries = [];
-            var entriesString = allAnswers.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled)).ToArray();
-            string keyword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT"));
-            if (!RegexTools.IsValidRegex(keyword))
+            var entriesString = allAnswers.Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, itemIdx: idx)).ToArray();
+            string keyword = InfoBoxInputColor.WriteInfoBoxInput(regexMode ? LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT") : LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT_NOREGEX"));
+            if (regexMode && !RegexTools.IsValidRegex(keyword))
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
                 return -1;
             }
 
             // Get the result entries
-            var regex = new Regex(keyword);
-            resultEntries = entriesString
-                .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, itemIdx: idx))
-                .Where((entry) => (regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)) && !entry.ChoiceDisabled).ToArray();
+            if (regexMode)
+            {
+                var regex = new Regex(keyword);
+                resultEntries = [.. entriesString.Where((entry) => (regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)) && !entry.ChoiceDisabled)];
+            }
+            else
+                resultEntries = [.. entriesString.Where((entry) => (entry.ChoiceName.ContainsWithNoCase(keyword) || entry.ChoiceTitle.ContainsWithNoCase(keyword)) && !entry.ChoiceDisabled)];
 
             // Act, depending on the result entries
             int idx = 0;
