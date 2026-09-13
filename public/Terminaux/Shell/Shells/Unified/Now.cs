@@ -45,22 +45,22 @@ namespace Terminaux.Shell.Shells.Unified
         public override CommandArgumentInfo[] CommandArgumentInfo =>
             [
                 new CommandArgumentInfo([
-                    new SwitchInfo("date", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC", new SwitchOptions()
+                    new SwitchInfo("date", LanguageTools.GetLocalized("T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["time", "full"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("time", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC", new SwitchOptions()
+                    new SwitchInfo("time", LanguageTools.GetLocalized("T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["date", "full"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("full", /* Localizable */ "T_SHELL_UNIFIED_SHOWTD_DESC", new SwitchOptions()
+                    new SwitchInfo("full", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SHOWTD_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["date", "time"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("utc", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC", new SwitchOptions()
+                    new SwitchInfo("utc", LanguageTools.GetLocalized("T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

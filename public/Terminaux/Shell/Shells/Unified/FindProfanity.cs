@@ -46,16 +46,16 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC")
                     }),
                     new CommandArgumentPart(false, "profanitytype", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC"),
                         AutoCompleter = (_) => Enum.GetNames(typeof(ProfanitySearchType)),
                     }),
                 ],
                 [
-                    new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                    new SwitchInfo("quiet", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_QUIET_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

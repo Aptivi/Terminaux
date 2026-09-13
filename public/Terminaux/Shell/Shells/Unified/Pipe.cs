@@ -49,16 +49,16 @@ namespace Terminaux.Shell.Shells.Unified
                     new CommandArgumentPart(true, "sourceCommand", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => CommandManager.GetCommandNames(ShellManager.CurrentShellType),
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC")
                     }),
                     new CommandArgumentPart(true, "targetCommand", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => CommandManager.GetCommandNames(ShellManager.CurrentShellType),
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("quoted", /* Localizable */ "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC")
+                    new SwitchInfo("quoted", LanguageTools.GetLocalized("T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC"))
                 ], true)
             ];
 

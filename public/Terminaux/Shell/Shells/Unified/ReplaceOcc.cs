@@ -44,24 +44,24 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC")
                     }),
                     new CommandArgumentPart(true, "toreplace", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC")
                     }),
                     new CommandArgumentPart(true, "replacewith", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC")
                     }),
                     new CommandArgumentPart(true, "occurrencenum", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC"),
                         IsNumeric = true,
                     }),
                 ],
                 [
-                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    new SwitchInfo("verbose", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

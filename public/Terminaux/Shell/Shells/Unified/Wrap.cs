@@ -45,7 +45,7 @@ namespace Terminaux.Shell.Shells.Unified
                     new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(ShellManager.CurrentShellType),
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC")
                     })
                 ])
             ];

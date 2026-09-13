@@ -64,15 +64,15 @@ namespace Terminaux.Shell.Shells.Unified
                     new CommandArgumentPart(true, "surnamescount", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC")
                     }),
                     new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC")
                     }),
                     new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC")
                     }),
                 ], true)
             ];

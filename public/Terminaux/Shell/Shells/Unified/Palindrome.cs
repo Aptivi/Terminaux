@@ -43,15 +43,15 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("ignorecase", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC", new SwitchOptions()
+                    new SwitchInfo("ignorecase", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    new SwitchInfo("verbose", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

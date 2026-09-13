@@ -46,15 +46,15 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "process", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC")
                     }),
                     new CommandArgumentPart(false, "args", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("forked", /* Localizable */ "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC", new SwitchOptions()
+                    new SwitchInfo("forked", LanguageTools.GetLocalized("T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

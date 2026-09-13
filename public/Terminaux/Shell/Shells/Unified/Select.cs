@@ -47,19 +47,19 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "answers", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC")
                     }),
                     new CommandArgumentPart(true, "input", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC")
                     }),
                     new CommandArgumentPart(false, "answertitle1", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC")
                     }),
                     new CommandArgumentPart(false, "answertitle2", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC")
                     }),
                 ], true, true)
             ];

@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 
@@ -51,7 +52,7 @@ namespace Terminaux.Shell.Arguments
         /// </summary>
         public SwitchInfo[] Switches { get; private set; } =
         [
-            new SwitchInfo("set", /* Localizable */ "T_SHELL_BASE_SWITCH_SET_DESC", false, true)
+            new SwitchInfo("set", LanguageTools.GetLocalized("T_SHELL_BASE_SWITCH_SET_DESC"), false, true)
         ];
         /// <summary>
         /// Whether to accept the -set switch to set the MESH variable value

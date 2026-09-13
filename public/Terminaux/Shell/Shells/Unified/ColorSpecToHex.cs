@@ -46,7 +46,7 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC")
                     }),
                 ], true)
             ];

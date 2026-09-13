@@ -38,7 +38,7 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "ms", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC")
                     }),
                 ])
             ];

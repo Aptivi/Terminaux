@@ -46,11 +46,11 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("noparse", /* Localizable */ "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC", false, false, [], 0, false)
+                    new SwitchInfo("noparse", LanguageTools.GetLocalized("T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC"), false, false, [], 0, false)
                 ], true)
             ];
 

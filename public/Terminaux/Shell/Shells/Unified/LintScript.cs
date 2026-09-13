@@ -42,7 +42,7 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "script", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC")
                     }),
                 ], true)
             ];

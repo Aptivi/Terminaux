@@ -43,21 +43,21 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("whole", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC", new SwitchOptions()
+                    new SwitchInfo("whole", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["first"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("first", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC", new SwitchOptions()
+                    new SwitchInfo("first", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["whole"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    new SwitchInfo("verbose", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

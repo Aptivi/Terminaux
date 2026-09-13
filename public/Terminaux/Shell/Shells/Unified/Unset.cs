@@ -45,11 +45,11 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "$variable", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("justwipe", /* Localizable */ "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC", new SwitchOptions()
+                    new SwitchInfo("justwipe", LanguageTools.GetLocalized("T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

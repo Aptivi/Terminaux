@@ -49,11 +49,11 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "MESHExpression", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC")
                     }),
                     new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC")
                     }),
                 ])
             ];

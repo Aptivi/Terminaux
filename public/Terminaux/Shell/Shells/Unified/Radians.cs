@@ -44,12 +44,12 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "degrees", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC"),
                         IsNumeric = true,
                     }),
                 ],
                 [
-                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    new SwitchInfo("verbose", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

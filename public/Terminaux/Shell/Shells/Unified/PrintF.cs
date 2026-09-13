@@ -43,11 +43,11 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC")
                     }),
                     new CommandArgumentPart(false, "parameters", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC")
                     }),
                 ], true, true)
             ];

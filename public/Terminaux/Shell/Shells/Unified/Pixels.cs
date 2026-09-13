@@ -43,17 +43,17 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "width", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC"),
                         IsNumeric = true,
                     }),
                     new CommandArgumentPart(true, "height", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC"),
                         IsNumeric = true,
                     }),
                 ],
                 [
-                    new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                    new SwitchInfo("verbose", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

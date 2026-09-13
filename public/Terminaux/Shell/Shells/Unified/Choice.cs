@@ -76,43 +76,43 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "answers", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC")
                     }),
                     new CommandArgumentPart(true, "input", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC")
                     }),
                     new CommandArgumentPart(false, "answertitle1", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC")
                     }),
                     new CommandArgumentPart(false, "answertitle2", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("o", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC", new SwitchOptions()
+                    new SwitchInfo("o", LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["t", "m"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("t", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC", new SwitchOptions()
+                    new SwitchInfo("t", LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["o", "m"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("m", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC", new SwitchOptions()
+                    new SwitchInfo("m", LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["t", "o"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("single", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC", new SwitchOptions()
+                    new SwitchInfo("single", LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["multiple"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("multiple", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC", new SwitchOptions()
+                    new SwitchInfo("multiple", LanguageTools.GetLocalized("T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["single"],
                         AcceptsValues = false

@@ -54,19 +54,19 @@ namespace Terminaux.Shell.Shells.Unified
                     new CommandArgumentPart(true, "add", new()
                     {
                         ExactWording = ["add"],
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC")
                     }),
                     new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC")
                     }),
                     new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC")
                     }),
                     new CommandArgumentPart(true, "cmd", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC")
                     }),
                 ]),
                 new CommandArgumentInfo(
@@ -74,15 +74,15 @@ namespace Terminaux.Shell.Shells.Unified
                     new CommandArgumentPart(true, "rem", new()
                     {
                         ExactWording = ["rem"],
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC")
                     }),
                     new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC")
                     }),
                     new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC")
                     }),
                 ]),
             ];

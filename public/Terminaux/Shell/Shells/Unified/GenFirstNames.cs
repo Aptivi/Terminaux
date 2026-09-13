@@ -65,29 +65,29 @@ namespace Terminaux.Shell.Shells.Unified
                     new CommandArgumentPart(true, "firstnamescount", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC")
                     }),
                     new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC")
                     }),
                     new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("male", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC", new SwitchOptions()
+                    new SwitchInfo("male", LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["female", "both"],
                         AcceptsValues = false,
                     }),
-                    new SwitchInfo("female", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC", new SwitchOptions()
+                    new SwitchInfo("female", LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["male", "both"],
                         AcceptsValues = false,
                     }),
-                    new SwitchInfo("both", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                    new SwitchInfo("both", LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["female", "male"],
                         AcceptsValues = false,

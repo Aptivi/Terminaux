@@ -47,43 +47,43 @@ namespace Terminaux.Shell.Shells.Unified
                     new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => CommandManager.GetCommandNames(ShellManager.CurrentShellType),
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("general", /* Localizable */ "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("general", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("alias", /* Localizable */ "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("alias", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("unified", /* Localizable */ "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("unified", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("extra", /* Localizable */ "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("extra", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("all", /* Localizable */ "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("all", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("simplified", /* Localizable */ "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("simplified", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("hidden", /* Localizable */ "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("hidden", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("count", /* Localizable */ "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("count", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("markdown", /* Localizable */ "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC", new SwitchOptions()
+                    new SwitchInfo("markdown", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

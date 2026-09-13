@@ -46,7 +46,7 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "encoded", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC")
                     })
                 ])
             ];

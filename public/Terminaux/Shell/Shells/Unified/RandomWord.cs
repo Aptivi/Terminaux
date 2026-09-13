@@ -41,7 +41,7 @@ namespace Terminaux.Shell.Shells.Unified
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                    new SwitchInfo("quiet", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_QUIET_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

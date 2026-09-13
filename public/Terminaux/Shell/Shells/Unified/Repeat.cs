@@ -47,7 +47,7 @@ namespace Terminaux.Shell.Shells.Unified
                     new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC")
                     }),
                     new CommandArgumentPart(false, "command"),
                 ])

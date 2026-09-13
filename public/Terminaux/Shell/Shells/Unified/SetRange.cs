@@ -45,15 +45,15 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC")
                     }),
                     new CommandArgumentPart(false, "value2", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC")
                     }),
                     new CommandArgumentPart(false, "value3", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC")
                     }),
                 ], true, true)
             ];

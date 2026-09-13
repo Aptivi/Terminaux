@@ -45,7 +45,7 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(true, "search", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC")
                     })
                 ], false)
             ];

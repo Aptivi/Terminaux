@@ -44,25 +44,25 @@ namespace Terminaux.Shell.Shells.Unified
                 [
                     new CommandArgumentPart(false, "maxLength", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC"),
                         IsNumeric = true,
                     }),
                     new CommandArgumentPart(false, "startsWith", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC")
                     }),
                     new CommandArgumentPart(false, "endsWith", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC")
                     }),
                     new CommandArgumentPart(false, "exactLength", new()
                     {
-                        ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+                        ArgumentDescription = LanguageTools.GetLocalized("T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC"),
                         IsNumeric = true,
                     }),
                 ],
                 [
-                    new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                    new SwitchInfo("quiet", LanguageTools.GetLocalized("T_SHELL_UNIFIED_SWITCH_QUIET_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
