@@ -687,10 +687,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (multiple)
             {
                 Keybindings.RemoveAt(3);
-                Keybindings.Add((SelectionStyleBase.BindingsMultiple[16], ModifyChoice));
-                Keybindings.Add((SelectionStyleBase.BindingsMultiple[17], (_, _, _) => ProcessSelectAll(1)));
-                Keybindings.Add((SelectionStyleBase.BindingsMultiple[18], (_, _, _) => ProcessSelectAll(2)));
-                Keybindings.Add((SelectionStyleBase.BindingsMultiple[19], (_, _, _) => ProcessSelectAll(3)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[17], ModifyChoice));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[18], (_, _, _) => ProcessSelectAll(1)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[19], (_, _, _) => ProcessSelectAll(2)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[20], (_, _, _) => ProcessSelectAll(3)));
             }
         }
     }
