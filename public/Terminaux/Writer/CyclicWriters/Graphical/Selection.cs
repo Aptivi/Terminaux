@@ -522,7 +522,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int relatedIdx = -1;
             var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, CurrentSelections, ref startIndexTristates) : [];
             string prefix = isMultiple ? "  [ ] " : ShowRadioButtons ? "  ( ) " : "  ";
-            int AnswerTitleLeft = choices.Count > 5000 ? 0 : choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $" {prefix}{x.ChoiceName}) "));
+            int AnswerTitleLeft = choices.Count > 5000 ? 0 : choices.Max(x => ConsoleChar.EstimateCellWidth($"{prefix}{x.ChoiceName}) "));
             for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
             {
                 InputChoiceCategoryInfo? category = Selections[categoryIdx];
@@ -539,6 +539,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     InputChoiceGroupInfo? group = category.Groups[groupIdx];
                     var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
+                    bool needPush = category.Groups.Length > 1;
                     if (category.Groups.Length > 1)
                     {
                         string modifiers = isMultiple ? "[ ] " : "";
@@ -556,11 +557,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                         // Get the option
                         string selectedIndicator = isMultiple ? $"  [ ]" : ShowRadioButtons ? $"  ( )" : " ";
-                        string AnswerOption = Selections.Length > 1 ? $"  {selectedIndicator} {choice.ChoiceName}) {AnswerTitle}" : $" {selectedIndicator} {choice.ChoiceName}) {AnswerTitle}";
+                        string AnswerOption = Selections.Length > 1 && needPush ? $"  {selectedIndicator} {choice.ChoiceName}) {AnswerTitle}" : $"{selectedIndicator} {choice.ChoiceName}) {AnswerTitle}";
                         if (choices.Count <= 5000 && AnswerTitleLeft < Width)
                         {
-                            string renderedChoice = Selections.Length > 1 ? $"  {selectedIndicator} {choice.ChoiceName}) " : $" {selectedIndicator} {choice.ChoiceName}) ";
-                            int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
+                            string renderedChoice = Selections.Length > 1 && needPush ? $"  {selectedIndicator} {choice.ChoiceName}) " : $"{selectedIndicator} {choice.ChoiceName}) ";
+                            int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice) + (Selections.Length > 1 && needPush ? 2 : 0);
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                         }
 
@@ -588,7 +589,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Now, get the choice parameters
             List<(string text, Color fore, Color back, bool force)> choiceText = [];
-            List<(SelectionTristate tristate, ChoiceHitboxType type, bool radioSelected, bool multipleSelected, bool disabled, bool isAlt)> choiceParams = [];
+            List<(SelectionTristate tristate, ChoiceHitboxType type, bool radioSelected, bool multipleSelected, bool disabled, bool isAlt, bool needPush)> choiceParams = [];
             int processedChoices = 0;
             int startIndexTristates = 0;
             int startIndexGroupTristates = 0;
@@ -599,7 +600,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 InputChoiceCategoryInfo? category = Selections[categoryIdx];
                 var tristate = isMultiple ? tristates[categoryIdx] : SelectionTristate.Unselected;
                 if (Selections.Length > 1)
-                    choiceParams.Add((tristate, ChoiceHitboxType.Category, false, false, false, false));
+                    choiceParams.Add((tristate, ChoiceHitboxType.Category, false, false, false, false, false));
 
                 var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, CurrentSelections, ref startIndexGroupTristates) : [];
                 for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
@@ -607,7 +608,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     InputChoiceGroupInfo? group = category.Groups[groupIdx];
                     var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
                     if (category.Groups.Length > 1)
-                        choiceParams.Add((groupTristate, ChoiceHitboxType.Group, false, false, false, false));
+                        choiceParams.Add((groupTristate, ChoiceHitboxType.Group, false, false, false, false, false));
                     for (int i = 0; i < group.Choices.Length; i++)
                     {
                         relatedIdx++;
@@ -618,7 +619,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                         // Render an entry
                         bool isAlt = processedChoices + 1 > AltChoicePos;
-                        choiceParams.Add((selected ? SelectionTristate.Selected : SelectionTristate.Unselected, ChoiceHitboxType.Choice, radioSelected, isMultiple && CurrentSelections.Contains(relatedIdx), disabled, isAlt));
+                        choiceParams.Add((selected ? SelectionTristate.Selected : SelectionTristate.Unselected, ChoiceHitboxType.Choice, radioSelected, isMultiple && CurrentSelections.Contains(relatedIdx), disabled, isAlt, category.Groups.Length > 1));
                         processedChoices++;
                     }
                 }
@@ -633,7 +634,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int finalIndex = i + startIndex;
                 if (finalIndex < selectionHeights[selectionHeights.Count - 1])
                 {
-                    var (tristate, type, radioSelected, multipleSelected, disabled, isAlt) = choiceParams[finalIndex];
+                    var (tristate, type, radioSelected, multipleSelected, disabled, isAlt, needPush) = choiceParams[finalIndex];
 
                     // Check the type
                     if (type == ChoiceHitboxType.Category)
@@ -662,7 +663,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         string selectedIndicator =
                             isMultiple ? $" [{(multipleSelected ? "*" : " ")}]" :
                             ShowRadioButtons ? $" ({(radioSelected ? "*" : " ")})" : "";
-                        string modifiers = Selections.Length > 1 ? $"  {selectionIndicator}{selectedIndicator}" : $" {selectionIndicator}{selectedIndicator}";
+                        string modifiers = Selections.Length > 1 && needPush ? $"  {selectionIndicator}{selectedIndicator}" : $"{selectionIndicator}{selectedIndicator}";
 
                         // Render an entry
                         var finalForeColor =

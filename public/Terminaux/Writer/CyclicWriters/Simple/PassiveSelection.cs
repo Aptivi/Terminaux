@@ -151,9 +151,10 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         var choice = group.Choices[i];
                         string AnswerTitle = choice.ChoiceTitle ?? "";
                         bool disabled = choice.ChoiceDisabled;
+                        bool needPush = category.Groups.Length > 1;
 
                         // Get the option
-                        string AnswerOption = Selections.Length > 1 ? $"    {choice.ChoiceName}) {AnswerTitle}" : $"  {choice.ChoiceName}) {AnswerTitle}";
+                        string AnswerOption = Selections.Length > 1 && needPush ? $"    {choice.ChoiceName}) {AnswerTitle}" : $"  {choice.ChoiceName}) {AnswerTitle}";
 
                         // Render an entry
                         bool isAlt = processedChoices + 1 > AltChoicePos;
