@@ -57,6 +57,7 @@ namespace Terminaux.Reader
         internal bool operationWasInvalid;
         internal bool concealing;
         internal bool refreshRequired;
+        internal bool cancelled;
         internal List<char> argNumbers = [];
         internal string oldText = "";
         internal List<string> changes = [];
@@ -284,6 +285,15 @@ namespace Terminaux.Reader
         /// </summary>
         public bool OneLineWrap =>
             oneLineWrap;
+
+        /// <summary>
+        /// Whether this input is cancelled
+        /// </summary>
+        public bool Cancelled
+        {
+            get => cancelled;
+            set => cancelled = value;
+        }
 
         /// <summary>
         /// Whether the refresh is required

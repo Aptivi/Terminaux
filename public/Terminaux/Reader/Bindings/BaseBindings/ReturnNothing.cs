@@ -30,6 +30,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
+            state.Cancelled = true;
             state.CurrentText.Clear();
         }
     }
