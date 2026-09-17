@@ -248,7 +248,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 break;
                             case ConsoleKey.Spacebar:
-                                string inputString = InfoBoxInputColor.WriteInfoBoxInput($"{selected}", LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE"), vars: [minPos, maxPos]);
+                                string inputString = InfoBoxInputColor.WriteInfoBoxInput($"{selected}", LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE"), out bool done, vars: [minPos, maxPos]);
+                                if (!done)
+                                    break;
                                 if (!inputString.IsStringNumeric())
                                 {
                                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID"));

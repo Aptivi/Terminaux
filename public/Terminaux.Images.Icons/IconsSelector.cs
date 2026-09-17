@@ -173,7 +173,9 @@ namespace Terminaux.Images.Icons
                                 bool write = cki.Modifiers.HasFlag(ConsoleModifiers.Shift);
                                 if (write)
                                 {
-                                    string promptedIconName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT")).ToLower();
+                                    string promptedIconName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT"), out bool done).ToLower();
+                                    if (!done)
+                                        break;
                                     if (!icons.Contains(promptedIconName))
                                     {
                                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_NOICON"));
@@ -188,6 +190,8 @@ namespace Terminaux.Images.Icons
                                     {
                                         Title = LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPTTITLE"),
                                     });
+                                    if (selectedIcon < 0)
+                                        break;
                                     iconName = icons[selectedIcon];
                                 }
                                 screen.RequireRefresh();

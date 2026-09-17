@@ -266,7 +266,9 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT") + " 00 -> FF.", settings.InfoBoxSettings);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT") + " 00 -> FF.", settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
@@ -293,7 +295,9 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, InfoBoxInputType.Text, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, out bool done, InfoBoxInputType.Text, byteNumHex);
+            if (!done)
+                return;
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
@@ -314,7 +318,9 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, InfoBoxInputType.Text, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, out bool done, InfoBoxInputType.Text, byteNumHex);
+            if (!done)
+                return;
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
@@ -331,14 +337,18 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED") + " 00 -> FF.", settings.InfoBoxSettings);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED") + " 00 -> FF.", settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, InfoBoxInputType.Text, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, out bool done2, InfoBoxInputType.Text, byteNumHex);
+            if (!done2)
+                return;
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
@@ -354,7 +364,9 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT") + " 00 -> FF.", settings.InfoBoxSettings);
+            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT") + " 00 -> FF.", settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             byte[] refBytes;
 
             // See if we have a cached find if the user didn't provide any string to find

@@ -45,7 +45,17 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="inputType">Input type</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars) =>
-            WriteInfoBoxInput("", text, InfoBoxSettings.GlobalSettings, inputType, vars);
+            WriteInfoBoxInput("", text, InfoBoxSettings.GlobalSettings, out _, inputType, vars);
+
+        /// <summary>
+        /// Writes the input info box
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="done">Indicates whether the input was finished successfully or not. Also false on cancellation.</param>
+        /// <param name="inputType">Input type</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInput(string text, out bool done, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars) =>
+            WriteInfoBoxInput("", text, InfoBoxSettings.GlobalSettings, out done, inputType, vars);
 
         /// <summary>
         /// Writes the input info box
@@ -55,7 +65,18 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="inputType">Input type</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text, InfoBoxSettings settings, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars) =>
-            WriteInfoBoxInput("", text, settings, inputType, vars);
+            WriteInfoBoxInput("", text, settings, out _, inputType, vars);
+
+        /// <summary>
+        /// Writes the input info box
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="done">Indicates whether the input was finished successfully or not. Also false on cancellation.</param>
+        /// <param name="inputType">Input type</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInput(string text, InfoBoxSettings settings, out bool done, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars) =>
+            WriteInfoBoxInput("", text, settings, out done, inputType, vars);
 
         /// <summary>
         /// Writes the input info box
@@ -65,7 +86,18 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="inputType">Input type</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string initialValue, string text, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars) =>
-            WriteInfoBoxInput(initialValue, text, InfoBoxSettings.GlobalSettings, inputType, vars);
+            WriteInfoBoxInput(initialValue, text, InfoBoxSettings.GlobalSettings, out _, inputType, vars);
+
+        /// <summary>
+        /// Writes the input info box
+        /// </summary>
+        /// <param name="initialValue">Initial value.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="done">Indicates whether the input was finished successfully or not. Also false on cancellation.</param>
+        /// <param name="inputType">Input type</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInput(string initialValue, string text, out bool done, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars) =>
+            WriteInfoBoxInput(initialValue, text, InfoBoxSettings.GlobalSettings, out done, inputType, vars);
 
         /// <summary>
         /// Writes the input info box
@@ -75,9 +107,22 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="inputType">Input type</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInput(string initialValue, string text, InfoBoxSettings settings, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars)
+        public static string WriteInfoBoxInput(string initialValue, string text, InfoBoxSettings settings, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars) =>
+            WriteInfoBoxInput(initialValue, text, settings, out _, inputType, vars);
+
+        /// <summary>
+        /// Writes the input info box
+        /// </summary>
+        /// <param name="initialValue">Initial value.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="done">Indicates whether the input was finished successfully or not. Also false on cancellation.</param>
+        /// <param name="inputType">Input type</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInput(string initialValue, string text, InfoBoxSettings settings, out bool done, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars)
         {
             // Prepare the screen
+            done = false;
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
@@ -154,11 +199,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     readerSettings.InputForegroundColor = settings.ForegroundColor;
                     readerSettings.InputBackgroundColor = settings.BackgroundColor;
                 }
-                BindingsTools.Override(
-                    new ConsoleKeyInfo('\x03', ConsoleKey.C, false, false, true),
-                    new ConsoleKeyInfo('\x1b', ConsoleKey.Escape, false, false, false)
-                );
                 string input = TermReader.Read("", initialValue, readerSettings, password, true);
+                done = !(readerSettings.state?.Cancelled ?? false);
                 if (character)
                 {
                     WideString wideInput = (WideString)input;
@@ -187,10 +229,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxScreenPart.Id);
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
-                BindingsTools.RemoveOverride(
-                    new ConsoleKeyInfo('\x03', ConsoleKey.C, false, false, true),
-                    new ConsoleKeyInfo('\x1b', ConsoleKey.Escape, false, false, false)
-                );
             }
             return "";
         }

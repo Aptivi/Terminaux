@@ -90,6 +90,7 @@ namespace Terminaux.Reader.Bindings
                 BoundKeys =
                 [
                     new ConsoleKeyInfo('\x03', ConsoleKey.C, false, false, true),
+                    new ConsoleKeyInfo('\x1b', ConsoleKey.Escape, false, false, false),
                 ]
             },
             new PreviousHistory()

@@ -72,7 +72,9 @@ namespace Terminaux.Inputs.Styles
             // TODO: T_INPUT_COMMON_SEARCHPROMPT_NOREGEX -> Write a search term (case insensitive)
             resultEntries = [];
             var entriesString = allAnswers.Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, itemIdx: idx)).ToArray();
-            string keyword = InfoBoxInputColor.WriteInfoBoxInput(regexMode ? LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT") : LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT_NOREGEX"));
+            string keyword = InfoBoxInputColor.WriteInfoBoxInput(regexMode ? LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT") : LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT_NOREGEX"), out bool done);
+            if (!done)
+                return -1;
             if (regexMode && !RegexTools.IsValidRegex(keyword))
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));

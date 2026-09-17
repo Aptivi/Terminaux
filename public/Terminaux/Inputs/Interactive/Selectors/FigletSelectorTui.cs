@@ -248,7 +248,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (write)
             {
-                string promptedfont = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTNAMEPROMPT")).ToLower();
+                string promptedfont = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTNAMEPROMPT"), out bool done).ToLower();
+                if (!done)
+                    return;
                 if (!FigletSelector.fonts.Contains(promptedfont))
                 {
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_NOFONT"));

@@ -64,12 +64,15 @@ namespace Terminaux.Inputs.Modules
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                Value = InfoBoxInputColor.WriteInfoBoxInput(value, Description, new InfoBoxSettings()
+                string projectedValue = InfoBoxInputColor.WriteInfoBoxInput(value, Description, new InfoBoxSettings()
                 {
                     Title = Name,
                     ForegroundColor = Foreground,
                     BackgroundColor = Background,
-                });
+                }, out bool done);
+                if (!done)
+                    return;
+                Value = projectedValue;
             }
             else
             {
@@ -92,7 +95,10 @@ namespace Terminaux.Inputs.Modules
                     readerSettings.InputForegroundColor = Foreground;
                     readerSettings.InputBackgroundColor = Background;
                 }
-                Value = TermReader.Read("", value, readerSettings, false, true);
+                string finalValue = TermReader.Read("", value, readerSettings, false, true);
+                if (readerSettings.state?.Cancelled ?? true)
+                    return;
+                Value = finalValue;
             }
             Provided = true;
         }

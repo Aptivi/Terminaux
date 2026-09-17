@@ -135,7 +135,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (write)
             {
-                string promptedCowName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT")).ToLower();
+                string promptedCowName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT"), out bool done).ToLower();
+                if (!done)
+                    return;
                 if (!Enum.TryParse(promptedCowName, out CowName promptedCow))
                 {
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_IS_COWSAY_NOCOWNAME"));

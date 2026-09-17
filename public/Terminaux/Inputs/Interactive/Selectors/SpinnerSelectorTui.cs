@@ -140,7 +140,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (write)
             {
-                string promptedSpinnerName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT")).ToLower();
+                string promptedSpinnerName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT"), out bool done).ToLower();
+                if (!done)
+                    return;
                 if (!SpinnerSelector.spinners.Contains(promptedSpinnerName))
                 {
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_IS_SPINNER_NOSPINNER"));
