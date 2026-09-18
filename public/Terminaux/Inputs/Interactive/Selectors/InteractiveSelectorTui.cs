@@ -611,7 +611,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int answer = InputChoiceTools.GetEntryIdxFromSearchPrompt(choices, regexMode, out var resultEntries);
             if (answer < 0)
                 return;
-            var resultIdx = resultEntries[answer].itemIdx;
+            var resultIdx = resultEntries[answer].itemIdx + 1;
             InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
         }
 
