@@ -41,20 +41,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private readonly BaseInteractiveTui<TPrimary, TSecondary> selectorTui;
         private int paneCurrentSelection;
 
-        public override InteractiveTuiHelpPage[] HelpPages
-        {
-            get
-            {
-                string moreKeybindingsHelpPageBody = GetDynamicHelpPageBody();
-                var moreKeybindingsHelpPage = new InteractiveTuiHelpPage()
-                {
-                    HelpTitle = "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
-                    HelpDescription = "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
-                    HelpBody = moreKeybindingsHelpPageBody
-                };
-                return [moreKeybindingsHelpPage, .. extraHelpPages];
-            }
-        }
+        // TODO: Remove T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO
+        public override InteractiveTuiHelpPage[] HelpPages =>
+            [.. extraHelpPages];
+
+        public override Keybinding[] HelpAdditionalBindings =>
+            KeybindingTools.ConvertFromTuiKeybindingsToKeybindings([.. selectorTui.Bindings, .. selectorTui.CurrentPane == 2 ? selectorTui.BindingsSecondPane : selectorTui.BindingsFirstPane]);
 
         public override string Render()
         {
@@ -626,24 +618,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var dataPrimary = selectorTui.PrimaryDataSource;
             var dataSecondary = selectorTui.SecondaryDataSource;
             return selectorTui.CurrentPane == 2 ? dataSecondary.Length() : dataPrimary.Length();
-        }
-
-        private string GetDynamicHelpPageBody()
-        {
-            if (selectorTui is null)
-                return "";
-
-            var helpPageBody = new StringBuilder();
-
-            // Write informational text prior to writing all keybindings for this TUI
-            helpPageBody.AppendLine(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO") + "\n");
-
-            // Now, write all keybindings
-            var uiBindings = KeybindingTools.ConvertFromTuiKeybindingsToKeybindings([.. selectorTui.Bindings, .. selectorTui.CurrentPane == 2 ? selectorTui.BindingsSecondPane : selectorTui.BindingsFirstPane]);
-            helpPageBody.Append(KeybindingTools.RenderKeybindingHelpText(uiBindings));
-
-            // Return the final body
-            return helpPageBody.ToString();
         }
 
         internal InteractiveSelectorTui(BaseInteractiveTui<TPrimary, TSecondary>? selectorTui)
