@@ -82,7 +82,7 @@ namespace Terminaux.Inputs.Interactive
         }
 
         /// <summary>
-        /// List of renderable contianers that are going to be laid out on top of what <see cref="Render()"/> prints to the console.
+        /// List of renderable containers that are going to be laid out on top of what <see cref="Render()"/> prints to the console.
         /// </summary>
         public virtual List<Container> Renderables { get; } = [];
 
