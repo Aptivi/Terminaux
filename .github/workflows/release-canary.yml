@@ -28,6 +28,7 @@ jobs:
         run: |
           pip install aptivi-adt
           make dbg-ci
+          adt checklocs
       - name: Package Publication
         run: |
           dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"

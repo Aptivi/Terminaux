@@ -29,6 +29,7 @@ jobs:
         run: |
           pip install aptivi-adt
           make rel-ci
+          adt checklocs
           make doc
           adt packdocs
           echo "SUBJECT=$(cat CHANGES.TITLE)" >> "$GITHUB_OUTPUT"
