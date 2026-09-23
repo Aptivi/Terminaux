@@ -193,35 +193,42 @@ namespace Terminaux.Inputs.Interactive
             //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
             var elements = new StringBuilder();
 
-            // First, the horizontal and vertical separators
+            // First, the first pane
             var finalForeColorFirstPane = interactiveTui.CurrentPane == 1 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
-            var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 || !interactiveTui.SecondPaneInteractable ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+            int separatorConsoleWidth = ConsoleWrapper.WindowWidth;
+            int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
+            int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
             int SeparatorMinimumHeight = 1;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             var firstPane = new Border()
             {
                 Left = 0,
                 Top = SeparatorMinimumHeight,
-                Width = SeparatorHalfConsoleWidthInterior,
+                Width = interactiveTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior,
                 Height = SeparatorMaximumHeightInterior,
                 Settings = interactiveTui.Settings.InfoBoxSettings.BorderSettings,
                 Color = finalForeColorFirstPane,
                 BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
             };
-            var secondPane = new Border()
-            {
-                Left = SeparatorHalfConsoleWidth,
-                Top = SeparatorMinimumHeight,
-                Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
-                Height = SeparatorMaximumHeightInterior,
-                Settings = interactiveTui.Settings.InfoBoxSettings.BorderSettings,
-                Color = finalForeColorSecondPane,
-                BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
-            };
             elements.Append(firstPane.Render());
-            elements.Append(secondPane.Render());
+
+            // Optionally render the second pane
+            if (interactiveTui.ShowSecondPane)
+            {
+                var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 || !interactiveTui.SecondPaneInteractable ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
+                var secondPane = new Border()
+                {
+                    Left = SeparatorHalfConsoleWidth,
+                    Top = SeparatorMinimumHeight,
+                    Width = SeparatorHalfConsoleWidthInterior + (separatorConsoleWidth % 2 != 0 ? 1 : 0),
+                    Height = SeparatorMaximumHeightInterior,
+                    Settings = interactiveTui.Settings.InfoBoxSettings.BorderSettings,
+                    Color = finalForeColorSecondPane,
+                    BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
+                };
+                elements.Append(secondPane.Render());
+            }
 
             // Populate appropriate bindings, depending on the SecondPaneInteractable value, and render them
             var finalBindings = GetAllBindings(interactiveTui);
@@ -271,8 +278,10 @@ namespace Terminaux.Inputs.Interactive
             int dataCount = paneNum == 2 ? dataSecondary.Length() : dataPrimary.Length();
 
             // Render the pane right away
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+            int separatorConsoleWidth = ConsoleWrapper.WindowWidth;
+            int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
+            int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
             int SeparatorMinimumHeightInterior = 2;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             int answersPerPage = SeparatorMaximumHeightInterior;
@@ -299,6 +308,7 @@ namespace Terminaux.Inputs.Interactive
                     int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
                     finalEntry = (paneNum == 2 ? interactiveTui.GetEntryFromItemSecondary((TSecondary)dataObject) : interactiveTui.GetEntryFromItem((TPrimary)dataObject)).Truncate(SeparatorHalfConsoleWidthInterior - 1);
                     int width = ConsoleChar.EstimateCellWidth(finalEntry);
+                    int finalOptionWidth = interactiveTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
                     string text =
                         $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
                         $"{ConsoleColoring.RenderSetConsoleColor(finalForeColor, false, true)}" +
@@ -306,7 +316,7 @@ namespace Terminaux.Inputs.Interactive
                         finalEntry +
                         $"{ConsoleColoring.RenderSetConsoleColor(finalForeColor, false, true)}" +
                         $"{ConsoleColoring.RenderSetConsoleColor(finalBackColor, true)}" +
-                        new string(' ', SeparatorHalfConsoleWidthInterior - width - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? -1 : 0)) +
+                        new string(' ', finalOptionWidth - width - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? -1 : 0)) +
                         $"{ConsoleColoring.RenderSetConsoleColor(interactiveTui.Settings.PaneItemBackColor, true)}";
                     builder.Append(text);
                 }

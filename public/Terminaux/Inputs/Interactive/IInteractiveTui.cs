@@ -33,6 +33,10 @@ namespace Terminaux.Inputs.Interactive
     public interface IInteractiveTui<TPrimary, TSecondary>
     {
         /// <summary>
+        /// Whether to show the second pane or not. Ignored when <see cref="SecondPaneInteractable"/> is true.
+        /// </summary>
+        public bool ShowSecondPane { get; }
+        /// <summary>
         /// Whether the user can switch to the second path
         /// </summary>
         public bool SecondPaneInteractable { get; }

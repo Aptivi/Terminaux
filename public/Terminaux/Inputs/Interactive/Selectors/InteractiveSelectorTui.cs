@@ -62,11 +62,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Draw the first pane
             builder.Append(InteractiveTuiTools.RenderInteractiveTuiItems(selectorTui, 1));
 
-            // Draw the second pane
-            if (selectorTui.SecondPaneInteractable)
-                builder.Append(InteractiveTuiTools.RenderInteractiveTuiItems(selectorTui, 2));
-            else
-                builder.Append(InteractiveTuiTools.RenderInformationOnSecondPane(selectorTui));
+            // Draw the second pane if needed
+            if (selectorTui.ShowSecondPane)
+            {
+                if (selectorTui.SecondPaneInteractable)
+                    builder.Append(InteractiveTuiTools.RenderInteractiveTuiItems(selectorTui, 2));
+                else
+                    builder.Append(InteractiveTuiTools.RenderInformationOnSecondPane(selectorTui));
+            }
+
+            // Draw the status
             builder.Append(InteractiveTuiTools.RenderStatus(selectorTui));
 
             // Return the result
@@ -93,9 +98,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (mouse is null)
                 return;
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
+            int separatorConsoleWidth = ConsoleWrapper.WindowWidth;
+            int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
+            int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
+            int finalWidth = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
+            int finalWidthInterior = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
+            if (mouse.Coordinates.x >= finalWidth && mouse.Coordinates.x <= finalWidth + finalWidthInterior + 1)
             {
                 // Check to see whether we need to scroll up in the info box or in the second pane selection
                 if (selectorTui.SecondPaneInteractable)
@@ -117,9 +126,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (mouse is null)
                 return;
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
+            int separatorConsoleWidth = ConsoleWrapper.WindowWidth;
+            int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
+            int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
+            int finalWidth = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
+            int finalWidthInterior = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
+            if (mouse.Coordinates.x >= finalWidth && mouse.Coordinates.x <= finalWidth + finalWidthInterior + 1)
             {
                 // Check to see whether we need to scroll down in the info box or in the second pane selection
                 if (selectorTui.SecondPaneInteractable)
@@ -446,17 +459,21 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             if (mouse.Coordinates.y < SeparatorMinimumHeight || mouse.Coordinates.y > SeparatorMaximumHeightInterior + 2)
                 return;
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+            int separatorConsoleWidth = ConsoleWrapper.WindowWidth;
+            int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
+            int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
+            int finalWidth = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
+            int finalWidthInterior = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
             int oldPane = selectorTui.CurrentPane;
             if (selectorTui.SecondPaneInteractable)
             {
-                if (mouse.Coordinates.x >= 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior - 1)
+                if (mouse.Coordinates.x >= 1 && mouse.Coordinates.x <= finalWidthInterior - 1)
                 {
                     if (selectorTui.CurrentPane != 1)
                         selectorTui.CurrentPane = 1;
                 }
-                else if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth + 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior)
+                else if (mouse.Coordinates.x >= finalWidth + 1 && mouse.Coordinates.x <= finalWidth + finalWidthInterior)
                 {
                     if (selectorTui.CurrentPane != 2)
                         selectorTui.CurrentPane = 2;
@@ -466,7 +483,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
             else
             {
-                if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth - 1)
+                if (mouse.Coordinates.x >= finalWidth - 1)
                     return;
                 if (mouse.Coordinates.x < 1)
                     return;
@@ -522,10 +539,15 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (mouse is not null)
             {
                 // First, determine the arrow positions
-                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                int separatorConsoleWidth = ConsoleWrapper.WindowWidth;
+                int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
+                int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
+                int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
+                int finalWidth = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
+                int finalWidthInterior = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-                int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
-                int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
+                int leftPaneArrowLeft = finalWidthInterior + 1;
+                int rightPaneArrowLeft = finalWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
                 int paneArrowTop = 2;
                 int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
 
@@ -545,7 +567,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
                 // Now, process the pointer
                 string finalInfoRendered = InteractiveTuiTools.RenderFinalInfo(selectorTui);
-                string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+                string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, finalWidthInterior);
                 if (dataCount > SeparatorMaximumHeightInterior || (!selectorTui.SecondPaneInteractable && paneNum == 2 && finalInfoStrings.Length > SeparatorMaximumHeightInterior))
                 {
                     leftArrowUpHitbox.ProcessPointer(mouse, out bool done);

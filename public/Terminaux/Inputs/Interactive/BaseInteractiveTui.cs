@@ -73,6 +73,8 @@ namespace Terminaux.Inputs.Interactive
         public List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsSecondPane { get; internal set; } = [];
 
         /// <inheritdoc/>
+        public virtual bool ShowSecondPane => true;
+        /// <inheritdoc/>
         public virtual bool SecondPaneInteractable => false;
         /// <inheritdoc/>
         public virtual int RefreshInterval => 0;
