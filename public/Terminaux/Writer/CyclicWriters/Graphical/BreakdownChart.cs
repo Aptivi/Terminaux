@@ -82,6 +82,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool UpsideDown { get; set; }
 
         /// <summary>
+        /// Whether to color the values or not
+        /// </summary>
+        public bool ColorValues { get; set; }
+
+        /// <summary>
         /// Renders a breakdown chart
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
@@ -96,6 +101,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     Width = Width / 4,
                     Height = Height,
                     UseColors = UseColors,
+                    ColorValues = ColorValues,
                     Elements = Elements,
                 };
                 int showcaseLength = 0;
@@ -192,7 +198,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             " ■ " +
                             (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                             name + "  " +
-                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ColorValues ? element.Color : ConsoleColors.Grey) : "") +
                             value +
                             spaces
                         );

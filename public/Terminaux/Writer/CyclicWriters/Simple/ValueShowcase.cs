@@ -67,6 +67,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public int Height { get; set; }
 
         /// <summary>
+        /// Whether to color the values or not
+        /// </summary>
+        public bool ColorValues { get; set; }
+
+        /// <summary>
         /// Calculated length of the showcase panel
         /// </summary>
         public int Length
@@ -120,7 +125,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     " ■ " +
                     (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                     element.Name.Truncate(nameLength - 4 - $"{maxValue:0.##}".Length) + "  " +
-                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(ColorValues ? element.Color : ConsoleColors.Grey) : "") +
                     $"{element.Value:0.##}"
                 );
                 string builtElement = elementBuilder.ToString();
