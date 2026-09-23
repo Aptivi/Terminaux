@@ -195,7 +195,7 @@ namespace Terminaux.Inputs.Interactive
 
             // First, the horizontal and vertical separators
             var finalForeColorFirstPane = interactiveTui.CurrentPane == 1 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
-            var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
+            var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 || !interactiveTui.SecondPaneInteractable ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int SeparatorMinimumHeight = 1;
@@ -353,23 +353,9 @@ namespace Terminaux.Inputs.Interactive
             var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            int SeparatorMinimumHeight = 1;
             int SeparatorMinimumHeightInterior = 2;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             var builder = new StringBuilder();
-
-            // Render a border
-            var border = new Border()
-            {
-                Left = SeparatorHalfConsoleWidth,
-                Top = SeparatorMinimumHeight,
-                Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
-                Height = SeparatorMaximumHeightInterior,
-                Settings = interactiveTui.Settings.InfoBoxSettings.BorderSettings,
-                Color = finalForeColorSecondPane,
-                BackgroundColor = interactiveTui.Settings.PaneBackgroundColor
-            };
-            builder.Append(border.Render());
 
             // Split the information string
             string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
