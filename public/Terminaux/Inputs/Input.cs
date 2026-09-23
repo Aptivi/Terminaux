@@ -100,15 +100,10 @@ namespace Terminaux.Inputs
             set
             {
                 if (!value)
-                {
-                    enableMouse = value;
-                    DisableMouseSupport(true);
-                }
+                    DisableMouseSupport();
                 else
-                {
                     EnableMouseSupport();
-                    enableMouse = value;
-                }
+                enableMouse = value;
             }
         }
 
@@ -704,9 +699,9 @@ namespace Terminaux.Inputs
             return new PointerEventContext(button, press, mods, dragging, x, y, finalTier);
         }
 
-        internal static void DisableMouseSupport(bool force = false)
+        internal static void DisableMouseSupport()
         {
-            if (!EnableMouse && !force)
+            if (!EnableMouse)
                 return;
             if (PlatformHelper.IsOnWindows())
             {
