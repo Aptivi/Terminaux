@@ -1240,7 +1240,7 @@ namespace Terminaux.Writer.CyclicWriters.Builtins
                 @"💙",
                 @"💜",
                 @"💚",
-                @"❤️ ",
+                @"❤️",
             ]);
 
         /// <summary>
@@ -1481,13 +1481,13 @@ namespace Terminaux.Writer.CyclicWriters.Builtins
         /// </summary>
         public static Spinner Weather =>
             new([
-                @"☀️ ",
-                @"☀️ ",
-                @"☀️ ",
+                @"☀️",
+                @"☀️",
+                @"☀️",
                 @"🌤",
                 @"⛅️",
                 @"🌥",
-                @"☁️ ",
+                @"☁️",
                 @"🌧",
                 @"🌨",
                 @"🌧",
@@ -1498,12 +1498,12 @@ namespace Terminaux.Writer.CyclicWriters.Builtins
                 @"🌨",
                 @"🌧",
                 @"🌨",
-                @"☁️ ",
+                @"☁️",
                 @"🌥",
                 @"⛅️",
                 @"🌤",
-                @"☀️ ",
-                @"☀️ ",
+                @"☀️",
+                @"☀️",
             ]);
 
         /// <summary>

@@ -69,14 +69,11 @@ namespace Terminaux.Inputs.Styles
         public static Spinner PromptForSpinner(string spinner)
         {
             ConsoleLogger.Debug("Initial spinner: {0}", spinner);
-            var spinnerSelectorTui = new SpinnerSelectorTui(spinner)
-            {
-                RefreshDelay = 50
-            };
-            TextualUITools.RunTui(spinnerSelectorTui);
-            var result = spinnerSelectorTui.GetResultingSpinner();
-            ConsoleLogger.Debug("Result spinner: {0}", result);
-            return spinnerSelectorTui.GetResultingSpinner();
+            var spinnerSelectorTui = new SpinnerSelectorTui();
+            InteractiveTuiTools.OpenInteractiveTui(spinnerSelectorTui);
+            var result = spinnerSelectorTui.firstPaneListing[spinnerSelectorTui.FirstPaneCurrentSelection];
+            ConsoleLogger.Debug("Result spinner: {0}", result.Item1);
+            return result.Item2;
         }
     }
 }
