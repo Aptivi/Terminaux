@@ -146,6 +146,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             }
             else
             {
+                // Showcase variables
+                var showcase = new ValueShowcaseHorizontal()
+                {
+                    Width = Width,
+                    Height = Height,
+                    UseColors = UseColors,
+                    ColorValues = ColorValues,
+                    Elements = Elements,
+                };
+
                 // Fill the breakdown chart with the element bars first
                 double maxValue = elements.Sum((element) => element.Value);
                 breakdownChart.Append(ConsolePositioning.RenderChangePosition(Left, Top));
@@ -168,42 +178,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Then, if we're told to showcase the values and the names, write them below the breakdown chart
                 if (Showcase)
-                {
-                    // Render the showcase elements
-                    int maxElementLength = Width / 4;
-                    var shownElements = elements.Where((ce) => !ce.Hidden).OrderByDescending((ce) => ce.Value).ToArray();
-                    int totalWidth = 0;
-                    int height = Top + 1;
-                    for (int i = 0; i < shownElements.Length; i++)
-                    {
-                        var element = elements[i];
-                        var color = element.Color;
-                        double value = element.Value;
-                        string name = element.Name.Truncate(maxElementLength - 3 - $"  {value}".Length);
-                        int width = 3 + ConsoleChar.EstimateCellWidth(name) + $"  {value}".Length;
-                        string spaces = new(' ', 4);
-                        totalWidth += width + spaces.Length;
-
-                        // If the element would overflow, make a new line
-                        if (totalWidth > Width || i == 0)
-                        {
-                            breakdownChart.Append(ConsolePositioning.RenderChangePosition(Left, height));
-                            height++;
-                            totalWidth = width + spaces.Length;
-                        }
-
-                        // Render the showcase element
-                        breakdownChart.Append(
-                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(color) : "") +
-                            " ■ " +
-                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                            name + "  " +
-                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ColorValues ? element.Color : ConsoleColors.Grey) : "") +
-                            value +
-                            spaces
-                        );
-                    }
-                }
+                    breakdownChart.Append(RendererTools.RenderRenderable(showcase, new(Left, Top)));
             }
 
             // Return the result
