@@ -31,6 +31,7 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -40,6 +41,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
     public class SpinnerSelectorTui : BaseInteractiveTui<(string, Spinner)>, IInteractiveTui<(string, Spinner)>
     {
         internal readonly List<(string, Spinner)> firstPaneListing = [];
+        internal string spinnerToFind = nameof(BuiltinSpinners.SpinMore);
 
         /// <inheritdoc/>
         public override IEnumerable<(string, Spinner)> PrimaryDataSource
@@ -49,12 +51,25 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (firstPaneListing.Count > 0)
                     return firstPaneListing;
                 var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
-                foreach (var spinnerProp in builtinSpinners)
+                bool foundSpinner = false;
+                int spinnerIndex = 0;
+                for (int i = 0; i < builtinSpinners.Length; i++)
                 {
+                    PropertyInfo spinnerProp = builtinSpinners[i];
                     var spinner = spinnerProp.GetGetMethod()?.Invoke(null, null);
                     if (spinner is Spinner finalSpinner)
+                    {
+                        finalSpinner.UseColors = false;
                         firstPaneListing.Add((spinnerProp.Name, finalSpinner));
+                        if (spinnerProp.Name == spinnerToFind)
+                        {
+                            foundSpinner = true;
+                            spinnerIndex = i;
+                        }
+                    }
                 }
+                if (foundSpinner)
+                    InteractiveTuiTools.SelectionMovement(this, spinnerIndex + 1);
                 return firstPaneListing;
             }
         }
@@ -74,7 +89,5 @@ namespace Terminaux.Inputs.Interactive.Selectors
         /// <inheritdoc/>
         public override string GetInfoFromItem((string, Spinner) item) =>
             item.Item1 + ": " + item.Item2.Peek();
-
-
     }
 }
