@@ -159,7 +159,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 int ratio = (int)Math.Round(angle * 180 / Math.PI) % 360;
                 if (full || (ratio >= angleStart && ratio < angleEnd) ^ inverted)
                 {
-                    Color finalColor = RainbowMode ? $"hsl:{ratio};{RainbowSaturation};{RainbowLighting}" : ShapeColor;
+                    Color finalColor = RainbowMode ? new($"hsl:{ratio};{RainbowSaturation};{RainbowLighting}", new() { UseTerminalPalette = false }) : ShapeColor;
                     pixels.Add(new(pos.Item1, pos.Item2) { CellColor = finalColor });
                     plotted.Add(pos);
                 }

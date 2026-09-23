@@ -902,6 +902,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     builder.Append(
                         bezelCircle.Render() +
                         colorWheelCircle.Render() +
+                        ConsolePositioning.RenderChangePosition(radius.x, radius.y) +
+                        ConsoleColoring.RenderSetConsoleColor(ConsoleColors.White, true) +
+                        "  " +
                         ConsolePositioning.RenderChangePosition(pointX, pointY) +
                         ConsoleColoring.RenderSetConsoleColor(ConsoleColors.White, true) +
                         "  " +
