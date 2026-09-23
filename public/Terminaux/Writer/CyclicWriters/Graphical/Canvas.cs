@@ -92,9 +92,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             ConsoleLogger.Debug("Canvas height: {0} * {1} ({2})", Height, heightFactor, Height * heightDivisionFactor / 2d);
             ConsoleLogger.Debug("Canvas position: {0}, {1}", Left, Top);
             int actualY = 0;
-            for (int y = 0; y < Height; y += heightFactor, actualY++)
+            for (int y = 0; y <= Height; y += heightFactor, actualY++)
             {
-                for (int x = 0; x < Width; x++)
+                for (int x = 0; x <= Width; x++)
                 {
                     // Get effective pixels
                     var effectivePixel = Pixels.LastOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
