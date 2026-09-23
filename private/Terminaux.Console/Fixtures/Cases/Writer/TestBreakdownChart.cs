@@ -35,6 +35,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var chart = new BreakdownChart()
             {
                 Width = ConsoleWrapper.WindowWidth - 4,
+                Height = 2,
                 Left = 2,
                 Top = 4,
                 Showcase = true,

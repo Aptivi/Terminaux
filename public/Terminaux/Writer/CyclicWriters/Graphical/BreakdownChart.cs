@@ -150,7 +150,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 var showcase = new ValueShowcaseHorizontal()
                 {
                     Width = Width,
-                    Height = Height,
+                    Height = Height - 1,
                     UseColors = UseColors,
                     ColorValues = ColorValues,
                     Elements = Elements,
@@ -178,7 +178,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Then, if we're told to showcase the values and the names, write them below the breakdown chart
                 if (Showcase)
-                    breakdownChart.Append(RendererTools.RenderRenderable(showcase, new(Left, Top)));
+                    breakdownChart.Append(RendererTools.RenderRenderable(showcase, new(Left, Top + 1)));
             }
 
             // Return the result

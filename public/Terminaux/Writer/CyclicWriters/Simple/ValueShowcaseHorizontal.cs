@@ -21,7 +21,6 @@ using System.Linq;
 using System.Text;
 using Colorimetry.Data;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
@@ -78,11 +77,16 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
+            // Check the height
+            if (Height == 0)
+                return "";
+
             // Render the showcase elements
             var showcase = new StringBuilder();
             int maxElementLength = Width / 4;
             var shownElements = elements.Where((ce) => !ce.Hidden).OrderByDescending((ce) => ce.Value).ToArray();
             int totalWidth = 0;
+            int processedHeight = 0;
             for (int i = 0; i < shownElements.Length; i++)
             {
                 var element = elements[i];
@@ -94,8 +98,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 totalWidth += width + spaces.Length;
 
                 // If the element would overflow, make a new line
-                if (totalWidth > Width || i == 0)
+                if (totalWidth > Width)
                 {
+                    processedHeight++;
+                    if (processedHeight >= Height)
+                        break;
                     showcase.AppendLine();
                     totalWidth = width + spaces.Length;
                 }
