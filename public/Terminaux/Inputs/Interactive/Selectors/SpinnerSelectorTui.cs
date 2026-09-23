@@ -42,6 +42,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
     {
         internal readonly List<(string, Spinner)> firstPaneListing = [];
         internal string spinnerToFind = nameof(BuiltinSpinners.SpinMore);
+        internal int fallbackIndex = 0;
+        internal bool cancelled = true;
 
         /// <inheritdoc/>
         public override IEnumerable<(string, Spinner)> PrimaryDataSource
@@ -66,10 +68,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
                             foundSpinner = true;
                             spinnerIndex = i;
                         }
+                        if (spinnerProp.Name == nameof(BuiltinSpinners.SpinMore))
+                            fallbackIndex = i;
                     }
                 }
                 if (foundSpinner)
                     InteractiveTuiTools.SelectionMovement(this, spinnerIndex + 1);
+                else
+                    InteractiveTuiTools.SelectionMovement(this, fallbackIndex + 1);
                 return firstPaneListing;
             }
         }
@@ -89,5 +95,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
         /// <inheritdoc/>
         public override string GetInfoFromItem((string, Spinner) item) =>
             item.Item1 + ": " + item.Item2.Peek();
+
+        internal void ConfirmSelection()
+        {
+            cancelled = false;
+            InteractiveTuiTools.CloseInteractiveTui(this);
+        }
     }
 }

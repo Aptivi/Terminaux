@@ -73,8 +73,10 @@ namespace Terminaux.Inputs.Styles
             {
                 spinnerToFind = spinner
             };
+            spinnerSelectorTui.Bindings.Add(new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT"), ConsoleKey.Enter, (_, _, _, _) => spinnerSelectorTui.ConfirmSelection()));
             InteractiveTuiTools.OpenInteractiveTui(spinnerSelectorTui);
-            var result = spinnerSelectorTui.firstPaneListing[spinnerSelectorTui.FirstPaneCurrentSelection - 1];
+            int finalIndex = spinnerSelectorTui.cancelled ? spinnerSelectorTui.fallbackIndex : spinnerSelectorTui.FirstPaneCurrentSelection - 1;
+            var result = spinnerSelectorTui.firstPaneListing[finalIndex];
             ConsoleLogger.Debug("Result spinner: {0}", result.Item1);
             return result.Item2;
         }

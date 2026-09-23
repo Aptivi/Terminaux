@@ -65,7 +65,27 @@ namespace Terminaux.Inputs.Interactive
                     RefreshDelay = interactiveTui.RefreshInterval,
                     extraHelpPages = interactiveTui.HelpPages,
                 };
+                interactiveTui.ui = tui;
                 TextualUITools.RunTui(tui);
+            }
+        }
+
+        /// <summary>
+        /// Closes the interactive TUI
+        /// </summary>
+        /// <param name="interactiveTui">The inherited class instance of the interactive TUI</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void CloseInteractiveTui<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
+        {
+            lock (_interactiveTuiLock)
+            {
+                // TODO: T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN -> This interactive TUI is not open yet.
+                var ui = interactiveTui.ui ??
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN"));
+
+                // Exit the TUI
+                interactiveTui.HandleExit();
+                TextualUITools.ExitTui(ui);
             }
         }
 

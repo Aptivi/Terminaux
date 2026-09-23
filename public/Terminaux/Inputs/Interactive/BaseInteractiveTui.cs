@@ -33,6 +33,8 @@ namespace Terminaux.Inputs.Interactive
     /// </summary>
     public class BaseInteractiveTui<TPrimary, TSecondary> : IInteractiveTui<TPrimary, TSecondary>
     {
+        internal TextualUI? ui;
+
         /// <summary>
         /// Current selection for the first pane
         /// </summary>

@@ -607,12 +607,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
         }
 
-        private void Exit(TextualUI ui)
-        {
-            selectorTui.HandleExit();
-            TextualUITools.ExitTui(ui);
-        }
-
         private int GetDataCount()
         {
             var dataPrimary = selectorTui.PrimaryDataSource;
@@ -640,7 +634,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_CONTEXTMENU"), PointerButton.Right, PointerButtonPress.Released), (_, _, mouse) => ShowContextMenu(mouse)));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCH"), ConsoleKey.F), (_, _, _) => LaunchFinder()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX"), ConsoleKey.F, ConsoleModifiers.Shift), (_, _, _) => LaunchFinder(true)));
-            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_EXIT"), ConsoleKey.Escape), (ui, _, _) => Exit(ui)));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_EXIT"), ConsoleKey.Escape), (_, _, _) => InteractiveTuiTools.CloseInteractiveTui(selectorTui)));
 
             // Informational selector TUI
             if (!selectorTui.SecondPaneInteractable)
