@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Colorimetry;
 using Colorimetry.Data;
+using System.Linq;
 
 namespace Terminaux.Themes.Colors
 {
@@ -64,6 +65,27 @@ namespace Terminaux.Themes.Colors
         }
 
         /// <summary>
+        /// Tries to get a color from the color type
+        /// </summary>
+        /// <param name="type">Color type</param>
+        public static Color? TryGetColor(ThemeColorType type) =>
+            TryGetColor(type.ToString());
+
+        /// <summary>
+        /// Tries to get a color from the color type
+        /// </summary>
+        /// <param name="type">Color type</param>
+        public static Color? TryGetColor(string type)
+        {
+            UpdateColorList();
+            if (!themeColors.TryGetValue(type, out var color))
+                return null;
+            string plainColorSeq = color.PlainSequence;
+            ConsoleLogger.Debug("Getting color type {0}: {1}", type.ToString(), plainColorSeq);
+            return new(plainColorSeq);
+        }
+
+        /// <summary>
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
@@ -74,13 +96,16 @@ namespace Terminaux.Themes.Colors
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public static Color GetColor(string type)
-        {
-            UpdateColorList();
-            string plainColorSeq = themeColors[type].PlainSequence;
-            ConsoleLogger.Debug("Getting color type {0}: {1}", type.ToString(), plainColorSeq);
-            return new(plainColorSeq);
-        }
+        public static Color GetColor(string type) =>
+            // TODO: T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE -> No such color type
+            TryGetColor(type) ?? throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE") + $": {type}");
+
+        /// <summary>
+        /// Gets a list of available theme colors
+        /// </summary>
+        /// <returns>A list of available theme colors</returns>
+        public static string[] GetThemeColors() =>
+            [.. themeColors.Keys];
 
         /// <summary>
         /// Sets a color from the color type
