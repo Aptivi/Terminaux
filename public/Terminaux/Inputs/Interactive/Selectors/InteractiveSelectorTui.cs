@@ -63,13 +63,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             builder.Append(InteractiveTuiTools.RenderInteractiveTuiItems(selectorTui, 1));
 
             // Draw the second pane if needed
-            if (selectorTui.ShowSecondPane)
-            {
-                if (selectorTui.SecondPaneInteractable)
-                    builder.Append(InteractiveTuiTools.RenderInteractiveTuiItems(selectorTui, 2));
-                else
-                    builder.Append(InteractiveTuiTools.RenderInformationOnSecondPane(selectorTui));
-            }
+            if (selectorTui.SecondPaneInteractable)
+                builder.Append(InteractiveTuiTools.RenderInteractiveTuiItems(selectorTui, 2));
+            else if (selectorTui.ShowSecondPane)
+                builder.Append(InteractiveTuiTools.RenderInformationOnSecondPane(selectorTui));
 
             // Draw the status
             builder.Append(InteractiveTuiTools.RenderStatus(selectorTui));
@@ -102,8 +99,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
             int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
             int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
-            int finalWidth = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
-            int finalWidthInterior = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
+            int finalWidth = selectorTui.ShowSecondPane || selectorTui.SecondPaneInteractable ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
+            int finalWidthInterior = selectorTui.ShowSecondPane || selectorTui.SecondPaneInteractable ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
             if (mouse.Coordinates.x >= finalWidth && mouse.Coordinates.x <= finalWidth + finalWidthInterior + 1)
             {
                 // Check to see whether we need to scroll up in the info box or in the second pane selection
@@ -130,8 +127,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
             int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
             int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
-            int finalWidth = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
-            int finalWidthInterior = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
+            int finalWidth = selectorTui.ShowSecondPane || selectorTui.SecondPaneInteractable ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
+            int finalWidthInterior = selectorTui.ShowSecondPane || selectorTui.SecondPaneInteractable ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
             if (mouse.Coordinates.x >= finalWidth && mouse.Coordinates.x <= finalWidth + finalWidthInterior + 1)
             {
                 // Check to see whether we need to scroll down in the info box or in the second pane selection
@@ -463,8 +460,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
             int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
             int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
-            int finalWidth = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
-            int finalWidthInterior = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
+            int finalWidth = selectorTui.ShowSecondPane || selectorTui.SecondPaneInteractable ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
+            int finalWidthInterior = selectorTui.ShowSecondPane || selectorTui.SecondPaneInteractable ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
             int oldPane = selectorTui.CurrentPane;
             if (selectorTui.SecondPaneInteractable)
             {
@@ -543,8 +540,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 int separatorConsoleWidthInterior = separatorConsoleWidth - 2;
                 int SeparatorHalfConsoleWidth = separatorConsoleWidth / 2;
                 int SeparatorHalfConsoleWidthInterior = separatorConsoleWidth / 2 - 2;
-                int finalWidth = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
-                int finalWidthInterior = selectorTui.ShowSecondPane ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
+                int finalWidth = selectorTui.ShowSecondPane || selectorTui.SecondPaneInteractable ? SeparatorHalfConsoleWidth : separatorConsoleWidth;
+                int finalWidthInterior = selectorTui.ShowSecondPane || selectorTui.SecondPaneInteractable ? SeparatorHalfConsoleWidthInterior : separatorConsoleWidthInterior;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 int leftPaneArrowLeft = finalWidthInterior + 1;
                 int rightPaneArrowLeft = finalWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
