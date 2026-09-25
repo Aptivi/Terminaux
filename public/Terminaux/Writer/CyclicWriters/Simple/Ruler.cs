@@ -145,8 +145,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             else
             {
                 // Horizontal ruler is required
-                string finalText = Text.Truncate(Width - 8);
-                int startX = TextWriterTools.DetermineTextAlignment(finalText, Width - 8, Alignment, 4);
+                string finalText = Text.Truncate(Width - 2);
+                int startX = TextWriterTools.DetermineTextAlignment(finalText, Width - 2, Alignment, 1);
                 for (int i = 0; i < Width; i++)
                 {
                     // Determine whether we're starting the ruler, ending it, or extending it
