@@ -82,18 +82,39 @@ namespace Terminaux.Inputs.Styles.Choice
             // Check settings and assign them if not found
             settings ??= new();
 
+            // Check to see if the answers consist of single or multiple characters, and exit if the mode is not appropriate with an error message.
+            Dictionary<string, bool> answers = Answers.ToDictionary((ici) => ici.ChoiceName, (ici) => ici.ChoiceDisabled);
+            Dictionary<string, bool> altAnswers = AltAnswers.ToDictionary((ici) => ici.ChoiceName, (ici) => ici.ChoiceDisabled);
+            string[] answerNames = [.. answers.Keys];
+            string[] altAnswerNames = [.. altAnswers.Keys];
+            if (!settings.PressEnter && (answerNames.Any((answer) => answer.Length > 1) || altAnswerNames.Any((answer) => answer.Length > 1)))
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES"));
+
+            // Ask a question
+            switch (settings.OutputType)
+            {
+                case ChoiceOutputType.Modern:
+                    {
+                        var selection = new PassiveSelection([.. Answers, .. AltAnswers])
+                        {
+                            AltChoicePos = Answers.Length,
+                            Settings = new()
+                            {
+                                OptionColor = settings.OptionColor,
+                                AltOptionColor = settings.AltOptionColor,
+                                DisabledOptionColor = settings.DisabledOptionColor,
+                            }
+                        };
+                        TextWriterColor.WriteColor(Question + CharManager.NewLine, true, settings.QuestionColor);
+                        TextWriterRaw.WritePlain(selection.Render());
+                        break;
+                    }
+            }
+
             // Main loop
             while (true)
             {
                 string answer;
-
-                // Check to see if the answers consist of single or multiple characters, and exit if the mode is not appropriate with an error message.
-                Dictionary<string, bool> answers = Answers.ToDictionary((ici) => ici.ChoiceName, (ici) => ici.ChoiceDisabled);
-                Dictionary<string, bool> altAnswers = AltAnswers.ToDictionary((ici) => ici.ChoiceName, (ici) => ici.ChoiceDisabled);
-                string[] answerNames = [.. answers.Keys];
-                string[] altAnswerNames = [.. altAnswers.Keys];
-                if (!settings.PressEnter && (answerNames.Any((answer) => answer.Length > 1) || altAnswerNames.Any((answer) => answer.Length > 1)))
-                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES"));
 
                 // Ask a question
                 switch (settings.OutputType)
@@ -114,18 +135,6 @@ namespace Terminaux.Inputs.Styles.Choice
                         }
                     case ChoiceOutputType.Modern:
                         {
-                            var selection = new PassiveSelection([.. Answers, .. AltAnswers])
-                            {
-                                AltChoicePos = Answers.Length,
-                                Settings = new()
-                                {
-                                    OptionColor = settings.OptionColor,
-                                    AltOptionColor = settings.AltOptionColor,
-                                    DisabledOptionColor = settings.DisabledOptionColor,
-                                }
-                            };
-                            TextWriterColor.WriteColor(Question + CharManager.NewLine, true, settings.QuestionColor);
-                            TextWriterRaw.WritePlain(selection.Render());
                             TextWriterColor.WriteColor(">> ", false, settings.InputColor);
                             break;
                         }
