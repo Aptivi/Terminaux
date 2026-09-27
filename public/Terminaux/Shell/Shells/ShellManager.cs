@@ -471,12 +471,13 @@ namespace Terminaux.Shell.Shells
 
                     // Get the target file and path
                     TargetFile = TextTools.Unescape(commandName);
-                    string[] possiblePaths = PlatformHelper.GetPossiblePaths(commandName);
+                    bool commandPathValid = PlatformHelper.TryParsePath(commandName);
+                    string[] possiblePaths = commandPathValid ? PlatformHelper.GetPossiblePaths(commandName) : [];
                     bool existsInPath = possiblePaths.Length > 0;
                     if (existsInPath)
                         TargetFile = possiblePaths[possiblePaths.Length - 1];
                     bool pathValid = PlatformHelper.TryParsePath(TargetFile);
-                    if (!existsInPath || string.IsNullOrEmpty(TargetFile))
+                    if ((!existsInPath || string.IsNullOrEmpty(TargetFile)) && commandPathValid)
                         TargetFile = ConsoleFilesystem.NeutralizePath(commandName);
                     if (pathValid)
                         TargetFileName = Path.GetFileName(TargetFile);
