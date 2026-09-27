@@ -30,6 +30,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Wrappers;
 using Terminaux.Reader;
+using Terminaux.Reader.Highlighting;
 using Terminaux.Reader.History;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
@@ -226,6 +227,16 @@ namespace Terminaux.Shell.Shells
         public static bool InputHistoryEnabled { get; set; } = true;
 
         /// <summary>
+        /// Whether to enable syntax highlighting
+        /// </summary>
+        public static bool SyntaxHighlightingEnabled { get; set; } = true;
+
+        /// <summary>
+        /// A syntax highlighter to use
+        /// </summary>
+        public static string SyntaxHighlighter { get; set; } = "Command";
+
+        /// <summary>
         /// Initial console title
         /// </summary>
         public static string InitialTitle { get; set; } = "";
@@ -269,7 +280,7 @@ namespace Terminaux.Shell.Shells
         /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
         /// <remarks>All shells should use this routine to allow effective and consistent line parsing.</remarks>
         public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true) =>
-            GetLine(FullCommand, OutputPath, ShellType, restoreDriver, SetTitle, InputHistoryEnabled);
+            GetLine(FullCommand, OutputPath, ShellType, restoreDriver, SetTitle, InputHistoryEnabled, SyntaxHighlightingEnabled, SyntaxHighlighter);
 
         /// <summary>
         /// Parses a specified command.
@@ -281,7 +292,7 @@ namespace Terminaux.Shell.Shells
         /// <param name="setTitle">Whether to set the console title</param>
         /// <remarks>All shells should use this routine to allow effective and consistent line parsing.</remarks>
         public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true, bool setTitle = true) =>
-            GetLine(FullCommand, OutputPath, ShellType, restoreDriver, setTitle, InputHistoryEnabled);
+            GetLine(FullCommand, OutputPath, ShellType, restoreDriver, setTitle, InputHistoryEnabled, SyntaxHighlightingEnabled, SyntaxHighlighter);
 
         /// <summary>
         /// Parses a specified command.
@@ -293,7 +304,36 @@ namespace Terminaux.Shell.Shells
         /// <param name="setTitle">Whether to set the console title</param>
         /// <param name="enableInputHistory">Whether to enable the input history</param>
         /// <remarks>All shells should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true, bool setTitle = true, bool enableInputHistory = true)
+        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true, bool setTitle = true, bool enableInputHistory = true) =>
+            GetLine(FullCommand, OutputPath, ShellType, restoreDriver, setTitle, enableInputHistory, SyntaxHighlightingEnabled, SyntaxHighlighter);
+
+        /// <summary>
+        /// Parses a specified command.
+        /// </summary>
+        /// <param name="FullCommand">The full command string</param>
+        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
+        /// <param name="ShellType">Shell type</param>
+        /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
+        /// <param name="setTitle">Whether to set the console title</param>
+        /// <param name="enableInputHistory">Whether to enable the input history</param>
+        /// <param name="enableSyntaxHighlighting">Whether to enable syntax highlighting</param>
+        /// <remarks>All shells should use this routine to allow effective and consistent line parsing.</remarks>
+        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true, bool setTitle = true, bool enableInputHistory = true, bool enableSyntaxHighlighting = true) =>
+            GetLine(FullCommand, OutputPath, ShellType, restoreDriver, setTitle, enableInputHistory, enableSyntaxHighlighting, SyntaxHighlighter);
+
+        /// <summary>
+        /// Parses a specified command.
+        /// </summary>
+        /// <param name="FullCommand">The full command string</param>
+        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
+        /// <param name="ShellType">Shell type</param>
+        /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
+        /// <param name="setTitle">Whether to set the console title</param>
+        /// <param name="enableInputHistory">Whether to enable the input history</param>
+        /// <param name="enableSyntaxHighlighting">Whether to enable syntax highlighting</param>
+        /// <param name="syntaxHighlighter">A syntax highlighter to use</param>
+        /// <remarks>All shells should use this routine to allow effective and consistent line parsing.</remarks>
+        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true, bool setTitle = true, bool enableInputHistory = true, bool enableSyntaxHighlighting = true, string syntaxHighlighter = "Command")
         {
             // Check for sanity
             if (string.IsNullOrEmpty(FullCommand))
@@ -316,6 +356,11 @@ namespace Terminaux.Shell.Shells
                 TreatCtrlCAsInput = true,
                 HistoryName = ShellType,
                 HistoryEnabled = enableInputHistory,
+                SyntaxHighlighterEnabled = enableSyntaxHighlighting,
+                SyntaxHighlighter =
+                    SyntaxHighlightingTools.Exists(syntaxHighlighter) ?
+                    SyntaxHighlightingTools.GetHighlighter(syntaxHighlighter) :
+                    SyntaxHighlightingTools.GetHighlighter("Command"),
             };
 
             // Check to see if the full command string ends with the semicolon
