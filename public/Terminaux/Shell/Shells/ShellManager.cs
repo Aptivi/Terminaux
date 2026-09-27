@@ -28,6 +28,7 @@ using Colorimetry;
 using SpecProbe.Software.Platform;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Base.Wrappers;
 using Terminaux.Reader;
 using Terminaux.Reader.Highlighting;
@@ -551,6 +552,7 @@ namespace Terminaux.Shell.Shells
                                     try
                                     {
                                         // Create a new instance of process
+                                        ConsoleMisc.SetEncoding(ConsoleEncoding.Default);
                                         ConsoleLogger.Debug("Command: {0}, Arguments: {1}", TargetFile, arguments);
                                         var Params = new ExecuteProcessThreadParameters(TargetFile, arguments);
                                         ProcessExecutor.processExecutorThread.Start(Params);
@@ -568,6 +570,7 @@ namespace Terminaux.Shell.Shells
                                     finally
                                     {
                                         ProcessExecutor.processExecutorThread.Stop();
+                                        ConsoleMisc.SetEncoding(ConsoleEncoding.UTF16);
                                     }
                                 }
                             }
