@@ -36,5 +36,9 @@ namespace Terminaux.Inputs.Styles.Choice
         /// The modern way of listing choices
         /// </summary>
         Modern,
+        /// <summary>
+        /// The table of available choices
+        /// </summary>
+        Table,
     }
 }

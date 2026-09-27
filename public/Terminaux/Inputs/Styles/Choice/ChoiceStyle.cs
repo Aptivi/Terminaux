@@ -23,6 +23,8 @@ using System.Linq;
 using Terminaux.Base;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
@@ -83,6 +85,7 @@ namespace Terminaux.Inputs.Styles.Choice
             settings ??= new();
 
             // Check to see if the answers consist of single or multiple characters, and exit if the mode is not appropriate with an error message.
+            InputChoiceInfo[] unifiedAnswers = [.. Answers, .. AltAnswers];
             Dictionary<string, bool> answers = Answers.ToDictionary((ici) => ici.ChoiceName, (ici) => ici.ChoiceDisabled);
             Dictionary<string, bool> altAnswers = AltAnswers.ToDictionary((ici) => ici.ChoiceName, (ici) => ici.ChoiceDisabled);
             string[] answerNames = [.. answers.Keys];
@@ -95,7 +98,7 @@ namespace Terminaux.Inputs.Styles.Choice
             {
                 case ChoiceOutputType.Modern:
                     {
-                        var selection = new PassiveSelection([.. Answers, .. AltAnswers])
+                        var selection = new PassiveSelection(unifiedAnswers)
                         {
                             AltChoicePos = Answers.Length,
                             Settings = new()
@@ -107,6 +110,31 @@ namespace Terminaux.Inputs.Styles.Choice
                         };
                         TextWriterColor.WriteColor(Question + CharManager.NewLine, true, settings.QuestionColor);
                         TextWriterRaw.WritePlain(selection.Render());
+                        break;
+                    }
+                case ChoiceOutputType.Table:
+                    {
+                        var choiceData = new TableCellOptions[Answers.Length + AltAnswers.Length, 2];
+                        for (int answerIndex = 0; answerIndex <= unifiedAnswers.Length - 1; answerIndex++)
+                        {
+                            bool isAlt = answerIndex >= Answers.Length;
+                            var answer = unifiedAnswers[answerIndex];
+                            var optionColor = answer.ChoiceDisabled ? settings.DisabledOptionColor : isAlt ? settings.AltOptionColor : settings.OptionColor;
+                            TableCellOptions possibleAnswerCell = new(answer.ChoiceName);
+                            TableCellOptions possibleAnswerDescCell = new(answer.ChoiceTitle);
+                            possibleAnswerCell.ColoredCell = true;
+                            possibleAnswerDescCell.ColoredCell = true;
+                            possibleAnswerCell.CellColor = optionColor;
+                            possibleAnswerDescCell.CellColor = optionColor;
+                            choiceData[answerIndex, 0] = possibleAnswerCell;
+                            choiceData[answerIndex, 1] = possibleAnswerDescCell;
+                        }
+                        var table = new Table()
+                        {
+                            Rows = choiceData,
+                        };
+                        TextWriterColor.WriteColor(Question, true, settings.QuestionColor);
+                        TextWriterRaw.WritePlain(table.Render());
                         break;
                     }
             }
@@ -134,6 +162,7 @@ namespace Terminaux.Inputs.Styles.Choice
                             break;
                         }
                     case ChoiceOutputType.Modern:
+                    case ChoiceOutputType.Table:
                         {
                             TextWriterColor.WriteColor(">> ", false, settings.InputColor);
                             break;
