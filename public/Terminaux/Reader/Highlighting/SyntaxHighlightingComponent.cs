@@ -23,6 +23,7 @@ using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Colorimetry;
 using Textify.Tools;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Terminaux.Reader.Highlighting
 {
@@ -87,7 +88,7 @@ namespace Terminaux.Reader.Highlighting
         /// <param name="useBackgroundColor">Whether the syntax highlighter can use the background color or not</param>
         /// <param name="useForegroundColor">Whether the syntax highlighter can use the foreground color or not</param>
         /// <exception cref="TerminauxException"></exception>
-        public SyntaxHighlightingComponent(string componentMatch, Color componentForegroundColor, Color componentBackgroundColor, bool useBackgroundColor, bool useForegroundColor) :
+        public SyntaxHighlightingComponent([StringSyntax(StringSyntaxAttribute.Regex)] string componentMatch, Color componentForegroundColor, Color componentBackgroundColor, bool useBackgroundColor, bool useForegroundColor) :
             this(new Regex(componentMatch, RegexOptions.Compiled), componentForegroundColor, componentBackgroundColor, useBackgroundColor, useForegroundColor)
         {
             if (!RegexTools.IsValidRegex(componentMatch))
