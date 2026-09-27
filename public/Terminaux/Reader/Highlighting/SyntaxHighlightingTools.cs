@@ -35,7 +35,7 @@ namespace Terminaux.Reader.Highlighting
         [
             new("Command", new Dictionary<string, SyntaxHighlightingComponent>()
             {
-                { "CommandName", new(@"^[^ ]+", ConsoleColors.Yellow, Color.Empty, false, true) }
+                { "CommandName", new(@"^(""[^""]+""|'[^']+'|`[^`]+`|\S+)", ConsoleColors.Yellow, Color.Empty, false, true) }
             })
         ];
         private static readonly List<SyntaxHighlighting> customHighlighters = [];
