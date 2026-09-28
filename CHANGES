@@ -1,13 +1,16 @@
-This is a monthly release of Terminaux that brings some of the most promising improvements to make your console applications more powerful!
+This version of Terminaux is a monthly release intended to make your console applications more powerful while introducing new features.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added ability to customize themes further
-- `[+]` Added more shell features, such as getting current shell instance
-- `[+]` Added color conversion commands from Nitrocid
-- `[*]` Significant improvements to shell command class structure
+- `[+]` Added new search mode for selection infoboxes
+- `[+]` Added a way for apps to determine whether a reader input was cancelled
+- `[+]` Added a horizontal value showcase renderer
+- `[+]` Added a way for custom keybindings to exit interactive TUIs
+- `[+]` Added back table choice style removed from v5.0
+- `[*]` Improved keybinding handling for the keybindings list
+- `[*]` Fixed search pointing to a wrong item
 - `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
