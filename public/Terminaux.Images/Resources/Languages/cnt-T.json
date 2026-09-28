@@ -14,10 +14,6 @@
       "text": "退出"
     },
     {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
-      "text": "按鍵綁定"
-    },
-    {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
       "text": "適合或縮放"
     },
@@ -52,10 +48,6 @@
     {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
       "text": "轉至結尾"
-    },
-    {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
-      "text": "可用按鍵綁定"
     },
     {
       "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",

@@ -47,7 +47,6 @@ namespace Terminaux.Inputs.Styles.Selection
 
         internal static Keybinding[] Bindings =>
         [
-            // TODO: T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX -> Searches for an element with regular expressions
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO"), ConsoleKey.Spacebar),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS"), ConsoleKey.Escape),

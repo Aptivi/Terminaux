@@ -37,10 +37,6 @@
       "text": "خروج"
     },
     {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
-      "text": "روابط المفاتيح"
-    },
-    {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
       "text": "ملائمة أو تغيير الحجم"
     },
@@ -75,10 +71,6 @@
     {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
       "text": "الانتقال إلى النهاية"
-    },
-    {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
-      "text": "روابط المفاتيح المتاحة"
     },
     {
       "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",

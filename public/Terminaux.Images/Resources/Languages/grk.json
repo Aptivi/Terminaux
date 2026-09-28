@@ -12,10 +12,6 @@
       "text": "Εξοδος"
     },
     {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
-      "text": "Keybindings"
-    },
-    {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
       "text": "Fit ή Scaled"
     },
@@ -50,10 +46,6 @@
     {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
       "text": "Μετάβαση στο Τέλος"
-    },
-    {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
-      "text": "Διαθέσιμα πλήκτρα"
     },
     {
       "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",

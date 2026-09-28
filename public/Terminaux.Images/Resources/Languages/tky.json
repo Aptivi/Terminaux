@@ -12,10 +12,6 @@
       "text": "Çıkış"
     },
     {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
-      "text": "Tuş Bağlamaları"
-    },
-    {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
       "text": "Uygun veya Ölçekli"
     },
@@ -50,10 +46,6 @@
     {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
       "text": "Bitişe Git"
-    },
-    {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
-      "text": "Kullanılabilir tuş bağlamaları"
     },
     {
       "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",

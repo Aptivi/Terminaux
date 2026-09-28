@@ -103,80 +103,11 @@
   <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
     <value>Layar tidak siklik.</value>
   </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
-    <value>Pengguna mencoba menjalankan aplikasi Terminaux menggunakan terminal bodoh.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Aplikasi ini memanfaatkan fitur konsol tambahan yang disediakan oleh Terminaux yang memerlukan fitur yang tidak didukung oleh terminal "bodoh".</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Solusi yang memungkinkan: Gunakan emulator terminal yang sesuai atau lihat pengaturan terminal Anda untuk menyetel jenis terminal menjadi sesuatu selain "dumb". Kami sarankan untuk menggunakan emulator terminal "vt100" untuk mendapatkan hasil maksimal dari aplikasi ini.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>Pengguna mencoba menjalankan aplikasi Terminaux pada jenis terminal yang masuk daftar hitam.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>Tipe konsol yang Anda gunakan saat ini, {0}, masuk daftar hitam: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>Tipe konsol yang Anda gunakan saat ini, {0}, masuk daftar abu-abu: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>Pengguna mencoba menjalankan aplikasi Terminaux pada emulator terminal yang masuk daftar hitam.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>Emulator terminal yang Anda gunakan saat ini, {0}, masuk daftar hitam: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>Emulator terminal yang Anda gunakan saat ini, {0}, masuk daftar abu-abu: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
-    <value>Tipe terminal {0} tidak mendukung 256 warna menurut terminfo</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>Pengguna mencoba menjalankan aplikasi Terminaux pada MinTTY Git Bash tanpa winpty.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>Anda perlu menggunakan winpty untuk dapat menggunakan program ini. Jika Anda yakin tidak menjalankan Git Bash, pastikan Anda menggunakan terminal Windows yang tepat.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
-    <value>Penempatan konsol tidak berfungsi karena kesalahan I/O, sehingga aplikasi ini mungkin berperilaku tidak menentu.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
-    <value>Penempatan konsol tidak berfungsi dengan baik, sehingga aplikasi ini mungkin berperilaku tidak menentu.</value>
-  </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
     <value>Konsol Anda terlalu kecil untuk berjalan dengan baik: {0}x{1} | buff: {2}x{3} | min: {4}x{5}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
     <value>Untuk mendapatkan pengalaman yang lebih baik, ubah ukuran jendela konsol Anda saat masih berada di layar ini. Tekan tombol apa saja untuk melanjutkan...</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
-    <value>Perakitan tidak disediakan.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
-    <value>{0} Tidak dapat melanjutkan.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
-    <value>Tipe konsol hanya mendukung penulisan dasar.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
-    <value>Jenis konsol tidak diketahui sifatnya.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
-    <value>Aplikasi ini memanfaatkan rangkaian escape VT, tetapi Terminal.app telah merusak dukungan untuk 255 dan warna sebenarnya.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
-    <value>Jenis konsol tidak mendukung 256 warna.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
-    <value>Tidak dapat memfilter tanpa kueri apa pun.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
-    <value>Tidak dapat memfilter dengan kueri yang tidak valid.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
-    <value>Tidak ada ekspresi dalam filter konsol.</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
     <value>Tidak dapat mengembalikan atribut termios baru untuk mode mentah: {0}</value>
@@ -421,9 +352,6 @@
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
     <value>Baca selengkapnya...</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
-    <value>Daftar pengikatan tombol</value>
-  </data>
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
     <value>Bergerak</value>
   </data>
@@ -435,18 +363,6 @@
   </data>
   <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
     <value>Gaya pemilihan mengharuskan setidaknya ada satu pilihan yang diaktifkan.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
-    <value>Tuliskan nama pemutar. Nama tersebut akan diubah menjadi huruf kecil.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
-    <value>Pemutar tidak ada.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
-    <value>Pilih pemintal dari daftar di bawah ini</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
-    <value>Pemilihan pemintal</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
     <value>Tidak ada informasi.</value>
@@ -1279,26 +1195,14 @@
   <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
     <value>Perintah umum:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
-    <value>Tidak ada perintah shell.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
     <value>Perintah tambahan:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
-    <value>Tidak ada perintah tambahan.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
     <value>Perintah alias:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
-    <value>Tidak ada perintah alias.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
     <value>Perintah terpadu:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
-    <value>Tidak ada perintah terpadu.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
     <value>Perintah yang didefinisikan oleh</value>
@@ -1765,15 +1669,6 @@
   <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
     <value>Satu atau lebih warna tidak valid.</value>
   </data>
-  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
-    <value>Tema bawaan untuk kernel</value>
-  </data>
-  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
-    <value>Aksen di mana-mana!</value>
-  </data>
-  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
-    <value>Cairan tidak berwarna, berasap, dan sangat korosif</value>
-  </data>
   <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
     <value>Anda harus menjalankan ConEmu atau prompt perintah Windows 10 dengan pemrosesan VT diaktifkan.</value>
   </data>
@@ -1783,17 +1678,11 @@
   <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
     <value>Apakah jalur landai ini terlihat tepat menurut Anda? Jalur landai ini seharusnya dapat bergerak dengan lancar.</value>
   </data>
-  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
-    <value>Kami gagal membuat rangkaian VT yang berfungsi dengan tipe {0} dengan tindakan {1}. Pastikan Anda telah menentukan nilai dengan benar.</value>
-  </data>
   <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
     <value>Jawaban tanpa judul</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
     <value>Fixture tanpa judul</value>
-  </data>
-  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
-    <value>Harap tunggu sementara operasi saat ini sedang diproses...</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
     <value>Pergi ke karakter pertama di baris saat ini</value>
@@ -1860,9 +1749,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
     <value>Mengkodekan teks ke representasi BASE64</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
-    <value>String untuk dikodekan</value>
   </data>
   <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
     <value>Memeriksa skrip UESH untuk kesalahan sintaksis</value>
@@ -2329,9 +2215,6 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Pilih salah satu halaman bantuan yang tercantum di bawah ini.</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
-    <value>Halaman ini mencantumkan pengikatan tombol tambahan yang didukung untuk TUI interaktif ini, selain yang dasar.</value>
-  </data>
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
     <value>Mengurangi nilai saat ini sebesar 100</value>
   </data>
@@ -2493,5 +2376,53 @@
   </data>
   <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
     <value>Penentu warna</value>
+  </data>
+  <data name="T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE" xml:space="preserve">
+    <value>Jenis warna tersebut tidak ada</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>String untuk dikodekan dengan BASE64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC" xml:space="preserve">
+    <value>String target</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>Output senyap (quiet)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC" xml:space="preserve">
+    <value>Kata kunci pencarian untuk menemukan perintah</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE" xml:space="preserve">
+    <value>Tidak dapat memenuhi kondisi.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN" xml:space="preserve">
+    <value>TUI interaktif ini belum terbuka.</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT_NOREGEX" xml:space="preserve">
+    <value>Masukkan kata kunci pencarian (tidak membedakan huruf besar/kecil)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX" xml:space="preserve">
+    <value>Mencari input menggunakan ekspresi reguler</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX" xml:space="preserve">
+    <value>Mencari pilihan menggunakan ekspresi reguler</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>Mencari elemen menggunakan ekspresi reguler</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT" xml:space="preserve">
+    <value>Masukkan nama seni ASCII "Cowsay".</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_NOCOWNAME" xml:space="preserve">
+    <value>Seni ASCII "Cowsay" tersebut tidak tersedia.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT" xml:space="preserve">
+    <value>Pilih seni ASCII "Cowsay" dari daftar di bawah ini.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE" xml:space="preserve">
+    <value>Pemilihan seni ASCII</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>Mencari elemen menggunakan ekspresi reguler</value>
   </data>
 </root>

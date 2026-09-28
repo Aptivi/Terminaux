@@ -12,10 +12,6 @@
       "text": "종료"
     },
     {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
-      "text": "키 바인딩"
-    },
-    {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
       "text": "맞춤 또는 크기 조절"
     },
@@ -50,10 +46,6 @@
     {
       "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
       "text": "끝으로 이동"
-    },
-    {
-      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
-      "text": "사용 가능한 키 바인딩"
     },
     {
       "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",

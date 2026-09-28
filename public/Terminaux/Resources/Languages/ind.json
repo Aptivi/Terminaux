@@ -67,104 +67,12 @@
       "text": "skreen chakreey nahin hai."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "upayogakarta ne damb tarminal ka upayog karake tarminoks eplikeshan chalaane ka prayaas kiya."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "yah eplikeshan tarminoks dvaara pradaan kee gaee vistaarit kansol suvidhaon ka upayog karata hai jisake lie \"damb\" tarminalon dvaara samarthit suvidhaon kee aavashyakata nahin hotee hai."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "sambhaavit samaadhaan: tarminal prakaar ko \"damb\" ke alaava kisee any prakaar mein set karane ke lie upayukt tarminal emuletar ka upayog karen ya apanee tarminal seting se paraamarsh len. ham is eplikeshan se adhikatam laabh uthaane ke lie \"vt100\" tarminal emuletar ka upayog karane kee salaah dete hain."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "upayogakarta ne blaikalisted tarminal prakaar par tarminoks eplikeshan chalaane kee koshish kee."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "aap jis kansol prakaar ka upayog kar rahe hain, {0}, vah blaikalisted hai: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "aap jis kansol prakaar ka upayog kar rahe hain, {0}, vah grelisted hai: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "upayogakarta ne blaikalisted tarminal emuletar par tarminoks eplikeshan chalaane kee koshish kee."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "aap jis tarminal emuletar ka upayog kar rahe hain, {0}, vah blaikalisted hai: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "aap jis tarminal emuletar ka upayog kar rahe hain, {0}, vah grelisted hai: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "tarminapho ke anusaar tarminal prakaar {0} 256 rangon ka samarthan nahin karata hai"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "upayogakarta ne git bash ke mintty par winpty ke bina tarminoks eplikeshan chalaane kee koshish kee."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "is prograam ka upayog karane mein saksham hone ke lie aapako winpty ka upayog karana hoga. yadi aap sunishchit hain ki aap git bash nahin chala rahe hain, to sunishchit karen ki aap uchit windows tarminal ka upayog kar rahe hain."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "kansol pojishaning i/o truti ke kaaran kaam nahin kar rahee hai, isalie yah eplikeshan aniyamit roop se vyavahaar kar sakata hai."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "kansol pojishaning theek se kaam nahin kar rahee hai, isalie yah eplikeshan aniyamit roop se vyavahaar kar sakata hai."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "aapaka kansol theek se chalane ke lie bahut chhota hai: {0}x{1} | baf: {2}x{3} | minat: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "behatar anubhav ke lie, is skreen par rahate hue bhee apanee kansol vindo ka aakaar badalen. jaaree rakhane ke lie koee bhee kunjee dabaen..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "asembalee pradaan nahin kee gaee hai."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} jaaree nahin rakha ja sakata."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "kansol prakaar keval mool lekhan ka samarthan karata hai."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "kansol prakaar agyaat prakrti ka hai."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "yah eplikeshan vt eskep anukramon ka upayog karata hai, lekin tarminal.ep ne 255 aur sachche rangon ke lie samarthan tod diya hai."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "kansol prakaar 256 rangon ka samarthan nahin karata hai."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "bina kisee kveree ke filtar nahin kiya ja sakata."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "amaany kveree ke saath filtar nahin kiya ja sakata."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "kansol filtar mein koee abhivyakti nahin hai."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -491,10 +399,6 @@
       "text": "aur padhen..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "soochee keebainding"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "chaaron or jaen"
     },
@@ -509,22 +413,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "chayan shailee ke lie aavashyak hai ki kam se kam ek vikalp saksham ho."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "spinar ka naam likhen. ise loarakes mein badal diya jaega."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "spinar maujood nahin hai."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "neeche dee gaee soochee se spinar chunen"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "spinar chayan"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1635,32 +1523,16 @@
       "text": "saamaany kamaand:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "koee shel kamaand nahin."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "atirikt aadesh:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "koee atirikt aadesh nahin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "upanaam aadesh:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "koee upanaam aadesh nahin."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "ekeekrt aadesh:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "koee ekeekrt aadesh nahin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2283,18 +2155,6 @@
       "text": "rangon mein se ek ya adhik amaany hai. "
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "karnel ke lie difolt theem"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "har jagah uchchaaran!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "rangaheen, dhunaadhaar aur atyadhik sankshaarak taral"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "aapako vt prosesing saksham ke saath chonaimu ya windows 10 kamaand prompt chalaana hoga."
     },
@@ -2307,20 +2167,12 @@
       "text": "kya ye raimp aapako sahee lagate hain? unhen suchaaroo roop se sankraman karana chaahie."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "ham {1} kriya ke saath {0} prakaar ka ek kaaryasheel vt anukram utpann karane mein viphal rahe hain. sunishchit karen ki aapane maan sahee dhang se nirdisht kie hain."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "sheershakaheen uttar"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "sheershakaheen phiksachar"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "krpaya vartamaan opareshan ke sansaadhit hone tak prateeksha karen..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2409,10 +2261,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "tekst ko basai64 pratinidhitv mein enakod karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "enkod karane ke lie string"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3035,10 +2883,6 @@
       "text": "neeche soocheebaddh kisee bhee sahaayata prshth ka chayan karen."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "yah prshth mool keebainding ke atirikt, is intaraiktiv tui ke lie samarthit atirikt keebainding ko soocheebaddh karata hai."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "maujooda vailyoo mein 100 kee kamee karata hai"
     },
@@ -3253,6 +3097,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "rang vinirdeshak"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "aisa koi rang prakar nahin hai"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "BASE64 ke saath encode karne ke liye string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "targate string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "shant output"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "kamand khojne ke liye search torm"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "shart puri nahin ho saki."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "yah interactive TUI abhi khula nahin hai."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "sarch term likhen (kes-insencitiv)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "regular expression ke saath input khojen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "regular expression ke saath vikalp khojen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "regular expression ke saath element khojen"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "\"Cowsay\" ASCII art ka naam likhen."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "\"Cowsay\" ASCII art maujood nahin hai."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "niche di gai suchi se \"Cowsay\" ASCII art chunen."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "ASCII art ka chayan"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "regular expression ke saath element khojen"
     }
   ]
 }

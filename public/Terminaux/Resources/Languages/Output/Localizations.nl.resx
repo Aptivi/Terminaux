@@ -103,80 +103,11 @@
   <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
     <value>Het scherm is niet cyclisch.</value>
   </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
-    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren met behulp van een domme terminal.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Deze applicatie maakt gebruik van uitgebreide consolefuncties van Terminaux die functies vereisen die niet worden ondersteund door 'domme' terminals.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Mogelijke oplossing: Gebruik een geschikte terminal-emulator of raadpleeg uw terminalinstellingen om het terminaltype in te stellen op iets anders dan "dom". We raden aan de "vt100" terminal-emulators te gebruiken om deze applicatie optimaal te benutten.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminaltype dat op de zwarte lijst staat.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>Het consoletype dat u momenteel gebruikt, {0}, staat op de zwarte lijst: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>Het consoletype dat u momenteel gebruikt, {0}, staat op de grijze lijst: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminal-emulator die op de zwarte lijst staat.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>De terminal-emulator die u momenteel gebruikt, {0}, staat op de zwarte lijst: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>De terminal-emulator die u momenteel gebruikt, {0}, staat op de grijze lijst: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
-    <value>Terminaltype {0} ondersteunt volgens terminfo geen 256 kleuren</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op Git Bash's MinTTY zonder winpty.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>Je hebt WinPty nodig om dit programma te kunnen gebruiken. Als je zeker weet dat je Git Bash niet gebruikt, zorg er dan voor dat je een geschikte Windows-terminal gebruikt.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
-    <value>De consolepositionering werkt niet vanwege een I/O-fout. Deze toepassing kan zich daardoor vreemd gedragen.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
-    <value>De positionering van de console werkt niet goed, waardoor deze toepassing mogelijk vreemd gedrag vertoont.</value>
-  </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
     <value>Je console is te klein om goed te kunnen draaien: {0}x{1} | buff: {2}x{3} | min: {4}x{5}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
     <value>Voor een betere ervaring kunt u het formaat van uw consolevenster aanpassen terwijl u nog steeds op dit scherm bent. Druk op een toets om door te gaan...</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
-    <value>Montage niet voorzien.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
-    <value>{0} Kan niet doorgaan.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
-    <value>Het consoletype ondersteunt alleen basisschrijfbewerkingen.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
-    <value>Het type console is van onbekende aard.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
-    <value>Deze applicatie maakt gebruik van VT escape sequences, maar Terminal.app ondersteunt geen 255 en true colors meer.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
-    <value>Het consoletype ondersteunt geen 256 kleuren.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
-    <value>Kan niet filteren zonder query.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
-    <value>Kan niet filteren met een ongeldige zoekopdracht.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
-    <value>Er is geen expressie in het consolefilter.</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
     <value>Kan nieuwe termios-kenmerken voor de raw-modus niet herstellen: {0}</value>
@@ -421,9 +352,6 @@
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
     <value>Lees verder...</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
-    <value>Lijst met sneltoetsen</value>
-  </data>
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
     <value>Beweeg rond</value>
   </data>
@@ -435,18 +363,6 @@
   </data>
   <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
     <value>De selectiestijl vereist dat er minimaal één keuze is ingeschakeld.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
-    <value>Schrijf de naam van de spinner. Deze wordt omgezet naar kleine letters.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
-    <value>De spinner bestaat niet.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
-    <value>Selecteer een spinner uit de onderstaande lijst</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
-    <value>Spinnerselectie</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
     <value>Geen informatie.</value>
@@ -1279,26 +1195,14 @@
   <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
     <value>Algemene commando's:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
-    <value>Geen shell-opdrachten.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
     <value>Extra commando's:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
-    <value>Geen extra opdrachten.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
     <value>Alias-opdrachten:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
-    <value>Geen aliasopdrachten.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
     <value>Geünificeerde opdrachten:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
-    <value>Geen uniforme commando’s.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
     <value>Commando gedefinieerd door</value>
@@ -1765,15 +1669,6 @@
   <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
     <value>Een of meer van de kleuren is ongeldig.</value>
   </data>
-  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
-    <value>Het standaardthema voor de kernel</value>
-  </data>
-  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
-    <value>Overal accenten!</value>
-  </data>
-  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
-    <value>Kleurloze, dampende en zeer bijtende vloeistof</value>
-  </data>
   <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
     <value>U moet ConEmu of een Windows 10-opdrachtprompt gebruiken waarbij VT-verwerking is ingeschakeld.</value>
   </data>
@@ -1783,17 +1678,11 @@
   <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
     <value>Zien deze opritten er goed uit voor jou? Ze moeten soepel overgaan.</value>
   </data>
-  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
-    <value>Het is ons niet gelukt een werkende VT-reeks van type {0} met actie {1} te genereren. Controleer of u de waarden correct hebt opgegeven.</value>
-  </data>
   <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
     <value>Antwoord zonder titel</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
     <value>Armatuur zonder titel</value>
-  </data>
-  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
-    <value>Even geduld terwijl de huidige bewerking wordt verwerkt...</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
     <value>Ga naar het eerste teken op de huidige regel</value>
@@ -1860,9 +1749,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
     <value>Codeert de tekst naar een BASE64-weergave</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
-    <value>String om te coderen</value>
   </data>
   <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
     <value>Controleert een UESH-script op syntaxisfouten</value>
@@ -2329,9 +2215,6 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Selecteer een van de onderstaande hulppagina's.</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
-    <value>Op deze pagina vindt u aanvullende sneltoetsen die voor deze interactieve TUI worden ondersteund, naast de basistoetsen.</value>
-  </data>
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
     <value>Verlaagt de huidige waarde met 100</value>
   </data>
@@ -2493,5 +2376,53 @@
   </data>
   <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
     <value>Kleurspecificatie</value>
+  </data>
+  <data name="T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE" xml:space="preserve">
+    <value>Dit kleurtype bestaat niet</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Tekstreeks om met BASE64 te coderen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC" xml:space="preserve">
+    <value>Doeltekstreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>Stille uitvoer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC" xml:space="preserve">
+    <value>Zoekterm om een ​​commando te vinden</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE" xml:space="preserve">
+    <value>Kan niet aan de voorwaarde voldoen.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN" xml:space="preserve">
+    <value>Deze interactieve TUI is nog niet geopend.</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT_NOREGEX" xml:space="preserve">
+    <value>Voer een zoekterm in (niet hoofdlettergevoelig)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX" xml:space="preserve">
+    <value>Zoekt naar een invoer met een reguliere expressie</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX" xml:space="preserve">
+    <value>Zoekt naar een keuze met een reguliere expressie</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>Zoekt naar een element met reguliere expressies</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT" xml:space="preserve">
+    <value>Voer de naam van de "Cowsay"-ASCII-art in.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_NOCOWNAME" xml:space="preserve">
+    <value>De "Cowsay"-ASCII-art bestaat niet.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT" xml:space="preserve">
+    <value>Selecteer een "Cowsay"-ASCII-art uit de onderstaande lijst.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE" xml:space="preserve">
+    <value>Selectie van ASCII-art</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>Zoekt naar een element met reguliere expressies</value>
   </data>
 </root>

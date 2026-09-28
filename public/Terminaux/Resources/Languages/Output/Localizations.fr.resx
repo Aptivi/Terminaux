@@ -103,80 +103,11 @@
   <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
     <value>L'écran n'est pas cyclique.</value>
   </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
-    <value>L'utilisateur a essayé d'exécuter une application Terminaux à l'aide d'un terminal muet.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Cette application utilise des fonctionnalités de console étendues fournies par Terminaux qui nécessitent des fonctionnalités non prises en charge par les terminaux « muets ».</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Solution possible : utilisez un émulateur de terminal approprié ou consultez les paramètres de votre terminal pour définir un type de terminal autre que « stupide ». Nous recommandons l'utilisation des émulateurs de terminal « vt100 » pour tirer le meilleur parti de cette application.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>L'utilisateur a essayé d'exécuter une application Terminaux sur un type de terminal sur liste noire.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>Le type de console que vous utilisez actuellement, {0}, est sur liste noire : {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>Le type de console que vous utilisez actuellement, {0}, est sur liste grise : {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>L'utilisateur a essayé d'exécuter une application Terminaux sur un émulateur de terminal sur liste noire.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>L'émulateur de terminal que vous utilisez actuellement, {0}, est sur liste noire : {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>L'émulateur de terminal que vous utilisez actuellement, {0}, est sur liste grise : {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
-    <value>Le type de terminal {0} ne prend pas en charge 256 couleurs selon terminfo</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>L'utilisateur a essayé d'exécuter une application Terminaux sur MinTTY de Git Bash sans winpty.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>Vous devrez utiliser winpty pour utiliser ce programme. Si vous êtes certain de ne pas utiliser Git Bash, assurez-vous d'utiliser un terminal Windows approprié.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
-    <value>Le positionnement de la console ne fonctionne pas en raison d'une erreur d'E/S, cette application peut donc se comporter de manière erratique.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
-    <value>Le positionnement de la console ne fonctionne pas correctement, cette application peut donc se comporter de manière erratique.</value>
-  </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
     <value>Votre console est trop petite pour fonctionner correctement : {0}x{1} | buff : {2}x{3} | min : {4}x{5}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
     <value>Pour une meilleure expérience, redimensionnez la fenêtre de votre console sans quitter cet écran. Appuyez sur n'importe quelle touche pour continuer…</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
-    <value>Montage non fourni.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
-    <value>{0} Impossible de continuer.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
-    <value>Le type de console ne prend en charge que l'écriture de base.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
-    <value>Le type de console est de nature inconnue.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
-    <value>Cette application utilise des séquences d'échappement VT, mais Terminal.app ne prend plus en charge les couleurs 255 et vraies.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
-    <value>Le type de console ne prend pas en charge 256 couleurs.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
-    <value>Impossible de filtrer sans aucune requête.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
-    <value>Impossible de filtrer avec une requête non valide.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
-    <value>Il n'y a aucune expression dans le filtre de la console.</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
     <value>Impossible de restaurer les nouveaux attributs termios pour le mode brut : {0}</value>
@@ -421,9 +352,6 @@
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
     <value>En savoir plus...</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
-    <value>Liste des raccourcis clavier</value>
-  </data>
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
     <value>Se déplacer</value>
   </data>
@@ -435,18 +363,6 @@
   </data>
   <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
     <value>Le style de sélection nécessite qu'au moins un choix soit activé.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
-    <value>Écrivez le nom du spinner. Il sera converti en minuscules.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
-    <value>Le spinner n'existe pas.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
-    <value>Sélectionnez un spinner dans la liste ci-dessous</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
-    <value>Sélection de fileurs</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
     <value>Aucune information.</value>
@@ -1279,26 +1195,14 @@
   <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
     <value>Commandes générales :</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
-    <value>Aucune commande shell.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
     <value>Commandes supplémentaires :</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
-    <value>Aucune commande supplémentaire.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
     <value>Commandes d'alias :</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
-    <value>Aucune commande d'alias.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
     <value>Commandes unifiées :</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
-    <value>Pas de commandes unifiées.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
     <value>Commande définie par</value>
@@ -1765,15 +1669,6 @@
   <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
     <value>Une ou plusieurs des couleurs sont invalides.</value>
   </data>
-  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
-    <value>Le thème par défaut du noyau</value>
-  </data>
-  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
-    <value>Des accents partout !</value>
-  </data>
-  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
-    <value>Liquide incolore, fumant et hautement corrosif</value>
-  </data>
   <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
     <value>Vous devez exécuter ConEmu ou une invite de commande Windows 10 avec le traitement VT activé.</value>
   </data>
@@ -1783,17 +1678,11 @@
   <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
     <value>Ces rampes vous conviennent-elles ? Ils devraient faire une transition en douceur.</value>
   </data>
-  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
-    <value>Nous n'avons pas réussi à générer une séquence VT fonctionnelle de type {0} avec l'action {1}. Assurez-vous d'avoir correctement spécifié les valeurs.</value>
-  </data>
   <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
     <value>Réponse sans titre</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
     <value>Installation sans titre</value>
-  </data>
-  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
-    <value>Veuillez patienter pendant le traitement de l'opération en cours...</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
     <value>Accéder au premier caractère de la ligne en cours</value>
@@ -1860,9 +1749,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
     <value>Encode le texte dans une représentation BASE64</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
-    <value>Chaîne à encoder</value>
   </data>
   <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
     <value>Vérifie un script UESH pour les erreurs de syntaxe</value>
@@ -2329,9 +2215,6 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Sélectionnez l'une des pages d'aide listées ci-dessous.</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
-    <value>Cette page répertorie les raccourcis clavier supplémentaires pris en charge par cette interface utilisateur interactive, en plus des raccourcis de base.</value>
-  </data>
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
     <value>Décrémente la valeur actuelle de 100</value>
   </data>
@@ -2493,5 +2376,53 @@
   </data>
   <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
     <value>Spécificateur de couleur</value>
+  </data>
+  <data name="T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE" xml:space="preserve">
+    <value>Type de couleur inexistant</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Chaîne à encoder en Base64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC" xml:space="preserve">
+    <value>Chaîne cible</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>Sortie silencieuse</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC" xml:space="preserve">
+    <value>Terme de recherche pour trouver une commande</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE" xml:space="preserve">
+    <value>Impossible de satisfaire la condition.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN" xml:space="preserve">
+    <value>Cette interface textuelle (TUI) interactive n'est pas encore ouverte.</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT_NOREGEX" xml:space="preserve">
+    <value>Saisissez un terme de recherche (insensible à la casse)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX" xml:space="preserve">
+    <value>Recherche une entrée à l'aide d'une expression régulière</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX" xml:space="preserve">
+    <value>Recherche un choix à l'aide d'une expression régulière</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>Recherche un élément à l'aide d'expressions régulières</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT" xml:space="preserve">
+    <value>Saisissez le nom de l'art ASCII « Cowsay ».</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_NOCOWNAME" xml:space="preserve">
+    <value>L'art ASCII « Cowsay » n'existe pas.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT" xml:space="preserve">
+    <value>Sélectionnez un art ASCII « Cowsay » dans la liste ci-dessous.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE" xml:space="preserve">
+    <value>Sélection d'art ASCII</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>Recherche un élément à l'aide d'expressions régulières</value>
   </data>
 </root>

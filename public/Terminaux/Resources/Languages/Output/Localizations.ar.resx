@@ -103,80 +103,11 @@
   <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
     <value>الشاشة ليست دورية.</value>
   </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
-    <value>حاول المستخدم تشغيل تطبيق Terminaux باستخدام محطة طرفية غبية.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>يستفيد هذا التطبيق من ميزات وحدة التحكم الموسعة التي توفرها Terminaux والتي تتطلب ميزات لا تدعمها المحطات "الغبية".</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>الحل المُحتمل: استخدم مُحاكي طرفية مُناسبًا أو راجع إعدادات الطرفية لديك لضبط نوع الطرفية إلى نوع آخر غير "dumb". نوصي باستخدام مُحاكيات الطرفية "vt100" لتحقيق أقصى استفادة من هذا التطبيق.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>حاول المستخدم تشغيل تطبيق Terminaux على نوع محطة طرفية مدرج في القائمة السوداء.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>نوع وحدة التحكم التي تستخدمها حاليًا، {0}، مدرج في القائمة السوداء: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>نوع وحدة التحكم التي تستخدمها حاليًا، {0}، مدرج في القائمة الرمادية: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>حاول المستخدم تشغيل تطبيق Terminaux على محاكي طرفية مدرج في القائمة السوداء.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>محاكي المحطة الطرفية الذي تستخدمه حاليًا، {0}، مدرج في القائمة السوداء: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>محاكي المحطة الطرفية الذي تستخدمه حاليًا، {0}، مدرج في القائمة الرمادية: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
-    <value>لا يدعم نوع المحطة الطرفية {0} 256 لونًا وفقًا لـ terminfo</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>حاول المستخدم تشغيل تطبيق Terminaux على MinTTY الخاص بـ Git Bash دون استخدام winpty.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>ستحتاج إلى استخدام winpty لتتمكن من استخدام هذا البرنامج. إذا كنت متأكدًا من عدم استخدام Git Bash، فتأكد من استخدام نافذة طرفية مناسبة لنظام Windows.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
-    <value>لا يعمل تحديد موضع وحدة التحكم بسبب خطأ في الإدخال/الإخراج، لذا قد يتصرف هذا التطبيق بشكل غير منتظم.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
-    <value>لا يعمل تحديد موضع وحدة التحكم بشكل صحيح، لذا قد يتصرف هذا التطبيق بشكل غير منتظم.</value>
-  </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
     <value>وحدة التحكم الخاصة بك صغيرة جدًا بحيث لا يمكن تشغيلها بشكل صحيح: {0}x{1} | buff: {2}x{3} | min: {4}x{5}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
     <value>لتجربة أفضل، غيّر حجم نافذة وحدة التحكم أثناء تواجدك على هذه الشاشة. اضغط أي مفتاح للمتابعة...</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
-    <value>لم يتم توفير التجميع.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
-    <value>{0} لا يمكن الاستمرار.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
-    <value>يدعم نوع وحدة التحكم الكتابة الأساسية فقط.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
-    <value>نوع وحدة التحكم غير معروف طبيعته.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
-    <value>يستخدم هذا التطبيق تسلسلات الهروب VT، ولكن Terminal.app لديه دعم غير كاف للألوان 255 والألوان الحقيقية.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
-    <value>نوع وحدة التحكم لا يدعم 256 لونًا.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
-    <value>لا يمكن التصفية دون أي استعلام.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
-    <value>لا يمكن التصفية باستخدام استعلام غير صالح.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
-    <value>لا يوجد تعبير في مرشح وحدة التحكم.</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
     <value>لا يمكن استعادة سمات termios الجديدة لوضع raw: {0}</value>
@@ -421,9 +352,6 @@
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
     <value>اقرأ المزيد...</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
-    <value>قائمة ارتباطات المفاتيح</value>
-  </data>
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
     <value>التحرك</value>
   </data>
@@ -435,18 +363,6 @@
   </data>
   <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
     <value>يتطلب أسلوب الاختيار أن يكون هناك خيار واحد ممكّنًا على الأقل.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
-    <value>اكتب اسم الدوار. سيتم تحويله إلى أحرف صغيرة.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
-    <value>الغزال غير موجود.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
-    <value>حدد الدوار من القائمة أدناه</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
-    <value>اختيار الدوار</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
     <value>لا يوجد معلومات.</value>
@@ -1279,26 +1195,14 @@
   <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
     <value>الأوامر العامة:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
-    <value>لا توجد أوامر shell.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
     <value>أوامر إضافية:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
-    <value>لا توجد أوامر إضافية.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
     <value>أوامر الاسم المستعار:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
-    <value>لا توجد أوامر بديلة.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
     <value>الأوامر الموحدة:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
-    <value>لا توجد أوامر موحدة.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
     <value>الأمر المحدد بواسطة</value>
@@ -1765,15 +1669,6 @@
   <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
     <value>واحد أو أكثر من الألوان غير صالح.</value>
   </data>
-  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
-    <value>الموضوع الافتراضي للنواة</value>
-  </data>
-  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
-    <value>لهجات في كل مكان!</value>
-  </data>
-  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
-    <value>سائل عديم اللون، دخاني، وشديد التآكل</value>
-  </data>
   <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
     <value>يجب أن تقوم بتشغيل ConEmu أو موجه أوامر Windows 10 مع تمكين معالجة VT.</value>
   </data>
@@ -1783,17 +1678,11 @@
   <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
     <value>هل تبدو هذه المنحدرات مناسبة لك؟ يجب أن ينتقلوا بسلاسة.</value>
   </data>
-  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
-    <value>لم نتمكن من إنشاء تسلسل VT فعال من النوع {0} باستخدام الإجراء {1}. تأكد من صحة القيم المحددة.</value>
-  </data>
   <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
     <value>إجابة بدون عنوان</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
     <value>تركيبة بدون عنوان</value>
-  </data>
-  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
-    <value>يرجى الانتظار أثناء معالجة العملية الحالية...</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
     <value>الانتقال إلى أول حرف في السطر الحالي</value>
@@ -1860,9 +1749,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
     <value>يشفر النص إلى تمثيل BASE64</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
-    <value>سلسلة للترميز</value>
   </data>
   <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
     <value>التحقق من البرنامج النصي UESH بحثًا عن أخطاء في بناء الجملة</value>
@@ -2329,9 +2215,6 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>اختر أيًا من صفحات المساعدة المدرجة أدناه.</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
-    <value>تسرد هذه الصفحة اختصارات المفاتيح الإضافية المدعومة لهذه الواجهة التفاعلية، بالإضافة إلى الاختصارات الأساسية.</value>
-  </data>
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
     <value>يُنقص القيمة الحالية بمقدار 100</value>
   </data>
@@ -2493,5 +2376,53 @@
   </data>
   <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
     <value>محدد اللون</value>
+  </data>
+  <data name="T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE" xml:space="preserve">
+    <value>نوع اللون هذا غير موجود</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>السلسلة المراد ترميزها بصيغة BASE64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC" xml:space="preserve">
+    <value>السلسلة المستهدفة</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>مخرجات صامتة (بدون تفاصيل إضافية)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC" xml:space="preserve">
+    <value>مصطلح بحث للعثور على أمر</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE" xml:space="preserve">
+    <value>تعذّر استيفاء الشرط.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN" xml:space="preserve">
+    <value>واجهة المستخدم النصية التفاعلية (TUI) هذه ليست مفتوحة بعد.</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT_NOREGEX" xml:space="preserve">
+    <value>اكتب مصطلح البحث (غير حساس لحالة الأحرف)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX" xml:space="preserve">
+    <value>البحث عن مُدخل باستخدام تعبير نمطي (Regular Expression)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX" xml:space="preserve">
+    <value>البحث عن خيار باستخدام تعبير نمطي</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>البحث عن عنصر باستخدام تعبيرات نمطية</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT" xml:space="preserve">
+    <value>اكتب اسم رسم ASCII الخاص بـ "Cowsay".</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_NOCOWNAME" xml:space="preserve">
+    <value>رسم ASCII الخاص بـ "Cowsay" غير موجود.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT" xml:space="preserve">
+    <value>اختر رسم ASCII لـ "Cowsay" من القائمة أدناه.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE" xml:space="preserve">
+    <value>اختيار رسم ASCII</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>البحث عن عنصر باستخدام تعبيرات نمطية</value>
   </data>
 </root>

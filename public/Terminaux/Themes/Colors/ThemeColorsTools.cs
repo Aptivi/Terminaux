@@ -97,7 +97,6 @@ namespace Terminaux.Themes.Colors
         /// </summary>
         /// <param name="type">Color type</param>
         public static Color GetColor(string type) =>
-            // TODO: T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE -> No such color type
             TryGetColor(type) ?? throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE") + $": {type}");
 
         /// <summary>

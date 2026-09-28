@@ -66,104 +66,12 @@
       "text": "A tela não é cíclica."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "O usuário tentou executar um aplicativo Terminaux usando um terminal burro."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Este aplicativo faz uso de recursos estendidos do console fornecidos pela Terminaux que exigem recursos não suportados por terminais \"burros\"."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Solução possível: Use um emulador de terminal apropriado ou consulte as configurações do seu terminal para definir o tipo de terminal como algo diferente de \"dumb\". Recomendamos usar os emuladores de terminal \"vt100\" para aproveitar ao máximo este aplicativo."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "O usuário tentou executar um aplicativo Terminaux em um tipo de terminal na lista negra."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "O tipo de console que você está usando atualmente, {0}, está na lista negra: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "O tipo de console que você está usando atualmente, {0}, está na lista cinza: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "O usuário tentou executar um aplicativo Terminaux em um emulador de terminal na lista negra."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "O emulador de terminal que você está usando atualmente, {0}, está na lista negra: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "O emulador de terminal que você está usando atualmente, {0}, está na lista cinza: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "O tipo de terminal {0} não suporta 256 cores de acordo com o terminfo"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "O usuário tentou executar um aplicativo Terminaux no MinTTY do Git Bash sem o winpty."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Você precisará usar o WinPty para usar este programa. Se tiver certeza de que não está executando o Git Bash, certifique-se de estar usando um terminal Windows adequado."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "O posicionamento do console não está funcionando devido a um erro de E/S, então este aplicativo pode se comportar de maneira irregular."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "O posicionamento do console não está funcionando corretamente, então este aplicativo pode se comportar de maneira irregular."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "Seu console é muito pequeno para rodar corretamente: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "Para uma experiência melhor, redimensione a janela do console enquanto ainda estiver nesta tela. Pressione qualquer tecla para continuar..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "Montagem não fornecida."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} Não é possível continuar."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "O tipo de console suporta apenas escrita básica."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "O tipo de console é de natureza desconhecida."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Este aplicativo faz uso de sequências de escape VT, mas o Terminal.app não oferece suporte para 255 e cores verdadeiras."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "O tipo de console não suporta 256 cores."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "Não é possível filtrar sem nenhuma consulta."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "Não é possível filtrar com uma consulta inválida."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "Não há expressão no filtro do console."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -490,10 +398,6 @@
       "text": "Leia mais..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Listar atalhos de teclado"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "Mova-se"
     },
@@ -508,22 +412,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "O estilo de seleção requer que haja pelo menos uma opção habilitada."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Escreva o nome do spinner. Ele será convertido para letras minúsculas."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "O spinner não existe."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Selecione um spinner da lista abaixo"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Seleção de spinners"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1634,32 +1522,16 @@
       "text": "Comandos gerais:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "Nenhum comando shell."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "Comandos extras:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Sem comandos extras."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "Comandos de alias:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Nenhum comando de alias."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "Comandos unificados:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "Nenhum comando unificado."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2282,18 +2154,6 @@
       "text": "Uma ou mais cores são inválidas."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "O tema padrão para o kernel"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Sotaques em todos os lugares!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Líquido incolor, fumegante e altamente corrosivo"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "Você deve estar executando o ConEmu ou um prompt de comando do Windows 10 com o processamento VT habilitado."
     },
@@ -2306,20 +2166,12 @@
       "text": "Essas rampas parecem certas para você? Elas devem fazer uma transição suave."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Não conseguimos gerar uma sequência VT funcional do tipo {0} com a ação {1}. Certifique-se de ter especificado os valores corretamente."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "Resposta sem título"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "Fixação sem título"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "Aguarde enquanto a operação atual está sendo processada..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2408,10 +2260,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "Codifica o texto para uma representação BASE64"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "String para codificar"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3034,10 +2882,6 @@
       "text": "Selecione qualquer uma das páginas de ajuda listadas abaixo."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "Esta página lista atalhos de teclado adicionais que são suportados para esta interface de usuário interativa (TUI), além dos básicos."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "Diminui o valor atual em 100"
     },
@@ -3252,6 +3096,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "Especificador de cor"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "Tipo de cor inexistente"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "String para codificar em BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "String de destino"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "Saída silenciosa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "Termo de busca para encontrar um comando"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "Não foi possível satisfazer a condição."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "Esta TUI interativa ainda não está aberta."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "Digite um termo de busca (sem diferenciar maiúsculas de minúsculas)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "Busca uma entrada usando uma expressão regular"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "Busca uma opção usando uma expressão regular"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "Busca um elemento usando expressões regulares"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "Digite o nome da arte ASCII \"Cowsay\"."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "A arte ASCII \"Cowsay\" não existe."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "Selecione uma arte ASCII \"Cowsay\" da lista abaixo."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "Seleção de arte ASCII"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "Busca um elemento usando expressões regulares"
     }
   ]
 }

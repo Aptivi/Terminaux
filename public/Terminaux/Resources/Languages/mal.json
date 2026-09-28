@@ -70,104 +70,12 @@
       "text": "Skrin bukan kitaran."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "Pengguna cuba menjalankan aplikasi Terminaux menggunakan terminal bodoh."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Aplikasi ini menggunakan ciri konsol lanjutan yang disediakan oleh Terminaux yang memerlukan ciri yang tidak disokong oleh terminal \"bodoh\"."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Penyelesaian yang mungkin: Gunakan emulator terminal yang sesuai atau rujuk tetapan terminal anda untuk menetapkan jenis terminal kepada sesuatu selain daripada \"bodoh\". Kami mengesyorkan menggunakan emulator terminal \"vt100\" untuk memanfaatkan sepenuhnya aplikasi ini."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "Pengguna cuba menjalankan aplikasi Terminaux pada jenis terminal yang disenaraihitamkan."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "Jenis konsol yang anda sedang gunakan, {0}, disenaraihitamkan: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "Jenis konsol yang anda sedang gunakan, {0}, adalah disenarai kelabu: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "Pengguna cuba menjalankan aplikasi Terminaux pada emulator terminal yang disenaraihitamkan."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "Emulator terminal yang anda sedang gunakan, {0}, disenaraihitamkan: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "Emulator terminal yang sedang anda gunakan, {0}, adalah disenarai kelabu: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "Jenis terminal {0} tidak menyokong 256 warna mengikut terminfo"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "Pengguna cuba menjalankan aplikasi Terminaux pada MinTTY Git Bash tanpa winpty."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Anda perlu menggunakan winpty untuk dapat menggunakan program ini. Jika anda pasti bahawa anda tidak menjalankan Git Bash, pastikan anda menggunakan terminal Windows yang betul."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "Kedudukan konsol tidak berfungsi kerana ralat I/O, jadi aplikasi ini mungkin berkelakuan tidak menentu."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "Kedudukan konsol tidak berfungsi dengan betul, jadi aplikasi ini mungkin berkelakuan tidak menentu."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "Konsol anda terlalu kecil untuk dijalankan dengan betul: {0}x{1} | peminat: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "Untuk mendapatkan pengalaman yang lebih baik, ubah saiz tetingkap konsol anda semasa masih berada di skrin ini. Tekan sebarang kekunci untuk meneruskan..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "Perhimpunan tidak disediakan."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} Tidak dapat meneruskan."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "Jenis konsol hanya menyokong penulisan asas."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "Jenis konsol tidak diketahui sifatnya."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Aplikasi ini menggunakan urutan pelarian VT, tetapi Terminal.app telah memecahkan sokongan untuk 255 dan warna sebenar."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "Jenis konsol tidak menyokong 256 warna."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "Tidak boleh menapis tanpa sebarang pertanyaan."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "Tidak boleh menapis dengan pertanyaan yang tidak sah."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "Tiada ungkapan dalam penapis konsol."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -494,10 +402,6 @@
       "text": "Baca lagi..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Senaraikan ikatan kekunci"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "Bergeraklah"
     },
@@ -512,22 +416,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "Gaya pemilihan memerlukan sekurang-kurangnya satu pilihan didayakan."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Tulis nama pemutar. Ia akan ditukar kepada huruf kecil."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "Pemintal tidak wujud."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Pilih pemutar daripada senarai di bawah"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Pemilihan pemutar"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1638,32 +1526,16 @@
       "text": "Perintah am:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "Tiada arahan shell."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "Perintah tambahan:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Tiada arahan tambahan."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "Alias memerintahkan:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Tiada arahan alias."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "Perintah bersatu:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "Tiada arahan bersatu."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2286,18 +2158,6 @@
       "text": "Satu atau beberapa warna tidak sah."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "Tema lalai untuk kernel"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Aksen di mana-mana!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Cecair tidak berwarna, berasap dan sangat menghakis"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "Anda mesti menjalankan sama ada ConEmu atau gesaan arahan Windows 10 dengan pemprosesan VT didayakan."
     },
@@ -2310,20 +2170,12 @@
       "text": "Adakah tanjakan ini kelihatan betul kepada anda? Mereka harus beralih dengan lancar."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Kami telah gagal menjana urutan VT yang berfungsi jenis {0} dengan tindakan {1}. Pastikan anda telah menetapkan nilai dengan betul."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "Jawapan tanpa tajuk"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "Perlawanan tanpa tajuk"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "Sila tunggu sementara operasi semasa sedang diproses..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2412,10 +2264,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "Mengekodkan teks kepada perwakilan BASE64"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "Rentetan untuk mengekod"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3038,10 +2886,6 @@
       "text": "Pilih mana-mana halaman bantuan yang disenaraikan di bawah."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "Halaman ini menyenaraikan pengikatan kekunci tambahan yang disokong untuk TUI interaktif ini, selain daripada yang asas."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "Mengurangkan nilai semasa sebanyak 100"
     },
@@ -3256,6 +3100,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "Penentu warna"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "Jenis warna sedemikian tidak wujud"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "Rentetan untuk dikodkan dengan BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "Rentetan sasaran"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "Output senyap"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "Istilah carian untuk mencari arahan"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "Tidak dapat memenuhi syarat."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "TUI interaktif ini belum dibuka lagi."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "Masukkan istilah carian (tidak peka huruf besar/kecil)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "Mencari input menggunakan ungkapan nalar"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "Mencari pilihan menggunakan ungkapan nalar"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "Mencari elemen menggunakan ungkapan nalar"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "Masukkan nama seni ASCII \"Cowsay\"."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "Seni ASCII \"Cowsay\" tersebut tidak wujud."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "Pilih seni ASCII \"Cowsay\" daripada senarai di bawah."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "Pemilihan seni ASCII"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "Mencari elemen menggunakan ungkapan nalar"
     }
   ]
 }

@@ -67,104 +67,12 @@
       "text": "Pantalla non est cyclica."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "Usor applicationem Terminaux per terminale stultum exsequi conatus est."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Haec applicatio utitur facultatibus consolae amplificatis a Terminaux praebitis, quae facultates requirunt quas terminales \"stulti\" non sustinent."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Solutio possibilis: Aemulatore terminali idoneo utere vel optiones terminalis consule ut genus terminalis in aliquid praeter \"stultum\" constituas. Aemulatoribus terminalibus \"vt100\" uti commendamus ut plurimum ex hac applicatione capias."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "Usor applicationem Terminaux in genere terminali in indice nigro inclusum exsequi conatus est."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "Genus consolae quod nunc uteris, {0}, in indice nigro est: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "Genus consolae quod nunc uteris, {0}, in indice griseo est: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "Usor applicationem Terminaux in aemulatore terminali in indice nigro inclusum exsequi conatus est."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "Aemulator terminalis quem nunc uteris, {0}, in indice nigro est: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "Aemulator terminalis quem nunc uteris, {0}, in indice griseo est: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "Typus terminalis {0} non sustinet 256 colores secundum terminfo."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "Usor conatus est applicationem Terminaux in MinTTY Git Bash sine winpty exsequi."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Programmate hoc uti posse, necesse erit tibi \"winpty\" uti. Si certus es te \"Git Bash\" non uti, fac ut terminali Windows apto utaris."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "Situs consolae propter errorem I/O non operatur, ergo haec applicatio erratice se gerere potest."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "Situs consolae recte non operatur, ergo haec applicatio erratice se gerere potest."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "Consola tua nimis parva est ad recte currendum: {0}x{1} | amplificatio: {2}x{3} | minima: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "Ut meliorem experientiam habeas, fenestram consolae magnitudinem muta dum adhuc in hoc schermo es. Quamlibet clavem preme ut pergas..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "Conventus non provisus."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} Pergere non possum."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "Typus consolae tantum scripturam fundamentalem sustinet."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "Genus consolae naturae ignotae est."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Haec applicatio series effugii VT utitur, sed Terminal.app auxilium pro 255 et veris coloribus fractum habet."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "Genus consolae 256 colores non sustinet."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "Sine ulla interrogatione filtrare non potest."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "Non licet cum interrogatione invalida filtrare."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "Nulla expressio in filtro consolae est."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -491,10 +399,6 @@
       "text": "Plura lege..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Enumera iuncturas clavium"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "Move circum"
     },
@@ -509,22 +413,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "Modus selectionis requirit ut saltem una optio activa sit."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Nomen rotatoris scribe. In litteras minusculas convertetur."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "Rotator non exstat."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Rotatorium ex indice infra elige."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Selectio rotatoria"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1635,32 +1523,16 @@
       "text": "Mandata generalia:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "Nulla mandata testae."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "Mandata addita:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Nulla mandata extraordinaria."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "Mandata alias:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Nulla mandata alias."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "Mandata unificata:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "Nulla mandata unificata."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2283,18 +2155,6 @@
       "text": "Colorum unus vel plures invalidum est."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "The default theme pro nucleo"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "ubique accentum!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Hyalina, fumans et liquida valde mordax"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "Currere debes vel ConEmu vel Windows 10 mandatum promptum cum VT processui para."
     },
@@ -2307,20 +2167,12 @@
       "text": "Hos aggeres spectare tibi fas? Debent transitum blande."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Series VT functionalis generis {0} cum actione {1} generare non potuimus. Fac ut valores recte specificaveris."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "Responsum sine titulo"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "Instrumentum sine titulo"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "Exspecta dum operatio praesens perficitur..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2409,10 +2261,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "Encodes textum ad BASE64 representation"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "Encode filum"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3035,10 +2883,6 @@
       "text": "Elige quamlibet paginam auxilii infra recensitam."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "Haec pagina clavium iuncturas additionales enumerat quae, praeter fundamentales, ab hac interfacie utente interactiva sustinentur."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "Valorem praesentem centum decrescit"
     },
@@ -3253,6 +3097,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "Color speciei"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "Hoc genus coloris non exstat"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "Catena ad formam BASE64 convertenda"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "Catena destinata"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "Exitus tacitus"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "Terminus quaesitus ad mandatum inveniendum"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "Condicio impleri non potest."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "Haec interfacies textualis interactiva nondum aperta est."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "Scribe terminum quaesitum (sine discrimine litterarum maiuscularum et minuscularum)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "Quaerit initum per expressionem regularem"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "Quaerit optionem per expressionem regularem"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "Quaerit elementum per expressiones regulares"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "Scribe nomen artis ASCII \"Cowsay\"."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "Ars ASCII \"Cowsay\" non exstat."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "Elige artem ASCII \"Cowsay\" ex indice infra posito."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "Electio artis ASCII"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "Quaerit elementum per expressiones regulares"
     }
   ]
 }

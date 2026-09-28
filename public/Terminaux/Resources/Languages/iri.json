@@ -68,104 +68,12 @@
       "text": "Níl an scáileán timthriallach."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "Rinne an t-úsáideoir iarracht feidhmchlár Terminaux a rith ag baint úsáide as críochfort balbh."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Baineann an feidhmchlár seo úsáid as gnéithe consóil leathnaithe arna soláthar ag Terminaux a éilíonn gnéithe nach dtacaítear leo ag críochfoirt \"amaideacha\"."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Réiteach féideartha: Bain úsáid as aithriseoir críochfoirt cuí nó féach ar shocruithe do chríochfoirt chun an cineál críochfoirt a shocrú i rud éigin seachas \"balbh\". Molaimid na haithriseoirí críochfoirt \"vt100\" a úsáid chun an leas is fearr a bhaint as an bhfeidhmchlár seo."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "Rinne an t-úsáideoir iarracht feidhmchlár Terminaux a rith ar chineál críochfoirt atá ar liosta dubh."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "Tá an cineál consól atá in úsáid agat faoi láthair, {0}, ar liosta dubh: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "Tá an cineál consól atá in úsáid agat faoi láthair, {0}, ar an liosta liath: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "Rinne an t-úsáideoir iarracht feidhmchlár Terminaux a rith ar aithriseoir críochfoirt atá ar liosta dubh."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "Tá an aithriseoir críochfoirt atá in úsáid agat faoi láthair, {0}, ar liosta dubh: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "Tá an aithriseoir críochfoirt atá in úsáid agat faoi láthair, {0}, ar an liosta liath: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "Ní thacaíonn cineál críochfoirt {0} le 256 dathanna de réir terminfo"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "Rinne úsáideoir iarracht feidhmchlár Terminaux a rith ar MinTTY Git Bash gan winpty."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Beidh ort winpty a úsáid le bheith in ann an clár seo a úsáid. Má tá tú cinnte nach bhfuil Git Bash á rith agat, déan cinnte go bhfuil críochfort Windows ceart á úsáid agat."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "Níl suíomh an chonsóil ag obair mar gheall ar earráid ionchuir/aschur, mar sin d'fhéadfadh an feidhmchlár seo iompraíocht neamhrialta a dhéanamh."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "Níl suíomh an chonsóil ag obair i gceart, mar sin d'fhéadfadh an feidhmchlár seo iompraíocht neamhrialta a dhéanamh."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "Tá do chonsól róbheag le rith i gceart: {0}x{1} | feabhas: {2}x{3} | íosmhéid: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "Chun eispéireas níos fearr a bheith agat, athraigh méid do fhuinneog consóil agus tú fós ar an scáileán seo. Brúigh aon eochair le leanúint ar aghaidh..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "Níor soláthraíodh tionól."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} Ní féidir leanúint ar aghaidh."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "Ní thacaíonn cineál consól ach le scríbhneoireacht bhunúsach."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "Tá an cineál consól anaithnid."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Úsáideann an feidhmchlár seo seichimh éalaithe VT, ach tá tacaíocht briste ag Terminal.app do 255 agus fíor-dathanna."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "Ní thacaíonn an cineál consól le 256 dathanna."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "Ní féidir scagadh a dhéanamh gan aon cheist."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "Ní féidir scagadh a dhéanamh le fiosrúchán neamhbhailí."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "Níl aon léiriú sa scagaire consól."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -492,10 +400,6 @@
       "text": "Léigh tuilleadh..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Liostaigh ceangail eochracha"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "Bog timpeall"
     },
@@ -510,22 +414,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "Éilíonn an stíl roghnúcháin go bhfuil rogha amháin ar a laghad cumasaithe."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Scríobh ainm an rothlóra. Déanfar é a thiontú go litreacha beaga."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "Níl an rothlóir ann."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Roghnaigh rothlóir ón liosta thíos"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Rogha sníomhaire"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1636,32 +1524,16 @@
       "text": "Orduithe ginearálta:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "Gan aon orduithe sliogáin."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "Orduithe breise:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Gan aon orduithe breise."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "Orduithe leasainm:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Gan aon orduithe leasainm."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "Orduithe aontaithe:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "Gan aon orduithe aontaithe."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2284,18 +2156,6 @@
       "text": "Tá ceann amháin nó níos mó de na dathanna neamhbhailí."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "An téama réamhshocraithe don eithne"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Accents i ngach áit!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Leacht gan dath, fuming, agus an-chreimneach"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "Ní mór duit a bheith ag rith ConEmu nó ordú Windows 10 leid le próiseáil VT cumasaithe."
     },
@@ -2308,20 +2168,12 @@
       "text": "An bhfeiceann na rampaí seo ceart duitse? Ba chóir dóibh aistriú go réidh."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Theip orainn seicheamh VT oibre de chineál {0} a ghiniúint leis an ngníomh {1}. Déan cinnte go bhfuil na luachanna sonraithe agat i gceart."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "Freagra gan Teideal"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "Daingneán gan Teideal"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "Fan le do thoil fad atá an oibríocht reatha á próiseáil..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2410,10 +2262,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "Ionchódaíonn sé an téacs chuig léiriú BASE64"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "Teaghrán a ionchódú"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3036,10 +2884,6 @@
       "text": "Roghnaigh aon cheann de na leathanaigh chabhrach atá liostaithe thíos."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "Liostaítear ar an leathanach seo ceangail eochracha breise a dtacaítear leo don TUI idirghníomhach seo, sa bhreis ar na cinn bhunúsacha."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "Laghdaíonn an luach reatha faoi 100"
     },
@@ -3254,6 +3098,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "Sonróir datha"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "Níl a leithéid de chineál datha ann"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "Teaghrán le hionchódú le BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "Teaghrán sprice"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "Aschur ciúin"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "Téarma cuardaigh chun ordú a aimsiú"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "Ní féidir an coinníoll a chomhlíonadh."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "Níl an TUI idirghníomhach seo oscailte go fóill."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "Cuir isteach téarma cuardaigh (gan aird ar chás na litreach)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "Cuardaigh ionchur ag baint úsáide as slonn rialta"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "Cuardaigh rogha ag baint úsáide as slonn rialta"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "Cuardaigh eilimint ag baint úsáide as sloinn rialta"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "Cuir isteach ainm na healaíne ASCII \"Cowsay\"."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "Níl an ealaín ASCII \"Cowsay\" ann."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "Roghnaigh ealaín ASCII \"Cowsay\" ón liosta thíos."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "Roghnú ealaíne ASCII"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "Cuardaigh eilimint ag baint úsáide as sloinn rialta"
     }
   ]
 }

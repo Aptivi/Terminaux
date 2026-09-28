@@ -79,7 +79,6 @@ namespace Terminaux.Inputs.Interactive
         {
             lock (_interactiveTuiLock)
             {
-                // TODO: T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN -> This interactive TUI is not open yet.
                 var ui = interactiveTui.ui ??
                     throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN"));
 

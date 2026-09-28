@@ -69,7 +69,6 @@ namespace Terminaux.Inputs.Styles
         internal static int GetEntryIdxFromSearchPrompt(InputChoiceInfo[] allAnswers, bool regexMode, out (string choiceName, string choiceTitle, bool choiceDisabled, int itemIdx)[] resultEntries)
         {
             // Prompt the user for search term
-            // TODO: T_INPUT_COMMON_SEARCHPROMPT_NOREGEX -> Write a search term (case insensitive)
             resultEntries = [];
             var entriesString = allAnswers.Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, itemIdx: idx)).ToArray();
             string keyword = InfoBoxInputColor.WriteInfoBoxInput(regexMode ? LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT") : LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT_NOREGEX"), out bool done);

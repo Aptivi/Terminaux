@@ -41,7 +41,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private readonly BaseInteractiveTui<TPrimary, TSecondary> selectorTui;
         private int paneCurrentSelection;
 
-        // TODO: Remove T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO
         public override InteractiveTuiHelpPage[] HelpPages =>
             [.. extraHelpPages];
 
@@ -639,7 +638,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR"));
 
             // Base bindings
-            // TODO: T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX -> Search for an element with regular expressions
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2"), ConsoleKey.UpArrow), (_, _, _) => GoUp()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2"), ConsoleKey.DownArrow), (_, _, _) => GoDown()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP1"), PointerButton.WheelUp, PointerButtonPress.Scrolled), (_, _, mouse) => GoUpDeterministic(mouse)));

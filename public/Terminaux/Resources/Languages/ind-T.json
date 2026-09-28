@@ -67,104 +67,12 @@
       "text": "स्क्रीन चक्रीय नहीं है."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "उपयोगकर्ता ने डंब टर्मिनल का उपयोग करके टर्मिनेक्स अनुप्रयोग चलाने का प्रयास किया।"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "यह अनुप्रयोग टर्मिनॉक्स द्वारा प्रदान की गई विस्तारित कंसोल सुविधाओं का उपयोग करता है, जिसके लिए उन सुविधाओं की आवश्यकता होती है जो \"डम्ब\" टर्मिनलों द्वारा समर्थित नहीं होती हैं।"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "संभावित समाधान: टर्मिनल प्रकार को \"डंब\" के अलावा किसी अन्य प्रकार में सेट करने के लिए उपयुक्त टर्मिनल एमुलेटर का उपयोग करें या अपनी टर्मिनल सेटिंग से परामर्श करें। हम इस एप्लिकेशन से अधिकतम लाभ उठाने के लिए \"vt100\" टर्मिनल एमुलेटर का उपयोग करने की सलाह देते हैं।"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "उपयोगकर्ता ने ब्लैकलिस्टेड टर्मिनल प्रकार पर टर्मिनॉक्स अनुप्रयोग चलाने का प्रयास किया।"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "आप वर्तमान में जिस कंसोल प्रकार का उपयोग कर रहे हैं, {0}, उसे ब्लैकलिस्ट किया गया है: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "आप वर्तमान में जिस कंसोल प्रकार का उपयोग कर रहे हैं, {0}, वह ग्रे सूची में है: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "उपयोगकर्ता ने ब्लैकलिस्टेड टर्मिनल एमुलेटर पर टर्मिनॉक्स एप्लिकेशन चलाने का प्रयास किया।"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "आप वर्तमान में जिस टर्मिनल एमुलेटर {0} का उपयोग कर रहे हैं, उसे ब्लैकलिस्ट कर दिया गया है: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "वर्तमान में आप जिस टर्मिनल एमुलेटर {0} का उपयोग कर रहे हैं, वह ग्रे सूची में है: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "टर्मिनल प्रकार {0} टर्मिनफो के अनुसार 256 रंगों का समर्थन नहीं करता है"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "उपयोगकर्ता ने बिना winpty के Git Bash के MinTTY पर एक Terminaux अनुप्रयोग चलाने का प्रयास किया।"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "इस प्रोग्राम का उपयोग करने के लिए आपको winpty का उपयोग करना होगा। यदि आप सुनिश्चित हैं कि आप Git Bash नहीं चला रहे हैं, तो सुनिश्चित करें कि आप उचित Windows टर्मिनल का उपयोग कर रहे हैं।"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "I/O त्रुटि के कारण कंसोल पोजिशनिंग काम नहीं कर रही है, इसलिए यह एप्लिकेशन अनियमित रूप से व्यवहार कर सकता है।"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "कंसोल पोजिशनिंग ठीक से काम नहीं कर रही है, इसलिए यह एप्लिकेशन अनियमित रूप से व्यवहार कर सकता है।"
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "आपका कंसोल ठीक से चलने के लिए बहुत छोटा है: {0}x{1} | बफ़: {2}x{3} | मिन: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "बेहतर अनुभव के लिए, इस स्क्रीन पर रहते हुए अपनी कंसोल विंडो का आकार बदलें। जारी रखने के लिए कोई भी कुंजी दबाएँ..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "असेंबली उपलब्ध नहीं है."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} जारी नहीं रखा जा सकता."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "कंसोल प्रकार केवल मूल लेखन का समर्थन करता है।"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "कंसोल का प्रकार अज्ञात है।"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "यह एप्लिकेशन VT एस्केप अनुक्रमों का उपयोग करता है, लेकिन टर्मिनल.एप ने 255 और ट्रू कलर्स के लिए समर्थन समाप्त कर दिया है।"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "कंसोल प्रकार 256 रंगों का समर्थन नहीं करता है."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "बिना किसी प्रश्न के फ़िल्टर नहीं किया जा सकता."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "अमान्य क्वेरी के साथ फ़िल्टर नहीं किया जा सकता."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "कंसोल फ़िल्टर में कोई अभिव्यक्ति नहीं है."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -491,10 +399,6 @@
       "text": "और पढ़ें..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "कीबाइंडिंग की सूची बनाएं"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "चारों ओर घूमें"
     },
@@ -509,22 +413,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "चयन शैली के लिए आवश्यक है कि कम से कम एक विकल्प सक्षम हो।"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "स्पिनर का नाम लिखें। इसे लोअरकेस में बदल दिया जाएगा।"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "स्पिनर मौजूद नहीं है."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "नीचे दी गई सूची से एक स्पिनर चुनें"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "स्पिनर चयन"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1635,32 +1523,16 @@
       "text": "सामान्य आदेश:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "कोई शेल कमांड नहीं."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "अतिरिक्त आदेश:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "कोई अतिरिक्त आदेश नहीं."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "उपनाम आदेश:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "कोई उपनाम आदेश नहीं."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "एकीकृत आदेश:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "कोई एकीकृत आदेश नहीं."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2283,18 +2155,6 @@
       "text": "एक या अधिक रंग अमान्य हैं।"
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "कर्नेल के लिए डिफ़ॉल्ट थीम"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "हर जगह उच्चारण!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "रंगहीन, धुआँदार और अत्यधिक संक्षारक तरल"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "आपको VT प्रोसेसिंग सक्षम होने के साथ ConEmu या Windows 10 कमांड प्रॉम्प्ट चलाना होगा।"
     },
@@ -2307,20 +2167,12 @@
       "text": "क्या ये रैंप आपको सही लगते हैं? उन्हें सुचारू रूप से परिवर्तन करना चाहिए।"
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "हम क्रिया {1} के साथ {0} प्रकार का कार्यशील VT अनुक्रम उत्पन्न करने में विफल रहे हैं। सुनिश्चित करें कि आपने मान सही ढंग से निर्दिष्ट किए हैं।"
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "शीर्षकहीन उत्तर"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "शीर्षकहीन फिक्सचर"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "कृपया वर्तमान ऑपरेशन के संसाधित होने तक प्रतीक्षा करें..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2409,10 +2261,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "टेक्स्ट को BASE64 प्रतिनिधित्व में एनकोड करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "एनकोड करने के लिए स्ट्रिंग"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3035,10 +2883,6 @@
       "text": "नीचे सूचीबद्ध किसी भी सहायता पृष्ठ का चयन करें।"
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "यह पृष्ठ मूल कीबाइंडिंग के अतिरिक्त, इस इंटरैक्टिव TUI के लिए समर्थित अतिरिक्त कीबाइंडिंग को सूचीबद्ध करता है।"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "मौजूदा वैल्यू में 100 की कमी करता है"
     },
@@ -3253,6 +3097,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "रंग निर्दिष्टकर्ता"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "ऐसा कोई रंग प्रकार नहीं है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "BASE64 के साथ एनकोड करने के लिए स्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "टारगेट स्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "शांत आउटपुट"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "कमांड खोजने के लिए सर्च टर्म"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "शर्त पूरी नहीं हो सकी।"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "यह इंटरैक्टिव TUI अभी खुला नहीं है।"
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "सर्च टर्म लिखें (केस-इनसेंसिटिव)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "रेगुलर एक्सप्रेशन के साथ इनपुट खोजें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "रेगुलर एक्सप्रेशन के साथ विकल्प खोजें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "रेगुलर एक्सप्रेशन के साथ एलिमेंट खोजें"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "\"Cowsay\" ASCII आर्ट का नाम लिखें।"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "\"Cowsay\" ASCII आर्ट मौजूद नहीं है।"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "नीचे दी गई सूची से \"Cowsay\" ASCII आर्ट चुनें।"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "ASCII आर्ट का चयन"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "रेगुलर एक्सप्रेशन के साथ एलिमेंट खोजें"
     }
   ]
 }

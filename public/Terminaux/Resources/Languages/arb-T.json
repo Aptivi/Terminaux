@@ -93,104 +93,12 @@
       "text": "الشاشة ليست دورية."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "حاول المستخدم تشغيل تطبيق Terminaux باستخدام محطة طرفية غبية."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "يستفيد هذا التطبيق من ميزات وحدة التحكم الموسعة التي توفرها Terminaux والتي تتطلب ميزات لا تدعمها المحطات \"الغبية\"."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "الحل المُحتمل: استخدم مُحاكي طرفية مُناسبًا أو راجع إعدادات الطرفية لديك لضبط نوع الطرفية إلى نوع آخر غير \"dumb\". نوصي باستخدام مُحاكيات الطرفية \"vt100\" لتحقيق أقصى استفادة من هذا التطبيق."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "حاول المستخدم تشغيل تطبيق Terminaux على نوع محطة طرفية مدرج في القائمة السوداء."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "نوع وحدة التحكم التي تستخدمها حاليًا، {0}، مدرج في القائمة السوداء: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "نوع وحدة التحكم التي تستخدمها حاليًا، {0}، مدرج في القائمة الرمادية: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "حاول المستخدم تشغيل تطبيق Terminaux على محاكي طرفية مدرج في القائمة السوداء."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "محاكي المحطة الطرفية الذي تستخدمه حاليًا، {0}، مدرج في القائمة السوداء: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "محاكي المحطة الطرفية الذي تستخدمه حاليًا، {0}، مدرج في القائمة الرمادية: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "لا يدعم نوع المحطة الطرفية {0} 256 لونًا وفقًا لـ terminfo"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "حاول المستخدم تشغيل تطبيق Terminaux على MinTTY الخاص بـ Git Bash دون استخدام winpty."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "ستحتاج إلى استخدام winpty لتتمكن من استخدام هذا البرنامج. إذا كنت متأكدًا من عدم استخدام Git Bash، فتأكد من استخدام نافذة طرفية مناسبة لنظام Windows."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "لا يعمل تحديد موضع وحدة التحكم بسبب خطأ في الإدخال/الإخراج، لذا قد يتصرف هذا التطبيق بشكل غير منتظم."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "لا يعمل تحديد موضع وحدة التحكم بشكل صحيح، لذا قد يتصرف هذا التطبيق بشكل غير منتظم."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "وحدة التحكم الخاصة بك صغيرة جدًا بحيث لا يمكن تشغيلها بشكل صحيح: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "لتجربة أفضل، غيّر حجم نافذة وحدة التحكم أثناء تواجدك على هذه الشاشة. اضغط أي مفتاح للمتابعة..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "لم يتم توفير التجميع."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} لا يمكن الاستمرار."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "يدعم نوع وحدة التحكم الكتابة الأساسية فقط."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "نوع وحدة التحكم غير معروف طبيعته."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "يستخدم هذا التطبيق تسلسلات الهروب VT، ولكن Terminal.app لديه دعم غير كاف للألوان 255 والألوان الحقيقية."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "نوع وحدة التحكم لا يدعم 256 لونًا."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "لا يمكن التصفية دون أي استعلام."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "لا يمكن التصفية باستخدام استعلام غير صالح."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "لا يوجد تعبير في مرشح وحدة التحكم."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -517,10 +425,6 @@
       "text": "اقرأ المزيد..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "قائمة ارتباطات المفاتيح"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "التحرك"
     },
@@ -535,22 +439,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "يتطلب أسلوب الاختيار أن يكون هناك خيار واحد ممكّنًا على الأقل."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "اكتب اسم الدوار. سيتم تحويله إلى أحرف صغيرة."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "الغزال غير موجود."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "حدد الدوار من القائمة أدناه"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "اختيار الدوار"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1661,32 +1549,16 @@
       "text": "الأوامر العامة:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "لا توجد أوامر shell."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "أوامر إضافية:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "لا توجد أوامر إضافية."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "أوامر الاسم المستعار:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "لا توجد أوامر بديلة."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "الأوامر الموحدة:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "لا توجد أوامر موحدة."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2309,18 +2181,6 @@
       "text": "واحد أو أكثر من الألوان غير صالح."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "الموضوع الافتراضي للنواة"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "لهجات في كل مكان!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "سائل عديم اللون، دخاني، وشديد التآكل"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "يجب أن تقوم بتشغيل ConEmu أو موجه أوامر Windows 10 مع تمكين معالجة VT."
     },
@@ -2333,20 +2193,12 @@
       "text": "هل تبدو هذه المنحدرات مناسبة لك؟ يجب أن ينتقلوا بسلاسة."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "لم نتمكن من إنشاء تسلسل VT فعال من النوع {0} باستخدام الإجراء {1}. تأكد من صحة القيم المحددة."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "إجابة بدون عنوان"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "تركيبة بدون عنوان"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "يرجى الانتظار أثناء معالجة العملية الحالية..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2435,10 +2287,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "يشفر النص إلى تمثيل BASE64"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "سلسلة للترميز"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3061,10 +2909,6 @@
       "text": "اختر أيًا من صفحات المساعدة المدرجة أدناه."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "تسرد هذه الصفحة اختصارات المفاتيح الإضافية المدعومة لهذه الواجهة التفاعلية، بالإضافة إلى الاختصارات الأساسية."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "يُنقص القيمة الحالية بمقدار 100"
     },
@@ -3279,6 +3123,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "محدد اللون"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "نوع اللون هذا غير موجود"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "السلسلة المراد ترميزها بصيغة BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "السلسلة المستهدفة"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "مخرجات صامتة (بدون تفاصيل إضافية)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "مصطلح بحث للعثور على أمر"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "تعذّر استيفاء الشرط."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "واجهة المستخدم النصية التفاعلية (TUI) هذه ليست مفتوحة بعد."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "اكتب مصطلح البحث (غير حساس لحالة الأحرف)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "البحث عن مُدخل باستخدام تعبير نمطي (Regular Expression)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "البحث عن خيار باستخدام تعبير نمطي"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "البحث عن عنصر باستخدام تعبيرات نمطية"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "اكتب اسم رسم ASCII الخاص بـ \"Cowsay\"."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "رسم ASCII الخاص بـ \"Cowsay\" غير موجود."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "اختر رسم ASCII لـ \"Cowsay\" من القائمة أدناه."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "اختيار رسم ASCII"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "البحث عن عنصر باستخدام تعبيرات نمطية"
     }
   ]
 }

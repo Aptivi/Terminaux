@@ -67,104 +67,12 @@
       "text": "画面は循環的ではありません。"
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "ユーザーはダム端末を使用して Terminaux アプリケーションを実行しようとしました。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "このアプリケーションは、「ダム」端末ではサポートされていない機能を必要とする、Terminaux によって提供される拡張コンソール機能を利用します。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "解決策：適切なターミナルエミュレータを使用するか、ターミナル設定を参照してターミナルタイプを「ダム」以外に設定してください。このアプリケーションを最大限に活用するには、「vt100」ターミナルエミュレータの使用をお勧めします。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "ユーザーは、ブラックリストに登録された端末タイプで Terminaux アプリケーションを実行しようとしました。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "現在使用しているコンソール タイプ {0} はブラックリストに登録されています: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "現在使用しているコンソール タイプ {0} はグレーリストに登録されています: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "ユーザーは、ブラックリストに登録された端末エミュレーターで Terminaux アプリケーションを実行しようとしました。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "現在使用している端末エミュレータ {0} はブラックリストに登録されています: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "現在使用している端末エミュレータ {0} はグレーリストに登録されています: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "端末タイプ {0} は、terminfo によると 256 色をサポートしていません。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "ユーザーは、winpty なしで Git Bash の MinTTY 上で Terminaux アプリケーションを実行しようとしました。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "このプログラムを使用するには、winpty を使用する必要があります。Git Bash を実行していないことが確実な場合は、適切な Windows ターミナルを使用していることを確認してください。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "I/O エラーのためコンソールの位置決めが機能しないため、このアプリケーションの動作が不安定になる可能性があります。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "コンソールの配置が正しく機能していないため、このアプリケーションの動作が不安定になる可能性があります。"
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "コンソールが小さすぎるため、正常に動作しません: {0}x{1} | バフ: {2}x{3} | 最小: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "より快適にご利用いただくために、この画面を開いたままコンソールウィンドウのサイズを変更してください。続行するには任意のキーを押してください..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "組み立ては提供されません。"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} 続行できません。"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "コンソールタイプは基本的な書き込みのみをサポートします。"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "コンソールタイプは不明です。"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "このアプリケーションは VT エスケープ シーケンスを使用しますが、Terminal.app では 255 および True Color のサポートが壊れています。"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "コンソールタイプは 256 色をサポートしていません。"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "クエリなしではフィルタリングできません。"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "無効なクエリではフィルタリングできません。"
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "コンソール フィルターに式がありません。"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -491,10 +399,6 @@
       "text": "続きを読む..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "キーバインドの一覧"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "移動する"
     },
@@ -509,22 +413,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "選択スタイルでは、少なくとも 1 つの選択肢が有効になっている必要があります。"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "スピナー名を入力してください。小文字に変換されます。"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "スピナーが存在しません。"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "以下のリストからスピナーを選択してください"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "スピナーの選択"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1635,32 +1523,16 @@
       "text": "一般的なコマンド:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "シェルコマンドはありません。"
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "追加コマンド:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "追加コマンドはありません。"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "エイリアスコマンド:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "エイリアス コマンドはありません。"
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "統合コマンド:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "統一されたコマンドはありません。"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2283,18 +2155,6 @@
       "text": "1つ以上の色が無効です。"
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "カーネルのデフォルトテーマ"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "どこにでもアクセントがあります！"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "無色で発煙性があり、非常に腐食性の高い液体"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "ConEmu または VT 処理を有効にした Windows 10 コマンド プロンプトを実行している必要があります。"
     },
@@ -2307,20 +2167,12 @@
       "text": "これらのスロープはあなたにぴったりだと思いますか? スムーズに移行できるはずです。"
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "アクション{1}でタイプ{0}の有効なVTシーケンスを生成できませんでした。値が正しく指定されていることを確認してください。"
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "無題の回答"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "無題のフィクスチャ"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "現在の操作を処理中です。しばらくお待ちください..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2409,10 +2261,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "テキストを BASE64 表現にエンコードします。"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "エンコードする文字列"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3035,10 +2883,6 @@
       "text": "以下のヘルプページからいずれかを選択してください。"
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "このページには、基本的なキーバインドに加えて、このインタラクティブ TUI でサポートされている追加のキーバインドがリストされています。"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "現在の値を100減らします"
     },
@@ -3253,6 +3097,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "色指定子"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "そのような色タイプは存在しません"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "BASE64でエンコードする文字列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "対象の文字列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "出力を抑制する"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "コマンドを検索するためのキーワード"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "条件を満たせません。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "この対話型TUIはまだ利用できません。"
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "検索キーワードを入力してください（大文字・小文字を区別しない）"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "正規表現を使用して入力を検索します"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "正規表現を使用して選択肢を検索します"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "正規表現を使用して要素を検索します"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "「Cowsay」アスキーアートの名前を入力してください。"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "その「Cowsay」アスキーアートは存在しません。"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "以下のリストから「Cowsay」アスキーアートを選択してください。"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "アスキーアートの選択"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "正規表現を使用して要素を検索します"
     }
   ]
 }

@@ -68,104 +68,12 @@
       "text": "Η οθόνη δεν είναι κυκλική."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux χρησιμοποιώντας ένα ανόητο τερματικό."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Αυτή η εφαρμογή χρησιμοποιεί εκτεταμένες λειτουργίες κονσόλας που παρέχονται από την Terminaux και απαιτούν λειτουργίες που δεν υποστηρίζονται από \"χαζά\" τερματικά."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Πιθανή λύση: Χρησιμοποιήστε έναν κατάλληλο εξομοιωτή τερματικού ή συμβουλευτείτε τις ρυθμίσεις του τερματικού σας για να ορίσετε τον τύπο τερματικού σε κάτι διαφορετικό από \"dumb\". Συνιστούμε να χρησιμοποιήσετε τους εξομοιωτές τερματικού \"vt100\" για να αξιοποιήσετε στο έπακρο αυτήν την εφαρμογή."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux σε έναν τύπο τερματικού που βρίσκεται στη μαύρη λίστα."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "Ο τύπος κονσόλας που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη μαύρη λίστα: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "Ο τύπος κονσόλας που χρησιμοποιείτε αυτήν τη στιγμή, {0}, είναι στη γκρι λίστα: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux σε έναν εξομοιωτή τερματικού που βρίσκεται στη μαύρη λίστα."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "Ο εξομοιωτής τερματικού που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη μαύρη λίστα: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "Ο εξομοιωτής τερματικού που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη γκρι λίστα: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "Ο τύπος τερματικού {0} δεν υποστηρίζει 256 χρώματα σύμφωνα με το terminfo"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux στο MinTTY του Git Bash χωρίς το winpty."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Θα χρειαστεί να χρησιμοποιήσετε το winpty για να μπορέσετε να χρησιμοποιήσετε αυτό το πρόγραμμα. Εάν είστε βέβαιοι ότι δεν εκτελείτε το Git Bash, βεβαιωθείτε ότι χρησιμοποιείτε ένα κατάλληλο τερματικό των Windows."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "Η τοποθέτηση της κονσόλας δεν λειτουργεί λόγω σφάλματος εισόδου/εξόδου, επομένως αυτή η εφαρμογή ενδέχεται να παρουσιάζει αστάθεια."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "Η τοποθέτηση της κονσόλας δεν λειτουργεί σωστά, επομένως αυτή η εφαρμογή ενδέχεται να παρουσιάζει αστάθεια."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "Η κονσόλα σας είναι πολύ μικρή για να λειτουργήσει σωστά: {0}x{1} | ενίσχυση: {2}x{3} | ελάχιστο: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "Για μια καλύτερη εμπειρία, αλλάξτε το μέγεθος του παραθύρου της κονσόλας σας ενώ βρίσκεστε ακόμα σε αυτήν την οθόνη. Πατήστε οποιοδήποτε πλήκτρο για να συνεχίσετε..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "Δεν παρέχεται συναρμολόγηση."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} Δεν είναι δυνατή η συνέχεια."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "Ο τύπος κονσόλας υποστηρίζει μόνο βασική γραφή."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "Ο τύπος κονσόλας είναι άγνωστης φύσης."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Αυτή η εφαρμογή χρησιμοποιεί ακολουθίες διαφυγής VT, αλλά το Terminal.app δεν υποστηρίζει πλέον χρώματα 255 και πραγματικά χρώματα."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "Ο τύπος κονσόλας δεν υποστηρίζει 256 χρώματα."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "Δεν είναι δυνατό το φιλτράρισμα χωρίς κανένα ερώτημα."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "Δεν είναι δυνατό το φιλτράρισμα με μη έγκυρο ερώτημα."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "Δεν υπάρχει έκφραση στο φίλτρο κονσόλας."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -492,10 +400,6 @@
       "text": "Διαβάστε περισσότερα..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Λίστα συνδυασμών πλήκτρων"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "Μετακίνηση"
     },
@@ -510,22 +414,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "Το στυλ επιλογής απαιτεί να είναι ενεργοποιημένη τουλάχιστον μία επιλογή."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Γράψτε το όνομα του περιστρεφόμενου μοχλού. Θα μετατραπεί σε πεζά γράμματα."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "Ο περιστρεφόμενος μηχανισμός δεν υπάρχει."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Επιλέξτε έναν περιστρεφόμενο δίσκο από την παρακάτω λίστα"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Επιλογή περιστρεφόμενου"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1636,32 +1524,16 @@
       "text": "Γενικές εντολές:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "Δεν υπάρχουν εντολές κελύφους."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "Επιπλέον εντολές:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Χωρίς επιπλέον εντολές."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "Εντολές ψευδωνύμου:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Δεν υπάρχουν εντολές ψευδωνύμου."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "Ενοποιημένες εντολές:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "Δεν υπάρχουν ενοποιημένες εντολές."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2284,18 +2156,6 @@
       "text": "Ένα ή περισσότερα από τα χρώματα δεν είναι έγκυρα."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "Το προεπιλεγμένο θέμα για τον πυρήνα"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Προφορές παντού!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Άχρωμο, ατμίζον και εξαιρετικά διαβρωτικό υγρό"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "Πρέπει να εκτελείτε είτε το ConEmu είτε μια γραμμή εντολών των Windows 10 με ενεργοποιημένη την επεξεργασία VT."
     },
@@ -2308,20 +2168,12 @@
       "text": "Σου φαίνονται σωστές αυτές οι ράμπες; Θα πρέπει να μεταβούν ομαλά."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Αποτύχαμε να δημιουργήσουμε μια λειτουργική ακολουθία VT τύπου {0} με την ενέργεια {1}. Βεβαιωθείτε ότι έχετε καθορίσει σωστά τις τιμές."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "Απάντηση χωρίς τίτλο"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "Στοιχείο χωρίς τίτλο"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "Παρακαλώ περιμένετε όσο γίνεται η επεξεργασία της τρέχουσας λειτουργίας..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2410,10 +2262,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "Κωδικοποιεί το κείμενο σε μια αναπαράσταση BASE64"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "Συμβολοσειρά για κωδικοποίηση"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3036,10 +2884,6 @@
       "text": "Επιλέξτε οποιαδήποτε από τις σελίδες βοήθειας που αναφέρονται παρακάτω."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "Αυτή η σελίδα παραθέτει πρόσθετες συνδυασμούς πλήκτρων που υποστηρίζονται για αυτό το διαδραστικό TUI, εκτός από τις βασικές."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "Μειώνει την τρέχουσα τιμή κατά 100"
     },
@@ -3254,6 +3098,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "Προσδιοριστής χρώματος"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "Δεν υπάρχει τέτοιος τύπος χρώματος"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "Συμβολοσειρά για κωδικοποίηση σε BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "Συμβολοσειρά-στόχος"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "Αθόρυβη έξοδος"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "Όρος αναζήτησης για την εύρεση εντολής"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "Αδυναμία ικανοποίησης της συνθήκης."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "Αυτό το διαδραστικό TUI δεν είναι ακόμα ανοιχτό."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "Πληκτρολογήστε έναν όρο αναζήτησης (χωρίς διάκριση πεζών-κεφαλαίων)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "Αναζήτηση εισόδου με χρήση κανονικής έκφρασης"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "Αναζήτηση επιλογής με χρήση κανονικής έκφρασης"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "Αναζήτηση στοιχείου με χρήση κανονικών εκφράσεων"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "Πληκτρολογήστε το όνομα του ASCII art \"Cowsay\"."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "Το ASCII art \"Cowsay\" δεν υπάρχει."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "Επιλέξτε ένα ASCII art \"Cowsay\" από την παρακάτω λίστα."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "Επιλογή ASCII art"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "Αναζήτηση στοιχείου με χρήση κανονικών εκφράσεων"
     }
   ]
 }

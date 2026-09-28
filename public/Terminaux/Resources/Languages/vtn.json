@@ -67,104 +67,12 @@
       "text": "Màn hình không tuần hoàn."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "Người dùng đã thử chạy ứng dụng Terminaux bằng một thiết bị đầu cuối không có chức năng."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Ứng dụng này sử dụng các tính năng bảng điều khiển mở rộng do Terminaux cung cấp, yêu cầu các tính năng không được hỗ trợ bởi các thiết bị đầu cuối \"thông thường\"."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Giải pháp khả thi: Sử dụng trình giả lập thiết bị đầu cuối phù hợp hoặc tham khảo cài đặt thiết bị đầu cuối của bạn để đặt loại thiết bị đầu cuối thành thứ gì đó khác ngoài \"dumb\". Chúng tôi khuyên bạn nên sử dụng trình giả lập thiết bị đầu cuối \"vt100\" để tận dụng tối đa ứng dụng này."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "Người dùng đã cố chạy ứng dụng Terminaux trên loại thiết bị đầu cuối bị đưa vào danh sách đen."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "Loại bảng điều khiển bạn đang sử dụng, {0}, đã bị đưa vào danh sách đen: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "Loại bảng điều khiển bạn đang sử dụng, {0}, được liệt kê trong danh sách xám: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "Người dùng đã cố chạy ứng dụng Terminaux trên trình giả lập thiết bị đầu cuối bị đưa vào danh sách đen."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "Trình giả lập thiết bị đầu cuối mà bạn hiện đang sử dụng, {0}, đã bị đưa vào danh sách đen: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "Trình giả lập thiết bị đầu cuối mà bạn hiện đang sử dụng, {0}, được đưa vào danh sách xám: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "Kiểu thiết bị đầu cuối {0} không hỗ trợ 256 màu theo terminfo"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "Người dùng đã thử chạy ứng dụng Terminaux trên MinTTY của Git Bash mà không cần winpty."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Bạn sẽ cần sử dụng winpty để có thể sử dụng chương trình này. Nếu bạn chắc chắn rằng mình không chạy Git Bash, hãy đảm bảo rằng bạn đang sử dụng một thiết bị đầu cuối Windows phù hợp."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "Vị trí bảng điều khiển không hoạt động do lỗi I/O, vì vậy ứng dụng này có thể hoạt động không bình thường."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "Vị trí bảng điều khiển không hoạt động bình thường nên ứng dụng này có thể hoạt động không bình thường."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "Máy chơi game của bạn quá nhỏ để chạy bình thường: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "Để có trải nghiệm tốt hơn, hãy thay đổi kích thước cửa sổ bảng điều khiển của bạn trong khi vẫn ở trên màn hình này. Nhấn bất kỳ phím nào để tiếp tục..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "Không cung cấp dịch vụ lắp ráp."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} Không thể tiếp tục."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "Kiểu console chỉ hỗ trợ viết cơ bản."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "Loại bảng điều khiển chưa được xác định."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Ứng dụng này sử dụng chuỗi thoát VT, nhưng Terminal.app đã không còn hỗ trợ 255 màu và màu thực."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "Kiểu máy chơi game không hỗ trợ 256 màu."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "Không thể lọc mà không có bất kỳ truy vấn nào."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "Không thể lọc bằng truy vấn không hợp lệ."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "Không có biểu thức nào trong bộ lọc bảng điều khiển."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -491,10 +399,6 @@
       "text": "Đọc thêm..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Liệt kê các phím tắt"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "Di chuyển xung quanh"
     },
@@ -509,22 +413,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "Kiểu lựa chọn yêu cầu phải có ít nhất một lựa chọn được bật."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Viết tên spinner. Tên này sẽ được chuyển thành chữ thường."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "Con quay không tồn tại."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Chọn một spinner từ danh sách bên dưới"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Lựa chọn Spinner"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1635,32 +1523,16 @@
       "text": "Lệnh chung:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "Không có lệnh shell."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "Các lệnh bổ sung:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Không có lệnh bổ sung."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "Lệnh bí danh:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Không có lệnh bí danh."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "Các lệnh thống nhất:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "Không có lệnh thống nhất."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2283,18 +2155,6 @@
       "text": "Một hoặc nhiều màu không hợp lệ."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "Chủ đề mặc định cho hạt nhân"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Giọng điệu ở khắp mọi nơi!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Chất lỏng không màu, bốc khói và có tính ăn mòn cao"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "Bạn phải chạy ConEmu hoặc dấu nhắc lệnh Windows 10 có bật xử lý VT."
     },
@@ -2307,20 +2167,12 @@
       "text": "Những đoạn đường dốc này có phù hợp với bạn không? Chúng phải chuyển tiếp một cách trơn tru."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Chúng tôi không thể tạo chuỗi VT hoạt động thuộc loại {0} với hành động {1}. Hãy đảm bảo rằng bạn đã chỉ định đúng giá trị."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "Câu trả lời chưa có tiêu đề"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "Đồ đạc chưa có tiêu đề"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "Vui lòng đợi trong khi thao tác hiện tại đang được xử lý..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2409,10 +2261,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "Mã hóa văn bản thành dạng biểu diễn BASE64"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "Chuỗi để mã hóa"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3035,10 +2883,6 @@
       "text": "Chọn bất kỳ trang trợ giúp nào được liệt kê bên dưới."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "Trang này liệt kê các phím tắt bổ sung được hỗ trợ cho TUI tương tác này, ngoài các phím tắt cơ bản."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "Giảm giá trị hiện tại đi 100"
     },
@@ -3253,6 +3097,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "Chỉ định màu sắc"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "Không có loại màu này"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "Chuỗi cần mã hóa bằng BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "Chuỗi đích"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "Chế độ xuất tĩnh (không hiển thị thông tin phụ)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "Từ khóa để tìm lệnh"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "Không thể thỏa mãn điều kiện."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "Giao diện TUI tương tác này chưa khả dụng."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "Nhập từ khóa tìm kiếm (không phân biệt chữ hoa/thường)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "Tìm kiếm đầu vào bằng biểu thức chính quy"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "Tìm kiếm tùy chọn bằng biểu thức chính quy"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "Tìm kiếm phần tử bằng biểu thức chính quy"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "Nhập tên mẫu hình ASCII \"Cowsay\"."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "Mẫu hình ASCII \"Cowsay\" không tồn tại."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "Chọn một mẫu hình ASCII \"Cowsay\" từ danh sách bên dưới."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "Chọn mẫu hình ASCII"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "Tìm kiếm phần tử bằng biểu thức chính quy"
     }
   ]
 }

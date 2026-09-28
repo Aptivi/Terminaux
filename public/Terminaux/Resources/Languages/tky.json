@@ -68,104 +68,12 @@
       "text": "Ekran döngüsel değildir."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "Kullanıcı, aptal bir terminal kullanarak bir Terminaux uygulaması çalıştırmayı denedi."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Bu uygulama, \"aptal\" terminallerin desteklemediği özellikleri gerektiren Terminaux tarafından sağlanan genişletilmiş konsol özelliklerini kullanır."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Olası çözüm: Uygun bir terminal emülatörü kullanın veya terminal ayarlarınıza danışarak terminal türünü \"dumb\" dışında bir şeye ayarlayın. Bu uygulamadan en iyi şekilde yararlanmak için \"vt100\" terminal emülatörlerini kullanmanızı öneririz."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "Kullanıcı kara listeye alınmış bir terminal türünde Terminaux uygulamasını çalıştırmayı denedi."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "Şu anda kullandığınız konsol türü {0} kara listeye alındı: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "Şu anda kullandığınız konsol türü {0} gri listeye alınmış: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "Kullanıcı, kara listeye alınmış bir terminal emülatöründe Terminaux uygulamasını çalıştırmayı denedi."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "Şu anda kullandığınız terminal emülatörü {0} kara listeye alındı: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "Şu anda kullandığınız terminal emülatörü {0} gri listeye alınmış: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "Terminal türü {0} terminfo'ya göre 256 rengi desteklemiyor"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "Kullanıcı winpty olmadan Git Bash'in MinTTY'sinde bir Terminaux uygulaması çalıştırmayı denedi."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Bu programı kullanabilmek için winpty kullanmanız gerekecek. Git Bash'i çalıştırmadığınızdan eminseniz, uygun bir Windows terminali kullandığınızdan emin olun."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "Bir G/Ç hatası nedeniyle konsol konumlandırması çalışmıyor, bu nedenle bu uygulama hatalı davranabilir."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "Konsol konumlandırması düzgün çalışmıyor, bu nedenle bu uygulama hatalı davranabilir."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "Konsolunuz düzgün çalışması için çok küçük: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "Daha iyi bir deneyim için, hala bu ekranda iken konsol pencerenizi yeniden boyutlandırın. Devam etmek için herhangi bir tuşa basın..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "Montajı sağlanmamaktadır."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} Devam edilemiyor."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "Konsol tipi sadece temel yazmayı destekler."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "Konsol tipi bilinmiyor."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Bu uygulama VT kaçış dizilerini kullanıyor, ancak Terminal.app 255 ve gerçek renkler için desteği bozdu."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "Konsol tipi 256 rengi desteklemiyor."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "Sorgulama yapılmadan filtreleme yapılamaz."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "Geçersiz bir sorgu ile filtreleme yapılamıyor."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "Konsol filtresinde herhangi bir ifade bulunmuyor."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -492,10 +400,6 @@
       "text": "Devamını oku..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Tuş atamalarını listele"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "Hareket et"
     },
@@ -510,22 +414,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "Seçim stili en az bir seçeneğin etkinleştirilmesini gerektirir."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Spinner ismini yazın. Küçük harfe dönüştürülecektir."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "Döndürücü yok."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Aşağıdaki listeden bir spinner seçin"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Spinner seçimi"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1636,32 +1524,16 @@
       "text": "Genel komutlar:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "Kabuk komutları yok."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "Ek komutlar:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Ekstra komut yok."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "Alias komutları:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Hiçbir takma ad komutu yok."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "Birleşik komutlar:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "Birleşik komutlar yok."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2284,18 +2156,6 @@
       "text": "Renklerin biri veya birkaçı geçersiz."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "Çekirdek için varsayılan tema"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Her yerde aksanlar!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Renksiz, dumanlı ve oldukça aşındırıcı sıvı"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "VT işlemeyi etkinleştirmiş bir ConEmu veya Windows 10 komut istemi çalıştırıyor olmanız gerekir."
     },
@@ -2308,20 +2168,12 @@
       "text": "Bu rampalar size doğru görünüyor mu? Sorunsuz bir şekilde geçiş yapmalılar."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "{1} eylemiyle {0} türünde çalışan bir VT dizisi oluşturmayı başaramadık. Değerleri doğru şekilde belirttiğinizden emin olun."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "Başlıksız cevap"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "Başlıksız fikstür"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "Mevcut işlem işlenirken lütfen bekleyin..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2410,10 +2262,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "Metni bir BASE64 gösterimine kodlar"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "Kodlanacak dize"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3036,10 +2884,6 @@
       "text": "Aşağıda listelenen yardım sayfalarından herhangi birini seçin."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "Bu sayfada, temel tuş atamalarının yanı sıra, bu etkileşimli TUI için desteklenen ek tuş atamaları listelenmektedir."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "Geçerli değeri 100 azaltır"
     },
@@ -3254,6 +3098,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "Renk belirleyici"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "Böyle bir renk türü yok"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "BASE64 ile kodlanacak metin"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "Hedef metin"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "Sessiz çıktı"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "Komut bulmak için arama terimi"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "Koşul sağlanamadı."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "Bu etkileşimli TUI henüz açılmadı."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "Bir arama terimi yazın (büyük/küçük harf duyarsız)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "Düzenli ifade kullanarak girdi arar"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "Düzenli ifade kullanarak seçenek arar"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "Düzenli ifadelerle bir öğe arayın"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "\"Cowsay\" ASCII sanatı adını yazın."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "\"Cowsay\" ASCII sanatı mevcut değil."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "Aşağıdaki listeden bir \"Cowsay\" ASCII sanatı seçin."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "ASCII sanatı seçimi"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "Düzenli ifadelerle bir öğe arayın"
     }
   ]
 }

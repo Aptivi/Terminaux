@@ -41,7 +41,6 @@ namespace Terminaux.Inputs.Styles.Infobox
     {
         private static Keybinding[] Keybindings =>
         [
-            // TODO: T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX -> Searches for an input with a regular expression
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP"), ConsoleKey.UpArrow),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN"), ConsoleKey.DownArrow),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST"), ConsoleKey.Home),

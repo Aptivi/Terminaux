@@ -73,104 +73,12 @@
       "text": "Het scherm is niet cyclisch."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "Gebruiker probeerde een Terminaux-applicatie uit te voeren met behulp van een domme terminal."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Deze applicatie maakt gebruik van uitgebreide consolefuncties van Terminaux die functies vereisen die niet worden ondersteund door 'domme' terminals."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Mogelijke oplossing: Gebruik een geschikte terminal-emulator of raadpleeg uw terminalinstellingen om het terminaltype in te stellen op iets anders dan \"dom\". We raden aan de \"vt100\" terminal-emulators te gebruiken om deze applicatie optimaal te benutten."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminaltype dat op de zwarte lijst staat."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "Het consoletype dat u momenteel gebruikt, {0}, staat op de zwarte lijst: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "Het consoletype dat u momenteel gebruikt, {0}, staat op de grijze lijst: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminal-emulator die op de zwarte lijst staat."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "De terminal-emulator die u momenteel gebruikt, {0}, staat op de zwarte lijst: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "De terminal-emulator die u momenteel gebruikt, {0}, staat op de grijze lijst: {1}"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "Terminaltype {0} ondersteunt volgens terminfo geen 256 kleuren"
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "Gebruiker probeerde een Terminaux-applicatie uit te voeren op Git Bash's MinTTY zonder winpty."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Je hebt WinPty nodig om dit programma te kunnen gebruiken. Als je zeker weet dat je Git Bash niet gebruikt, zorg er dan voor dat je een geschikte Windows-terminal gebruikt."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "De consolepositionering werkt niet vanwege een I/O-fout. Deze toepassing kan zich daardoor vreemd gedragen."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "De positionering van de console werkt niet goed, waardoor deze toepassing mogelijk vreemd gedrag vertoont."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
       "text": "Je console is te klein om goed te kunnen draaien: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
       "text": "Voor een betere ervaring kunt u het formaat van uw consolevenster aanpassen terwijl u nog steeds op dit scherm bent. Druk op een toets om door te gaan..."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "Montage niet voorzien."
-    },
-    {
-      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} Kan niet doorgaan."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "Het consoletype ondersteunt alleen basisschrijfbewerkingen."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "Het type console is van onbekende aard."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Deze applicatie maakt gebruik van VT escape sequences, maar Terminal.app ondersteunt geen 255 en true colors meer."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "Het consoletype ondersteunt geen 256 kleuren."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "Kan niet filteren zonder query."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "Kan niet filteren met een ongeldige zoekopdracht."
-    },
-    {
-      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "Er is geen expressie in het consolefilter."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
@@ -497,10 +405,6 @@
       "text": "Lees verder..."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Lijst met sneltoetsen"
-    },
-    {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
       "text": "Beweeg rond"
     },
@@ -515,22 +419,6 @@
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
       "text": "De selectiestijl vereist dat er minimaal één keuze is ingeschakeld."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Schrijf de naam van de spinner. Deze wordt omgezet naar kleine letters."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "De spinner bestaat niet."
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Selecteer een spinner uit de onderstaande lijst"
-    },
-    {
-      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Spinnerselectie"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
@@ -1641,32 +1529,16 @@
       "text": "Algemene commando's:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "Geen shell-opdrachten."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
       "text": "Extra commando's:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Geen extra opdrachten."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
       "text": "Alias-opdrachten:"
     },
     {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Geen aliasopdrachten."
-    },
-    {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
       "text": "Geünificeerde opdrachten:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "Geen uniforme commando’s."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
@@ -2289,18 +2161,6 @@
       "text": "Een of meer van de kleuren is ongeldig."
     },
     {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "Het standaardthema voor de kernel"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Overal accenten!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Kleurloze, dampende en zeer bijtende vloeistof"
-    },
-    {
       "loc": "T_COLOR_COLORTEST_WARNING",
       "text": "U moet ConEmu of een Windows 10-opdrachtprompt gebruiken waarbij VT-verwerking is ingeschakeld."
     },
@@ -2313,20 +2173,12 @@
       "text": "Zien deze opritten er goed uit voor jou? Ze moeten soepel overgaan."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Het is ons niet gelukt een werkende VT-reeks van type {0} met actie {1} te genereren. Controleer of u de waarden correct hebt opgegeven."
-    },
-    {
       "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
       "text": "Antwoord zonder titel"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
       "text": "Armatuur zonder titel"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
-      "text": "Even geduld terwijl de huidige bewerking wordt verwerkt..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
@@ -2415,10 +2267,6 @@
     {
       "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
       "text": "Codeert de tekst naar een BASE64-weergave"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
-      "text": "String om te coderen"
     },
     {
       "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
@@ -3041,10 +2889,6 @@
       "text": "Selecteer een van de onderstaande hulppagina's."
     },
     {
-      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
-      "text": "Op deze pagina vindt u aanvullende sneltoetsen die voor deze interactieve TUI worden ondersteund, naast de basistoetsen."
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
       "text": "Verlaagt de huidige waarde met 100"
     },
@@ -3259,6 +3103,70 @@
     {
       "loc": "T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC",
       "text": "Kleurspecificatie"
+    },
+    {
+      "loc": "T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE",
+      "text": "Dit kleurtype bestaat niet"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC",
+      "text": "Tekstreeks om met BASE64 te coderen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC",
+      "text": "Doeltekstreeks"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_QUIET_DESC",
+      "text": "Stille uitvoer"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC",
+      "text": "Zoekterm om een ​​commando te vinden"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE",
+      "text": "Kan niet aan de voorwaarde voldoen."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN",
+      "text": "Deze interactieve TUI is nog niet geopend."
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT_NOREGEX",
+      "text": "Voer een zoekterm in (niet hoofdlettergevoelig)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX",
+      "text": "Zoekt naar een invoer met een reguliere expressie"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX",
+      "text": "Zoekt naar een keuze met een reguliere expressie"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX",
+      "text": "Zoekt naar een element met reguliere expressies"
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT",
+      "text": "Voer de naam van de \"Cowsay\"-ASCII-art in."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_NOCOWNAME",
+      "text": "De \"Cowsay\"-ASCII-art bestaat niet."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT",
+      "text": "Selecteer een \"Cowsay\"-ASCII-art uit de onderstaande lijst."
+    },
+    {
+      "loc": "T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE",
+      "text": "Selectie van ASCII-art"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX",
+      "text": "Zoekt naar een element met reguliere expressies"
     }
   ]
 }

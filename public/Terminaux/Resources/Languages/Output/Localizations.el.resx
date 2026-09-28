@@ -103,80 +103,11 @@
   <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
     <value>Η οθόνη δεν είναι κυκλική.</value>
   </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
-    <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux χρησιμοποιώντας ένα ανόητο τερματικό.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>Αυτή η εφαρμογή χρησιμοποιεί εκτεταμένες λειτουργίες κονσόλας που παρέχονται από την Terminaux και απαιτούν λειτουργίες που δεν υποστηρίζονται από "χαζά" τερματικά.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>Πιθανή λύση: Χρησιμοποιήστε έναν κατάλληλο εξομοιωτή τερματικού ή συμβουλευτείτε τις ρυθμίσεις του τερματικού σας για να ορίσετε τον τύπο τερματικού σε κάτι διαφορετικό από "dumb". Συνιστούμε να χρησιμοποιήσετε τους εξομοιωτές τερματικού "vt100" για να αξιοποιήσετε στο έπακρο αυτήν την εφαρμογή.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux σε έναν τύπο τερματικού που βρίσκεται στη μαύρη λίστα.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>Ο τύπος κονσόλας που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη μαύρη λίστα: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>Ο τύπος κονσόλας που χρησιμοποιείτε αυτήν τη στιγμή, {0}, είναι στη γκρι λίστα: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux σε έναν εξομοιωτή τερματικού που βρίσκεται στη μαύρη λίστα.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>Ο εξομοιωτής τερματικού που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη μαύρη λίστα: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>Ο εξομοιωτής τερματικού που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη γκρι λίστα: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
-    <value>Ο τύπος τερματικού {0} δεν υποστηρίζει 256 χρώματα σύμφωνα με το terminfo</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux στο MinTTY του Git Bash χωρίς το winpty.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>Θα χρειαστεί να χρησιμοποιήσετε το winpty για να μπορέσετε να χρησιμοποιήσετε αυτό το πρόγραμμα. Εάν είστε βέβαιοι ότι δεν εκτελείτε το Git Bash, βεβαιωθείτε ότι χρησιμοποιείτε ένα κατάλληλο τερματικό των Windows.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
-    <value>Η τοποθέτηση της κονσόλας δεν λειτουργεί λόγω σφάλματος εισόδου/εξόδου, επομένως αυτή η εφαρμογή ενδέχεται να παρουσιάζει αστάθεια.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
-    <value>Η τοποθέτηση της κονσόλας δεν λειτουργεί σωστά, επομένως αυτή η εφαρμογή ενδέχεται να παρουσιάζει αστάθεια.</value>
-  </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
     <value>Η κονσόλα σας είναι πολύ μικρή για να λειτουργήσει σωστά: {0}x{1} | ενίσχυση: {2}x{3} | ελάχιστο: {4}x{5}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
     <value>Για μια καλύτερη εμπειρία, αλλάξτε το μέγεθος του παραθύρου της κονσόλας σας ενώ βρίσκεστε ακόμα σε αυτήν την οθόνη. Πατήστε οποιοδήποτε πλήκτρο για να συνεχίσετε...</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
-    <value>Δεν παρέχεται συναρμολόγηση.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
-    <value>{0} Δεν είναι δυνατή η συνέχεια.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
-    <value>Ο τύπος κονσόλας υποστηρίζει μόνο βασική γραφή.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
-    <value>Ο τύπος κονσόλας είναι άγνωστης φύσης.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
-    <value>Αυτή η εφαρμογή χρησιμοποιεί ακολουθίες διαφυγής VT, αλλά το Terminal.app δεν υποστηρίζει πλέον χρώματα 255 και πραγματικά χρώματα.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
-    <value>Ο τύπος κονσόλας δεν υποστηρίζει 256 χρώματα.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
-    <value>Δεν είναι δυνατό το φιλτράρισμα χωρίς κανένα ερώτημα.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
-    <value>Δεν είναι δυνατό το φιλτράρισμα με μη έγκυρο ερώτημα.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
-    <value>Δεν υπάρχει έκφραση στο φίλτρο κονσόλας.</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
     <value>Δεν είναι δυνατή η επαναφορά νέων χαρακτηριστικών termios για την ακατέργαστη λειτουργία: {0}</value>
@@ -421,9 +352,6 @@
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
     <value>Διαβάστε περισσότερα...</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
-    <value>Λίστα συνδυασμών πλήκτρων</value>
-  </data>
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
     <value>Μετακίνηση</value>
   </data>
@@ -435,18 +363,6 @@
   </data>
   <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
     <value>Το στυλ επιλογής απαιτεί να είναι ενεργοποιημένη τουλάχιστον μία επιλογή.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
-    <value>Γράψτε το όνομα του περιστρεφόμενου μοχλού. Θα μετατραπεί σε πεζά γράμματα.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
-    <value>Ο περιστρεφόμενος μηχανισμός δεν υπάρχει.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
-    <value>Επιλέξτε έναν περιστρεφόμενο δίσκο από την παρακάτω λίστα</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
-    <value>Επιλογή περιστρεφόμενου</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
     <value>Δεν υπάρχουν πληροφορίες.</value>
@@ -1279,26 +1195,14 @@
   <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
     <value>Γενικές εντολές:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
-    <value>Δεν υπάρχουν εντολές κελύφους.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
     <value>Επιπλέον εντολές:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
-    <value>Χωρίς επιπλέον εντολές.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
     <value>Εντολές ψευδωνύμου:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
-    <value>Δεν υπάρχουν εντολές ψευδωνύμου.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
     <value>Ενοποιημένες εντολές:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
-    <value>Δεν υπάρχουν ενοποιημένες εντολές.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
     <value>Εντολή που ορίζεται από</value>
@@ -1765,15 +1669,6 @@
   <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
     <value>Ένα ή περισσότερα από τα χρώματα δεν είναι έγκυρα.</value>
   </data>
-  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
-    <value>Το προεπιλεγμένο θέμα για τον πυρήνα</value>
-  </data>
-  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
-    <value>Προφορές παντού!</value>
-  </data>
-  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
-    <value>Άχρωμο, ατμίζον και εξαιρετικά διαβρωτικό υγρό</value>
-  </data>
   <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
     <value>Πρέπει να εκτελείτε είτε το ConEmu είτε μια γραμμή εντολών των Windows 10 με ενεργοποιημένη την επεξεργασία VT.</value>
   </data>
@@ -1783,17 +1678,11 @@
   <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
     <value>Σου φαίνονται σωστές αυτές οι ράμπες; Θα πρέπει να μεταβούν ομαλά.</value>
   </data>
-  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
-    <value>Αποτύχαμε να δημιουργήσουμε μια λειτουργική ακολουθία VT τύπου {0} με την ενέργεια {1}. Βεβαιωθείτε ότι έχετε καθορίσει σωστά τις τιμές.</value>
-  </data>
   <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
     <value>Απάντηση χωρίς τίτλο</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
     <value>Στοιχείο χωρίς τίτλο</value>
-  </data>
-  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
-    <value>Παρακαλώ περιμένετε όσο γίνεται η επεξεργασία της τρέχουσας λειτουργίας...</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
     <value>Μετάβαση στον πρώτο χαρακτήρα της τρέχουσας γραμμής</value>
@@ -1860,9 +1749,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
     <value>Κωδικοποιεί το κείμενο σε μια αναπαράσταση BASE64</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
-    <value>Συμβολοσειρά για κωδικοποίηση</value>
   </data>
   <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
     <value>Ελέγχει μια δέσμη ενεργειών UESH για συντακτικά σφάλματα</value>
@@ -2329,9 +2215,6 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Επιλέξτε οποιαδήποτε από τις σελίδες βοήθειας που αναφέρονται παρακάτω.</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
-    <value>Αυτή η σελίδα παραθέτει πρόσθετες συνδυασμούς πλήκτρων που υποστηρίζονται για αυτό το διαδραστικό TUI, εκτός από τις βασικές.</value>
-  </data>
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
     <value>Μειώνει την τρέχουσα τιμή κατά 100</value>
   </data>
@@ -2493,5 +2376,53 @@
   </data>
   <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
     <value>Προσδιοριστής χρώματος</value>
+  </data>
+  <data name="T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE" xml:space="preserve">
+    <value>Δεν υπάρχει τέτοιος τύπος χρώματος</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Συμβολοσειρά για κωδικοποίηση σε BASE64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC" xml:space="preserve">
+    <value>Συμβολοσειρά-στόχος</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>Αθόρυβη έξοδος</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC" xml:space="preserve">
+    <value>Όρος αναζήτησης για την εύρεση εντολής</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE" xml:space="preserve">
+    <value>Αδυναμία ικανοποίησης της συνθήκης.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN" xml:space="preserve">
+    <value>Αυτό το διαδραστικό TUI δεν είναι ακόμα ανοιχτό.</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT_NOREGEX" xml:space="preserve">
+    <value>Πληκτρολογήστε έναν όρο αναζήτησης (χωρίς διάκριση πεζών-κεφαλαίων)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX" xml:space="preserve">
+    <value>Αναζήτηση εισόδου με χρήση κανονικής έκφρασης</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX" xml:space="preserve">
+    <value>Αναζήτηση επιλογής με χρήση κανονικής έκφρασης</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>Αναζήτηση στοιχείου με χρήση κανονικών εκφράσεων</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT" xml:space="preserve">
+    <value>Πληκτρολογήστε το όνομα του ASCII art "Cowsay".</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_NOCOWNAME" xml:space="preserve">
+    <value>Το ASCII art "Cowsay" δεν υπάρχει.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT" xml:space="preserve">
+    <value>Επιλέξτε ένα ASCII art "Cowsay" από την παρακάτω λίστα.</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE" xml:space="preserve">
+    <value>Επιλογή ASCII art</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>Αναζήτηση στοιχείου με χρήση κανονικών εκφράσεων</value>
   </data>
 </root>

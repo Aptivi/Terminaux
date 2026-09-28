@@ -103,80 +103,11 @@
   <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
     <value>स्क्रीन चक्रीय नहीं है.</value>
   </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
-    <value>उपयोगकर्ता ने डंब टर्मिनल का उपयोग करके टर्मिनेक्स अनुप्रयोग चलाने का प्रयास किया।</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
-    <value>यह अनुप्रयोग टर्मिनॉक्स द्वारा प्रदान की गई विस्तारित कंसोल सुविधाओं का उपयोग करता है, जिसके लिए उन सुविधाओं की आवश्यकता होती है जो "डम्ब" टर्मिनलों द्वारा समर्थित नहीं होती हैं।</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
-    <value>संभावित समाधान: टर्मिनल प्रकार को "डंब" के अलावा किसी अन्य प्रकार में सेट करने के लिए उपयुक्त टर्मिनल एमुलेटर का उपयोग करें या अपनी टर्मिनल सेटिंग से परामर्श करें। हम इस एप्लिकेशन से अधिकतम लाभ उठाने के लिए "vt100" टर्मिनल एमुलेटर का उपयोग करने की सलाह देते हैं।</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>उपयोगकर्ता ने ब्लैकलिस्टेड टर्मिनल प्रकार पर टर्मिनॉक्स अनुप्रयोग चलाने का प्रयास किया।</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>आप वर्तमान में जिस कंसोल प्रकार का उपयोग कर रहे हैं, {0}, उसे ब्लैकलिस्ट किया गया है: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>आप वर्तमान में जिस कंसोल प्रकार का उपयोग कर रहे हैं, {0}, वह ग्रे सूची में है: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
-    <value>उपयोगकर्ता ने ब्लैकलिस्टेड टर्मिनल एमुलेटर पर टर्मिनॉक्स एप्लिकेशन चलाने का प्रयास किया।</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
-    <value>आप वर्तमान में जिस टर्मिनल एमुलेटर {0} का उपयोग कर रहे हैं, उसे ब्लैकलिस्ट कर दिया गया है: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
-    <value>वर्तमान में आप जिस टर्मिनल एमुलेटर {0} का उपयोग कर रहे हैं, वह ग्रे सूची में है: {1}</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
-    <value>टर्मिनल प्रकार {0} टर्मिनफो के अनुसार 256 रंगों का समर्थन नहीं करता है</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
-    <value>उपयोगकर्ता ने बिना winpty के Git Bash के MinTTY पर एक Terminaux अनुप्रयोग चलाने का प्रयास किया।</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
-    <value>इस प्रोग्राम का उपयोग करने के लिए आपको winpty का उपयोग करना होगा। यदि आप सुनिश्चित हैं कि आप Git Bash नहीं चला रहे हैं, तो सुनिश्चित करें कि आप उचित Windows टर्मिनल का उपयोग कर रहे हैं।</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
-    <value>I/O त्रुटि के कारण कंसोल पोजिशनिंग काम नहीं कर रही है, इसलिए यह एप्लिकेशन अनियमित रूप से व्यवहार कर सकता है।</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
-    <value>कंसोल पोजिशनिंग ठीक से काम नहीं कर रही है, इसलिए यह एप्लिकेशन अनियमित रूप से व्यवहार कर सकता है।</value>
-  </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
     <value>आपका कंसोल ठीक से चलने के लिए बहुत छोटा है: {0}x{1} | बफ़: {2}x{3} | मिन: {4}x{5}</value>
   </data>
   <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
     <value>बेहतर अनुभव के लिए, इस स्क्रीन पर रहते हुए अपनी कंसोल विंडो का आकार बदलें। जारी रखने के लिए कोई भी कुंजी दबाएँ...</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
-    <value>असेंबली उपलब्ध नहीं है.</value>
-  </data>
-  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
-    <value>{0} जारी नहीं रखा जा सकता.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
-    <value>कंसोल प्रकार केवल मूल लेखन का समर्थन करता है।</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
-    <value>कंसोल का प्रकार अज्ञात है।</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
-    <value>यह एप्लिकेशन VT एस्केप अनुक्रमों का उपयोग करता है, लेकिन टर्मिनल.एप ने 255 और ट्रू कलर्स के लिए समर्थन समाप्त कर दिया है।</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
-    <value>कंसोल प्रकार 256 रंगों का समर्थन नहीं करता है.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
-    <value>बिना किसी प्रश्न के फ़िल्टर नहीं किया जा सकता.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
-    <value>अमान्य क्वेरी के साथ फ़िल्टर नहीं किया जा सकता.</value>
-  </data>
-  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
-    <value>कंसोल फ़िल्टर में कोई अभिव्यक्ति नहीं है.</value>
   </data>
   <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
     <value>रॉ मोड के लिए नई टर्मियोस विशेषताएँ पुनर्स्थापित नहीं की जा सकतीं: {0}</value>
@@ -421,9 +352,6 @@
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
     <value>और पढ़ें...</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
-    <value>कीबाइंडिंग की सूची बनाएं</value>
-  </data>
   <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
     <value>चारों ओर घूमें</value>
   </data>
@@ -435,18 +363,6 @@
   </data>
   <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
     <value>चयन शैली के लिए आवश्यक है कि कम से कम एक विकल्प सक्षम हो।</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
-    <value>स्पिनर का नाम लिखें। इसे लोअरकेस में बदल दिया जाएगा।</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
-    <value>स्पिनर मौजूद नहीं है.</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
-    <value>नीचे दी गई सूची से एक स्पिनर चुनें</value>
-  </data>
-  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
-    <value>स्पिनर चयन</value>
   </data>
   <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
     <value>कोई जानकारी नहीं.</value>
@@ -1279,26 +1195,14 @@
   <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
     <value>सामान्य आदेश:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
-    <value>कोई शेल कमांड नहीं.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
     <value>अतिरिक्त आदेश:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
-    <value>कोई अतिरिक्त आदेश नहीं.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
     <value>उपनाम आदेश:</value>
   </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
-    <value>कोई उपनाम आदेश नहीं.</value>
-  </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
     <value>एकीकृत आदेश:</value>
-  </data>
-  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
-    <value>कोई एकीकृत आदेश नहीं.</value>
   </data>
   <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
     <value>द्वारा परिभाषित आदेश</value>
@@ -1765,15 +1669,6 @@
   <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
     <value>एक या अधिक रंग अमान्य हैं।</value>
   </data>
-  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
-    <value>कर्नेल के लिए डिफ़ॉल्ट थीम</value>
-  </data>
-  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
-    <value>हर जगह उच्चारण!</value>
-  </data>
-  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
-    <value>रंगहीन, धुआँदार और अत्यधिक संक्षारक तरल</value>
-  </data>
   <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
     <value>आपको VT प्रोसेसिंग सक्षम होने के साथ ConEmu या Windows 10 कमांड प्रॉम्प्ट चलाना होगा।</value>
   </data>
@@ -1783,17 +1678,11 @@
   <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
     <value>क्या ये रैंप आपको सही लगते हैं? उन्हें सुचारू रूप से परिवर्तन करना चाहिए।</value>
   </data>
-  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
-    <value>हम क्रिया {1} के साथ {0} प्रकार का कार्यशील VT अनुक्रम उत्पन्न करने में विफल रहे हैं। सुनिश्चित करें कि आपने मान सही ढंग से निर्दिष्ट किए हैं।</value>
-  </data>
   <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
     <value>शीर्षकहीन उत्तर</value>
   </data>
   <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
     <value>शीर्षकहीन फिक्सचर</value>
-  </data>
-  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
-    <value>कृपया वर्तमान ऑपरेशन के संसाधित होने तक प्रतीक्षा करें...</value>
   </data>
   <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
     <value>वर्तमान पंक्ति के पहले वर्ण पर जाएँ</value>
@@ -1860,9 +1749,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
     <value>टेक्स्ट को BASE64 प्रतिनिधित्व में एनकोड करता है</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
-    <value>एनकोड करने के लिए स्ट्रिंग</value>
   </data>
   <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
     <value>सिंटैक्स त्रुटियों के लिए यूईएसएच स्क्रिप्ट की जाँच करता है</value>
@@ -2329,9 +2215,6 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>नीचे सूचीबद्ध किसी भी सहायता पृष्ठ का चयन करें।</value>
   </data>
-  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
-    <value>यह पृष्ठ मूल कीबाइंडिंग के अतिरिक्त, इस इंटरैक्टिव TUI के लिए समर्थित अतिरिक्त कीबाइंडिंग को सूचीबद्ध करता है।</value>
-  </data>
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
     <value>मौजूदा वैल्यू में 100 की कमी करता है</value>
   </data>
@@ -2493,5 +2376,53 @@
   </data>
   <data name="T_SHELL_UNIFIED_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
     <value>रंग निर्दिष्टकर्ता</value>
+  </data>
+  <data name="T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE" xml:space="preserve">
+    <value>ऐसा कोई रंग प्रकार नहीं है</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>BASE64 के साथ एनकोड करने के लिए स्ट्रिंग</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TARGETSTR_DESC" xml:space="preserve">
+    <value>टारगेट स्ट्रिंग</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>शांत आउटपुट</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC" xml:space="preserve">
+    <value>कमांड खोजने के लिए सर्च टर्म</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE" xml:space="preserve">
+    <value>शर्त पूरी नहीं हो सकी।</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_INTERACTIVENOTOPEN" xml:space="preserve">
+    <value>यह इंटरैक्टिव TUI अभी खुला नहीं है।</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT_NOREGEX" xml:space="preserve">
+    <value>सर्च टर्म लिखें (केस-इनसेंसिटिव)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTSREGEX" xml:space="preserve">
+    <value>रेगुलर एक्सप्रेशन के साथ इनपुट खोजें</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICESREGEX" xml:space="preserve">
+    <value>रेगुलर एक्सप्रेशन के साथ विकल्प खोजें</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>रेगुलर एक्सप्रेशन के साथ एलिमेंट खोजें</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMENAMEPROMPT" xml:space="preserve">
+    <value>"Cowsay" ASCII आर्ट का नाम लिखें।</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_NOCOWNAME" xml:space="preserve">
+    <value>"Cowsay" ASCII आर्ट मौजूद नहीं है।</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT" xml:space="preserve">
+    <value>नीचे दी गई सूची से "Cowsay" ASCII आर्ट चुनें।</value>
+  </data>
+  <data name="T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE" xml:space="preserve">
+    <value>ASCII आर्ट का चयन</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCHREGEX" xml:space="preserve">
+    <value>रेगुलर एक्सप्रेशन के साथ एलिमेंट खोजें</value>
   </data>
 </root>
