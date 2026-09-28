@@ -17,9 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
 using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
@@ -71,6 +72,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         }
 
         /// <summary>
+        /// Whether to show a point at the center or not
+        /// </summary>
+        public bool ShowCenterPoint { get; set; }
+
+        /// <summary>
+        /// Center point color
+        /// </summary>
+        public Color CenterPointColor { get; set; } = ConsoleColors.White;
+
+        /// <summary>
         /// Renders an ellipsis
         /// </summary>
         /// <returns>A rendered ellipsis using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
@@ -86,6 +97,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 RainbowMode = RainbowMode,
                 RainbowSaturation = RainbowSaturation,
                 RainbowLighting = RainbowLighting,
+                ShowCenterPoint = ShowCenterPoint,
+                CenterPointColor = CenterPointColor,
             };
 
             // Check to see if it's a circle or an ellipsis

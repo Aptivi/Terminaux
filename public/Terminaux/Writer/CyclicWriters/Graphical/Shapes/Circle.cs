@@ -18,9 +18,10 @@
 //
 
 using System.Text;
-using Terminaux.Writer.ConsoleWriters;
 using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
@@ -72,6 +73,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         }
 
         /// <summary>
+        /// Whether to show a point at the center or not
+        /// </summary>
+        public bool ShowCenterPoint { get; set; }
+
+        /// <summary>
+        /// Center point color
+        /// </summary>
+        public Color CenterPointColor { get; set; } = ConsoleColors.White;
+
+        /// <summary>
         /// Renders a circle
         /// </summary>
         /// <returns>A rendered circle using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
@@ -83,6 +94,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 RainbowMode = RainbowMode,
                 RainbowSaturation = RainbowSaturation,
                 RainbowLighting = RainbowLighting,
+                ShowCenterPoint = ShowCenterPoint,
+                CenterPointColor = CenterPointColor,
             };
             buffer.Append(ellipsis.Render());
             return buffer.ToString();

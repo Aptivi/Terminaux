@@ -24,6 +24,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using System.Collections.Generic;
 using Terminaux.Base;
 using Terminaux.Themes.Colors;
+using Colorimetry.Data;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
@@ -110,6 +111,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         }
 
         /// <summary>
+        /// Whether to show a point at the center or not
+        /// </summary>
+        public bool ShowCenterPoint { get; set; }
+
+        /// <summary>
+        /// Center point color
+        /// </summary>
+        public Color CenterPointColor { get; set; } = ConsoleColors.White;
+
+        /// <summary>
         /// Renders an arc
         /// </summary>
         /// <returns>A rendered arc using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
@@ -148,7 +159,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             var plotted = new HashSet<(int x, int y)>();
 
             // Helper function to add pixel
-            void AddPixel(int pixelX, int pixelY)
+            void AddPixel(int pixelX, int pixelY, Color? overrideColor = null)
             {
                 var pos = (centerX + pixelX + 1, centerY - pixelY + 1);
                 if (plotted.Contains(pos))
@@ -159,11 +170,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 int ratio = (int)Math.Round(angle * 180 / Math.PI) % 360;
                 if (full || (ratio >= angleStart && ratio < angleEnd) ^ inverted)
                 {
-                    Color finalColor = RainbowMode ? new($"hsl:{ratio};{RainbowSaturation};{RainbowLighting}", new() { UseTerminalPalette = false }) : ShapeColor;
+                    Color finalColor = overrideColor is not null ? overrideColor : RainbowMode ? new($"hsl:{ratio};{RainbowSaturation};{RainbowLighting}", new() { UseTerminalPalette = false }) : ShapeColor;
                     pixels.Add(new(pos.Item1, pos.Item2) { CellColor = finalColor });
                     plotted.Add(pos);
                 }
             }
+            if (ShowCenterPoint)
+                AddPixel(0, 0, CenterPointColor);
             for (int layer = 0; layer <= (OuterRadius - InnerRadius); layer++)
             {
                 int layerRadius = InnerRadius + layer;
