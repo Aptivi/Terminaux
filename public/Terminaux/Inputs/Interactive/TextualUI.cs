@@ -119,7 +119,8 @@ namespace Terminaux.Inputs.Interactive
         {
             Keybindings.Clear();
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K), (_, _, _) => ListBindings()));
-            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H), (_, _, _) => OpenHelpPages()));
+            if (HelpPages.Length > 0)
+                Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H), (_, _, _) => OpenHelpPages()));
         }
 
         private void ListBindings()
@@ -134,6 +135,10 @@ namespace Terminaux.Inputs.Interactive
 
         private void OpenHelpPages()
         {
+            // Check to see if there are any help pages to open
+            if (HelpPages.Length == 0)
+                return;
+
             // Prepare an infinite loop that allows opening help pages until exit is chosen
             bool bail = false;
             while (!bail)
