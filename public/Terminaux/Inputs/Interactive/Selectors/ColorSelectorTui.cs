@@ -891,6 +891,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         RainbowMode = true,
                         RainbowSaturation = hsl.SaturationWhole,
                         RainbowLighting = hsl.LightnessWhole,
+                        ShowCenterPoint = true,
                     };
                     (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);
                     int arcLeft = ConsoleWrapper.WindowWidth / 2 - (bezelHeight + 2);
@@ -902,9 +903,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     builder.Append(
                         bezelCircle.Render() +
                         colorWheelCircle.Render() +
-                        ConsolePositioning.RenderChangePosition(radius.x, radius.y) +
-                        ConsoleColoring.RenderSetConsoleColor(ConsoleColors.White, true) +
-                        "  " +
                         ConsolePositioning.RenderChangePosition(pointX, pointY) +
                         ConsoleColoring.RenderSetConsoleColor(ConsoleColors.White, true) +
                         "  " +
