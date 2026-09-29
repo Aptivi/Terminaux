@@ -115,23 +115,23 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Some variables
                 var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
-                double maxValue = elements.Sum((element) => element.Value);
-                var shownElementHeightsSelect = shownElements.Select((ce) => (ce, (int)Math.Round(ce.Value * Height / maxValue)));
-                var shownElementHeights = (UpsideDown ? shownElementHeightsSelect.OrderBy((ce) => ce.Item2) : shownElementHeightsSelect.OrderByDescending((ce) => ce.Item2)).ToArray();
+                double maxValue = shownElements.Sum((element) => element.Value);
+                var orderedElements = (UpsideDown ? shownElements.OrderBy((ce) => ce.Value) : shownElements.OrderByDescending((ce) => ce.Value)).ToArray();
 
                 // Show the actual bar
                 int processedY = 0;
-                for (int e = 0; e < shownElementHeights.Length; e++)
+                double cumulative = 0;
+                for (int e = 0; e < orderedElements.Length && maxValue > 0; e++)
                 {
-                    // Get the element and the height
-                    var elementTuple = shownElementHeights[e];
-                    ChartElement element = elementTuple.ce;
-                    int height = elementTuple.Item2;
+                    // Get the element and compute where its segment ends
+                    ChartElement element = orderedElements[e];
+                    cumulative += element.Value;
+                    int boundary = e == orderedElements.Length - 1 ? Height : (int)Math.Round(cumulative * Height / maxValue);
+                    int height = boundary - processedY;
 
                     // Use the chart height to draw the stick
                     for (int h = 0; h < height; h++)
                     {
-                        // Decide whether to draw this area or not
                         Coordinate stickCoord = new(Left + showcaseLength, Top + processedY);
                         ConsoleLogger.Debug("Rendering breakdown chart element {0}: ({1} + {2}, {3} + {4})", e, Left, showcaseLength, Top, processedY);
                         breakdownChart.Append(
@@ -157,20 +157,23 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 };
 
                 // Fill the breakdown chart with the element bars first
-                double maxValue = elements.Sum((element) => element.Value);
+                var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
+                double maxValue = shownElements.Sum((element) => element.Value);
                 breakdownChart.Append(ConsolePositioning.RenderChangePosition(Left, Top));
-                foreach (var element in elements)
+                int processedX = 0;
+                double cumulative = 0;
+                for (int e = 0; e < shownElements.Length && maxValue > 0; e++)
                 {
-                    var color = element.Color;
-                    bool hidden = element.Hidden;
-                    double value = element.Value;
-                    if (hidden)
-                        continue;
+                    // Get the element and compute where its segment ends
+                    var element = shownElements[e];
+                    cumulative += element.Value;
+                    int boundary = e == shownElements.Length - 1 ? Width : (int)Math.Round(cumulative * Width / maxValue);
+                    int length = boundary - processedX;
+                    processedX = boundary;
 
-                    // Render the element bar
-                    int length = (int)Math.Round(value * Width / maxValue);
+                    // Use the chart length to draw the bar
                     breakdownChart.Append(
-                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(color, true) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(element.Color, true) : "") +
                         new string(' ', length) +
                         (UseColors ? ConsoleColoring.RenderResetBackground() : "")
                     );
