@@ -30,8 +30,8 @@ namespace Terminaux.Console.Fixtures.Cases.Images
 
         public void RunFixture()
         {
-            var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Terminaux.Console.Assets.pictures.aptivi-logo-ios.png") ??
-                throw new Exception("Resource doesn't exist: aptivi-logo-ios.png");
+            var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Terminaux.Console.Assets.pictures.Modern-Logo-1024.png") ??
+                throw new Exception("Resource doesn't exist: Modern-Logo-1024.png");
             var image = ImageProcessor.OpenImage(stream);
             ImageViewInteractive.OpenInteractive(image);
         }
