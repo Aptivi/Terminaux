@@ -84,7 +84,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             var showcase = new ValueShowcase()
             {
                 Width = Width / 4,
-                Height = Height,
                 UseColors = UseColors,
                 ColorValues = ColorValues,
                 Elements = Elements,
@@ -92,15 +91,17 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int showcaseLength = 0;
 
             // Fill the bar chart with the elements first
+            var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
             StringBuilder barChart = new();
             if (Showcase)
             {
+                if (shownElements.Length > Height)
+                    showcase.Height = Height;
                 showcaseLength = showcase.Length;
                 barChart.Append(RendererTools.RenderRenderable(showcase, new(Left, Top)));
             }
 
             // Show the actual bar
-            var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
             double maxValue = shownElements.Max((element) => element.Value);
             int wholeLength = Width - showcaseLength;
             for (int e = 0; e < shownElements.Length; e++)

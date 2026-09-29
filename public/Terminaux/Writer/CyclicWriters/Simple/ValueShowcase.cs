@@ -100,8 +100,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         {
             // Some variables
             var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
-            if (Height > 0)
-                shownElements = [.. shownElements.Take(Height)];
+            int height = Height > 0 ? Height : shownElements.Length;
+            if (height > 0)
+                shownElements = [.. shownElements.Take(height)];
             double maxValue = shownElements.Max((element) => element.Value);
 
             // Fill the showcase panel with the elements first
@@ -114,7 +115,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 StringBuilder elementBuilder = new();
 
                 // Get the element showcase position and write it there
-                bool canShow = Height > i;
+                bool canShow = height > i;
                 if (!canShow)
                     break;
                 var element = shownElements[i];
@@ -148,7 +149,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             }
 
             // In case we've specified height, we need to write the separator appropriately
-            int remainingHeight = Height - processedHeight;
+            int remainingHeight = height - processedHeight;
             if (remainingHeight > 0)
             {
                 showcase.AppendLine();
