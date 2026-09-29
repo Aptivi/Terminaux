@@ -11,6 +11,7 @@ This release contains a variety of changes, including, but not limited to:
 - `[+]` Added back table choice style removed from v5.0
 - `[*]` Improved keybinding handling for the keybindings list
 - `[*]` Fixed search pointing to a wrong item
+- `[*]` Fixed some charts rendering out of bounds
 - `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
