@@ -135,6 +135,28 @@ namespace Terminaux.Themes
         }
 
         /// <summary>
+        /// Tries to get a color from the color type
+        /// </summary>
+        /// <param name="type">Color type</param>
+        public Color? TryGetColor(ThemeColorType type) =>
+            GetColor(type.ToString());
+
+        /// <summary>
+        /// Tries to get a color from the color type
+        /// </summary>
+        /// <param name="type">Color type</param>
+        public Color? TryGetColor(string type)
+        {
+            if (!themeColors.TryGetValue(type, out var color))
+                return null;
+            if (UseAccentTypes.Contains(type) && ThemeColorsTools.UseAccentColors)
+                return type.EndsWith("BackgroundColor") || type.EndsWith("BackColor") ?
+                    new Color(ThemeColorsTools.AccentBackgroundColor) :
+                    new Color(ThemeColorsTools.AccentForegroundColor);
+            return color;
+        }
+
+        /// <summary>
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
@@ -145,14 +167,8 @@ namespace Terminaux.Themes
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public Color GetColor(string type)
-        {
-            if (UseAccentTypes.Contains(type) && ThemeColorsTools.UseAccentColors)
-                return type.EndsWith("BackgroundColor") || type.EndsWith("BackColor") ?
-                    new Color(ThemeColorsTools.AccentBackgroundColor) :
-                    new Color(ThemeColorsTools.AccentForegroundColor);
-            return themeColors[type];
-        }
+        public Color GetColor(string type) =>
+            TryGetColor(type) ?? throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_COLORS_EXCEPTION_NOSUCHCOLORTYPE") + $": {type}");
 
         /// <summary>
         /// Sets a color in the color type
