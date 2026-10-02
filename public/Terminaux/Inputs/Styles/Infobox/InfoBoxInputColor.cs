@@ -199,8 +199,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     readerSettings.InputForegroundColor = settings.ForegroundColor;
                     readerSettings.InputBackgroundColor = settings.BackgroundColor;
                 }
-                string input = TermReader.Read("", initialValue, readerSettings, password, true);
-                done = !(readerSettings.state?.Cancelled ?? false);
+                string input = TermReader.Read("", initialValue, readerSettings, out done, password, true);
                 if (character)
                 {
                     WideString wideInput = (WideString)input;
