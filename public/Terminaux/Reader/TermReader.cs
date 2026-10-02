@@ -486,7 +486,7 @@ namespace Terminaux.Reader
         /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static T Read<T>(Func<string> inputPrompt, string defaultValue, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible =>
-            Read<T>(inputPrompt, defaultValue, settings, password, oneLineWrap, interruptible);
+            Read<T>(inputPrompt, defaultValue, settings, out _, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
