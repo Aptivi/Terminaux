@@ -1,18 +1,10 @@
-This version of Terminaux is a monthly release intended to make your console applications more powerful while introducing new features.
+This is an emergency release that adds a missing feature that was supposed to land to Terminaux 8.8.0.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added new search mode for selection infoboxes
-- `[+]` Added a way for apps to determine whether a reader input was cancelled
-- `[+]` Added a horizontal value showcase renderer
-- `[+]` Added a way for custom keybindings to exit interactive TUIs
-- `[+]` Added back table choice style removed from v5.0
-- `[*]` Improved keybinding handling for the keybindings list
-- `[*]` Fixed search pointing to a wrong item
-- `[*]` Fixed some charts rendering out of bounds
-- `[*]` General improvements and bug fixes
+- `[+]` Added `out bool done` to terminal reader
 
 Review the commit history if you want to get a deep insight about the changes.
 
