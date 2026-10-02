@@ -1,10 +1,10 @@
-This is an emergency release that adds a missing feature that was supposed to land to Terminaux 8.8.0.
+This is another emergency release that fixes a bug related to the recently added functions.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added `out bool done` to terminal reader
+- `[*]` Fixed stack overflows on terminal reader
 
 Review the commit history if you want to get a deep insight about the changes.
 
