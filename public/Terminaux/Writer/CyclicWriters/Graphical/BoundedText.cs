@@ -50,6 +50,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private TextSettings settings = new();
         private bool customSize = false;
         private bool useColors = true;
+        private bool wordWrap = true;
 
         /// <summary>
         /// A text to render
@@ -132,6 +133,15 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
+        /// Whether to wrap words or not
+        /// </summary>
+        public bool WordWrap
+        {
+            get => wordWrap;
+            set => wordWrap = value;
+        }
+
+        /// <summary>
         /// [Position-wise] Specifies a zero-based row index
         /// </summary>
         public int Row
@@ -172,7 +182,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             if (!customSize)
                 UpdateInternalSize();
-            string[] lines = TextWriterTools.GetFinalLines(Text, width);
+            string[] lines = TextWriterTools.GetFinalLines(Text, width, WordWrap);
             ConsoleLogger.Debug("Bounded text width x height (poswise: {0}): {1}, {2}", PositionWise, Width, Height);
             if (PositionWise)
                 return RenderTextPoswise(

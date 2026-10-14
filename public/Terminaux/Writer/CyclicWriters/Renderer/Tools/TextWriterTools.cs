@@ -74,7 +74,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             return x;
         }
 
-        internal static string[] GetFinalLines(string text, int width, params object[] vars)
+        internal static string[] GetFinalLines(string text, int width, bool wrapWords = true, params object[] vars)
         {
             // Deal with the lines to actually fit text in the infobox
             string finalInfoRendered = text.FormatString(vars);
@@ -82,9 +82,17 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             List<string> splitFinalLines = [];
             foreach (var line in splitLines)
             {
-                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, width);
-                foreach (var lineSentence in lineSentences)
-                    splitFinalLines.Add(lineSentence);
+                if (wrapWords)
+                {
+                    var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, width);
+                    foreach (var lineSentence in lineSentences)
+                        splitFinalLines.Add(lineSentence);
+                }
+                else
+                {
+                    string finalLine = line.Truncate(width);
+                    splitFinalLines.Add(finalLine);
+                }
             }
 
             // Trim the new lines until we reach a full line
