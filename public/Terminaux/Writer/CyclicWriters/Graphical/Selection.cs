@@ -514,6 +514,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
+            // Determine whether to push the selection choices or not
+            bool needPush = DeterminePushNeeded();
+
             // Now, get the choice text instances
             List<string> choiceText = [];
             int processedChoices = 0;
@@ -539,7 +542,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     InputChoiceGroupInfo? group = category.Groups[groupIdx];
                     var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
-                    bool needPush = category.Groups.Length > 1;
                     if (category.Groups.Length > 1)
                     {
                         string modifiers = isMultiple ? "[ ] " : "";
@@ -587,9 +589,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
+            // Determine whether to push the selection choices or not
+            bool needPush = DeterminePushNeeded();
+
             // Now, get the choice parameters
             List<(string text, Color fore, Color back, bool force)> choiceText = [];
-            List<(SelectionTristate tristate, ChoiceHitboxType type, bool radioSelected, bool multipleSelected, bool disabled, bool isAlt, bool needPush)> choiceParams = [];
+            List<(SelectionTristate tristate, ChoiceHitboxType type, bool radioSelected, bool multipleSelected, bool disabled, bool isAlt)> choiceParams = [];
             int processedChoices = 0;
             int startIndexTristates = 0;
             int startIndexGroupTristates = 0;
@@ -600,7 +605,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 InputChoiceCategoryInfo? category = Selections[categoryIdx];
                 var tristate = isMultiple ? tristates[categoryIdx] : SelectionTristate.Unselected;
                 if (Selections.Length > 1)
-                    choiceParams.Add((tristate, ChoiceHitboxType.Category, false, false, false, false, false));
+                    choiceParams.Add((tristate, ChoiceHitboxType.Category, false, false, false, false));
 
                 var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, CurrentSelections, ref startIndexGroupTristates) : [];
                 for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
@@ -608,7 +613,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     InputChoiceGroupInfo? group = category.Groups[groupIdx];
                     var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
                     if (category.Groups.Length > 1)
-                        choiceParams.Add((groupTristate, ChoiceHitboxType.Group, false, false, false, false, false));
+                        choiceParams.Add((groupTristate, ChoiceHitboxType.Group, false, false, false, false));
                     for (int i = 0; i < group.Choices.Length; i++)
                     {
                         relatedIdx++;
@@ -619,7 +624,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                         // Render an entry
                         bool isAlt = processedChoices + 1 > AltChoicePos;
-                        choiceParams.Add((selected ? SelectionTristate.Selected : SelectionTristate.Unselected, ChoiceHitboxType.Choice, radioSelected, isMultiple && CurrentSelections.Contains(relatedIdx), disabled, isAlt, category.Groups.Length > 1));
+                        choiceParams.Add((selected ? SelectionTristate.Selected : SelectionTristate.Unselected, ChoiceHitboxType.Choice, radioSelected, isMultiple && CurrentSelections.Contains(relatedIdx), disabled, isAlt));
                         processedChoices++;
                     }
                 }
@@ -634,7 +639,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int finalIndex = i + startIndex;
                 if (finalIndex < selectionHeights[selectionHeights.Count - 1])
                 {
-                    var (tristate, type, radioSelected, multipleSelected, disabled, isAlt, needPush) = choiceParams[finalIndex];
+                    var (tristate, type, radioSelected, multipleSelected, disabled, isAlt) = choiceParams[finalIndex];
 
                     // Check the type
                     if (type == ChoiceHitboxType.Category)
@@ -696,6 +701,21 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// </summary>
         public void InvalidateCache() =>
             cached = false;
+
+        private bool DeterminePushNeeded()
+        {
+            bool needPush = false;
+            for (int categoryIdx = 0; categoryIdx < Selections.Length && !needPush; categoryIdx++)
+            {
+                InputChoiceCategoryInfo? category = Selections[categoryIdx];
+                for (int groupIdx = 0; groupIdx < category.Groups.Length && !needPush; groupIdx++)
+                {
+                    if (category.Groups.Length > 1)
+                        needPush = true;
+                }
+            }
+            return needPush;
+        }
 
         /// <summary>
         /// Makes a new selection instance
