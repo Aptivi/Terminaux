@@ -93,58 +93,63 @@ namespace Terminaux.Inputs.Styles.Choice
             if (!settings.PressEnter && (answerNames.Any((answer) => answer.Length > 1) || altAnswerNames.Any((answer) => answer.Length > 1)))
                 throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES"));
 
-            // Ask a question
-            switch (settings.OutputType)
-            {
-                case ChoiceOutputType.Modern:
-                    {
-                        var selection = new PassiveSelection(unifiedAnswers)
-                        {
-                            AltChoicePos = Answers.Length,
-                            Settings = new()
-                            {
-                                OptionColor = settings.OptionColor,
-                                AltOptionColor = settings.AltOptionColor,
-                                DisabledOptionColor = settings.DisabledOptionColor,
-                            }
-                        };
-                        TextWriterColor.WriteColor(Question + CharManager.NewLine, true, settings.QuestionColor);
-                        TextWriterRaw.WritePlain(selection.Render());
-                        break;
-                    }
-                case ChoiceOutputType.Table:
-                    {
-                        var choiceData = new TableCellOptions[Answers.Length + AltAnswers.Length, 2];
-                        for (int answerIndex = 0; answerIndex <= unifiedAnswers.Length - 1; answerIndex++)
-                        {
-                            bool isAlt = answerIndex >= Answers.Length;
-                            var answer = unifiedAnswers[answerIndex];
-                            var optionColor = answer.ChoiceDisabled ? settings.DisabledOptionColor : isAlt ? settings.AltOptionColor : settings.OptionColor;
-                            TableCellOptions possibleAnswerCell = new(answer.ChoiceName);
-                            TableCellOptions possibleAnswerDescCell = new(answer.ChoiceTitle);
-                            possibleAnswerCell.ColoredCell = true;
-                            possibleAnswerDescCell.ColoredCell = true;
-                            possibleAnswerCell.CellColor = optionColor;
-                            possibleAnswerDescCell.CellColor = optionColor;
-                            choiceData[answerIndex, 0] = possibleAnswerCell;
-                            choiceData[answerIndex, 1] = possibleAnswerDescCell;
-                        }
-                        var table = new Table()
-                        {
-                            Rows = choiceData,
-                        };
-                        TextWriterColor.WriteColor(Question, true, settings.QuestionColor);
-                        TextWriterRaw.WritePlain(table.Render());
-                        break;
-                    }
-            }
-
             // Main loop
+            bool asked = false;
             while (true)
             {
-                string answer;
+                string answer = "";
 
                 // Ask a question
+                if (!asked)
+                {
+                    asked = true;
+                    switch (settings.OutputType)
+                    {
+                        case ChoiceOutputType.Modern:
+                            {
+                                var selection = new PassiveSelection(unifiedAnswers)
+                                {
+                                    AltChoicePos = Answers.Length,
+                                    Settings = new()
+                                    {
+                                        OptionColor = settings.OptionColor,
+                                        AltOptionColor = settings.AltOptionColor,
+                                        DisabledOptionColor = settings.DisabledOptionColor,
+                                    }
+                                };
+                                TextWriterColor.WriteColor(Question + CharManager.NewLine, true, settings.QuestionColor);
+                                TextWriterRaw.WritePlain(selection.Render());
+                                break;
+                            }
+                        case ChoiceOutputType.Table:
+                            {
+                                var choiceData = new TableCellOptions[Answers.Length + AltAnswers.Length, 2];
+                                for (int answerIndex = 0; answerIndex <= unifiedAnswers.Length - 1; answerIndex++)
+                                {
+                                    bool isAlt = answerIndex >= Answers.Length;
+                                    var choiceInfo = unifiedAnswers[answerIndex];
+                                    var optionColor = choiceInfo.ChoiceDisabled ? settings.DisabledOptionColor : isAlt ? settings.AltOptionColor : settings.OptionColor;
+                                    TableCellOptions possibleAnswerCell = new(choiceInfo.ChoiceName);
+                                    TableCellOptions possibleAnswerDescCell = new(choiceInfo.ChoiceTitle);
+                                    possibleAnswerCell.ColoredCell = true;
+                                    possibleAnswerDescCell.ColoredCell = true;
+                                    possibleAnswerCell.CellColor = optionColor;
+                                    possibleAnswerDescCell.CellColor = optionColor;
+                                    choiceData[answerIndex, 0] = possibleAnswerCell;
+                                    choiceData[answerIndex, 1] = possibleAnswerDescCell;
+                                }
+                                var table = new Table()
+                                {
+                                    Rows = choiceData,
+                                };
+                                TextWriterColor.WriteColor(Question, true, settings.QuestionColor);
+                                TextWriterRaw.WritePlain(table.Render());
+                                break;
+                            }
+                    }
+                }
+
+                // Write the prompt
                 switch (settings.OutputType)
                 {
                     case ChoiceOutputType.OneLine:
@@ -174,13 +179,21 @@ namespace Terminaux.Inputs.Styles.Choice
                     answer = TermReader.Read();
                 else
                 {
-                    answer = Convert.ToString(Input.ReadKey().KeyChar);
-                    TextWriterRaw.WritePlain(answer);
+                    var key = Input.ReadKey();
+                    if (key.Key != ConsoleKey.Enter)
+                    {
+                        answer = Convert.ToString(key.KeyChar);
+                        TextWriterRaw.WritePlain(answer);
+                    }
+                    else
+                        TextWriterRaw.Write();
                 }
 
                 // Check if answer is correct.
                 if (answerNames.Contains(answer) && !answers[answer] || altAnswerNames.Contains(answer) && !altAnswers[answer])
                     return answer;
+                else if (string.IsNullOrEmpty(answer))
+                    asked = false;
                 else
                     TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_WRONGANSWER"));
             }
