@@ -257,7 +257,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             for (int i = startIndex; i <= endIndex; i++)
             {
                 // Get a line
-                string source = lines[i - 1].Replace("\t", new string(' ', ConsoleMisc.TabWidth));
+                string source = ConsoleMisc.ConvertTabsToSpaces(lines[i - 1]);
                 if (source.Length == 0)
                     source = " ";
                 var sequencesCollections = VtSequenceTools.MatchVTSequences(source);

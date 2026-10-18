@@ -149,7 +149,7 @@ namespace Terminaux.Base.Extensions
             text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
 
             // Convert tabs to spaces
-            text = text.Replace("\t", new string(' ', TabWidth));
+            text = ConvertTabsToSpaces(text);
 
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
@@ -240,7 +240,7 @@ namespace Terminaux.Base.Extensions
             text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
 
             // Convert tabs to spaces
-            text = text.Replace("\t", new string(' ', TabWidth));
+            text = ConvertTabsToSpaces(text);
 
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
@@ -759,6 +759,36 @@ namespace Terminaux.Base.Extensions
                         Console.OutputEncoding = windowsOutputEncoding;
                     break;
             }
+        }
+
+        internal static string ConvertTabsToSpaces(string text) =>
+            ConvertTabsToSpaces(text, TabWidth, out _);
+
+        internal static string ConvertTabsToSpaces(string text, out int spaceWidth) =>
+            ConvertTabsToSpaces(text, TabWidth, out spaceWidth);
+
+        internal static string ConvertTabsToSpaces(string text, int tabWidth) =>
+            ConvertTabsToSpaces(text, tabWidth, out _);
+
+        internal static string ConvertTabsToSpaces(string text, int tabWidth, out int spaceWidth)
+        {
+            var stringBuilder = new StringBuilder(text);
+            spaceWidth = 0;
+            for (int i = 0; i < stringBuilder.Length; i++)
+            {
+                char c = stringBuilder[i];
+                if (c == '\t')
+                {
+                    string fragment = stringBuilder.ToString(0, i);
+                    int width = ConsoleChar.EstimateCellWidth(fragment);
+                    int spaces = tabWidth - (width % tabWidth);
+                    string spacesStr = new(' ', spaces);
+                    stringBuilder.Replace($"{c}", spacesStr, i, 1);
+                    i += spaces - 1;
+                    spaceWidth = spaces;
+                }
+            }
+            return stringBuilder.ToString();
         }
 
         internal static uint GetMode(IntPtr stdHandle)

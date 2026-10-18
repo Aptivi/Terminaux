@@ -255,6 +255,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         WriteRaw(ConsoleColoring.RenderRevertColors());
 
                     // Actually write
+                    Text = ConsoleMisc.ConvertTabsToSpaces(Text);
                     if (Line)
                     {
                         if (vars.Length > 0)

@@ -18,23 +18,24 @@
 //
 
 using System;
-using System.Text;
-using Terminaux.Sequences;
-using Terminaux.Sequences.Builder.Types;
 using System.Collections.Generic;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.ConsoleWriters;
+using System.Collections.ObjectModel;
+using System.Text;
+using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using System.Text.RegularExpressions;
 using Terminaux.Inputs.Interactive;
-using Textify.General;
-using Textify.Tools;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Sequences;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using System.Collections.ObjectModel;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.General;
+using Textify.Tools;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -242,7 +243,14 @@ namespace Terminaux.Inputs.Styles.Editor
                     for (int a = 0; a < lineColIdx; a++)
                     {
                         char targetChar = lines[lineIdx][a];
-                        finalPos += targetChar == '\t' ? ConsoleMisc.TabWidth : TextTools.GetCharWidth(targetChar);
+                        if (targetChar == '\t')
+                        {
+                            string fragment = lines[lineIdx].Substring(0, a + 1);
+                            ConsoleMisc.ConvertTabsToSpaces(fragment, out int spaceWidth);
+                            finalPos += spaceWidth;
+                        }
+                        else
+                            finalPos += TextTools.GetCharWidth(targetChar);
                         if (finalPos > SeparatorConsoleWidthInterior)
                         {
                             currentCharPage++;

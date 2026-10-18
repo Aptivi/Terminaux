@@ -274,7 +274,8 @@ namespace Terminaux.Reader
                 return;
 
             // Replace some of the characters
-            newText = newText.Replace("\t", new string(' ', ConsoleMisc.TabWidth)).ReplaceAll(CharManager.GetAllControlChars(), "");
+            newText = ConsoleMisc.ConvertTabsToSpaces(newText);
+            newText = newText.ReplaceAll(CharManager.GetAllControlChars(), "");
 
             // Get the longest sentence width and crop the text appropriately
             if (!state.OneLineWrap)

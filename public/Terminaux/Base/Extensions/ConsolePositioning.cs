@@ -187,9 +187,18 @@ namespace Terminaux.Base.Extensions
                 }
             }
             isVtSequence = vtSeq;
+
+            // If this character is a tab, process until this point.
+            string spaces = "";
+            if (ch == '\t' && string.IsNullOrEmpty(seq))
+            {
+                string fragment = text.Substring(0, i + 1);
+                ConsoleMisc.ConvertTabsToSpaces(fragment, out int spaceWidth);
+                spaces = new(' ', spaceWidth);
+            }
             return
                 !string.IsNullOrEmpty(seq) ? seq :
-                ch == '\t' ? new string(' ', ConsoleMisc.TabWidth) :
+                ch == '\t' ? spaces :
                 ch.ToString();
         }
     }
