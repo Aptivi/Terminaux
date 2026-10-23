@@ -74,6 +74,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var selector = new StringBuilder();
 
             // First, render the preview box
+            if (type == ColorType.TrueColor && showColorList)
+            {
+                showColorList = false;
+                selector.Append(ConsoleClearing.GetClearWholeScreenSequence());
+            }
             selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, decide whether to render the bars or to render the color list
@@ -521,7 +526,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     case ColorType.FourBitColor:
                         Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[14], (_, _, _) => ChangeColor(true)));
                         Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[15], (_, _, _) => ChangeColor(false)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[16], (_, _, _) => ShowColorList()));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[16], (tui, _, _) => ShowColorList(tui)));
                         break;
                 }
             }
@@ -753,8 +758,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 IncrementColor(type);
         }
 
-        private void ShowColorList() =>
+        private void ShowColorList(TextualUI tui)
+        {
             showColorList = !showColorList;
+            tui.RequireRefresh();
+        }
 
         private void DecrementColor(ColorType type)
         {
