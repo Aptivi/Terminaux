@@ -684,7 +684,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Make pointer hitboxes to detect boundaries
             var colorBoxHitbox = new PointerHitbox(new(colorBoxX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + colorBoxX, boxHeight + colorBoxY), (pec) => ChangeColor(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
-            var colorListHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + generalX, boxHeight + colorBoxY), (pec) => ChangeColor(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorListHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + generalX, boxHeight + colorBoxY), (pec) => ChangeColor(goBack, 3)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
             var colorHueBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(generalX + boxWidth, colorBoxY + 2), (pec) => ChangeHue(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
             var colorSaturationBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 3), new Coordinate(generalX + boxWidth, colorBoxY + 4), (pec) => ChangeSaturation(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
             var colorLightnessBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 5), new Coordinate(generalX + boxWidth, colorBoxY + 6), (pec) => ChangeLightness(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
@@ -750,12 +750,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 finalSettings.Opacity++;
         }
 
-        private void ChangeColor(bool goBack)
+        private void ChangeColor(bool goBack, int factor = 1)
         {
             if (goBack)
-                DecrementColor(type);
+                DecrementColor(type, factor);
             else
-                IncrementColor(type);
+                IncrementColor(type, factor);
         }
 
         private void ShowColorList(TextualUI tui)
@@ -764,20 +764,20 @@ namespace Terminaux.Inputs.Interactive.Selectors
             tui.RequireRefresh();
         }
 
-        private void DecrementColor(ColorType type)
+        private void DecrementColor(ColorType type, int factor = 1)
         {
             switch (type)
             {
                 case ColorType.TrueColor:
-                    DecrementHue(type);
+                    DecrementHue(type, factor);
                     break;
                 case ColorType.EightBitColor:
-                    colorValue255--;
+                    colorValue255 -= factor;
                     if (colorValue255 < ConsoleColors.Black)
                         colorValue255 = ConsoleColors.Grey93;
                     break;
                 case ColorType.FourBitColor:
-                    colorValue16--;
+                    colorValue16 -= factor;
                     if (colorValue16 < ConsoleColor.Black)
                         colorValue16 = ConsoleColor.White;
                     break;
@@ -785,20 +785,20 @@ namespace Terminaux.Inputs.Interactive.Selectors
             UpdateColor(ref selectedColor, type, finalSettings);
         }
 
-        private void IncrementColor(ColorType type)
+        private void IncrementColor(ColorType type, int factor = 1)
         {
             switch (type)
             {
                 case ColorType.TrueColor:
-                    IncrementHue(type);
+                    IncrementHue(type, factor);
                     break;
                 case ColorType.EightBitColor:
-                    colorValue255++;
+                    colorValue255 += factor;
                     if (colorValue255 > ConsoleColors.Grey93)
                         colorValue255 = ConsoleColors.Black;
                     break;
                 case ColorType.FourBitColor:
-                    colorValue16++;
+                    colorValue16 += factor;
                     if (colorValue16 > ConsoleColor.White)
                         colorValue16 = ConsoleColor.Black;
                     break;
@@ -806,21 +806,21 @@ namespace Terminaux.Inputs.Interactive.Selectors
             UpdateColor(ref selectedColor, type, finalSettings);
         }
 
-        private void DecrementHue(ColorType type)
+        private void DecrementHue(ColorType type, int factor = 1)
         {
             if (type != ColorType.TrueColor)
                 return;
-            trueColorHue--;
+            trueColorHue -= factor;
             if (trueColorHue < 0)
                 trueColorHue = 360;
             UpdateColor(ref selectedColor, type, finalSettings);
         }
 
-        private void IncrementHue(ColorType type)
+        private void IncrementHue(ColorType type, int factor = 1)
         {
             if (type != ColorType.TrueColor)
                 return;
-            trueColorHue++;
+            trueColorHue += factor;
             if (trueColorHue > 360)
                 trueColorHue = 0;
             UpdateColor(ref selectedColor, type, finalSettings);
