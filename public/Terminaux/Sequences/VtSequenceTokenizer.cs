@@ -27,6 +27,15 @@ namespace Terminaux.Sequences
     internal class VtSequenceTokenizer
     {
         private readonly char[] charRead;
+        private readonly char[] escChars =
+        [
+            VtSequenceBasicChars.EscapeChar,
+            VtSequenceBasicChars.CsiChar,
+            VtSequenceBasicChars.OSCChar,
+            VtSequenceBasicChars.APCChar,
+            VtSequenceBasicChars.DCSChar,
+            VtSequenceBasicChars.PMChar,
+        ];
 
         internal VtSequenceInfo[] Parse(VtSequenceType type = VtSequenceType.All)
         {
@@ -38,16 +47,7 @@ namespace Terminaux.Sequences
             bool hasSequences = false;
             for (int pos = 0; pos < charRead.Length; pos++)
             {
-                hasSequences =
-                    VtSequenceTokenTools.CheckChar(charRead, pos,
-                    [
-                        VtSequenceBasicChars.EscapeChar,
-                        VtSequenceBasicChars.CsiChar,
-                        VtSequenceBasicChars.OSCChar,
-                        VtSequenceBasicChars.APCChar,
-                        VtSequenceBasicChars.DCSChar,
-                        VtSequenceBasicChars.PMChar,
-                    ]);
+                hasSequences = VtSequenceTokenTools.CheckChar(charRead, pos, escChars);
                 if (hasSequences)
                     break;
             }
