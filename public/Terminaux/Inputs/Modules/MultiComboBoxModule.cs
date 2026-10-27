@@ -335,5 +335,36 @@ namespace Terminaux.Inputs.Modules
             if (currentSelection > selections.Length - 1)
                 currentSelection = 0;
         }
+
+        /// <summary>
+        /// Makes a new multiple selection combo box module instance
+        /// </summary>
+        public MultiComboBoxModule()
+        { }
+
+        /// <summary>
+        /// Makes a new multiple selection combo box module instance
+        /// </summary>
+        /// <param name="categories">Categories</param>
+        public MultiComboBoxModule(InputChoiceCategoryInfo[] categories)
+        {
+            Choices = categories;
+        }
+
+        /// <summary>
+        /// Makes a new multiple selection combo box module instance
+        /// </summary>
+        /// <param name="groups">Groups</param>
+        public MultiComboBoxModule(InputChoiceGroupInfo[] groups) :
+            this([new InputChoiceCategoryInfo("Selection category", groups)])
+        { }
+
+        /// <summary>
+        /// Makes a new multiple selection combo box module instance
+        /// </summary>
+        /// <param name="choices">Choices</param>
+        public MultiComboBoxModule(InputChoiceInfo[] choices) :
+            this([new InputChoiceCategoryInfo("Selection category", [new("Selection group", choices)])])
+        { }
     }
 }

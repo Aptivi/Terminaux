@@ -20,6 +20,7 @@
 using System.Linq;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Modules;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
@@ -33,6 +34,39 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
         public void RunFixture()
         {
             Input.EnableMouse = true;
+            InputChoiceCategoryInfo[] moduleCategories =
+                [
+                    new("Selection infobox", [new("Available options",
+                    [
+                        new("Acid House", ""),
+                        new("Big Room", ""),
+                        new("Deep House", ""),
+                        new("Drum-n-Bass", ""),
+                        new("House", ""),
+                        new("Techno", ""),
+                        new("Trance", ""),
+                    ])])
+                ];
+            InputChoiceGroupInfo[] moduleGroups =
+                [
+                    new("Available options",
+                    [
+                        new("Windows", ""),
+                        new("macOS", ""),
+                        new("Linux", ""),
+                    ])
+                ];
+            InputChoiceInfo[] moduleChoices =
+                [
+                    new("Green", ""),
+                    new("Blue", ""),
+                    new("Red", ""),
+                    new("Fuchsia", ""),
+                    new("Aqua", ""),
+                    new("Orange", ""),
+                    new("Black", ""),
+                    new("White", ""),
+                ];
 
             var modules = new InputModule[]
             {
@@ -40,53 +74,20 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 {
                     Name = "EDM Music Genre",
                     Description = "Choose one of the EDM music genres to continue",
-                    Choices =
-                    [
-                        new("Selection infobox", [new("Available options",
-                        [
-                            new("Acid House", ""),
-                            new("Big Room", ""),
-                            new("Deep House", ""),
-                            new("Drum-n-Bass", ""),
-                            new("House", ""),
-                            new("Techno", ""),
-                            new("Trance", ""),
-                        ])])
-                    ],
+                    Choices = moduleCategories,
                     Value = 6,
                 },
                 new ComboBoxModule()
                 {
                     Name = "Preferred Operating System",
                     Description = "Choose your preferred operating system to continue",
-                    Choices =
-                    [
-                        new("Selection infobox", [new("Available options",
-                        [
-                            new("Windows", ""),
-                            new("macOS", ""),
-                            new("Linux", ""),
-                        ])])
-                    ],
+                    Choices = [new("Selection infobox", moduleGroups)],
                 },
                 new MultiComboBoxModule()
                 {
                     Name = "Favorite Colors",
                     Description = "Choose your favorite colors",
-                    Choices =
-                    [
-                        new("Selection infobox", [new("Available options",
-                        [
-                            new("Green", ""),
-                            new("Blue", ""),
-                            new("Red", ""),
-                            new("Fuchsia", ""),
-                            new("Aqua", ""),
-                            new("Orange", ""),
-                            new("Black", ""),
-                            new("White", ""),
-                        ])])
-                    ],
+                    Choices = [new("Selection infobox", [new("Available options", moduleChoices)])],
                 },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "Select an input module to test...", new InfoBoxSettings()
