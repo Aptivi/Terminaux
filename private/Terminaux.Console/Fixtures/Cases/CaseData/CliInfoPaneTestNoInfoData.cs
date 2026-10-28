@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
@@ -26,6 +28,16 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     internal class CliInfoPaneTestNoInfoData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         internal static List<string> strings = [];
+
+        /// <inheritdoc/>
+        public override List<InteractiveTuiBinding<string, string>> Bindings =>
+        [
+            new("Add", ConsoleKey.F1, (_, index, _, _) => Add(index), true),
+            new("Delete", ConsoleKey.F2, (_, index, _, _) => Remove(index), true),
+            new("Delete", PointerButton.Right, PointerButtonPress.Released, (_, index, _, _) => Remove(index)),
+            new("Delete Last", ConsoleKey.F3, (_, _, _, _) => RemoveLast(), true),
+            new("Open info", ConsoleKey.Enter, (name, _, _, _) => OpenInfo(name), true),
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>

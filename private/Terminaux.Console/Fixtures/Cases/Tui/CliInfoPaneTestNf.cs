@@ -36,7 +36,6 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
             // Run the resize listener
             ConsoleResizeHandler.StartResizeListener();
             var tui = new CliInfoPaneNfTestData();
-            tui.Bindings.Add(new InteractiveTuiBinding<string>("Show", ConsoleKey.Spacebar, (_, _, _, _) => tui.Show()));
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(tui);

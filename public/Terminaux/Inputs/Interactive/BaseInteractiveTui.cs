@@ -59,18 +59,6 @@ namespace Terminaux.Inputs.Interactive
         /// Interactive TUI settings
         /// </summary>
         public InteractiveTuiSettings Settings { get; set; } = InteractiveTuiSettings.GlobalSettings;
-        /// <summary>
-        /// All key bindings for your interactive user interface
-        /// </summary>
-        public List<InteractiveTuiBinding<TPrimary, TSecondary>> Bindings { get; internal set; } = [];
-        /// <summary>
-        /// All key bindings for your interactive user interface (first pane)
-        /// </summary>
-        public List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsFirstPane { get; internal set; } = [];
-        /// <summary>
-        /// All key bindings for your interactive user interface (first pane)
-        /// </summary>
-        public List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsSecondPane { get; internal set; } = [];
 
         /// <inheritdoc/>
         public virtual bool ShowSecondPane => true;
@@ -82,6 +70,13 @@ namespace Terminaux.Inputs.Interactive
         public virtual bool AcceptsEmptyData => false;
         /// <inheritdoc/>
         public virtual InteractiveTuiHelpPage[] HelpPages { get; } = [];
+
+        /// <inheritdoc/>
+        public virtual List<InteractiveTuiBinding<TPrimary, TSecondary>> Bindings { get; } = [];
+        /// <inheritdoc/>
+        public virtual List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsFirstPane { get; } = [];
+        /// <inheritdoc/>
+        public virtual List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsSecondPane { get; } = [];
 
         /// <inheritdoc/>
         public virtual IEnumerable<TPrimary> PrimaryDataSource => [];

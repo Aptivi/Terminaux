@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     {
         private static bool loaded = false;
         private static readonly List<TermInfoDesc> descs = [];
+
+        /// <inheritdoc/>
+        public override List<InteractiveTuiBinding<TermInfoDesc, TermInfoDesc>> Bindings =>
+        [
+            new("Custom...", ConsoleKey.C, (_, _, _, _) => ShowCustomInfo())
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable<TermInfoDesc> PrimaryDataSource =>

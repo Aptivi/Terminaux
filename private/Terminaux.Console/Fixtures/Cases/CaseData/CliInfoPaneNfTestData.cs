@@ -33,6 +33,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         internal static string[] types = Enum.GetNames(typeof(NerdFontsTypes));
 
         /// <inheritdoc/>
+        public override List<InteractiveTuiBinding<string, string>> Bindings =>
+        [
+            new("Show", ConsoleKey.Spacebar, (_, _, _, _) => Show()),
+        ];
+
+        /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             types;
 

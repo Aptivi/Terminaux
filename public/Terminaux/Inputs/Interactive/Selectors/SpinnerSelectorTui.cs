@@ -46,6 +46,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
         internal bool cancelled = true;
 
         /// <inheritdoc/>
+        public override List<InteractiveTuiBinding<(string, Spinner), (string, Spinner)>> Bindings =>
+        [
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT"), ConsoleKey.Enter, (_, _, _, _) => ConfirmSelection())
+        ];
+
+        /// <inheritdoc/>
         public override IEnumerable<(string, Spinner)> PrimaryDataSource
         {
             get

@@ -54,6 +54,19 @@ namespace Terminaux.Inputs.Interactive
         public InteractiveTuiHelpPage[] HelpPages { get; }
 
         /// <summary>
+        /// All key bindings for your interactive user interface
+        /// </summary>
+        public List<InteractiveTuiBinding<TPrimary, TSecondary>> Bindings { get; }
+        /// <summary>
+        /// All key bindings for your interactive user interface (first pane)
+        /// </summary>
+        public List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsFirstPane { get; }
+        /// <summary>
+        /// All key bindings for your interactive user interface (first pane)
+        /// </summary>
+        public List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsSecondPane { get; }
+
+        /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane one)
         /// </summary>
         public IEnumerable<TPrimary> PrimaryDataSource { get; }

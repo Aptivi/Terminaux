@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
 
@@ -26,6 +27,14 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     {
         internal static List<string> strings = [];
         internal int timesRendered = 0;
+
+        /// <inheritdoc/>
+        public override List<InteractiveTuiBinding<string, string>> Bindings =>
+        [
+            new("Add", ConsoleKey.F1, (_, index, _, _) => Add(index), true),
+            new("Delete", ConsoleKey.F2, (_, index, _, _) => Remove(index), true),
+            new("Delete Last", ConsoleKey.F3, (_, _, _, _) => RemoveLast(), true),
+        ];
 
         /// <inheritdoc/>
         public override int RefreshInterval =>

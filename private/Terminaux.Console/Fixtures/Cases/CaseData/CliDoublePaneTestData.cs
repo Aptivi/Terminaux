@@ -17,8 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
+using Terminaux.Base.TermInfo;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -26,6 +29,26 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     {
         internal static List<string> strings = [];
         internal static List<string> strings2 = [];
+
+        /// <inheritdoc/>
+        public override List<InteractiveTuiBinding<string, string>> Bindings =>
+        [
+            new("Add", ConsoleKey.F1, (_, index, _, index2) => Add(index, index2), true),
+            new("Delete", ConsoleKey.F2, (_, index, _, index2) => Remove(index, index2), true),
+            new("Delete Last", ConsoleKey.F3, (_, _, _, _) => RemoveLast(), true),
+        ];
+
+        /// <inheritdoc/>
+        public override List<InteractiveTuiBinding<string, string>> BindingsFirstPane =>
+        [
+            new("Information", ConsoleKey.F4, (str, _, _, _) => InfoBoxModalColor.WriteInfoBoxModal(str ?? ""), true),
+        ];
+
+        /// <inheritdoc/>
+        public override List<InteractiveTuiBinding<string, string>> BindingsSecondPane =>
+        [
+            new("Length", ConsoleKey.F4, (_, _, str, _) => InfoBoxModalColor.WriteInfoBoxModal($"len={(str ?? "").Length}"), true),
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
