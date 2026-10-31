@@ -522,6 +522,11 @@ namespace Terminaux.Inputs.Styles.Editor
 
         private string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte, InteractiveTuiSettings settings)
         {
+            // Get the widths and heights
+            int SeparatorConsoleWidthInterior = fullscreen ? ConsoleWrapper.WindowWidth : ConsoleWrapper.WindowWidth - 2;
+            int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
+            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
+
             // Get the un-highlighted and highlighted colors
             var entryColor = settings.PaneItemForeColor;
             var unhighlightedColorBackground = settings.BackgroundColor;
@@ -543,6 +548,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 //    0x00000020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 //    0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 // ... and so on.
+                int processedHeight = 0;
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
@@ -586,7 +592,24 @@ namespace Terminaux.Inputs.Styles.Editor
                             $"{RenderedByteChar}"
                         );
                     }
+
+                    // Pad the remaining byte display again
+                    padded = new(' ', remaining);
+                    builder.Append(ConsoleColoring.RenderResetBackground());
+                    builder.Append(padded);
+
+                    // Add a new line
                     builder.AppendLine();
+                    processedHeight++;
+                }
+
+                // Fill the remaining area if needed
+                if (processedHeight < byteLinesPerPage)
+                {
+                    int diff = byteLinesPerPage - processedHeight;
+                    int width = SeparatorConsoleWidthInterior;
+                    for (int i = 0; i < diff; i++)
+                        builder.AppendLine(new(' ', width));
                 }
                 return builder.ToString();
             }

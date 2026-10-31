@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
@@ -235,7 +236,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 // Now, get the line range
                 var lineBuilder = new StringBuilder();
                 var absolutes = GetAbsoluteSequences(source, sequencesCollections);
-                int finalPos = 1;
+                int finalPos = 0;
                 if (source.Length > 0)
                 {
                     int charsPerPage = SeparatorConsoleWidthInterior;
@@ -251,7 +252,7 @@ namespace Terminaux.Inputs.Styles.Editor
                         }
                         else
                             finalPos += TextTools.GetCharWidth(targetChar);
-                        if (finalPos > SeparatorConsoleWidthInterior)
+                        if (finalPos >= SeparatorConsoleWidthInterior)
                         {
                             currentCharPage++;
                             finalPos -= SeparatorConsoleWidthInterior;
@@ -259,12 +260,23 @@ namespace Terminaux.Inputs.Styles.Editor
                     }
                     int startLineIndex = charsPerPage * currentCharPage;
                     int endLineIndex = charsPerPage * (currentCharPage + 1);
+                    var lineRenderer = new StringBuilder();
                     if (startLineIndex > absolutes.Length)
                         startLineIndex = absolutes.Length;
                     if (endLineIndex > absolutes.Length)
                         endLineIndex = absolutes.Length;
                     for (int a = startLineIndex; a < endLineIndex; a++)
-                        lineBuilder.Append(absolutes[a].Item2);
+                        lineRenderer.Append(absolutes[a].Item2);
+                    lineBuilder.Append(lineRenderer);
+
+                    // Pad the remaining display
+                    int textLineWidth = ConsoleChar.EstimateCellWidth(lineRenderer.ToString());
+                    int remaining = SeparatorConsoleWidthInterior - textLineWidth;
+                    if (remaining > 0)
+                    {
+                        string padded = new(' ', remaining);
+                        lineBuilder.Append(padded);
+                    }
                 }
 
                 // Highlight the selection
@@ -272,7 +284,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 {
                     bool overflown = lines[i - 1].Length == 0 || lineColIdx >= absolutes.Length;
                     char finalChar = overflown ? ' ' : lines[i - 1][absolutes[lineColIdx].Item1];
-                    lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
+                    lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + (fullscreen ? 0 : 1) + 1, SeparatorMinimumHeightInterior + count + 1));
                     lineBuilder.Append(ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground));
                     lineBuilder.Append(ConsoleColoring.RenderSetConsoleColor(highlightedColorBackground, true, true));
                     lineBuilder.Append(finalChar == '\t' ? ' ' : finalChar);
@@ -288,12 +300,24 @@ namespace Terminaux.Inputs.Styles.Editor
 
                 // Change the color depending on the highlighted line and column
                 sels.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition((fullscreen ? 0 : 1) + 1, SeparatorMinimumHeightInterior + count + 1)}" +
                     $"{ConsoleColoring.RenderSetConsoleColor(highlightedColorBackground)}" +
                     $"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
                     lineBuilder
                 );
                 count++;
+            }
+
+            // Fill the remaining area if needed
+            if (count < lineLinesPerPage)
+            {
+                int diff = lineLinesPerPage - count;
+                int width = SeparatorConsoleWidthInterior;
+                for (int i = 0; i < diff; i++)
+                {
+                    sels.Append(CsiSequences.GenerateCsiCursorPosition((fullscreen ? 0 : 1) + 1, SeparatorMinimumHeightInterior + count + i + 1));
+                    sels.Append(new string(' ', width));
+                }
             }
             return sels.ToString();
         }
