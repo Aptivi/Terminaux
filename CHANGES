@@ -1,10 +1,13 @@
-This is another emergency release that fixes a bug related to the recently added functions.
+This is a small monthly release that marks the first release to enter the second support year.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed stack overflows on terminal reader
+- `[+]` Added new constructors for combo box modules
+- `[*]` Made selection choices tidier
+- `[*]` Improved tab handling mechanism
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
