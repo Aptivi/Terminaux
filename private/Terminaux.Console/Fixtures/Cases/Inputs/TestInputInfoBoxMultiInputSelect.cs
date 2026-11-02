@@ -70,24 +70,21 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 
             var modules = new InputModule[]
             {
-                new ComboBoxModule()
+                new ComboBoxModule(moduleCategories)
                 {
                     Name = "EDM Music Genre",
                     Description = "Choose one of the EDM music genres to continue",
-                    Choices = moduleCategories,
                     Value = 6,
                 },
-                new ComboBoxModule()
+                new ComboBoxModule(moduleGroups)
                 {
                     Name = "Preferred Operating System",
                     Description = "Choose your preferred operating system to continue",
-                    Choices = [new("Selection infobox", moduleGroups)],
                 },
-                new MultiComboBoxModule()
+                new MultiComboBoxModule(moduleChoices)
                 {
                     Name = "Favorite Colors",
                     Description = "Choose your favorite colors",
-                    Choices = [new("Selection infobox", [new("Available options", moduleChoices)])],
                 },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "Select an input module to test...", new InfoBoxSettings()
