@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
+
 namespace Terminaux.Shell.Arguments
 {
     /// <summary>
@@ -77,9 +79,15 @@ namespace Terminaux.Shell.Arguments
         internal string[] UnknownSwitchesList { get; private set; }
         internal string[] ConflictingSwitchesList { get; private set; }
         internal string[] NoValueSwitchesList { get; private set; }
+        internal string[] RequiredArgumentsNotTaken { get; private set; }
+        internal string[] RequiredSwitchesNotTaken { get; private set; }
+        internal string[] RequiredSwitchArgumentsNotTaken { get; private set; }
+        internal string[] RequiredNumericArgumentsNotTaken { get; private set; }
+        internal string[] RequiredArgumentsWordsNotTaken { get; private set; }
+        internal string[] RequiredNumericSwitchesNotTaken { get; private set; }
         internal CommandArgumentInfo? ArgumentInfo { get; private set; }
 
-        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string argumentsTextOrig, string[] argumentsListOrig, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList, bool numberProvided, bool exactWordingProvided, bool switchNumberProvided, CommandArgumentInfo? argumentInfo)
+        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string argumentsTextOrig, string[] argumentsListOrig, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList, bool numberProvided, bool exactWordingProvided, bool switchNumberProvided, string[] requiredArgumentsNotTaken, string[] requiredSwitchesNotTaken, string[] requiredSwitchArgumentsNotTaken, string[] requiredNumericArgumentsNotTaken, string[] requiredArgumentsWordsNotTaken, string[] requiredNumericSwitchesNotTaken, CommandArgumentInfo? argumentInfo)
         {
             Command = command;
             ArgumentsText = argumentsText;
@@ -97,6 +105,12 @@ namespace Terminaux.Shell.Arguments
             ExactWordingProvided = exactWordingProvided;
             ArgumentInfo = argumentInfo;
             SwitchNumberProvided = switchNumberProvided;
+            RequiredArgumentsNotTaken = requiredArgumentsNotTaken;
+            RequiredSwitchesNotTaken = requiredSwitchesNotTaken;
+            RequiredSwitchArgumentsNotTaken = requiredSwitchArgumentsNotTaken;
+            RequiredNumericArgumentsNotTaken = requiredNumericArgumentsNotTaken;
+            RequiredArgumentsWordsNotTaken = requiredArgumentsWordsNotTaken;
+            RequiredNumericSwitchesNotTaken = requiredNumericSwitchesNotTaken;
         }
 
     }

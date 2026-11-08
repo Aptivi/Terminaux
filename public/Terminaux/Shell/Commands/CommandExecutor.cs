@@ -116,6 +116,10 @@ namespace Terminaux.Shell.Commands
                         {
                             ConsoleLogger.Warning("User hasn't provided enough arguments for {0}", command);
                             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED"), ThemeColorType.ListValue);
+                            TextWriterRaw.WriteRaw(new Listing()
+                            {
+                                Objects = unsatisfied.RequiredArgumentsNotTaken,
+                            }.Render() + "\n");
                         }
 
                         // Check for required switches
@@ -123,6 +127,10 @@ namespace Terminaux.Shell.Commands
                         {
                             ConsoleLogger.Warning("User hasn't provided enough switches for {0}", command);
                             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED"), ThemeColorType.ListValue);
+                            TextWriterRaw.WriteRaw(new Listing()
+                            {
+                                Objects = unsatisfied.RequiredSwitchesNotTaken,
+                            }.Render() + "\n");
                         }
 
                         // Check for required switch arguments
@@ -130,6 +138,10 @@ namespace Terminaux.Shell.Commands
                         {
                             ConsoleLogger.Warning("User hasn't provided a value for one of the switches for {0}", command);
                             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE"), ThemeColorType.ListValue);
+                            TextWriterRaw.WriteRaw(new Listing()
+                            {
+                                Objects = unsatisfied.RequiredSwitchArgumentsNotTaken,
+                            }.Render() + "\n");
                         }
 
                         // Check for unknown switches
@@ -170,6 +182,10 @@ namespace Terminaux.Shell.Commands
                         {
                             ConsoleLogger.Warning("User has provided invalid number for one or more of the arguments for {0}", command);
                             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGNUMERIC"), ThemeColorType.ListValue);
+                            TextWriterRaw.WriteRaw(new Listing()
+                            {
+                                Objects = unsatisfied.RequiredNumericArgumentsNotTaken,
+                            }.Render() + "\n");
                         }
 
                         // Check for invalid exact wording
@@ -177,6 +193,10 @@ namespace Terminaux.Shell.Commands
                         {
                             ConsoleLogger.Warning("User has provided non-exact wording for {0}", command);
                             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGEXACT"), ThemeColorType.ListValue);
+                            TextWriterRaw.WriteRaw(new Listing()
+                            {
+                                Objects = unsatisfied.RequiredArgumentsWordsNotTaken,
+                            }.Render() + "\n");
                         }
 
                         // Check for invalid number in numeric switches
@@ -184,6 +204,10 @@ namespace Terminaux.Shell.Commands
                         {
                             ConsoleLogger.Warning("User has provided invalid number for one or more of the switches for {0}", command);
                             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHNUMERIC"), ThemeColorType.ListValue);
+                            TextWriterRaw.WriteRaw(new Listing()
+                            {
+                                Objects = unsatisfied.RequiredNumericSwitchesNotTaken,
+                            }.Render() + "\n");
                         }
                     }
                     TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CONSULTHELP"), ThemeColorType.Error);

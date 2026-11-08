@@ -27,6 +27,7 @@ using Terminaux.Shell.Arguments.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Textify.General;
 using Textify.Tools;
 
@@ -75,7 +76,7 @@ namespace Terminaux.Shell.Arguments
             var CommandInfo = ShellCommands.Any((info) => info.Command == Command) ? ShellCommands.Single((info) => info.Command == Command) :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
                               cmdInfo;
-            var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
+            var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, [], [], [], [], [], [], new());
 
             // Change the command if a command with no slash is entered on slash-enabled shells
             var shellInfo = ShellManager.GetShellInfo(CommandType);
@@ -116,7 +117,7 @@ namespace Terminaux.Shell.Arguments
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
             var ArgumentInfo = argsDict.TryGetValue(Argument, out ArgumentInfo? argInfo) ? argInfo : null;
-            var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
+            var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, [], [], [], [], [], [], new());
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
             else
@@ -163,6 +164,12 @@ namespace Terminaux.Shell.Arguments
             string[] unknownSwitchesList = [];
             string[] conflictingSwitchesList = [];
             string[] noValueSwitchesList = [];
+            List<string> requiredArgumentsNotTaken = [];
+            List<string> requiredSwitchesNotTaken = [];
+            List<string> requiredSwitchArgumentsNotTaken = [];
+            List<string> requiredNumericArgumentsNotTaken = [];
+            List<string> requiredArgumentsWordsNotTaken = [];
+            List<string> requiredNumericSwitchesNotTaken = [];
             var argInfos = (CommandInfo is not null ? CommandInfo.CommandArgumentInfo : argumentInfo?.ArgArgumentInfo) ??
                 throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO"));
             if (argInfos.Length == 0)
@@ -197,19 +204,40 @@ namespace Terminaux.Shell.Arguments
 
                 // Check to see if the caller has provided required number of arguments
                 if (argInfo is not null)
+                {
                     RequiredArgumentsProvided =
                         EnclosedArgs.Length >= finalRequiredArgs ||
                         !argInfo.ArgumentsRequired;
+                    if (!RequiredArgumentsProvided)
+                    {
+                        for (int i = EnclosedArgs.Length; i < finalRequiredArgs; i++)
+                        {
+                            var requiredArg = argInfo.Arguments[i];
+                            requiredArgumentsNotTaken.Add(requiredArg.ArgumentExpression);
+                        }
+                    }
+                }
                 else
                     RequiredArgumentsProvided = true;
                 ConsoleLogger.Debug("RequiredArgumentsProvided is {0}. Refer to the value of argument info.", RequiredArgumentsProvided);
 
                 // Check to see if the caller has provided required number of switches
                 if (argInfo is not null)
+                {
+                    int finalRequiredSwitches = argInfo.Switches.Count((@switch) => @switch.IsRequired);
                     RequiredSwitchesProvided =
                         argInfo.Switches.Length == 0 ||
-                        enclosedSwitches.Length >= argInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
+                        enclosedSwitches.Length >= finalRequiredSwitches ||
                         !argInfo.Switches.Any((@switch) => @switch.IsRequired);
+                    if (!RequiredSwitchesProvided)
+                    {
+                        for (int i = enclosedSwitches.Length; i < finalRequiredSwitches; i++)
+                        {
+                            var requiredSwitch = argInfo.Switches[i];
+                            requiredSwitchesNotTaken.Add(requiredSwitch.SwitchName);
+                        }
+                    }
+                }
                 else
                     RequiredSwitchesProvided = true;
                 ConsoleLogger.Debug("RequiredSwitchesProvided is {0}. Refer to the value of argument info.", RequiredSwitchesProvided);
@@ -227,7 +255,10 @@ namespace Terminaux.Shell.Arguments
                         foreach (var providedSwitch in allProvidedSwitches)
                         {
                             if (string.IsNullOrWhiteSpace(EnclosedSwitchKeyValuePairs.Single((kvp) => kvp.Item1 == providedSwitch).Item2))
+                            {
                                 RequiredSwitchArgumentsProvided = false;
+                                requiredSwitchArgumentsNotTaken.Add(providedSwitch);
+                            }
                         }
                     }
                 }
@@ -314,7 +345,10 @@ namespace Terminaux.Shell.Arguments
                         // Check to see if the argument expects a number and that the provided argument is numeric
                         // or if the argument allows string values
                         if (argPart.Options.IsNumeric && !double.TryParse(arg, out _))
+                        {
                             numberProvided = false;
+                            requiredNumericArgumentsNotTaken.Add(argPart.ArgumentExpression + " / " + arg);
+                        }
                     }
                 }
 
@@ -330,7 +364,10 @@ namespace Terminaux.Shell.Arguments
                         // Check to see if the argument expects a number and that the provided argument is numeric
                         // or if the argument allows string values
                         if (argPart.Options.ExactWording.Length > 0 && !argPart.Options.ExactWording.Contains(arg))
+                        {
                             exactWordingProvided = false;
+                            requiredArgumentsWordsNotTaken.Add(argPart.ArgumentExpression + " / " + arg);
+                        }
                     }
                 }
 
@@ -347,7 +384,10 @@ namespace Terminaux.Shell.Arguments
                         // Check to see if the switch expects a number and that the provided switch is numeric
                         // or if the switch allows string values
                         if (switchPart.IsNumeric && !double.TryParse(switches.Item2, out _))
+                        {
                             switchNumberProvided = false;
+                            requiredNumericSwitchesNotTaken.Add(switchPart.SwitchName + " / " + switches.Item2);
+                        }
                     }
                 }
 
@@ -369,6 +409,12 @@ namespace Terminaux.Shell.Arguments
                     numberProvided,
                     exactWordingProvided,
                     switchNumberProvided,
+                    [.. requiredArgumentsNotTaken],
+                    [.. requiredSwitchesNotTaken],
+                    [.. requiredSwitchArgumentsNotTaken],
+                    [.. requiredNumericArgumentsNotTaken],
+                    [.. requiredArgumentsWordsNotTaken],
+                    [.. requiredNumericSwitchesNotTaken],
                     argInfo
                 );
                 if (RequiredArgumentsProvided &&
