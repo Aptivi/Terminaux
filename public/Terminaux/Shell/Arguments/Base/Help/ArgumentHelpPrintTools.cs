@@ -24,7 +24,6 @@ using Terminaux.Base;
 using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.General;
 
 namespace Terminaux.Shell.Arguments.Base.Help
 {
@@ -36,7 +35,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
             {
                 var argumentInstance = arguments[arg];
                 string[] usages = [.. argumentInstance.ArgArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
-                string argumentEntry = "  --{0}{1}".FormatString(argumentInstance.Argument, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
+                string argumentEntry = $"  --{argumentInstance.Argument}";
                 ListEntryWriterColor.WriteListEntry(argumentEntry, LanguageTools.GetLocalized(argumentInstance.HelpDefinition), needsIndent: false);
             }
         }

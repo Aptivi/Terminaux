@@ -203,9 +203,7 @@ namespace Terminaux.Shell.Help
                     hiddenProcessed++;
                     continue;
                 }
-                string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
-                string commandEntry = "{0}{1}".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
-                ListEntryWriterColor.WriteListEntry(commandEntry, LanguageTools.GetLocalized(cmd.HelpDefinition), indent: 1);
+                ListEntryWriterColor.WriteListEntry(cmd.Command, LanguageTools.GetLocalized(cmd.HelpDefinition), indent: 1);
             }
             if (hiddenProcessed > 0 && showCount)
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
@@ -222,8 +220,7 @@ namespace Terminaux.Shell.Help
                     hiddenProcessed++;
                     continue;
                 }
-                string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
-                string aliasEntry = "{0} -> {1}{2}".FormatString(alias.Alias, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
+                string aliasEntry = $"{alias.Alias} -> {cmd.Command}";
                 ListEntryWriterColor.WriteListEntry(aliasEntry, LanguageTools.GetLocalized(cmd.HelpDefinition), indent: 1);
             }
             if (hiddenProcessed > 0 && showCount)
