@@ -35,7 +35,7 @@ namespace Terminaux.Shell.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(
-                "* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDNEEDSSLASH") + $" /{parameters.CommandText} {parameters.ArgumentsText}", ThemeColorType.Tip);
+                LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDNEEDSSLASH") + $" /{parameters.CommandText} {parameters.ArgumentsText}", ThemeColorType.Tip);
             return 0;
         }
 

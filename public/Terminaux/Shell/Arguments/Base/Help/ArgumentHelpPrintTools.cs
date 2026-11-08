@@ -87,14 +87,18 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 if (Arguments.Length != 0)
                 {
                     TextWriterRaw.Write();
-                    TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGSLIST"), ThemeColorType.ListTitle);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGSLIST"), ThemeColorType.ListTitle);
                     foreach (var argumentPart in Arguments)
                     {
                         string argumentName = argumentPart.ArgumentExpression;
                         string argumentDesc = LanguageTools.GetLocalized(argumentPart.Options.ArgumentDescription);
+                        bool hasWordingRequirement = argumentPart.Options.ExactWording.Length > 0;
+                        string argumentWords = !hasWordingRequirement || argumentPart.Options.ExactWording[0] == argumentPart.ArgumentExpression ? "" : string.Join("/", argumentPart.Options.ExactWording);
                         if (string.IsNullOrWhiteSpace(argumentDesc))
                             argumentDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED");
                         ListEntryWriterColor.WriteListEntry(argumentName, argumentDesc, indent: 1, needsIndent: false);
+                        if (hasWordingRequirement)
+                            TextWriterColor.Write("    " + argumentWords, ThemeColorType.ListValue);
                     }
                 }
 
@@ -102,7 +106,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 if (Switches.Length != 0)
                 {
                     TextWriterRaw.Write();
-                    TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST"), ThemeColorType.ListTitle);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST"), ThemeColorType.ListTitle);
                     foreach (var Switch in Switches)
                     {
                         string switchName = Switch.SwitchName;

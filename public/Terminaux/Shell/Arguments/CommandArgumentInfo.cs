@@ -127,7 +127,7 @@ namespace Terminaux.Shell.Arguments
                     string requiredTagEnd = required ? ">" : "]";
                     string numericRender = justNumeric ? ":int" : "";
                     string renderedArgument = hasWordingRequirement ?
-                        $"{Argument.ArgumentExpression}{(Argument.Options.ExactWording[0] == Argument.ArgumentExpression ? "" : ":" + string.Join("/", Argument.Options.ExactWording))} " :
+                        $"{Argument.ArgumentExpression} " :
                         $"{requiredTagStart}{Argument.ArgumentExpression}{numericRender}{requiredTagEnd} ";
                     usageBuilder.Append(renderedArgument);
                 }

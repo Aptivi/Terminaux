@@ -23,6 +23,7 @@ using System.Linq;
 using Terminaux.Base;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Arguments.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
@@ -154,14 +155,18 @@ namespace Terminaux.Shell.Help
                     if (Arguments.Length != 0)
                     {
                         TextWriterRaw.Write();
-                        TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGSLIST"), ThemeColorType.ListTitle);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGSLIST"), ThemeColorType.ListTitle);
                         foreach (var argument in Arguments)
                         {
                             string argumentName = argument.ArgumentExpression;
                             string argumentDesc = LanguageTools.GetLocalized(argument.Options.ArgumentDescription);
+                            bool hasWordingRequirement = argument.Options.ExactWording.Length > 0;
+                            string argumentWords = !hasWordingRequirement || argument.Options.ExactWording[0] == argument.ArgumentExpression ? "" : string.Join("/", argument.Options.ExactWording);
                             if (string.IsNullOrWhiteSpace(argumentDesc))
                                 argumentDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED");
                             ListEntryWriterColor.WriteListEntry(argumentName, argumentDesc, indent: 1, needsIndent: false);
+                            if (hasWordingRequirement)
+                                TextWriterColor.Write("    " + argumentWords, ThemeColorType.ListValue);
                         }
                     }
 
@@ -169,7 +174,7 @@ namespace Terminaux.Shell.Help
                     if (Switches.Length != 0)
                     {
                         TextWriterRaw.Write();
-                        TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST"), ThemeColorType.ListTitle);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST"), ThemeColorType.ListTitle);
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;
