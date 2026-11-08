@@ -175,13 +175,17 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                     plotted.Add(pos);
                 }
             }
+
+            // Get the right amount of layers depending on radii
             if (ShowCenterPoint)
                 AddPixel(0, 0, CenterPointColor);
-            for (int layer = 0; layer <= (OuterRadius - InnerRadius); layer++)
+            double scale = Math.Max(1.0, Math.Max(RadiusX, RadiusY) / (double)OuterRadius);
+            int layers = (int)Math.Ceiling((OuterRadius - InnerRadius) * scale);
+            for (int layer = 0; layer <= layers; layer++)
             {
-                int layerRadius = InnerRadius + layer;
-                int currentRadiusA = (int)(layerRadius * RadiusX / (double)OuterRadius);
-                int currentRadiusB = (int)(layerRadius * RadiusY / (double)OuterRadius);
+                double layerRadius = layers == 0 ? InnerRadius : InnerRadius + (OuterRadius - InnerRadius) * layer / (double)layers;
+                int currentRadiusA = (int)Math.Round(layerRadius * RadiusX / OuterRadius);
+                int currentRadiusB = (int)Math.Round(layerRadius * RadiusY / OuterRadius);
 
                 int x = 0;
                 int y = currentRadiusB;
