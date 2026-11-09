@@ -262,7 +262,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else
             {
                 InputChoiceInfo[] figletSelections = [.. InputChoiceTools.GetInputChoices(FigletSelector.fonts.Select((font, num) => ($"{num}", font)).ToArray())];
-                selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection(figletSelections, LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTSELECTPROMPT"), new InfoBoxSettings()
+                selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection(selectedFont, -1, figletSelections, LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTSELECTPROMPT"), new InfoBoxSettings()
                 {
                     Title = LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE")
                 });

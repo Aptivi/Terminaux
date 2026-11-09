@@ -186,7 +186,7 @@ namespace Terminaux.Images.Icons
                                 }
                                 else
                                 {
-                                    selectedIcon = InfoBoxSelectionColor.WriteInfoBoxSelection(iconsSelections, LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPT"), new InfoBoxSettings()
+                                    selectedIcon = InfoBoxSelectionColor.WriteInfoBoxSelection(selectedIcon, -1, iconsSelections, LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPT"), new InfoBoxSettings()
                                     {
                                         Title = LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPTTITLE"),
                                     });

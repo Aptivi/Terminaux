@@ -149,7 +149,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else
             {
                 InputChoiceInfo[] cowsaySelections = [.. InputChoiceTools.GetInputChoices(CowNameMapping.cowNameStrings.Values.Select((cowName, num) => ($"{num}", cowName)).ToArray())];
-                cowName = (CowName)InfoBoxSelectionColor.WriteInfoBoxSelection(cowsaySelections, LanguageTools.GetLocalized("T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT"), new InfoBoxSettings()
+                cowName = (CowName)InfoBoxSelectionColor.WriteInfoBoxSelection((int)cowName, -1, cowsaySelections, LanguageTools.GetLocalized("T_INPUT_IS_COWSAY_COWNAMESELECTPROMPT"), new InfoBoxSettings()
                 {
                     Title = LanguageTools.GetLocalized("T_INPUT_IS_COWSAY_COWNAMESELECTPROMPTTITLE")
                 });
