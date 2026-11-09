@@ -38,11 +38,14 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
     internal static class InfoBoxTools
     {
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(string[] splitFinalLines, int extraHeight = 0, int extraWidth = 0)
+        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(string[] splitFinalLines, BorderSettings settings, int extraHeight = 0, int extraWidth = 0, string title = "")
         {
             int windowWidth = ConsoleWrapper.WindowWidth;
             int windowHeight = ConsoleWrapper.WindowHeight;
             int maxWidth = splitFinalLines.Length > 0 ? splitFinalLines.Max(ConsoleChar.EstimateCellWidth) : 0;
+            int titleWidth = ConsoleChar.EstimateCellWidth($" {settings.BorderRightHorizontalIntersectionChar} ") + ConsoleChar.EstimateCellWidth(title) + ConsoleChar.EstimateCellWidth($" {settings.BorderLeftHorizontalIntersectionChar}  ") + ConsoleChar.EstimateCellWidth(GetButtons(settings) + " ");
+            if (titleWidth > maxWidth)
+                maxWidth = titleWidth;
             if (maxWidth < 50 && extraHeight > 0)
                 maxWidth = 50;
             maxWidth += extraWidth;
@@ -57,11 +60,14 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY);
         }
         
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(int width, int height, int left, int top, int extraHeight = 0, int extraWidth = 0)
+        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(int width, int height, int left, int top, BorderSettings settings, int extraHeight = 0, int extraWidth = 0, string title = "")
         {
             int windowWidth = ConsoleWrapper.WindowWidth;
             int windowHeight = ConsoleWrapper.WindowHeight;
             int maxWidth = width;
+            int titleWidth = ConsoleChar.EstimateCellWidth($" {settings.BorderRightHorizontalIntersectionChar} ") + ConsoleChar.EstimateCellWidth(title) + ConsoleChar.EstimateCellWidth($" {settings.BorderLeftHorizontalIntersectionChar}  ") + ConsoleChar.EstimateCellWidth(GetButtons(settings) + " ");
+            if (titleWidth > maxWidth)
+                maxWidth = titleWidth;
             if (maxWidth < 50 && extraHeight > 0)
                 maxWidth = 50;
             maxWidth += extraWidth;

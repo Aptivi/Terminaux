@@ -108,8 +108,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(Text, linesWidth);
                     var (maxWidth, maxHeight, maxRenderWidth, borderX, borderY) = !Positioning.Autofit ?
-                        InfoBoxTools.GetDimensions(Positioning.Width, Positioning.Height, Positioning.Left, Positioning.Top, Positioning.ExtraHeight, Positioning.ExtraWidth) :
-                        InfoBoxTools.GetDimensions(splitFinalLines, Positioning.ExtraHeight, Positioning.ExtraWidth);
+                        InfoBoxTools.GetDimensions(Positioning.Width, Positioning.Height, Positioning.Left, Positioning.Top, Settings.BorderSettings, Positioning.ExtraHeight, Positioning.ExtraWidth, Settings.Title) :
+                        InfoBoxTools.GetDimensions(splitFinalLines, Settings.BorderSettings, Positioning.ExtraHeight, Positioning.ExtraWidth, Settings.Title);
                     if (!Positioning.Autofit)
                         splitFinalLines = TextWriterTools.GetFinalLines(Text, maxWidth + 1);
                     int maxTextHeight = maxHeight - Positioning.ExtraHeight;
