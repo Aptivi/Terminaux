@@ -35,7 +35,7 @@ namespace Terminaux.Base
         internal static int CurrentWindowWidth;
         internal static int CurrentWindowHeight;
         private static bool ResizeDetected;
-        private static ThreadInstance ResizeListenerThread = new("Console Resize Listener Thread", true, (l) => PollForResize((Action<int, int, int, int>?)l));
+        private static readonly ThreadInstance ResizeListenerThread = new("Console Resize Listener Thread", true, (l) => PollForResize((Action<int, int, int, int>?)l));
 
         /// <summary>
         /// Whether to run the base console resize handler or not after running a custom action
@@ -142,17 +142,17 @@ namespace Terminaux.Base
 
         private static void PollForResize(Action<int, int, int, int>? customHandler)
         {
-            try
+            while (true)
             {
-                while (true)
+                try
                 {
                     SpinWait.SpinUntil(CheckResized);
                     HandleResize(customHandler);
                 }
-            }
-            catch (Exception ex)
-            {
-                ConsoleLogger.Error(ex, $"Failed to detect console resize: {ex.Message}");
+                catch (Exception ex)
+                {
+                    ConsoleLogger.Error(ex, $"Failed to run console resize handler. Continuing...");
+                }
             }
         }
     }
