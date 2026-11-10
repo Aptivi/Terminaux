@@ -133,7 +133,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             // Get necessary variables
             var selectionsRendered = new Selections(selections);
             var related = selectionsRendered.GetRelatedHeights();
-            int selectionChoices = related.Count > 10 ? 10 : related.Count;
+            int maximumSelectionHeight = ConsoleWrapper.WindowHeight - 4 - infoBox.Dimensions.maxTextHeight - 2;
+            int selectionChoices = related.Count > maximumSelectionHeight ? maximumSelectionHeight : related.Count;
             var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
             int selectionBoxPosX = borderX + 2;
             int selectionBoxPosY = borderY + maxTextHeight + 2;

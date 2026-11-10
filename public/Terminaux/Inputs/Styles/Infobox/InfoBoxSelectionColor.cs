@@ -208,9 +208,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                     BackgroundColor = settings.BackgroundColor,
                 }
             };
-            var related = selectionsRendered.GetRelatedHeights();
-            int selectionChoices = related.Count > 10 ? 10 : related.Count;
-            int selectionReservedHeight = 2 + selectionChoices;
             var infoBox = new InfoBox()
             {
                 Settings = new(settings)
@@ -219,6 +216,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                 },
                 Text = text.FormatString(vars),
             };
+            var related = selectionsRendered.GetRelatedHeights();
+            int maximumSelectionHeight = ConsoleWrapper.WindowHeight - 4 - infoBox.Dimensions.maxHeight - 2;
+            int selectionChoices = related.Count > maximumSelectionHeight ? maximumSelectionHeight : related.Count;
+            int selectionReservedHeight = 2 + selectionChoices;
             infoBox.Settings.Positioning.ExtraHeight = selectionReservedHeight;
 
             // Now, some logic to get the informational box ready
@@ -234,11 +235,19 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Get the absolute infobox positioning dimensions according to the width of the selection
                     infoBox.Elements.RemoveRenderables();
                     infoBox.Settings.Positioning.ExtraWidth = 0;
+                    infoBox.Settings.Positioning.ExtraHeight = 0;
+
                     var (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
                     if (selectionsRendered.choiceTexts.Count == 0)
                         selectionsRendered.choiceTexts = selectionsRendered.GetChoiceParameters();
                     int maxChoiceTextsWidth = selectionsRendered.choiceTexts.Max((ct) => ConsoleChar.EstimateCellWidth(ct) + 4);
                     infoBox.Settings.Positioning.ExtraWidth = maxChoiceTextsWidth > maxWidth ? maxChoiceTextsWidth - maxWidth : 0;
+
+                    maximumSelectionHeight = ConsoleWrapper.WindowHeight - 4 - infoBox.Dimensions.maxHeight - 2;
+                    selectionChoices = related.Count > maximumSelectionHeight ? maximumSelectionHeight : related.Count;
+                    selectionReservedHeight = 2 + selectionChoices;
+                    infoBox.Settings.Positioning.ExtraHeight = selectionReservedHeight;
+
                     (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
                     int selectionBoxPosX = borderX + 2;
                     int selectionBoxPosY = borderY + maxTextHeight + 1;
