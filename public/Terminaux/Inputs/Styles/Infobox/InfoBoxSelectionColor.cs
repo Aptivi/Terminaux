@@ -217,7 +217,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 Text = text.FormatString(vars),
             };
             var related = selectionsRendered.GetRelatedHeights();
-            int maximumSelectionHeight = ConsoleWrapper.WindowHeight - 4 - infoBox.Dimensions.maxHeight - 2;
+            int maximumSelectionHeight = ConsoleWrapper.WindowHeight - 4 - (!infoBox.Settings.Positioning.Autofit ? infoBox.Dimensions.borderY : 2) - infoBox.Dimensions.maxHeight;
             int selectionChoices = related.Count > maximumSelectionHeight ? maximumSelectionHeight : related.Count;
             int selectionReservedHeight = 2 + selectionChoices;
             infoBox.Settings.Positioning.ExtraHeight = selectionReservedHeight;
@@ -243,7 +243,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int maxChoiceTextsWidth = selectionsRendered.choiceTexts.Max((ct) => ConsoleChar.EstimateCellWidth(ct) + 4);
                     infoBox.Settings.Positioning.ExtraWidth = maxChoiceTextsWidth > maxWidth ? maxChoiceTextsWidth - maxWidth : 0;
 
-                    maximumSelectionHeight = ConsoleWrapper.WindowHeight - 4 - infoBox.Dimensions.maxHeight - 2;
+                    maximumSelectionHeight = ConsoleWrapper.WindowHeight - 4 - (!infoBox.Settings.Positioning.Autofit ? infoBox.Dimensions.borderY : 2) - infoBox.Dimensions.maxHeight;
                     selectionChoices = related.Count > maximumSelectionHeight ? maximumSelectionHeight : related.Count;
                     selectionReservedHeight = 2 + selectionChoices;
                     infoBox.Settings.Positioning.ExtraHeight = selectionReservedHeight;
