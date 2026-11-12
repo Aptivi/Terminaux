@@ -211,7 +211,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                 $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                 new string(' ', indent * 4) +
-                "Error " +
                 $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ExceptionNameColor) : "")}" +
                 ex.GetType().Name +
                 $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
@@ -229,7 +228,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 stackTraceBuilder.Append(
                     $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                     new string(' ', indent * 4) +
-                    "  at "
+                    "  -> "
                 );
                 var frame = stackTrace.GetFrame(i);
 
@@ -242,9 +241,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     string memberClassName = methodInfo.DeclaringType.Name;
                     stackTraceBuilder.Append(
                         $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(MethodMemberColor) : "")}" +
-                        $"{memberClassName}." +
+                        memberClassName +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        "." +
                         $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(MethodColor) : "")}" +
-                        $"{memberName}" +
+                        memberName +
                         $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         "("
                     );
@@ -273,7 +274,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 {
                     stackTraceBuilder.Append(
                         $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(MethodColor) : "")}" +
-                        "<unknown method> "
+                        "<???> "
                     );
                 }
 
@@ -294,7 +295,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 {
                     stackTraceBuilder.Append(
                         $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(IlOffsetColor) : "")}" +
-                        "<unknown il offset> "
+                        "<???> "
                     );
                 }
 
@@ -325,7 +326,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 {
                     stackTraceBuilder.AppendLine(
                         $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(IlOffsetColor) : "")}" +
-                        "<unknown source>"
+                        "<???>"
                     );
                 }
             }
