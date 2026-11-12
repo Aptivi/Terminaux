@@ -139,12 +139,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Render the element using a pie
                 ConsoleLogger.Debug("Rendering pie chart element {0}: (start angle: {1}, sweep angle: {2})", i, start, sweep);
-                var pie = new Arc(Height, Left + showcaseLength, Top, element.Color)
+                var pie = new Arc(Height % 2 == 0 ? Height - 1 : Height, Left + showcaseLength, Top, element.Color)
                 {
                     InnerRadius = 0,
-                    OuterRadius = Height / 2,
+                    OuterRadius = (Height % 2 == 0 ? Height - 1 : Height) / 2,
                     AngleStart = start,
                     AngleEnd = sweep,
+                    ShowCenterPoint = true,
                 };
                 pieChart.Append(pie.Render());
             }
