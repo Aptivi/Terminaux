@@ -169,12 +169,12 @@ namespace Terminaux.Inputs.Modules
                                 if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
                                 {
                                     goingUp = true;
-                                    SelectionGoUp(ref currentSelection, choices);
+                                    SelectionGoUp(ref currentSelection, choices, 3);
                                 }
                                 break;
                             case PointerButton.WheelDown:
                                 if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
-                                    SelectionGoDown(ref currentSelection, choices);
+                                    SelectionGoDown(ref currentSelection, choices, 3);
                                 break;
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
@@ -242,20 +242,16 @@ namespace Terminaux.Inputs.Modules
                         {
                             case ConsoleKey.UpArrow:
                                 goingUp = true;
-                                currentSelection--;
-                                if (currentSelection < 0)
-                                    currentSelection = choices.Length - 1;
+                                SelectionGoUp(ref currentSelection, choices);
                                 break;
                             case ConsoleKey.DownArrow:
-                                currentSelection++;
-                                if (currentSelection > choices.Length - 1)
-                                    currentSelection = 0;
+                                SelectionGoDown(ref currentSelection, choices);
                                 break;
                             case ConsoleKey.Home:
-                                currentSelection = 0;
+                                SelectionSet(ref currentSelection, choices, 0);
                                 break;
                             case ConsoleKey.End:
-                                currentSelection = choices.Length - 1;
+                                SelectionSet(ref currentSelection, choices, choices.Length - 1);
                                 break;
                             case ConsoleKey.PageUp:
                                 goingUp = true;
@@ -340,17 +336,30 @@ namespace Terminaux.Inputs.Modules
             return PointerTools.PointerWithinRange(mouse, (selectionBoxPosX, selectionBoxPosY), (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + reservedHeight));
         }
 
-        private static void SelectionGoUp(ref int currentSelection, InputChoiceInfo[] selections)
+        private static void SelectionGoUp(ref int currentSelection, InputChoiceInfo[] selections, int factor = 1)
         {
-            currentSelection--;
+            if (factor < 1)
+                factor = 1;
+            currentSelection -= factor;
             if (currentSelection < 0)
-                currentSelection = selections.Length - 1;
+                currentSelection = factor == 1 ? selections.Length - 1 : 0;
         }
 
-        private static void SelectionGoDown(ref int currentSelection, InputChoiceInfo[] selections)
+        private static void SelectionGoDown(ref int currentSelection, InputChoiceInfo[] selections, int factor = 1)
         {
-            currentSelection++;
+            if (factor < 1)
+                factor = 1;
+            currentSelection += factor;
             if (currentSelection > selections.Length - 1)
+                currentSelection = factor == 1 ? 0 : selections.Length - 1;
+        }
+
+        private static void SelectionSet(ref int currentSelection, InputChoiceInfo[] selections, int value)
+        {
+            currentSelection = value;
+            if (currentSelection > selections.Length - 1)
+                currentSelection = selections.Length - 1;
+            if (currentSelection < 0)
                 currentSelection = 0;
         }
 
