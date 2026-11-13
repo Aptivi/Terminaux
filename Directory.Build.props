@@ -33,5 +33,4 @@
             <Output TaskParameter="Value" PropertyName="PackageVersion"/>
         </CreateProperty>
     </Target>
-    <Import Project="$(RootPath)/private/MonoWorkaround.targets"/>
 </Project>
