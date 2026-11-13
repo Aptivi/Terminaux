@@ -260,20 +260,38 @@ namespace Terminaux.Inputs.Modules
                             case ConsoleKey.PageUp:
                                 goingUp = true;
                                 {
-                                    int currentPageMove = (currentSelection - 1) / finalPopoverHeight;
-                                    int startIndexMove = finalPopoverHeight * currentPageMove;
-                                    currentSelection = startIndexMove;
-                                    if (currentSelection < 0)
-                                        currentSelection = 0;
+                                    // Use the rendered selection heights to go to the previous page
+                                    int projectedSelection = currentSelection;
+                                    int processedHeight = 0;
+                                    var heights = selection.GetSelectionHeights();
+                                    for (int h = projectedSelection; h > 0 && processedHeight < finalPopoverHeight; h--)
+                                    {
+                                        int height = heights[h];
+                                        int prevHeight = h - 1 < heights.Count ? heights[h - 1] : 0;
+                                        projectedSelection--;
+                                        if (projectedSelection < 0)
+                                            projectedSelection = 0;
+                                        processedHeight += height - prevHeight;
+                                    }
+                                    currentSelection = projectedSelection;
                                 }
                                 break;
                             case ConsoleKey.PageDown:
                                 {
-                                    int currentPageMove = currentSelection / finalPopoverHeight;
-                                    int startIndexMove = finalPopoverHeight * (currentPageMove + 1);
-                                    currentSelection = startIndexMove;
-                                    if (currentSelection > choices.Length - 1)
-                                        currentSelection = choices.Length - 1;
+                                    // Use the rendered selection heights to go to the next page
+                                    int projectedSelection = currentSelection;
+                                    int processedHeight = 0;
+                                    var heights = selection.GetSelectionHeights();
+                                    for (int h = projectedSelection; h < heights.Count && processedHeight < finalPopoverHeight; h++)
+                                    {
+                                        int height = heights[h];
+                                        int nextHeight = h + 1 < heights.Count ? heights[h + 1] : 0;
+                                        projectedSelection++;
+                                        if (projectedSelection > choices.Length - 1)
+                                            projectedSelection = choices.Length - 1;
+                                        processedHeight += nextHeight - height > 0 ? nextHeight - height : 1;
+                                    }
+                                    currentSelection = projectedSelection;
                                 }
                                 break;
                             case ConsoleKey.Tab:
