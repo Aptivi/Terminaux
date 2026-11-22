@@ -84,6 +84,7 @@ namespace Terminaux.Base
             if (!IsListening)
                 return;
             ResizeListenerThread.Stop();
+            ResizeListenerThread.Wait();
         }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace Terminaux.Base
 
         private static void PollForResize(Action<int, int, int, int>? customHandler)
         {
-            while (true)
+            while (!ResizeListenerThread.IsStopping)
             {
                 try
                 {
