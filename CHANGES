@@ -1,13 +1,10 @@
-This is another small monthly release that improves design in some components.
+This is a small hotfix release that aims at fixing console resize handler not stopping.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Made list of commands tidier
-- `[*]` Improved appearance of exception renderer
-- `[*]` Show which arguments are unsatisfied
-- `[*]` General improvements and bug fixes
+- `[*]` Fixed console resize handler not stopping
 
 Review the commit history if you want to get a deep insight about the changes.
 
